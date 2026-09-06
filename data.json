@@ -1,0 +1,62 @@
+{
+  "html-css": {
+    "title": "HTML & CSS & JavaScript講座",
+    "accent": "oklch(0.68 0.19 40)",
+    "runtime": "web",
+    "description": "マークアップ・スタイル・動きの実装まで、Webページ制作の基礎を一気通貫で学びます。右側のエディタを編集すると、すぐ下にプレビューが表示されます。",
+    "lessons": [
+      {
+        "id": "html-1",
+        "title": "はじめてのHTML",
+        "explanation": "<p>HTMLは文章の「構造」を表すための言語です。<code>&lt;h1&gt;</code>は見出し、<code>&lt;p&gt;</code>は段落を表します。</p><p>右のコードを書き換えて、実行ボタンでプレビューを更新してみましょう。</p>",
+        "starterCode": "<h1>Hello, Proglight!</h1>\n<p>ここを編集してみよう。</p>"
+      },
+      {
+        "id": "html-2",
+        "title": "CSSで装飾する",
+        "explanation": "<p><code>&lt;style&gt;</code>タグの中にCSSを書くと、見た目を変えられます。色・サイズ・余白などを自由に変更してみましょう。</p>",
+        "starterCode": "<style>\n  h1 { color: tomato; font-family: sans-serif; }\n</style>\n<h1>色を変えてみよう</h1>"
+      }
+    ]
+  },
+  "typescript": {
+    "title": "TypeScript講座",
+    "accent": "oklch(0.62 0.17 250)",
+    "runtime": "typescript",
+    "description": "型システムを活用して、安全で保守しやすいコードの書き方を学びます。コードはブラウザ上でJavaScriptに変換されてから実行されます。",
+    "lessons": [
+      {
+        "id": "ts-1",
+        "title": "型注釈の基本",
+        "explanation": "<p>変数の後ろに<code>: 型名</code>を書くことで、その変数に入る値の種類を指定できます。間違った型の値を入れようとすると、エディタや変換時にエラーが分かります。</p>",
+        "starterCode": "let message: string = \"Hello, TypeScript!\";\nconsole.log(message);"
+      },
+      {
+        "id": "ts-2",
+        "title": "インターフェースを使う",
+        "explanation": "<p><code>interface</code>を使うと、オブジェクトの形（どんなプロパティを持つか）を定義できます。</p>",
+        "starterCode": "interface User {\n  name: string;\n  age: number;\n}\n\nconst user: User = { name: \"Proglight\", age: 1 };\nconsole.log(user.name + \"は\" + user.age + \"歳です\");"
+      }
+    ]
+  },
+  "python": {
+    "title": "Python講座",
+    "accent": "oklch(0.65 0.16 150)",
+    "runtime": "python",
+    "description": "文法の基礎からデータ処理まで、Pythonをブラウザだけで学べます（初回実行時のみPython実行環境の読み込みに数秒かかります）。",
+    "lessons": [
+      {
+        "id": "py-1",
+        "title": "はじめてのPython",
+        "explanation": "<p><code>print()</code>を使うと、画面に文字を表示できます。まずは実行ボタンを押して結果を確認してみましょう。</p>",
+        "starterCode": "print(\"Hello, Python!\")"
+      },
+      {
+        "id": "py-2",
+        "title": "変数と計算",
+        "explanation": "<p>Pythonでは<code>=</code>を使って変数に値を入れます。数値の計算もそのまま書けます。</p>",
+        "starterCode": "age = 15\nnext_year = age + 1\nprint(\"来年は\" + str(next_year) + \"歳になります\")"
+      }
+    ]
+  }
+}
