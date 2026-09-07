@@ -1,137 +1,375 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Proglight - ホーム</title>
+
+  <!-- ファビコン -->
+
+  <link rel="icon" type="image/png" href="rogo.png">
+  <link rel="apple-touch-icon" href="rogo.png">
+
+  <!-- スタイル -->
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- ==========================================
-       ヘッダーコンポーネント
+       ヘッダー
        ========================================== -->
+
   <header class="site-header">
     <div class="header-container">
-      
-      <!-- 左: ロゴ -->
-      <div class="header-left">
-        <span class="logo-box">
-          <!-- LucideのZapアイコン -->
-          <svg class="zap-icon" xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-          </svg>
-          <span class="sr-only">Proglight ロゴ</span>
-        </span>
-      </div>
 
-      <!-- 中央: サイト名 -->
-      <div class="header-center">
-        <span class="site-title">Proglight</span>
-      </div>
 
-      <!-- 右: 無料バッジ -->
-      <div class="header-right">
-        <span class="badge-free">新時代のコード</span>
-      </div>
-
+  <!-- 左: ロゴ -->
+  <div class="header-left">
+    <div class="logo-box">
+      <img
+        src="rogo.png"
+        alt="Proglight ロゴ"
+        class="site-logo"
+      >
     </div>
+  </div>
+
+  <!-- 中央: サイト名 -->
+  <div class="header-center">
+    <span class="site-title">Proglight</span>
+  </div>
+
+  <!-- 右: バッジ -->
+  <div class="header-right">
+    <span class="badge-free">新時代のコード</span>
+  </div>
+
+</div>
+
   </header>
 
   <!-- ==========================================
-       メインコンテンツ（講座一覧セクション）
+       メインコンテンツ
        ========================================== -->
+
   <main>
-    <section class="course-section">
-      <!-- ヘッダーテキストエリア -->
-      <div class="section-header">
-        <span class="section-sub">Courses</span>
-        <h2 class="section-main-title">講座一覧</h2>
-        <p class="section-desc">好きな講座を選んで、今すぐ無料で学習をはじめましょう。</p>
+
+<section class="course-section">
+
+  <!-- ヘッダー -->
+  <div class="section-header">
+
+    <span class="section-sub">
+      Courses
+    </span>
+
+    <h2 class="section-main-title">
+      講座一覧
+    </h2>
+
+    <p class="section-desc">
+      好きな講座を選んで、今すぐ無料で学習をはじめましょう。
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================
+       講座カード
+       ========================================== -->
+
+  <ul class="course-grid">
+
+
+    <!-- HTML / CSS / JavaScript -->
+    <li
+      class="course-card"
+      style="--accent: oklch(0.68 0.19 40); --index: 0;"
+    >
+
+      <div class="spotlight"></div>
+
+      <span class="accent-bar"></span>
+
+
+      <div class="card-inner">
+
+        <!-- アイコン -->
+        <span class="icon-box">
+
+          <svg
+            class="icon"
+            xmlns="http://w3.org"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m18 16 4-4-4-4"></path>
+            <path d="m6 8-4 4 4 4"></path>
+            <path d="m14.5 4-5 16"></path>
+          </svg>
+
+        </span>
+
+
+        <!-- テキスト -->
+        <div class="text-group">
+
+          <h3 class="course-title">
+            HTML & CSS & JavaScript講座
+          </h3>
+
+          <p class="course-text">
+            Webページ制作の基礎を、マークアップからスタイル、動きの実装まで一気通貫で学べます。
+          </p>
+
+        </div>
+
+
+        <!-- タグ -->
+        <div class="tag-list">
+
+          <span class="tag">HTML</span>
+
+          <span class="tag">CSS</span>
+
+          <span class="tag">JavaScript</span>
+
+        </div>
+
+
+        <!-- ボタン -->
+        <a
+          href="html.html"
+          class="action-btn"
+          data-course="html-css"
+        >
+
+          始める
+
+          <svg
+            class="arrow-icon"
+            xmlns="http://w3.org"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+
+        </a>
+
       </div>
 
-      <!-- 3Dカードグリッド -->
-      <ul class="course-grid">
-        
-        <!-- HTML & CSS & JavaScript講座 -->
-        <li class="course-card" style="--accent: oklch(0.68 0.19 40); --index: 0;">
-          <div class="spotlight"></div>
-          <span class="accent-bar"></span>
-          <div class="card-inner">
-            <span class="icon-box">
-              <!-- Code2 アイコン -->
-              <svg class="icon" xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>
-            </span>
-            <div class="text-group">
-              <h3 class="course-title">HTML & CSS & JavaScript講座</h3>
-              <p class="course-text">Webページ制作の基礎を、マークアップからスタイル、動きの実装まで一気通貫で学べます。</p>
-            </div>
-            <div class="tag-list">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
-            </div>
-            <a href="html.html" class="action-btn" data-course="html-css" style="text-decoration: none; display: inline-flex; align-items: center;">
-              始める
-              <svg class="arrow-icon" xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-            </a>
-          </div>
-        </li>
+    </li>
 
-        <!-- TypeScript講座 -->
-        <li class="course-card" style="--accent: oklch(0.62 0.17 250); --index: 1;">
-          <div class="spotlight"></div>
-          <span class="accent-bar"></span>
-          <div class="card-inner">
-            <span class="icon-box">
-              <!-- FileType2 アイコン -->
-              <svg class="icon" xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4c0-.5.2-1 .6-1.4C5 2.2 5.5 2 6 2h8l6 6v12c0 .5-.2 1-.6 1.4-.4.4-.9.6-1.4.6H6c-.5 0-1-.2-1.4-.6-.4-.4-.6-.9-.6-.1.4z"></path><path d="M14 2v6h6"></path><path d="M9 18V12h3"></path><path d="M10.5 12v6"></path></svg>
-            </span>
-            <div class="text-group">
-              <h3 class="course-title">TypeScript講座</h3>
-              <p class="course-text">型システムを活用して、より安全で保守しやすいコードの書き方を身につけます。</p>
-            </div>
-            <div class="tag-list">
-              <span class="tag">Type</span>
-              <span class="tag">Interface</span>
-              <span class="tag">Generics</span>
-            </div>
-            <a href="ts.html" class="action-btn" data-course="typescript" style="text-decoration: none; display: inline-flex; align-items: center;">
-              始める
-              <svg class="arrow-icon" xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-            </a>
-          </div>
-        </li>
 
-        <!-- Python講座 -->
-        <li class="course-card" style="--accent: oklch(0.65 0.16 150); --index: 2;">
-          <div class="spotlight"></div>
-          <span class="accent-bar"></span>
-          <div class="card-inner">
-            <span class="icon-box">
-              <!-- Terminal アイコン -->
-              <svg class="icon" xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
-            </span>
-            <div class="text-group">
-              <h3 class="course-title">Python講座</h3>
-              <p class="course-text">文法の基礎からデータ処理まで、幅広い場面で活用できるPythonを学べます。</p>
-            </div>
-            <div class="tag-list">
-              <span class="tag">基礎文法</span>
-              <span class="tag">データ処理</span>
-              <span class="tag">自動化</span>
-            </div>
-            <a href="py.html" class="action-btn" data-course="python" style="text-decoration: none; display: inline-flex; align-items: center;">
-              始める
-              <svg class="arrow-icon" xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-            </a>
-          </div>
-        </li>
 
-      </ul>
-    </section>
+    <!-- TypeScript -->
+    <li
+      class="course-card"
+      style="--accent: oklch(0.62 0.17 250); --index: 1;"
+    >
+
+      <div class="spotlight"></div>
+
+      <span class="accent-bar"></span>
+
+
+      <div class="card-inner">
+
+        <!-- アイコン -->
+        <span class="icon-box">
+
+          <svg
+            class="icon"
+            xmlns="http://w3.org"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M4 22V4c0-.5.2-1 .6-1.4C5 2.2 5.5 2 6 2h8l6 6v12c0 .5-.2 1-.6 1.4-.4.4-.9.6-1.4.6H6c-.5 0-1-.2-1.4-.6-.4-.4-.6-.9-.6-1.4z"></path>
+            <path d="M14 2v6h6"></path>
+            <path d="M9 18V12h3"></path>
+            <path d="M10.5 12v6"></path>
+          </svg>
+
+        </span>
+
+
+        <div class="text-group">
+
+          <h3 class="course-title">
+            TypeScript講座
+          </h3>
+
+          <p class="course-text">
+            型システムを活用して、より安全で保守しやすいコードの書き方を身につけます。
+          </p>
+
+        </div>
+
+
+        <div class="tag-list">
+
+          <span class="tag">Type</span>
+
+          <span class="tag">Interface</span>
+
+          <span class="tag">Generics</span>
+
+        </div>
+
+
+        <a
+          href="ts.html"
+          class="action-btn"
+          data-course="typescript"
+        >
+
+          始める
+
+          <svg
+            class="arrow-icon"
+            xmlns="http://w3.org"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+
+        </a>
+
+      </div>
+
+    </li>
+
+
+
+    <!-- Python -->
+    <li
+      class="course-card"
+      style="--accent: oklch(0.65 0.16 150); --index: 2;"
+    >
+
+      <div class="spotlight"></div>
+
+      <span class="accent-bar"></span>
+
+
+      <div class="card-inner">
+
+        <!-- アイコン -->
+        <span class="icon-box">
+
+          <svg
+            class="icon"
+            xmlns="http://w3.org"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="4 17 10 11 4 5"></polyline>
+
+            <line
+              x1="12"
+              y1="19"
+              x2="20"
+              y2="19"
+            ></line>
+
+          </svg>
+
+        </span>
+
+
+        <div class="text-group">
+
+          <h3 class="course-title">
+            Python講座
+          </h3>
+
+          <p class="course-text">
+            文法の基礎からデータ処理まで、幅広い場面で活用できるPythonを学べます。
+          </p>
+
+        </div>
+
+
+        <div class="tag-list">
+
+          <span class="tag">基礎文法</span>
+
+          <span class="tag">データ処理</span>
+
+          <span class="tag">自動化</span>
+
+        </div>
+
+
+        <a
+          href="py.html"
+          class="action-btn"
+          data-course="python"
+        >
+
+          始める
+
+          <svg
+            class="arrow-icon"
+            xmlns="http://w3.org"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14"></path>
+
+            <path d="m12 5 7 7-7 7"></path>
+
+          </svg>
+
+        </a>
+
+      </div>
+
+    </li>
+
+
+  </ul>
+
+</section>
+
+
   </main>
 
+  <!-- JavaScript -->
+
   <script type="module" src="script.js"></script>
+
 </body>
 </html>
