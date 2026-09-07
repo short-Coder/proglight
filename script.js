@@ -42,24 +42,4 @@ cards.forEach((card) => {
   });
 
 
-  // 4. 💡「始める」ボタンが押されたときの処理
-  const btn = card.querySelector(".action-btn");
-  if (btn) {
-    btn.addEventListener("click", (e) => {
-      // 3D傾きアニメーションやPlaycodeのリセット機能との不要な干渉を防ぐ
-      e.stopPropagation(); 
-      
-      // HTMLに仕込んだ data-course の値（"typescript" など）を読み取る
-      const courseId = btn.getAttribute("data-course");
-      
-      if (courseId) {
-        // 💡 ブラウザのローカルストレージ（共通のメモ帳）に「selectedCourse」という名前で保存
-        localStorage.setItem("selectedCourse", courseId);
-      }
-      
-      // 登録完了後、安全に次の問題画面ページへ遷移する
-      window.location.href = "course.html";
-    });
-  }
-
-});
+ 
