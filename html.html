@@ -1,0 +1,2130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HTML・CSS・JavaScript講座 | Proglight</title>
+
+<meta
+    name="description"
+    content="ProglightのHTML・CSS・JavaScript講座。入門からJavaScript完全マスターまで学習できます。"
+>
+
+<style>
+
+/* =========================================================
+   Proglight
+   HTML・CSS・JavaScript Course
+   Single File Version
+   ========================================================= */
+
+:root {
+    --bg: #f6f8fc;
+    --surface: #ffffff;
+    --surface-soft: #f1f4f9;
+
+    --text: #172033;
+    --text-light: #667085;
+    --text-muted: #98a2b3;
+
+    --primary: #4f46e5;
+    --primary-dark: #3730a3;
+    --primary-light: #eef2ff;
+
+    --border: #e5e7eb;
+
+    --shadow-sm:
+        0 2px 8px rgba(15, 23, 42, 0.05);
+
+    --shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
+
+    --shadow-lg:
+        0 20px 50px rgba(15, 23, 42, 0.12);
+
+    --radius-sm: 10px;
+    --radius: 16px;
+    --radius-lg: 24px;
+
+    --max-width: 1180px;
+}
+
+
+/* =========================
+   Reset
+   ========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        "Yu Gothic",
+        YuGothic,
+        Meiryo,
+        sans-serif;
+
+    background: var(--bg);
+    color: var(--text);
+
+    line-height: 1.7;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   Header
+   ========================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255,255,255,0.92);
+
+    border-bottom:
+        1px solid rgba(229,231,235,0.8);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.header-inner {
+    max-width: var(--max-width);
+
+    min-height: 68px;
+
+    margin: auto;
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+
+    color: var(--primary);
+
+    white-space: nowrap;
+
+    transition: opacity .2s;
+}
+
+.logo:hover {
+    opacity: .7;
+}
+
+.header-nav {
+    display: flex;
+    gap: 6px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+.header-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.header-nav a {
+    padding: 8px 12px;
+
+    color: var(--text-light);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border-radius: 8px;
+
+    white-space: nowrap;
+
+    transition:
+        color .2s,
+        background .2s;
+}
+
+.header-nav a:hover,
+.header-nav a.active {
+    color: var(--primary);
+
+    background: var(--primary-light);
+}
+
+
+/* =========================
+   Hero
+   ========================= */
+
+.course-hero {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #ffffff 50%,
+            #f5f3ff
+        );
+
+    border-bottom: 1px solid var(--border);
+}
+
+.course-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -160px;
+    top: -180px;
+
+    background:
+        rgba(79,70,229,.08);
+
+    border-radius: 50%;
+}
+
+.course-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    left: -150px;
+    bottom: -170px;
+
+    background:
+        rgba(99,102,241,.06);
+
+    border-radius: 50%;
+}
+
+.course-hero-inner {
+    position: relative;
+    z-index: 1;
+
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    padding: 90px 24px 80px;
+}
+
+.course-badge {
+    display: inline-flex;
+
+    padding: 7px 13px;
+
+    margin-bottom: 20px;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    border: 1px solid #dfe3ff;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.course-hero h1 {
+    max-width: 780px;
+
+    font-size:
+        clamp(38px, 6vw, 68px);
+
+    line-height: 1.12;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+.course-description {
+    max-width: 720px;
+
+    color: var(--text-light);
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 38px;
+}
+
+
+/* =========================
+   Stats
+   ========================= */
+
+.course-stats {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+.stat {
+    min-width: 130px;
+
+    padding: 17px 22px;
+
+    background:
+        rgba(255,255,255,.85);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-sm);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.stat strong {
+    color: var(--primary);
+
+    font-size: 25px;
+    line-height: 1.2;
+}
+
+.stat span {
+    color: var(--text-muted);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   Sections
+   ========================= */
+
+.course-section {
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    padding: 85px 24px;
+}
+
+.section-heading {
+    margin-bottom: 40px;
+}
+
+.section-heading > span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--primary);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size:
+        clamp(28px,4vw,40px);
+
+    line-height: 1.25;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 8px;
+}
+
+.section-heading p {
+    color: var(--text-light);
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   Overview
+   ========================= */
+
+.course-overview {
+    max-width: 850px;
+
+    padding: 30px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.course-overview p {
+    color: var(--text-light);
+
+    font-size: 16px;
+
+    line-height: 1.9;
+}
+
+.course-overview p + p {
+    margin-top: 16px;
+}
+
+
+/* =========================
+   Roadmap
+   ========================= */
+
+.roadmap-section {
+    padding-top: 20px;
+}
+
+.roadmap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.roadmap-item {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+
+    padding: 25px 28px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform .25s,
+        box-shadow .25s;
+}
+
+.roadmap-item:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow);
+}
+
+.roadmap-number {
+    flex: 0 0 58px;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    border-radius: 16px;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.roadmap-item h3 {
+    font-size: 20px;
+
+    margin-bottom: 5px;
+}
+
+.roadmap-item p {
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+.roadmap-item strong {
+    color: var(--primary);
+
+    font-size: 13px;
+}
+
+.roadmap-arrow {
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--text-muted);
+
+    font-size: 22px;
+}
+
+
+/* =========================
+   Lesson Cards
+   ========================= */
+
+.lesson-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap: 14px;
+}
+
+.lesson-card {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 17px;
+
+    padding: 21px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform .2s,
+        border-color .2s,
+        box-shadow .2s,
+        background .2s;
+}
+
+.lesson-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #cfd3ff;
+
+    box-shadow: var(--shadow);
+
+    background: #fcfcff;
+}
+
+.lesson-number {
+    flex: 0 0 43px;
+
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    border-radius: 12px;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.lesson-card h3 {
+    font-size: 16px;
+
+    line-height: 1.45;
+
+    margin-bottom: 4px;
+}
+
+.lesson-card p {
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   Subsections
+   ========================= */
+
+.subsection {
+    margin-top: 50px;
+}
+
+.subsection > h3 {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+
+    font-size: 22px;
+}
+
+.subsection > h3::before {
+    content: "";
+
+    width: 5px;
+    height: 24px;
+
+    background: var(--primary);
+
+    border-radius: 999px;
+}
+
+
+/* =========================
+   Advanced
+   ========================= */
+
+.advanced-section {
+    max-width: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f1f3ff,
+            #f7f8ff
+        );
+}
+
+.advanced-section > * {
+    max-width: var(--max-width);
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.chapter-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap: 16px;
+}
+
+.chapter-card {
+    position: relative;
+
+    padding: 27px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform .25s,
+        box-shadow .25s,
+        border-color .25s;
+}
+
+.chapter-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #d1d5ff;
+
+    box-shadow: var(--shadow-lg);
+}
+
+.chapter-card > strong {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: var(--primary);
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+.chapter-card h3 {
+    font-size: 19px;
+
+    line-height: 1.4;
+
+    margin-bottom: 10px;
+}
+
+.chapter-card p {
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   Bonus
+   ========================= */
+
+.bonus-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap: 16px;
+}
+
+.bonus-card {
+    padding: 25px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform .2s,
+        box-shadow .2s;
+}
+
+.bonus-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow);
+}
+
+.bonus-card h3 {
+    font-size: 17px;
+
+    margin-bottom: 9px;
+}
+
+.bonus-card p {
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   Final Goal
+   ========================= */
+
+.goal-section {
+    padding: 100px 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #312e81,
+            #4f46e5,
+            #6366f1
+        );
+
+    color: white;
+
+    text-align: center;
+}
+
+.goal-inner {
+    max-width: 760px;
+
+    margin: auto;
+}
+
+.goal-inner > span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    opacity: .75;
+}
+
+.goal-inner h2 {
+    font-size:
+        clamp(28px,5vw,46px);
+
+    line-height: 1.25;
+
+    margin-bottom: 20px;
+}
+
+.goal-inner p {
+    max-width: 650px;
+
+    margin:
+        0 auto 32px;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    opacity: .85;
+}
+
+.start-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 24px;
+
+    background: white;
+
+    color: var(--primary);
+
+    border-radius: 12px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.15);
+
+    transition:
+        transform .2s,
+        box-shadow .2s;
+}
+
+.start-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.2);
+}
+
+
+/* =========================
+   Footer
+   ========================= */
+
+.site-footer {
+    background: #111827;
+
+    color: white;
+}
+
+.footer-inner {
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    padding: 55px 24px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.footer-inner strong {
+    font-size: 21px;
+}
+
+.footer-inner p {
+    margin-top: 7px;
+
+    color: #9ca3af;
+
+    font-size: 13px;
+}
+
+.footer-links {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px 20px;
+}
+
+.footer-links a {
+    color: #d1d5db;
+
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.copyright {
+    padding: 20px 24px;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   Tablet
+   ========================= */
+
+@media (max-width: 900px) {
+
+    .course-hero-inner {
+        padding-top: 70px;
+        padding-bottom: 65px;
+    }
+
+    .course-section {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .lesson-list {
+        grid-template-columns: 1fr;
+    }
+
+    .chapter-list {
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .bonus-grid {
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+}
+
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .header-inner {
+        min-height: 60px;
+
+        padding: 0 16px;
+
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .header-nav a {
+        padding: 7px 9px;
+
+        font-size: 12px;
+    }
+
+    .course-hero-inner {
+        padding:
+            55px 18px 50px;
+    }
+
+    .course-hero h1 {
+        font-size: 39px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .course-description {
+        font-size: 14px;
+    }
+
+    .course-stats {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        gap: 8px;
+    }
+
+    .stat {
+        min-width: 0;
+
+        padding: 14px 10px;
+
+        text-align: center;
+
+        align-items: center;
+    }
+
+    .stat strong {
+        font-size: 21px;
+    }
+
+    .stat span {
+        font-size: 10px;
+    }
+
+    .course-section {
+        padding:
+            55px 18px;
+    }
+
+    .section-heading h2 {
+        font-size: 29px;
+    }
+
+    .course-overview {
+        padding: 21px;
+    }
+
+    .course-overview p {
+        font-size: 14px;
+    }
+
+    .roadmap-item {
+        padding: 19px;
+
+        gap: 14px;
+    }
+
+    .roadmap-number {
+        flex-basis: 46px;
+
+        width: 46px;
+        height: 46px;
+    }
+
+    .roadmap-item h3 {
+        font-size: 17px;
+    }
+
+    .roadmap-item p {
+        font-size: 12px;
+    }
+
+    .lesson-card {
+        padding: 17px;
+
+        gap: 13px;
+    }
+
+    .lesson-number {
+        flex-basis: 38px;
+
+        width: 38px;
+        height: 38px;
+    }
+
+    .lesson-card h3 {
+        font-size: 14px;
+    }
+
+    .lesson-card p {
+        font-size: 11px;
+    }
+
+    .subsection {
+        margin-top: 38px;
+    }
+
+    .subsection > h3 {
+        font-size: 19px;
+    }
+
+    .chapter-list {
+        grid-template-columns: 1fr;
+    }
+
+    .bonus-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .goal-section {
+        padding: 70px 20px;
+    }
+
+    .goal-inner h2 {
+        font-size: 30px;
+    }
+
+    .goal-inner p {
+        font-size: 13px;
+    }
+
+    .footer-inner {
+        padding: 40px 18px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+
+/* =========================
+   Reduced Motion
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     Header
+     ===================================================== -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a href="index.html" class="logo">
+            Proglight
+        </a>
+
+        <nav class="header-nav">
+
+            <a href="index.html">
+                ホーム
+            </a>
+
+            <a href="html.html" class="active">
+                HTML・CSS・JavaScript
+            </a>
+
+            <a href="py.html">
+                Python
+            </a>
+
+            <a href="ts.html">
+                TypeScript
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =====================================================
+     Hero
+     ===================================================== -->
+
+<section class="course-hero">
+
+    <div class="course-hero-inner">
+
+        <div class="course-badge">
+            HTML・CSS・JavaScript
+        </div>
+
+        <h1>
+            HTML・CSS・<br>
+            JavaScript講座
+        </h1>
+
+        <p class="course-description">
+            Webサイト制作の基本からJavaScript完全マスターまで。
+            HTML・CSS・JavaScriptを使って、
+            本格的なWebサイトやWebアプリを
+            自力で制作できる力を身につけます。
+        </p>
+
+        <div class="course-stats">
+
+            <div class="stat">
+                <strong>80</strong>
+                <span>レッスン</span>
+            </div>
+
+            <div class="stat">
+                <strong>3</strong>
+                <span>学習段階</span>
+            </div>
+
+            <div class="stat">
+                <strong>＋</strong>
+                <span>おまけ</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     Overview
+     ===================================================== -->
+
+<section class="course-section">
+
+    <div class="section-heading">
+
+        <span>COURSE</span>
+
+        <h2>
+            講座について
+        </h2>
+
+    </div>
+
+    <div class="course-overview">
+
+        <p>
+            この講座では、HTML・CSS・JavaScriptを
+            順番に学習します。
+        </p>
+
+        <p>
+            完全初心者向けの入門編から始め、
+            Webサイト制作に必要な基礎、
+            そしてJavaScript完全マスターを目指す
+            応用編まで学びます。
+        </p>
+
+        <p>
+            最終的には、基本的なWebサイトから
+            本格的なWebアプリケーションまで
+            自力で制作できることを目標とします。
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     Roadmap
+     ===================================================== -->
+
+<section class="course-section roadmap-section">
+
+    <div class="section-heading">
+
+        <span>ROADMAP</span>
+
+        <h2>
+            学習ロードマップ
+        </h2>
+
+    </div>
+
+
+    <div class="roadmap">
+
+        <div class="roadmap-item">
+
+            <div class="roadmap-number">
+                01
+            </div>
+
+            <div>
+
+                <h3>
+                    入門編
+                </h3>
+
+                <p>
+                    HTML・CSS・JavaScriptの役割を理解し、
+                    初めてのWebページを作ります。
+                </p>
+
+                <strong>
+                    9レッスン
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="roadmap-arrow">
+            ↓
+        </div>
+
+
+        <div class="roadmap-item">
+
+            <div class="roadmap-number">
+                02
+            </div>
+
+            <div>
+
+                <h3>
+                    基礎編
+                </h3>
+
+                <p>
+                    HTML・CSS・JavaScript・Canvasを学び、
+                    一般的なWebサイトを制作できる力を身につけます。
+                </p>
+
+                <strong>
+                    30レッスン
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="roadmap-arrow">
+            ↓
+        </div>
+
+
+        <div class="roadmap-item">
+
+            <div class="roadmap-number">
+                03
+            </div>
+
+            <div>
+
+                <h3>
+                    応用編
+                </h3>
+
+                <p>
+                    JavaScriptを深く理解し、
+                    本格的なWebアプリケーションを
+                    開発できる力を身につけます。
+                </p>
+
+                <strong>
+                    41レッスン
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="roadmap-arrow">
+            ↓
+        </div>
+
+
+        <div class="roadmap-item">
+
+            <div class="roadmap-number">
+                ＋
+            </div>
+
+            <div>
+
+                <h3>
+                    おまけ
+                </h3>
+
+                <p>
+                    HTML・CSS・JavaScript・Canvas・
+                    ブラウザAPIなどの裏技・小技・便利機能。
+                </p>
+
+                <strong>
+                    自由学習
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     Beginner
+     ===================================================== -->
+
+<section class="course-section">
+
+    <div class="section-heading">
+
+        <span>BEGINNER</span>
+
+        <h2>
+            入門編
+        </h2>
+
+        <p>
+            HTML・CSS・JavaScriptを初めて学ぶ人向け
+        </p>
+
+    </div>
+
+
+    <div class="lesson-list">
+
+        <a href="/html/1" class="lesson-card">
+            <span class="lesson-number">01</span>
+            <div>
+                <h3>Webサイトとプログラミング</h3>
+                <p>Webサイトの仕組みとHTML・CSS・JavaScriptの役割</p>
+            </div>
+        </a>
+
+        <a href="/html/2" class="lesson-card">
+            <span class="lesson-number">02</span>
+            <div>
+                <h3>開発環境とファイル</h3>
+                <p>HTML・CSS・JavaScriptファイルと基本的なフォルダ構成</p>
+            </div>
+        </a>
+
+        <a href="/html/3" class="lesson-card">
+            <span class="lesson-number">03</span>
+            <div>
+                <h3>HTMLを書いてみよう</h3>
+                <p>HTMLの基本構造と基本タグ</p>
+            </div>
+        </a>
+
+        <a href="/html/4" class="lesson-card">
+            <span class="lesson-number">04</span>
+            <div>
+                <h3>CSSを書いてみよう</h3>
+                <p>CSSの基本構文と文字・背景の装飾</p>
+            </div>
+        </a>
+
+        <a href="/html/5" class="lesson-card">
+            <span class="lesson-number">05</span>
+            <div>
+                <h3>CSSをHTMLに埋め込もう</h3>
+                <p>外部CSS・styleタグ・linkタグ</p>
+            </div>
+        </a>
+
+        <a href="/html/6" class="lesson-card">
+            <span class="lesson-number">06</span>
+            <div>
+                <h3>JavaScriptを書いてみよう</h3>
+                <p>JavaScriptの基本とconsole.log()</p>
+            </div>
+        </a>
+
+        <a href="/html/7" class="lesson-card">
+            <span class="lesson-number">07</span>
+            <div>
+                <h3>JavaScriptをHTMLに埋め込もう</h3>
+                <p>scriptタグと外部JavaScriptファイル</p>
+            </div>
+        </a>
+
+        <a href="/html/8" class="lesson-card">
+            <span class="lesson-number">08</span>
+            <div>
+                <h3>HTML・CSS・JavaScriptを接続する</h3>
+                <p>3つのファイルの関係と接続方法</p>
+            </div>
+        </a>
+
+        <a href="/html/9" class="lesson-card">
+            <span class="lesson-number">09</span>
+            <div>
+                <h3>最初のWebサイトを作ろう</h3>
+                <p>HTML・CSS・JavaScriptを使った最初の作品制作</p>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     Basic
+     ===================================================== -->
+
+<section class="course-section">
+
+    <div class="section-heading">
+
+        <span>BASIC</span>
+
+        <h2>
+            基礎編
+        </h2>
+
+        <p>
+            一般的なWebサイトを制作できる力を身につける
+        </p>
+
+    </div>
+
+
+    <!-- HTML -->
+
+    <div class="subsection">
+
+        <h3>
+            HTML
+        </h3>
+
+        <div class="lesson-list">
+
+            <a href="/html/10" class="lesson-card">
+                <span class="lesson-number">10</span>
+                <div>
+                    <h3>HTML基本タグ</h3>
+                    <p>h1〜h6、p、br、hr、strong、em、span、コメント</p>
+                </div>
+            </a>
+
+            <a href="/html/11" class="lesson-card">
+                <span class="lesson-number">11</span>
+                <div>
+                    <h3>リンクと画像</h3>
+                    <p>a、href、img、src、alt、相対パス・絶対パス</p>
+                </div>
+            </a>
+
+            <a href="/html/12" class="lesson-card">
+                <span class="lesson-number">12</span>
+                <div>
+                    <h3>リスト</h3>
+                    <p>ul、ol、li</p>
+                </div>
+            </a>
+
+            <a href="/html/13" class="lesson-card">
+                <span class="lesson-number">13</span>
+                <div>
+                    <h3>表</h3>
+                    <p>table、tr、th、td、thead、tbody</p>
+                </div>
+            </a>
+
+            <a href="/html/14" class="lesson-card">
+                <span class="lesson-number">14</span>
+                <div>
+                    <h3>フォーム</h3>
+                    <p>form、input、textarea、button、select、option、label</p>
+                </div>
+            </a>
+
+            <a href="/html/15" class="lesson-card">
+                <span class="lesson-number">15</span>
+                <div>
+                    <h3>ページ構造</h3>
+                    <p>header、nav、main、section、article、aside、footer</p>
+                </div>
+            </a>
+
+            <a href="/html/16" class="lesson-card">
+                <span class="lesson-number">16</span>
+                <div>
+                    <h3>セマンティックHTML</h3>
+                    <p>適切なタグ・SEO・アクセシビリティ・見出し構造</p>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- CSS -->
+
+    <div class="subsection">
+
+        <h3>
+            CSS
+        </h3>
+
+        <div class="lesson-list">
+
+            <a href="/html/17" class="lesson-card">
+                <span class="lesson-number">17</span>
+                <div>
+                    <h3>CSSセレクタ</h3>
+                    <p>要素・class・id・子孫・複数セレクタ</p>
+                </div>
+            </a>
+
+            <a href="/html/18" class="lesson-card">
+                <span class="lesson-number">18</span>
+                <div>
+                    <h3>文字とフォント</h3>
+                    <p>color、font-size、font-family、font-weightなど</p>
+                </div>
+            </a>
+
+            <a href="/html/19" class="lesson-card">
+                <span class="lesson-number">19</span>
+                <div>
+                    <h3>背景</h3>
+                    <p>background-color、image、size、position、repeat</p>
+                </div>
+            </a>
+
+            <a href="/html/20" class="lesson-card">
+                <span class="lesson-number">20</span>
+                <div>
+                    <h3>ボックスモデル</h3>
+                    <p>width、height、margin、padding、border、box-sizing</p>
+                </div>
+            </a>
+
+            <a href="/html/21" class="lesson-card">
+                <span class="lesson-number">21</span>
+                <div>
+                    <h3>表示方法</h3>
+                    <p>display、block、inline、inline-block、none</p>
+                </div>
+            </a>
+
+            <a href="/html/22" class="lesson-card">
+                <span class="lesson-number">22</span>
+                <div>
+                    <h3>Flexbox</h3>
+                    <p>flex-direction、justify-content、align-items、gapなど</p>
+                </div>
+            </a>
+
+            <a href="/html/23" class="lesson-card">
+                <span class="lesson-number">23</span>
+                <div>
+                    <h3>CSS Grid</h3>
+                    <p>grid-template-columns、rows、gapなど</p>
+                </div>
+            </a>
+
+            <a href="/html/24" class="lesson-card">
+                <span class="lesson-number">24</span>
+                <div>
+                    <h3>擬似クラス・擬似要素</h3>
+                    <p>:hover、:focus、:active、:nth-child()、::before、::after</p>
+                </div>
+            </a>
+
+            <a href="/html/25" class="lesson-card">
+                <span class="lesson-number">25</span>
+                <div>
+                    <h3>CSSアニメーション</h3>
+                    <p>transition、transform、@keyframes、animation</p>
+                </div>
+            </a>
+
+            <a href="/html/26" class="lesson-card">
+                <span class="lesson-number">26</span>
+                <div>
+                    <h3>レスポンシブデザイン</h3>
+                    <p>viewport・Media Query・スマホ・PC・タブレット</p>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <div class="subsection">
+
+        <h3>
+            JavaScript
+        </h3>
+
+        <div class="lesson-list">
+
+            <a href="/html/27" class="lesson-card">
+                <span class="lesson-number">27</span>
+                <div>
+                    <h3>JavaScriptの基本</h3>
+                    <p>let、const、コメント、console.log()</p>
+                </div>
+            </a>
+
+            <a href="/html/28" class="lesson-card">
+                <span class="lesson-number">28</span>
+                <div>
+                    <h3>データ型</h3>
+                    <p>String、Number、Boolean、null、undefined</p>
+                </div>
+            </a>
+
+            <a href="/html/29" class="lesson-card">
+                <span class="lesson-number">29</span>
+                <div>
+                    <h3>演算子</h3>
+                    <p>算術・比較・論理・代入演算子</p>
+                </div>
+            </a>
+
+            <a href="/html/30" class="lesson-card">
+                <span class="lesson-number">30</span>
+                <div>
+                    <h3>条件分岐</h3>
+                    <p>if、else if、else、switch</p>
+                </div>
+            </a>
+
+            <a href="/html/31" class="lesson-card">
+                <span class="lesson-number">31</span>
+                <div>
+                    <h3>繰り返し</h3>
+                    <p>for、while、for...of</p>
+                </div>
+            </a>
+
+            <a href="/html/32" class="lesson-card">
+                <span class="lesson-number">32</span>
+                <div>
+                    <h3>関数</h3>
+                    <p>function、引数、return、アロー関数</p>
+                </div>
+            </a>
+
+            <a href="/html/33" class="lesson-card">
+                <span class="lesson-number">33</span>
+                <div>
+                    <h3>配列</h3>
+                    <p>Array、push、pop、length</p>
+                </div>
+            </a>
+
+            <a href="/html/34" class="lesson-card">
+                <span class="lesson-number">34</span>
+                <div>
+                    <h3>オブジェクト</h3>
+                    <p>プロパティ・値・メソッド</p>
+                </div>
+            </a>
+
+            <a href="/html/35" class="lesson-card">
+                <span class="lesson-number">35</span>
+                <div>
+                    <h3>DOM操作</h3>
+                    <p>querySelector、querySelectorAll、textContent、innerHTML、classList</p>
+                </div>
+            </a>
+
+            <a href="/html/36" class="lesson-card">
+                <span class="lesson-number">36</span>
+                <div>
+                    <h3>イベント</h3>
+                    <p>addEventListener、click、input、change、イベント処理</p>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Canvas -->
+
+    <div class="subsection">
+
+        <h3>
+            Canvas
+        </h3>
+
+        <div class="lesson-list">
+
+            <a href="/html/37" class="lesson-card">
+                <span class="lesson-number">37</span>
+                <div>
+                    <h3>Canvas入門</h3>
+                    <p>canvasタグ、getContext("2d")、座標、2D描画</p>
+                </div>
+            </a>
+
+            <a href="/html/38" class="lesson-card">
+                <span class="lesson-number">38</span>
+                <div>
+                    <h3>Canvasで図形を描く</h3>
+                    <p>四角形・円・線・複数の図形を描画</p>
+                </div>
+            </a>
+
+            <a href="/html/39" class="lesson-card">
+                <span class="lesson-number">39</span>
+                <div>
+                    <h3>Canvasで動きを作る</h3>
+                    <p>requestAnimationFrame・アニメーション・ボールの反射</p>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     Advanced
+     ===================================================== -->
+
+<section class="course-section advanced-section">
+
+    <div class="section-heading">
+
+        <span>ADVANCED</span>
+
+        <h2>
+            応用編
+        </h2>
+
+        <p>
+            JavaScript完全マスター
+        </p>
+
+    </div>
+
+
+    <div class="chapter-list">
+
+        <a href="/html/40" class="chapter-card">
+            <strong>第1章</strong>
+            <h3>JavaScriptの深い基礎</h3>
+            <p>スコープ・実行コンテキスト・this・クロージャ</p>
+        </a>
+
+        <a href="/html/44" class="chapter-card">
+            <strong>第2章</strong>
+            <h3>関数完全理解</h3>
+            <p>関数の種類・高階関数・コールバック・再帰</p>
+        </a>
+
+        <a href="/html/48" class="chapter-card">
+            <strong>第3章</strong>
+            <h3>配列・オブジェクト完全マスター</h3>
+            <p>配列操作・オブジェクト・分割代入・スプレッド構文</p>
+        </a>
+
+        <a href="/html/53" class="chapter-card">
+            <strong>第4章</strong>
+            <h3>非同期JavaScript</h3>
+            <p>Promise・async/await・Fetch API・JSON</p>
+        </a>
+
+        <a href="/html/58" class="chapter-card">
+            <strong>第5章</strong>
+            <h3>ブラウザAPI</h3>
+            <p>Storage・Clipboard・Geolocation・Notification・URL・タイマー</p>
+        </a>
+
+        <a href="/html/62" class="chapter-card">
+            <strong>第6章</strong>
+            <h3>DOM完全マスター</h3>
+            <p>DOM生成・イベント・イベント伝播・イベント委譲</p>
+        </a>
+
+        <a href="/html/66" class="chapter-card">
+            <strong>第7章</strong>
+            <h3>モジュールとコード設計</h3>
+            <p>export・import・コード分割・エラー処理・デバッグ</p>
+        </a>
+
+        <a href="/html/70" class="chapter-card">
+            <strong>第8章</strong>
+            <h3>JavaScript実践技術</h3>
+            <p>フォーム・データ管理・ルーティング・パフォーマンス・セキュリティ</p>
+        </a>
+
+        <a href="/html/75" class="chapter-card">
+            <strong>第9章</strong>
+            <h3>JavaScript言語仕様</h3>
+            <p>クラス・プロトタイプ・イテレーター・ジェネレーター・Symbol・Proxy</p>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     Bonus
+     ===================================================== -->
+
+<section class="course-section">
+
+    <div class="section-heading">
+
+        <span>BONUS</span>
+
+        <h2>
+            おまけ
+        </h2>
+
+        <p>
+            裏技・小技・便利機能
+        </p>
+
+    </div>
+
+
+    <div class="bonus-grid">
+
+        <div class="bonus-card">
+
+            <h3>
+                HTML小技
+            </h3>
+
+            <p>
+                details、summary、contenteditable、
+                download、target="_blank"、
+                favicon、data属性、iframeなど
+            </p>
+
+        </div>
+
+
+        <div class="bonus-card">
+
+            <h3>
+                CSS小技
+            </h3>
+
+            <p>
+                CSS変数、ダークモード、
+                hoverメニュー、sticky、
+                backdrop-filter、clip-pathなど
+            </p>
+
+        </div>
+
+
+        <div class="bonus-card">
+
+            <h3>
+                JavaScript小技
+            </h3>
+
+            <p>
+                ワンクリックコピー、
+                乱数、ランダムカラー、
+                URL情報、リロード、キーボード入力など
+            </p>
+
+        </div>
+
+
+        <div class="bonus-card">
+
+            <h3>
+                ブラウザ便利機能
+            </h3>
+
+            <p>
+                Clipboard、Fullscreen、
+                Notification、Speech Synthesis、
+                Speech Recognition、画面共有など
+            </p>
+
+        </div>
+
+
+        <div class="bonus-card">
+
+            <h3>
+                Canvas発展
+            </h3>
+
+            <p>
+                画像・文字・マウス描画、
+                簡単なペイントアプリ、
+                パーティクル、簡単なゲームなど
+            </p>
+
+        </div>
+
+
+        <div class="bonus-card">
+
+            <h3>
+                UI制作テクニック
+            </h3>
+
+            <p>
+                ボタンアニメーション、
+                カードUI、Glassmorphism、
+                ローディング、ハンバーガーメニュー、
+                モーダル、Toast、Accordion、Tabsなど
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     Final Goal
+     ===================================================== -->
+
+<section class="goal-section">
+
+    <div class="goal-inner">
+
+        <span>
+            FINAL GOAL
+        </span>
+
+        <h2>
+            Web開発を<br>
+            自力でできるようになる
+        </h2>
+
+        <p>
+            HTML・CSS・JavaScriptを組み合わせて、
+            基本的なWebサイトから
+            本格的なWebアプリケーションまで
+            自力で制作できることを目指します。
+        </p>
+
+        <a href="/html/1" class="start-button">
+            学習を始める
+            <span>→</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     Footer
+     ===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+        <div>
+
+            <strong>
+                Proglight
+            </strong>
+
+            <p>
+                プログラミングを、もっと分かりやすく。
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                ホーム
+            </a>
+
+            <a href="html.html">
+                HTML・CSS・JavaScript
+            </a>
+
+            <a href="py.html">
+                Python
+            </a>
+
+            <a href="ts.html">
+                TypeScript
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+        © Proglight
+    </div>
+
+</footer>
+
+
+</body>
+</html>
