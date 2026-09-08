@@ -71,13 +71,19 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  overflow: visible;
+  background: transparent;
 }
 
 .logo-image {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
+  object-position: center;
   display: block;
+  transform: none;
 }
 
 .zap-icon {
