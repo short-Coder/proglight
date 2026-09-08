@@ -63,16 +63,27 @@ body {
   flex: 1;
   justify-content: center;
 }
-
+.logo-image {
+  width: 2.8rem;
+  height: 2.8rem;
+  object-fit: contain;
+  display: block;
+}
 .logo-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3.5rem; /* w-14 */
+  width: 3.5rem;
   height: 3.5rem;
+  overflow: hidden;
   border-radius: 0.75rem;
-  background-color: var(--primary);
-  color: var(--primary-foreground);
+}
+
+.logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .zap-icon {
