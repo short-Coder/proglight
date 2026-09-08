@@ -1,1 +1,2048 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Proglight - 学習</title>
+
+  <!-- ファビコン -->
+  <link rel="icon" href="rogo.png">
+
+  <style>
+
+    /* =========================
+       基本設定
+    ========================= */
+
+    :root {
+      --background: #ffffff;
+      --foreground: #0f172a;
+      --card: #ffffff;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --primary: #0f172a;
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+    }
+
+
+    body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+
+      background: var(--background);
+      color: var(--foreground);
+    }
+
+
+    /* =========================
+       ヘッダー
+    ========================= */
+
+    .header {
+
+      width: 100%;
+
+      height: 72px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      padding: 0 32px;
+
+      border-bottom: 1px solid var(--border);
+
+      background: var(--background);
+
+    }
+
+
+    .header-left {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      min-width: 0;
+
+    }
+
+
+    .logo-link {
+
+      display: flex;
+
+      align-items: center;
+
+    }
+
+
+    .logo {
+
+      width: 42px;
+
+      height: 42px;
+
+      object-fit: contain;
+
+      border-radius: 10px;
+
+    }
+
+
+    .brand-area {
+
+      display: flex;
+
+      flex-direction: column;
+
+      min-width: 0;
+
+    }
+
+
+    .brand {
+
+      font-size: 20px;
+
+      font-weight: 700;
+
+      color: var(--foreground);
+
+      text-decoration: none;
+
+    }
+
+
+    .lesson-name {
+
+      font-size: 13px;
+
+      color: var(--muted);
+
+      white-space: nowrap;
+
+      overflow: hidden;
+
+      text-overflow: ellipsis;
+
+    }
+
+
+    /* =========================
+       進捗
+    ========================= */
+
+    .progress-area {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+    }
+
+
+    .progress-text {
+
+      font-size: 14px;
+
+      color: var(--muted);
+
+      white-space: nowrap;
+
+    }
+
+
+    .progress-bar {
+
+      width: 160px;
+
+      height: 7px;
+
+      overflow: hidden;
+
+      border-radius: 999px;
+
+      background: var(--border);
+
+    }
+
+
+    .progress {
+
+      width: 0%;
+
+      height: 100%;
+
+      border-radius: inherit;
+
+      background: var(--primary);
+
+      transition: width 0.3s ease;
+
+    }
+
+
+    /* =========================
+       メイン
+    ========================= */
+
+    .main {
+
+      min-height: calc(100vh - 72px);
+
+      display: flex;
+
+      flex-direction: column;
+
+    }
+
+
+    /* =========================
+       スライドエリア
+    ========================= */
+
+    .slide-container {
+
+      flex: 1;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 40px 20px;
+
+    }
+
+
+    .slide {
+
+      width: 100%;
+
+      max-width: 900px;
+
+      min-height: 480px;
+
+      padding: 64px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 20px;
+
+      background: var(--card);
+
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.08);
+
+      animation: slideIn 0.35s ease;
+
+    }
+
+
+    @keyframes slideIn {
+
+      from {
+
+        opacity: 0;
+
+        transform: translateY(12px);
+
+      }
+
+
+      to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+      }
+
+    }
+
+
+    /* =========================
+       スライド共通
+    ========================= */
+
+    .slide-label {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      padding: 6px 12px;
+
+      margin-bottom: 24px;
+
+      border-radius: 999px;
+
+      background: #f1f5f9;
+
+      color: #475569;
+
+      font-size: 13px;
+
+      font-weight: 600;
+
+    }
+
+
+    .slide-title {
+
+      margin: 0 0 28px;
+
+      font-size: 42px;
+
+      line-height: 1.3;
+
+      letter-spacing: -0.03em;
+
+    }
+
+
+    .slide-title.large {
+
+      font-size: 52px;
+
+    }
+
+
+    .slide-text {
+
+      margin: 0;
+
+      font-size: 19px;
+
+      line-height: 1.9;
+
+      color: var(--muted);
+
+    }
+
+
+    /* =========================
+       リスト
+    ========================= */
+
+    .slide-list {
+
+      margin: 24px 0 0;
+
+      padding-left: 24px;
+
+      font-size: 19px;
+
+      line-height: 2;
+
+      color: var(--muted);
+
+    }
+
+
+    .slide-list li {
+
+      margin-bottom: 6px;
+
+    }
+
+
+    /* =========================
+       コード
+    ========================= */
+
+    .code-block {
+
+      margin-top: 25px;
+
+      padding: 24px;
+
+      overflow-x: auto;
+
+      border-radius: 14px;
+
+      background: #0f172a;
+
+      color: #f8fafc;
+
+      font-size: 15px;
+
+      line-height: 1.7;
+
+    }
+
+
+    .code-block code {
+
+      font-family:
+
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    }
+
+
+    /* =========================
+       Flow
+    ========================= */
+
+    .flow-list {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 12px;
+
+      margin-top: 30px;
+
+    }
+
+
+    .flow-item {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 16px;
+
+      padding: 16px 20px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 12px;
+
+      font-size: 17px;
+
+      color: var(--muted);
+
+    }
+
+
+    .flow-number {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      flex-shrink: 0;
+
+      width: 32px;
+
+      height: 32px;
+
+      border-radius: 50%;
+
+      background: var(--primary);
+
+      color: white;
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+    }
+
+
+    /* =========================
+       Comparison
+    ========================= */
+
+    .comparison-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 16px;
+
+      margin-top: 30px;
+
+    }
+
+
+    .comparison-card {
+
+      padding: 22px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 16px;
+
+      background: var(--background);
+
+    }
+
+
+    .comparison-name {
+
+      margin-bottom: 14px;
+
+      font-size: 22px;
+
+      font-weight: 700;
+
+    }
+
+
+    .comparison-role {
+
+      margin-bottom: 10px;
+
+      font-size: 15px;
+
+      line-height: 1.7;
+
+      color: var(--muted);
+
+    }
+
+
+    .comparison-example {
+
+      padding-top: 12px;
+
+      border-top: 1px solid var(--border);
+
+      font-size: 13px;
+
+      line-height: 1.6;
+
+      color: var(--muted);
+
+    }
+
+
+    /* =========================
+       End
+    ========================= */
+
+    .end-slide {
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 350px;
+
+      text-align: center;
+
+    }
+
+
+    .end-icon {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      width: 72px;
+
+      height: 72px;
+
+      margin-bottom: 24px;
+
+      border-radius: 50%;
+
+      background: #f1f5f9;
+
+      font-size: 32px;
+
+    }
+
+
+    .next-lesson {
+
+      margin-top: 24px;
+
+      padding: 16px 20px;
+
+      border-radius: 12px;
+
+      background: #f8fafc;
+
+      color: var(--muted);
+
+    }
+
+
+    /* =========================
+       ローディング
+    ========================= */
+
+    .loading {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 300px;
+
+      color: var(--muted);
+
+      font-size: 18px;
+
+    }
+
+
+    /* =========================
+       エラー
+    ========================= */
+
+    .error {
+
+      text-align: center;
+
+      padding: 40px;
+
+    }
+
+
+    .error h2 {
+
+      margin-top: 0;
+
+    }
+
+
+    /* =========================
+       操作バー
+    ========================= */
+
+    .controls {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 16px;
+
+      min-height: 90px;
+
+      padding: 15px;
+
+      border-top: 1px solid var(--border);
+
+      background: var(--background);
+
+    }
+
+
+    .control-button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-width: 130px;
+
+      padding: 13px 22px;
+
+      border: none;
+
+      border-radius: 12px;
+
+      font-size: 16px;
+
+      font-weight: 600;
+
+      cursor: pointer;
+
+      transition:
+
+        transform 0.2s ease,
+
+        opacity 0.2s ease;
+
+    }
+
+
+    .control-button:hover:not(:disabled) {
+
+      transform: translateY(-2px);
+
+    }
+
+
+    .control-button:active:not(:disabled) {
+
+      transform: scale(0.97);
+
+    }
+
+
+    .prev-button {
+
+      background: #f1f5f9;
+
+      color: #0f172a;
+
+    }
+
+
+    .next-button {
+
+      background: var(--primary);
+
+      color: white;
+
+    }
+
+
+    .control-button:disabled {
+
+      opacity: 0.4;
+
+      cursor: not-allowed;
+
+    }
+
+
+    /* =========================
+       モバイル
+    ========================= */
+
+    @media (max-width: 700px) {
+
+
+      .header {
+
+        height: 64px;
+
+        padding: 0 16px;
+
+      }
+
+
+      .logo {
+
+        width: 36px;
+
+        height: 36px;
+
+      }
+
+
+      .lesson-name {
+
+        display: none;
+
+      }
+
+
+      .progress-bar {
+
+        width: 70px;
+
+      }
+
+
+      .slide-container {
+
+        padding: 20px 14px;
+
+      }
+
+
+      .slide {
+
+        min-height: 420px;
+
+        padding: 32px 24px;
+
+        border-radius: 16px;
+
+      }
+
+
+      .slide-title {
+
+        font-size: 30px;
+
+      }
+
+
+      .slide-title.large {
+
+        font-size: 36px;
+
+      }
+
+
+      .slide-text,
+
+      .slide-list {
+
+        font-size: 16px;
+
+      }
+
+
+      .comparison-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .controls {
+
+        min-height: 76px;
+
+      }
+
+
+      .control-button {
+
+        min-width: 110px;
+
+      }
+
+    }
+
+
+    /* =========================
+       ダークモード
+    ========================= */
+
+    @media (prefers-color-scheme: dark) {
+
+
+      :root {
+
+        --background: #09090b;
+        --foreground: #f4f4f5;
+        --card: #18181b;
+        --muted: #a1a1aa;
+        --border: #27272a;
+        --primary: #f4f4f5;
+
+      }
+
+
+      .slide-label {
+
+        background: #27272a;
+
+        color: #d4d4d8;
+
+      }
+
+
+      .prev-button {
+
+        background: #27272a;
+
+        color: #f4f4f5;
+
+      }
+
+
+      .next-button {
+
+        background: #f4f4f5;
+
+        color: #09090b;
+
+      }
+
+
+      .flow-number {
+
+        background: #f4f4f5;
+
+        color: #09090b;
+
+      }
+
+
+      .next-lesson {
+
+        background: #27272a;
+
+      }
+
+
+      .end-icon {
+
+        background: #27272a;
+
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       ヘッダー
+  ========================= -->
+
+  <header class="header">
+
+
+    <div class="header-left">
+
+
+      <a
+        href="index.html"
+        class="logo-link"
+      >
+
+        <img
+          src="rogo.png"
+          alt="Proglight"
+          class="logo"
+        >
+
+      </a>
+
+
+      <div class="brand-area">
+
+
+        <a
+          href="index.html"
+          class="brand"
+        >
+          Proglight
+        </a>
+
+
+        <span
+          class="lesson-name"
+          id="lessonName"
+        >
+          読み込み中...
+        </span>
+
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="progress-area">
+
+
+      <span
+        class="progress-text"
+        id="progressText"
+      >
+        0 / 0
+      </span>
+
+
+      <div class="progress-bar">
+
+        <div
+          class="progress"
+          id="progress"
+        ></div>
+
+      </div>
+
+
+    </div>
+
+
+  </header>
+
+
+
+  <!-- =========================
+       メイン
+  ========================= -->
+
+  <main class="main">
+
+
+    <div class="slide-container">
+
+
+      <article
+        class="slide"
+        id="slide"
+      >
+
+        <div class="loading">
+
+          読み込み中...
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         操作ボタン
+    ========================= -->
+
+    <div class="controls">
+
+
+      <button
+        class="control-button prev-button"
+        id="prevButton"
+      >
+        ← 前へ
+      </button>
+
+
+      <button
+        class="control-button next-button"
+        id="nextButton"
+      >
+        次へ →
+      </button>
+
+
+    </div>
+
+
+  </main>
+
+
+
+  <script>
+
+
+    /* =========================================
+       Proglight スライドエンジン
+       ========================================= */
+
+
+    /* =========================
+       URLからLesson ID取得
+
+       html-ress.html?id=1
+
+       ↓
+
+       1
+    ========================= */
+
+    const params = new URLSearchParams(
+      window.location.search
+    );
+
+
+    const lessonId = Number(
+      params.get("id") || 1
+    );
+
+
+
+    /* =========================
+       要素取得
+    ========================= */
+
+    const slideElement =
+      document.getElementById("slide");
+
+
+    const lessonNameElement =
+      document.getElementById("lessonName");
+
+
+    const prevButton =
+      document.getElementById("prevButton");
+
+
+    const nextButton =
+      document.getElementById("nextButton");
+
+
+    const progressElement =
+      document.getElementById("progress");
+
+
+    const progressTextElement =
+      document.getElementById("progressText");
+
+
+
+    /* =========================
+       データ
+    ========================= */
+
+    let courseData = null;
+
+    let currentLesson = null;
+
+    let currentSlide = 0;
+
+
+
+    /* =========================
+       JSON読み込み
+    ========================= */
+
+    async function loadCourse() {
+
+
+      try {
+
+
+        const response = await fetch(
+          "html.json"
+        );
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            "JSONファイルを読み込めませんでした"
+          );
+
+        }
+
+
+        courseData =
+          await response.json();
+
+
+
+        /* Lesson検索 */
+
+        currentLesson =
+          courseData.lessons.find(
+            lesson =>
+              lesson.id === lessonId
+          );
+
+
+
+        /* Lessonが存在しない場合 */
+
+        if (!currentLesson) {
+
+          showError(
+            `Lesson ${lessonId} は存在しません。`
+          );
+
+          return;
+
+        }
+
+
+
+        /* タイトル設定 */
+
+        document.title =
+          `${currentLesson.title} - Proglight`;
+
+
+
+        lessonNameElement.textContent =
+          currentLesson.title;
+
+
+
+        /* 初期スライド表示 */
+
+        renderSlide();
+
+
+      }
+
+
+      catch (error) {
+
+
+        console.error(error);
+
+
+        showError(
+          "講座データの読み込みに失敗しました。"
+        );
+
+
+      }
+
+
+    }
+
+
+
+    /* =========================
+       スライド描画
+    ========================= */
+
+    function renderSlide() {
+
+
+      const data =
+        currentLesson.slides[
+          currentSlide
+        ];
+
+
+
+      /* 内容リセット */
+
+      slideElement.innerHTML = "";
+
+
+      slideElement.classList.remove(
+        "slide"
+      );
+
+
+      void slideElement.offsetWidth;
+
+
+      slideElement.classList.add(
+        "slide"
+      );
+
+
+
+      /* =========================
+         Endタイプ
+      ========================= */
+
+      if (data.type === "end") {
+
+
+        renderEndSlide(data);
+
+
+      }
+
+      else {
+
+
+        /* ラベル */
+
+        const label =
+          document.createElement("div");
+
+
+        label.className =
+          "slide-label";
+
+
+        label.textContent =
+          `${currentLesson.category} / Lesson ${currentLesson.id}`;
+
+
+        slideElement.appendChild(label);
+
+
+
+        /* タイトル */
+
+        const title =
+          document.createElement(
+            data.type === "title"
+              ? "h1"
+              : "h2"
+          );
+
+
+        title.className =
+          "slide-title";
+
+
+        if (data.type === "title") {
+
+          title.classList.add(
+            "large"
+          );
+
+        }
+
+
+        title.textContent =
+          data.title;
+
+
+        slideElement.appendChild(title);
+
+
+
+        /* テキスト */
+
+        if (data.text) {
+
+          const text =
+            document.createElement("p");
+
+
+          text.className =
+            "slide-text";
+
+
+          text.textContent =
+            data.text;
+
+
+          slideElement.appendChild(text);
+
+        }
+
+
+
+        /* リスト */
+
+        if (data.list) {
+
+          renderList(data.list);
+
+        }
+
+
+
+        /* コード */
+
+        if (data.code) {
+
+          renderCode(data);
+
+        }
+
+
+
+        /* Flow */
+
+        if (data.steps) {
+
+          renderFlow(data.steps);
+
+        }
+
+
+
+        /* Comparison */
+
+        if (data.items) {
+
+          renderComparison(
+            data.items
+          );
+
+        }
+
+
+      }
+
+
+
+      /* UI更新 */
+
+      updateProgress();
+
+
+      updateButtons();
+
+
+      saveProgress();
+
+
+    }
+
+
+
+    /* =========================
+       リスト描画
+    ========================= */
+
+    function renderList(listData) {
+
+
+      const ul =
+        document.createElement("ul");
+
+
+      ul.className =
+        "slide-list";
+
+
+      listData.forEach(item => {
+
+
+        const li =
+          document.createElement("li");
+
+
+        li.textContent = item;
+
+
+        ul.appendChild(li);
+
+
+      });
+
+
+      slideElement.appendChild(ul);
+
+
+    }
+
+
+
+    /* =========================
+       コード描画
+    ========================= */
+
+    function renderCode(data) {
+
+
+      const pre =
+        document.createElement("pre");
+
+
+      pre.className =
+        "code-block";
+
+
+      const code =
+        document.createElement("code");
+
+
+      code.textContent =
+        data.code;
+
+
+      pre.appendChild(code);
+
+
+      slideElement.appendChild(pre);
+
+
+    }
+
+
+
+    /* =========================
+       Flow描画
+    ========================= */
+
+    function renderFlow(steps) {
+
+
+      const container =
+        document.createElement("div");
+
+
+      container.className =
+        "flow-list";
+
+
+      steps.forEach(
+        (step, index) => {
+
+
+          const item =
+            document.createElement("div");
+
+
+          item.className =
+            "flow-item";
+
+
+          const number =
+            document.createElement("span");
+
+
+          number.className =
+            "flow-number";
+
+
+          number.textContent =
+            index + 1;
+
+
+          const text =
+            document.createElement("span");
+
+
+          text.textContent =
+            step;
+
+
+          item.appendChild(number);
+
+
+          item.appendChild(text);
+
+
+          container.appendChild(item);
+
+
+        }
+      );
+
+
+      slideElement.appendChild(
+        container
+      );
+
+
+    }
+
+
+
+    /* =========================
+       Comparison描画
+    ========================= */
+
+    function renderComparison(items) {
+
+
+      const grid =
+        document.createElement("div");
+
+
+      grid.className =
+        "comparison-grid";
+
+
+      items.forEach(item => {
+
+
+        const card =
+          document.createElement("div");
+
+
+        card.className =
+          "comparison-card";
+
+
+
+        const name =
+          document.createElement("div");
+
+
+        name.className =
+          "comparison-name";
+
+
+        name.textContent =
+          item.name;
+
+
+
+        const role =
+          document.createElement("div");
+
+
+        role.className =
+          "comparison-role";
+
+
+        role.textContent =
+          item.role;
+
+
+
+        const example =
+          document.createElement("div");
+
+
+        example.className =
+          "comparison-example";
+
+
+        example.textContent =
+          item.example;
+
+
+
+        card.appendChild(name);
+
+
+        card.appendChild(role);
+
+
+        card.appendChild(example);
+
+
+        grid.appendChild(card);
+
+
+      });
+
+
+      slideElement.appendChild(grid);
+
+
+    }
+
+
+
+    /* =========================
+       終了スライド
+    ========================= */
+
+    function renderEndSlide(data) {
+
+
+      const container =
+        document.createElement("div");
+
+
+      container.className =
+        "end-slide";
+
+
+
+      const icon =
+        document.createElement("div");
+
+
+      icon.className =
+        "end-icon";
+
+
+      icon.textContent =
+        "✓";
+
+
+
+      const title =
+        document.createElement("h1");
+
+
+      title.className =
+        "slide-title";
+
+
+      title.textContent =
+        data.title;
+
+
+
+      const text =
+        document.createElement("p");
+
+
+      text.className =
+        "slide-text";
+
+
+      text.textContent =
+        data.text;
+
+
+
+      container.appendChild(icon);
+
+
+      container.appendChild(title);
+
+
+      container.appendChild(text);
+
+
+
+      if (data.next) {
+
+
+        const next =
+          document.createElement("div");
+
+
+        next.className =
+          "next-lesson";
+
+
+        next.textContent =
+          data.next;
+
+
+        container.appendChild(next);
+
+
+      }
+
+
+
+      slideElement.appendChild(
+        container
+      );
+
+
+    }
+
+
+
+    /* =========================
+       進捗更新
+    ========================= */
+
+    function updateProgress() {
+
+
+      const total =
+        currentLesson.slides.length;
+
+
+      const current =
+        currentSlide + 1;
+
+
+      const percentage =
+        (current / total) * 100;
+
+
+      progressElement.style.width =
+        `${percentage}%`;
+
+
+      progressTextElement.textContent =
+        `${current} / ${total}`;
+
+
+    }
+
+
+
+    /* =========================
+       ボタン状態更新
+    ========================= */
+
+    function updateButtons() {
+
+
+      prevButton.disabled =
+        currentSlide === 0;
+
+
+      nextButton.disabled =
+        currentSlide ===
+        currentLesson.slides.length - 1;
+
+
+    }
+
+
+
+    /* =========================
+       エラー表示
+    ========================= */
+
+    function showError(message) {
+
+
+      slideElement.innerHTML = `
+
+        <div class="error">
+
+          <h2>
+            エラー
+          </h2>
+
+          <p>
+            ${message}
+          </p>
+
+        </div>
+
+      `;
+
+
+      prevButton.disabled = true;
+
+
+      nextButton.disabled = true;
+
+
+    }
+
+
+
+    /* =========================
+       前へ
+    ========================= */
+
+    prevButton.addEventListener(
+      "click",
+      () => {
+
+
+        if (currentSlide > 0) {
+
+
+          currentSlide--;
+
+
+          renderSlide();
+
+
+        }
+
+
+      }
+    );
+
+
+
+    /* =========================
+       次へ
+    ========================= */
+
+    nextButton.addEventListener(
+      "click",
+      () => {
+
+
+        if (
+          currentSlide <
+          currentLesson.slides.length - 1
+        ) {
+
+
+          currentSlide++;
+
+
+          renderSlide();
+
+
+        }
+
+
+      }
+    );
+
+
+
+    /* =========================
+       キーボード操作
+    ========================= */
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+
+        if (
+          event.key === "ArrowRight"
+        ) {
+
+
+          if (!nextButton.disabled) {
+
+            nextButton.click();
+
+          }
+
+
+        }
+
+
+
+        if (
+          event.key === "ArrowLeft"
+        ) {
+
+
+          if (!prevButton.disabled) {
+
+            prevButton.click();
+
+          }
+
+
+        }
+
+
+      }
+    );
+
+
+
+    /* =========================
+       学習進捗保存
+    ========================= */
+
+    function saveProgress() {
+
+
+      const progressData = {
+
+
+        lessonId:
+          currentLesson.id,
+
+
+        slide:
+          currentSlide,
+
+
+        updatedAt:
+          new Date().toISOString()
+
+
+      };
+
+
+      localStorage.setItem(
+
+        `proglight-html-lesson-${currentLesson.id}`,
+
+        JSON.stringify(progressData)
+
+      );
+
+
+    }
+
+
+
+    /* =========================
+       保存された進捗を読み込み
+    ========================= */
+
+    function loadProgress() {
+
+
+      const saved =
+        localStorage.getItem(
+
+          `proglight-html-lesson-${currentLesson.id}`
+
+        );
+
+
+      if (!saved) return;
+
+
+      try {
+
+
+        const data =
+          JSON.parse(saved);
+
+
+        if (
+
+          typeof data.slide === "number"
+
+          &&
+
+          data.slide >= 0
+
+          &&
+
+          data.slide < currentLesson.slides.length
+
+        ) {
+
+
+          currentSlide =
+            data.slide;
+
+
+        }
+
+
+      }
+
+
+      catch (error) {
+
+
+        console.error(
+          "進捗データの読み込みに失敗しました",
+          error
+        );
+
+
+      }
+
+
+    }
+
+
+
+    /* =========================
+       初期化
+    ========================= */
+
+    async function init() {
+
+
+      await loadCourse();
+
+
+      if (currentLesson) {
+
+
+        loadProgress();
+
+
+        renderSlide();
+
+
+      }
+
+
+    }
+
+
+    init();
+
+
+  </script>
+
+
+</body>
+</html>
