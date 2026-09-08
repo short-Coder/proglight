@@ -1,1 +1,208 @@
+{
+  "course": {
+    "id": "html",
+    "title": "HTML・CSS・JavaScript講座",
+    "description": "Webサイト制作の基礎から本格的なWebアプリ開発まで学ぶ講座です。"
+  },
 
+  "lessons": [
+    {
+      "id": 1,
+      "category": "入門編",
+      "title": "Webサイトとプログラミング",
+
+      "slides": [
+        {
+          "type": "title",
+          "title": "Webサイトとプログラミング",
+          "text": "HTML・CSS・JavaScriptを学び始める前に、まずWebサイトの仕組みとプログラミングについて理解しましょう。"
+        },
+
+        {
+          "type": "content",
+          "title": "このレッスンで学ぶこと",
+          "list": [
+            "Webサイトとは何か",
+            "Webサイトが表示される仕組み",
+            "HTMLとは何か",
+            "CSSとは何か",
+            "JavaScriptとは何か",
+            "3つの技術の役割"
+          ]
+        },
+
+        {
+          "type": "content",
+          "title": "Webサイトとは？",
+          "text": "Webサイトとは、インターネット上で公開されているWebページの集まりです。"
+        },
+
+        {
+          "type": "content",
+          "title": "普段見ているWebサイト",
+          "text": "検索サイト、動画サイト、SNS、ネットショップなど、インターネット上にはさまざまなWebサイトがあります。",
+          "list": [
+            "Googleなどの検索サイト",
+            "YouTubeなどの動画サイト",
+            "XなどのSNS",
+            "ネットショップ",
+            "企業のホームページ"
+          ]
+        },
+
+        {
+          "type": "content",
+          "title": "Webサイトはどうやって表示される？",
+          "text": "あなたがブラウザでURLを開くと、ブラウザはWebサイトのデータを読み込み、画面に表示します。"
+        },
+
+        {
+          "type": "flow",
+          "title": "Webサイトが表示される流れ",
+          "steps": [
+            "ブラウザでURLを開く",
+            "サーバーにデータを要求する",
+            "HTML・CSS・JavaScriptなどのデータを受け取る",
+            "ブラウザがデータを読み込む",
+            "画面にWebサイトが表示される"
+          ]
+        },
+
+        {
+          "type": "content",
+          "title": "Webサイトを作る主な技術",
+          "text": "基本的なWebサイトは、主にHTML、CSS、JavaScriptという3つの技術を組み合わせて作られています。"
+        },
+
+        {
+          "type": "content",
+          "title": "HTMLとは？",
+          "text": "HTMLは、Webページの構造や内容を作るための言語です。",
+          "list": [
+            "見出しを作る",
+            "文章を表示する",
+            "画像を配置する",
+            "リンクを作る",
+            "フォームを作る"
+          ]
+        },
+
+        {
+          "type": "code",
+          "title": "HTMLの例",
+          "language": "html",
+          "code": "<h1>こんにちは</h1>\n<p>これはWebページです。</p>"
+        },
+
+        {
+          "type": "content",
+          "title": "CSSとは？",
+          "text": "CSSは、Webページのデザインや見た目を変更するための言語です。",
+          "list": [
+            "文字の色を変える",
+            "文字の大きさを変える",
+            "背景色を設定する",
+            "レイアウトを作る",
+            "アニメーションを作る"
+          ]
+        },
+
+        {
+          "type": "code",
+          "title": "CSSの例",
+          "language": "css",
+          "code": "h1 {\n  color: blue;\n  font-size: 32px;\n}"
+        },
+
+        {
+          "type": "content",
+          "title": "JavaScriptとは？",
+          "text": "JavaScriptは、Webページに動きや機能を追加するためのプログラミング言語です。",
+          "list": [
+            "ボタンをクリックしたときの処理",
+            "画面の内容を変更する",
+            "計算をする",
+            "ゲームを作る",
+            "Webアプリを作る"
+          ]
+        },
+
+        {
+          "type": "code",
+          "title": "JavaScriptの例",
+          "language": "javascript",
+          "code": "console.log(\"こんにちは\");"
+        },
+
+        {
+          "type": "comparison",
+          "title": "3つの技術の役割",
+          "items": [
+            {
+              "name": "HTML",
+              "role": "Webページの構造を作る",
+              "example": "見出し、文章、画像"
+            },
+            {
+              "name": "CSS",
+              "role": "Webページのデザインを作る",
+              "example": "色、サイズ、レイアウト"
+            },
+            {
+              "name": "JavaScript",
+              "role": "Webページに動きや機能を追加する",
+              "example": "ボタン、ゲーム、アプリ"
+            }
+          ]
+        },
+
+        {
+          "type": "content",
+          "title": "家に例えると",
+          "text": "HTML・CSS・JavaScriptの役割を家に例えると理解しやすくなります。"
+        },
+
+        {
+          "type": "comparison",
+          "title": "家とWebサイトの関係",
+          "items": [
+            {
+              "name": "HTML",
+              "role": "家の骨組み",
+              "example": "壁や部屋の構造"
+            },
+            {
+              "name": "CSS",
+              "role": "家のデザイン",
+              "example": "壁紙や家具の見た目"
+            },
+            {
+              "name": "JavaScript",
+              "role": "家の機能",
+              "example": "自動ドアや電気"
+            }
+          ]
+        },
+
+        {
+          "type": "summary",
+          "title": "まとめ",
+          "list": [
+            "Webサイトはインターネット上で公開されているページの集まり",
+            "HTMLはWebページの構造を作る",
+            "CSSはWebページのデザインを作る",
+            "JavaScriptはWebページに動きや機能を追加する",
+            "この3つを組み合わせてWebサイトを作る"
+          ]
+        },
+
+        {
+          "type": "end",
+          "title": "Lesson 1 完了！",
+          "text": "WebサイトとHTML・CSS・JavaScriptの基本的な役割を理解できました。",
+          "next": "次は「開発環境とファイル」を学びます。"
+        }
+      ]
+    }
+  ]
+}
