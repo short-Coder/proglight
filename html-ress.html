@@ -11,13 +11,18 @@
   <title>Proglight - 学習</title>
 
   <!-- ファビコン -->
-  <link rel="icon" href="rogo.png">
+  <link
+    rel="icon"
+    type="image/png"
+    href="../rogo.png"
+  >
 
   <style>
 
-    /* =========================
-       基本設定
-    ========================= */
+    /* ========================================
+       Proglight
+       Slide Learning Engine
+       ======================================== */
 
     :root {
       --background: #ffffff;
@@ -26,6 +31,10 @@
       --muted: #64748b;
       --border: #e2e8f0;
       --primary: #0f172a;
+      --primary-hover: #1e293b;
+      --soft: #f8fafc;
+      --soft-hover: #f1f5f9;
+      --success: #16a34a;
     }
 
 
@@ -48,6 +57,8 @@
         BlinkMacSystemFont,
         "Segoe UI",
         Roboto,
+        "Helvetica Neue",
+        Arial,
         sans-serif;
 
       background: var(--background);
@@ -55,135 +66,131 @@
     }
 
 
-    /* =========================
+    button,
+    a {
+      font: inherit;
+    }
+
+
+    button {
+      border: 0;
+    }
+
+
+    /* ========================================
        ヘッダー
-    ========================= */
+       ======================================== */
 
     .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
 
       width: 100%;
-
       height: 72px;
 
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
 
       padding: 0 32px;
 
       border-bottom: 1px solid var(--border);
 
-      background: var(--background);
+      background: rgba(255, 255, 255, 0.94);
 
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
 
 
     .header-left {
-
       display: flex;
-
       align-items: center;
-
-      gap: 14px;
+      gap: 13px;
 
       min-width: 0;
-
     }
 
 
     .logo-link {
-
       display: flex;
-
       align-items: center;
+      justify-content: center;
 
+      flex-shrink: 0;
+
+      text-decoration: none;
     }
 
 
     .logo {
-
       width: 42px;
-
       height: 42px;
 
       object-fit: contain;
+      object-position: center;
+
+      display: block;
 
       border-radius: 10px;
-
     }
 
 
     .brand-area {
-
       display: flex;
-
       flex-direction: column;
 
       min-width: 0;
-
     }
 
 
     .brand {
-
-      font-size: 20px;
-
-      font-weight: 700;
-
       color: var(--foreground);
 
-      text-decoration: none;
+      font-size: 19px;
+      font-weight: 700;
 
+      text-decoration: none;
     }
 
 
     .lesson-name {
+      max-width: 420px;
 
-      font-size: 13px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
 
       color: var(--muted);
 
-      white-space: nowrap;
-
-      overflow: hidden;
-
-      text-overflow: ellipsis;
-
+      font-size: 12px;
     }
 
 
-    /* =========================
+    /* ========================================
        進捗
-    ========================= */
+       ======================================== */
 
     .progress-area {
-
       display: flex;
-
       align-items: center;
-
       gap: 12px;
-
     }
 
 
     .progress-text {
-
-      font-size: 14px;
-
       color: var(--muted);
 
-      white-space: nowrap;
+      font-size: 13px;
+      font-weight: 500;
 
+      white-space: nowrap;
     }
 
 
     .progress-bar {
-
       width: 160px;
-
       height: 7px;
 
       overflow: hidden;
@@ -191,14 +198,11 @@
       border-radius: 999px;
 
       background: var(--border);
-
     }
 
 
     .progress {
-
-      width: 0%;
-
+      width: 0;
       height: 100%;
 
       border-radius: inherit;
@@ -206,184 +210,149 @@
       background: var(--primary);
 
       transition: width 0.3s ease;
-
     }
 
 
-    /* =========================
+    /* ========================================
        メイン
-    ========================= */
+       ======================================== */
 
     .main {
-
       min-height: calc(100vh - 72px);
 
       display: flex;
-
       flex-direction: column;
-
     }
 
 
-    /* =========================
-       スライドエリア
-    ========================= */
+    /* ========================================
+       スライド
+       ======================================== */
 
     .slide-container {
-
       flex: 1;
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
-      padding: 40px 20px;
-
+      padding: 48px 20px;
     }
 
 
     .slide {
-
       width: 100%;
+      max-width: 920px;
 
-      max-width: 900px;
-
-      min-height: 480px;
+      min-height: 500px;
 
       padding: 64px;
 
       border: 1px solid var(--border);
-
-      border-radius: 20px;
+      border-radius: 22px;
 
       background: var(--card);
 
       box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.08);
+        0 20px 60px rgba(15, 23, 42, 0.08);
 
-      animation: slideIn 0.35s ease;
-
+      animation: slideIn 0.3s ease;
     }
 
 
     @keyframes slideIn {
 
       from {
-
         opacity: 0;
-
         transform: translateY(12px);
-
       }
 
-
       to {
-
         opacity: 1;
-
         transform: translateY(0);
-
       }
 
     }
 
 
-    /* =========================
-       スライド共通
-    ========================= */
+    /* ========================================
+       スライドラベル
+       ======================================== */
 
     .slide-label {
-
       display: inline-flex;
-
       align-items: center;
 
+      margin-bottom: 22px;
       padding: 6px 12px;
-
-      margin-bottom: 24px;
 
       border-radius: 999px;
 
-      background: #f1f5f9;
+      background: var(--soft);
 
-      color: #475569;
+      color: var(--muted);
 
       font-size: 13px;
-
       font-weight: 600;
-
     }
 
 
-    .slide-title {
+    /* ========================================
+       タイトル
+       ======================================== */
 
+    .slide-title {
       margin: 0 0 28px;
 
       font-size: 42px;
-
       line-height: 1.3;
 
-      letter-spacing: -0.03em;
-
+      letter-spacing: -0.035em;
     }
 
 
     .slide-title.large {
-
       font-size: 52px;
-
     }
 
 
     .slide-text {
-
       margin: 0;
-
-      font-size: 19px;
-
-      line-height: 1.9;
 
       color: var(--muted);
 
+      font-size: 19px;
+      line-height: 1.9;
     }
 
 
-    /* =========================
+    /* ========================================
        リスト
-    ========================= */
+       ======================================== */
 
     .slide-list {
-
       margin: 24px 0 0;
 
-      padding-left: 24px;
-
-      font-size: 19px;
-
-      line-height: 2;
+      padding-left: 25px;
 
       color: var(--muted);
 
+      font-size: 18px;
+      line-height: 2;
     }
 
 
     .slide-list li {
-
       margin-bottom: 6px;
-
     }
 
 
-    /* =========================
+    /* ========================================
        コード
-    ========================= */
+       ======================================== */
 
     .code-block {
-
-      margin-top: 25px;
-
+      margin-top: 26px;
       padding: 24px;
 
       overflow-x: auto;
@@ -395,74 +364,58 @@
       color: #f8fafc;
 
       font-size: 15px;
-
       line-height: 1.7;
-
     }
 
 
     .code-block code {
-
       font-family:
-
         "SFMono-Regular",
         Consolas,
         "Liberation Mono",
+        Menlo,
         monospace;
-
     }
 
 
-    /* =========================
+    /* ========================================
        Flow
-    ========================= */
+       ======================================== */
 
     .flow-list {
-
       display: flex;
-
       flex-direction: column;
-
       gap: 12px;
 
       margin-top: 30px;
-
     }
 
 
     .flow-item {
-
       display: flex;
-
       align-items: center;
-
       gap: 16px;
 
-      padding: 16px 20px;
+      padding: 15px 18px;
 
       border: 1px solid var(--border);
-
-      border-radius: 12px;
-
-      font-size: 17px;
+      border-radius: 13px;
 
       color: var(--muted);
 
+      font-size: 16px;
+      line-height: 1.6;
     }
 
 
     .flow-number {
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
       flex-shrink: 0;
 
       width: 32px;
-
       height: 32px;
 
       border-radius: 50%;
@@ -471,448 +424,461 @@
 
       color: white;
 
-      font-size: 14px;
-
+      font-size: 13px;
       font-weight: 700;
-
     }
 
 
-    /* =========================
-       Comparison
-    ========================= */
+    /* ========================================
+       比較
+       ======================================== */
 
     .comparison-grid {
-
       display: grid;
 
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns:
+        repeat(3, 1fr);
 
       gap: 16px;
 
       margin-top: 30px;
-
     }
 
 
     .comparison-card {
-
       padding: 22px;
 
       border: 1px solid var(--border);
-
       border-radius: 16px;
 
       background: var(--background);
-
     }
 
 
     .comparison-name {
-
       margin-bottom: 14px;
 
-      font-size: 22px;
-
+      font-size: 21px;
       font-weight: 700;
-
     }
 
 
     .comparison-role {
-
-      margin-bottom: 10px;
-
-      font-size: 15px;
-
-      line-height: 1.7;
+      margin-bottom: 12px;
 
       color: var(--muted);
 
+      font-size: 14px;
+      line-height: 1.7;
     }
 
 
     .comparison-example {
-
       padding-top: 12px;
 
       border-top: 1px solid var(--border);
 
-      font-size: 13px;
-
-      line-height: 1.6;
-
       color: var(--muted);
 
+      font-size: 13px;
+      line-height: 1.6;
     }
 
 
-    /* =========================
-       End
-    ========================= */
+    /* ========================================
+       完了スライド
+       ======================================== */
 
     .end-slide {
+      min-height: 360px;
 
       display: flex;
-
       flex-direction: column;
 
       align-items: center;
-
       justify-content: center;
 
-      min-height: 350px;
-
       text-align: center;
-
     }
 
 
     .end-icon {
+      width: 72px;
+      height: 72px;
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
-      width: 72px;
-
-      height: 72px;
 
       margin-bottom: 24px;
 
       border-radius: 50%;
 
-      background: #f1f5f9;
+      background: var(--soft);
+
+      color: var(--success);
 
       font-size: 32px;
-
+      font-weight: 700;
     }
 
 
     .next-lesson {
-
       margin-top: 24px;
-
-      padding: 16px 20px;
+      padding: 14px 18px;
 
       border-radius: 12px;
 
-      background: #f8fafc;
+      background: var(--soft);
 
       color: var(--muted);
 
+      font-size: 14px;
     }
 
 
-    /* =========================
+    /* ========================================
        ローディング
-    ========================= */
+       ======================================== */
 
     .loading {
+      min-height: 300px;
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
-      min-height: 300px;
 
       color: var(--muted);
 
-      font-size: 18px;
-
+      font-size: 17px;
     }
 
 
-    /* =========================
+    /* ========================================
        エラー
-    ========================= */
+       ======================================== */
 
     .error {
+      padding: 50px;
 
       text-align: center;
-
-      padding: 40px;
-
     }
 
 
     .error h2 {
-
       margin-top: 0;
-
     }
 
 
-    /* =========================
+    .error p {
+      color: var(--muted);
+    }
+
+
+    /* ========================================
        操作バー
-    ========================= */
+       ======================================== */
 
     .controls {
+      position: sticky;
+      bottom: 0;
+      z-index: 90;
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
-      gap: 16px;
+      gap: 12px;
 
-      min-height: 90px;
+      min-height: 88px;
 
-      padding: 15px;
+      padding: 14px 20px;
 
       border-top: 1px solid var(--border);
 
-      background: var(--background);
+      background: rgba(255, 255, 255, 0.94);
 
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
 
 
     .control-button {
+      min-width: 125px;
 
-      display: inline-flex;
+      padding: 12px 20px;
 
-      align-items: center;
+      border-radius: 11px;
 
-      justify-content: center;
-
-      min-width: 130px;
-
-      padding: 13px 22px;
-
-      border: none;
-
-      border-radius: 12px;
-
-      font-size: 16px;
-
+      font-size: 15px;
       font-weight: 600;
 
       cursor: pointer;
 
       transition:
-
         transform 0.2s ease,
-
-        opacity 0.2s ease;
-
+        opacity 0.2s ease,
+        background 0.2s ease;
     }
 
 
     .control-button:hover:not(:disabled) {
-
       transform: translateY(-2px);
-
     }
 
 
     .control-button:active:not(:disabled) {
-
       transform: scale(0.97);
+    }
 
+
+    .control-button:disabled {
+      opacity: 0.35;
+
+      cursor: not-allowed;
     }
 
 
     .prev-button {
+      background: var(--soft);
 
-      background: #f1f5f9;
+      color: var(--foreground);
+    }
 
-      color: #0f172a;
 
+    .prev-button:hover:not(:disabled) {
+      background: var(--soft-hover);
     }
 
 
     .next-button {
+      background: var(--primary);
+
+      color: white;
+    }
+
+
+    .next-button:hover:not(:disabled) {
+      background: var(--primary-hover);
+    }
+
+
+    /* ========================================
+       スキップ
+       ======================================== */
+
+    .skip-button {
+      min-width: auto;
+
+      background: transparent;
+
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+
+    .skip-button:hover {
+      color: var(--foreground);
+
+      background: var(--soft);
+    }
+
+
+    /* ========================================
+       次の講座へ
+       ======================================== */
+
+    .next-lesson-button {
+      display: none;
+
+      min-width: 180px;
+
+      padding: 13px 22px;
+
+      border-radius: 11px;
 
       background: var(--primary);
 
       color: white;
 
+      font-size: 15px;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
     }
 
 
-    .control-button:disabled {
+    .next-lesson-button:hover {
+      transform: translateY(-2px);
 
-      opacity: 0.4;
-
-      cursor: not-allowed;
-
+      background: var(--primary-hover);
     }
 
 
-    /* =========================
+    .next-lesson-button.show {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    /* ========================================
        モバイル
-    ========================= */
+       ======================================== */
 
     @media (max-width: 700px) {
 
-
       .header {
-
         height: 64px;
 
-        padding: 0 16px;
-
+        padding: 0 15px;
       }
 
 
       .logo {
+        width: 38px;
+        height: 38px;
+      }
 
-        width: 36px;
 
-        height: 36px;
-
+      .brand {
+        font-size: 17px;
       }
 
 
       .lesson-name {
-
         display: none;
-
       }
 
 
       .progress-bar {
-
         width: 70px;
+      }
 
+
+      .progress-text {
+        font-size: 12px;
       }
 
 
       .slide-container {
-
         padding: 20px 14px;
-
       }
 
 
       .slide {
-
-        min-height: 420px;
+        min-height: 450px;
 
         padding: 32px 24px;
 
-        border-radius: 16px;
-
+        border-radius: 17px;
       }
 
 
       .slide-title {
-
         font-size: 30px;
-
       }
 
 
       .slide-title.large {
-
         font-size: 36px;
-
       }
 
 
       .slide-text,
-
       .slide-list {
-
         font-size: 16px;
-
       }
 
 
       .comparison-grid {
-
         grid-template-columns: 1fr;
-
       }
 
 
       .controls {
+        flex-wrap: wrap;
 
         min-height: 76px;
 
+        gap: 8px;
+
+        padding: 10px;
       }
 
 
       .control-button {
+        min-width: 100px;
 
-        min-width: 110px;
+        padding: 10px 15px;
 
+        font-size: 14px;
+      }
+
+
+      .next-lesson-button {
+        min-width: 160px;
       }
 
     }
 
 
-    /* =========================
+    /* ========================================
        ダークモード
-    ========================= */
+       ======================================== */
 
     @media (prefers-color-scheme: dark) {
 
-
       :root {
-
         --background: #09090b;
         --foreground: #f4f4f5;
         --card: #18181b;
         --muted: #a1a1aa;
         --border: #27272a;
         --primary: #f4f4f5;
-
+        --primary-hover: #e4e4e7;
+        --soft: #27272a;
+        --soft-hover: #3f3f46;
+        --success: #4ade80;
       }
 
 
-      .slide-label {
-
-        background: #27272a;
-
-        color: #d4d4d8;
-
+      .header,
+      .controls {
+        background: rgba(9, 9, 11, 0.94);
       }
 
 
-      .prev-button {
-
-        background: #27272a;
-
-        color: #f4f4f5;
-
-      }
-
-
-      .next-button {
-
-        background: #f4f4f5;
-
+      .next-button,
+      .next-lesson-button {
         color: #09090b;
-
       }
 
 
-      .flow-number {
-
-        background: #f4f4f5;
-
-        color: #09090b;
-
+      .code-block {
+        background: #050505;
       }
 
-
-      .next-lesson {
-
-        background: #27272a;
-
-      }
+    }
 
 
-      .end-icon {
+    /* ========================================
+       アニメーション軽減
+       ======================================== */
 
-        background: #27272a;
+    @media (prefers-reduced-motion: reduce) {
 
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
       }
 
     }
@@ -924,23 +890,21 @@
 <body>
 
 
-  <!-- =========================
+  <!-- ========================================
        ヘッダー
-  ========================= -->
+       ======================================== -->
 
   <header class="header">
 
-
     <div class="header-left">
 
-
       <a
-        href="index.html"
+        href="../html/"
         class="logo-link"
       >
 
         <img
-          src="rogo.png"
+          src="../rogo.png"
           alt="Proglight"
           class="logo"
         >
@@ -950,14 +914,12 @@
 
       <div class="brand-area">
 
-
         <a
-          href="index.html"
+          href="../html/"
           class="brand"
         >
           Proglight
         </a>
-
 
         <span
           class="lesson-name"
@@ -966,16 +928,12 @@
           読み込み中...
         </span>
 
-
       </div>
-
 
     </div>
 
 
-
     <div class="progress-area">
-
 
       <span
         class="progress-text"
@@ -983,7 +941,6 @@
       >
         0 / 0
       </span>
-
 
       <div class="progress-bar">
 
@@ -994,23 +951,20 @@
 
       </div>
 
-
     </div>
-
 
   </header>
 
 
 
-  <!-- =========================
+  <!-- ========================================
        メイン
-  ========================= -->
+       ======================================== -->
 
   <main class="main">
 
 
     <div class="slide-container">
-
 
       <article
         class="slide"
@@ -1018,26 +972,37 @@
       >
 
         <div class="loading">
-
           読み込み中...
-
         </div>
 
       </article>
-
 
     </div>
 
 
 
-    <!-- =========================
-         操作ボタン
-    ========================= -->
+    <!-- ========================================
+         操作バー
+         ======================================== -->
 
     <div class="controls">
 
 
+      <!-- スキップ -->
+
       <button
+        type="button"
+        class="control-button skip-button"
+        id="skipButton"
+      >
+        スキップ
+      </button>
+
+
+      <!-- 前へ -->
+
+      <button
+        type="button"
         class="control-button prev-button"
         id="prevButton"
       >
@@ -1045,11 +1010,25 @@
       </button>
 
 
+      <!-- 次へ -->
+
       <button
+        type="button"
         class="control-button next-button"
         id="nextButton"
       >
         次へ →
+      </button>
+
+
+      <!-- 次の講座 -->
+
+      <button
+        type="button"
+        class="next-lesson-button"
+        id="nextLessonButton"
+      >
+        次の講座へ →
       </button>
 
 
@@ -1063,35 +1042,57 @@
   <script>
 
 
-    /* =========================================
-       Proglight スライドエンジン
-       ========================================= */
+    /* ========================================
+       Proglight Slide Engine
+       ======================================== */
 
 
-    /* =========================
-       URLからLesson ID取得
-
-       html-ress.html?id=1
-
+    /* ========================================
+       URLからLesson番号を取得
+       
+       /html-ress/1/
        ↓
-
        1
-    ========================= */
+       ======================================== */
 
-    const params = new URLSearchParams(
-      window.location.search
-    );
+    function getLessonId() {
+
+      const path =
+        window.location.pathname;
+
+      const match =
+        path.match(/\/html-ress\/(\d+)\/?/);
+
+      if (match) {
+
+        return Number(match[1]);
+
+      }
 
 
-    const lessonId = Number(
-      params.get("id") || 1
-    );
+      /* 開発時のフォールバック */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      return Number(
+        params.get("id") || 1
+      );
+
+    }
+
+
+    const lessonId =
+      getLessonId();
 
 
 
-    /* =========================
-       要素取得
-    ========================= */
+    /* ========================================
+       DOM
+       ======================================== */
 
     const slideElement =
       document.getElementById("slide");
@@ -1109,18 +1110,30 @@
       document.getElementById("nextButton");
 
 
+    const skipButton =
+      document.getElementById("skipButton");
+
+
+    const nextLessonButton =
+      document.getElementById(
+        "nextLessonButton"
+      );
+
+
     const progressElement =
       document.getElementById("progress");
 
 
     const progressTextElement =
-      document.getElementById("progressText");
+      document.getElementById(
+        "progressText"
+      );
 
 
 
-    /* =========================
-       データ
-    ========================= */
+    /* ========================================
+       状態
+       ======================================== */
 
     let courseData = null;
 
@@ -1130,25 +1143,22 @@
 
 
 
-    /* =========================
+    /* ========================================
        JSON読み込み
-    ========================= */
+       ======================================== */
 
     async function loadCourse() {
 
-
       try {
 
-
-        const response = await fetch(
-          "data/html.json"
-        );
+        const response =
+          await fetch("data/html.json");
 
 
         if (!response.ok) {
 
           throw new Error(
-            "JSONファイルを読み込めませんでした"
+            "data/html.jsonを読み込めませんでした"
           );
 
         }
@@ -1158,18 +1168,17 @@
           await response.json();
 
 
-
-        /* Lesson検索 */
+        /* Lessonを探す */
 
         currentLesson =
           courseData.lessons.find(
             lesson =>
-              lesson.id === lessonId
+              Number(lesson.id) ===
+              lessonId
           );
 
 
-
-        /* Lessonが存在しない場合 */
+        /* Lessonが存在しない */
 
         if (!currentLesson) {
 
@@ -1182,50 +1191,51 @@
         }
 
 
-
-        /* タイトル設定 */
+        /* ページタイトル */
 
         document.title =
           `${currentLesson.title} - Proglight`;
 
 
+        /* ヘッダー */
 
         lessonNameElement.textContent =
-          currentLesson.title;
+          `${currentLesson.category} / Lesson ${currentLesson.id}　${currentLesson.title}`;
 
 
+        /* 保存済み進捗 */
 
-        /* 初期スライド表示 */
+        loadProgress();
+
+
+        /* 描画 */
 
         renderSlide();
-
 
       }
 
 
       catch (error) {
 
-
         console.error(error);
-
 
         showError(
           "講座データの読み込みに失敗しました。"
         );
 
-
       }
-
 
     }
 
 
 
-    /* =========================
+    /* ========================================
        スライド描画
-    ========================= */
+       ======================================== */
 
     function renderSlide() {
+
+      if (!currentLesson) return;
 
 
       const data =
@@ -1234,54 +1244,44 @@
         ];
 
 
+      if (!data) return;
 
-      /* 内容リセット */
+
+      /* 再アニメーション */
 
       slideElement.innerHTML = "";
 
-
-      slideElement.classList.remove(
-        "slide"
-      );
-
+      slideElement.className = "slide";
 
       void slideElement.offsetWidth;
 
-
-      slideElement.classList.add(
-        "slide"
-      );
+      slideElement.className = "slide";
 
 
 
-      /* =========================
-         Endタイプ
-      ========================= */
+      /* ====================================
+         END
+         ==================================== */
 
       if (data.type === "end") {
 
-
         renderEndSlide(data);
-
 
       }
 
-      else {
 
+      else {
 
         /* ラベル */
 
         const label =
           document.createElement("div");
 
-
         label.className =
           "slide-label";
 
-
         label.textContent =
           `${currentLesson.category} / Lesson ${currentLesson.id}`;
-
 
         slideElement.appendChild(label);
 
@@ -1296,43 +1296,37 @@
               : "h2"
           );
 
-
         title.className =
           "slide-title";
 
 
         if (data.type === "title") {
 
-          title.classList.add(
-            "large"
-          );
+          title.classList.add("large");
 
         }
 
 
         title.textContent =
-          data.title;
+          data.title || "";
 
 
         slideElement.appendChild(title);
 
 
 
-        /* テキスト */
+        /* 本文 */
 
         if (data.text) {
 
           const text =
             document.createElement("p");
 
-
           text.className =
             "slide-text";
 
-
           text.textContent =
             data.text;
-
 
           slideElement.appendChild(text);
 
@@ -1342,7 +1336,7 @@
 
         /* リスト */
 
-        if (data.list) {
+        if (Array.isArray(data.list)) {
 
           renderList(data.list);
 
@@ -1362,7 +1356,7 @@
 
         /* Flow */
 
-        if (data.steps) {
+        if (Array.isArray(data.steps)) {
 
           renderFlow(data.steps);
 
@@ -1370,9 +1364,9 @@
 
 
 
-        /* Comparison */
+        /* 比較 */
 
-        if (data.items) {
+        if (Array.isArray(data.items)) {
 
           renderComparison(
             data.items
@@ -1380,74 +1374,59 @@
 
         }
 
-
       }
 
 
-
-      /* UI更新 */
-
       updateProgress();
-
 
       updateButtons();
 
-
       saveProgress();
-
 
     }
 
 
 
-    /* =========================
-       リスト描画
-    ========================= */
+    /* ========================================
+       リスト
+       ======================================== */
 
-    function renderList(listData) {
-
+    function renderList(items) {
 
       const ul =
         document.createElement("ul");
-
 
       ul.className =
         "slide-list";
 
 
-      listData.forEach(item => {
-
+      items.forEach(item => {
 
         const li =
           document.createElement("li");
 
-
-        li.textContent = item;
-
+        li.textContent =
+          item;
 
         ul.appendChild(li);
-
 
       });
 
 
       slideElement.appendChild(ul);
 
-
     }
 
 
 
-    /* =========================
-       コード描画
-    ========================= */
+    /* ========================================
+       コード
+       ======================================== */
 
     function renderCode(data) {
 
-
       const pre =
         document.createElement("pre");
-
 
       pre.className =
         "code-block";
@@ -1456,31 +1435,26 @@
       const code =
         document.createElement("code");
 
-
       code.textContent =
         data.code;
 
 
       pre.appendChild(code);
 
-
       slideElement.appendChild(pre);
-
 
     }
 
 
 
-    /* =========================
-       Flow描画
-    ========================= */
+    /* ========================================
+       Flow
+       ======================================== */
 
     function renderFlow(steps) {
 
-
       const container =
         document.createElement("div");
-
 
       container.className =
         "flow-list";
@@ -1489,10 +1463,8 @@
       steps.forEach(
         (step, index) => {
 
-
           const item =
             document.createElement("div");
-
 
           item.className =
             "flow-item";
@@ -1501,10 +1473,8 @@
           const number =
             document.createElement("span");
 
-
           number.className =
             "flow-number";
-
 
           number.textContent =
             index + 1;
@@ -1513,19 +1483,15 @@
           const text =
             document.createElement("span");
 
-
           text.textContent =
             step;
 
 
           item.appendChild(number);
 
-
           item.appendChild(text);
 
-
           container.appendChild(item);
-
 
         }
       );
@@ -1535,21 +1501,18 @@
         container
       );
 
-
     }
 
 
 
-    /* =========================
-       Comparison描画
-    ========================= */
+    /* ========================================
+       比較
+       ======================================== */
 
     function renderComparison(items) {
 
-
       const grid =
         document.createElement("div");
-
 
       grid.className =
         "comparison-grid";
@@ -1557,178 +1520,142 @@
 
       items.forEach(item => {
 
-
         const card =
           document.createElement("div");
-
 
         card.className =
           "comparison-card";
 
 
-
         const name =
           document.createElement("div");
-
 
         name.className =
           "comparison-name";
 
-
         name.textContent =
-          item.name;
-
+          item.name || "";
 
 
         const role =
           document.createElement("div");
 
-
         role.className =
           "comparison-role";
 
-
         role.textContent =
-          item.role;
-
+          item.role || "";
 
 
         const example =
           document.createElement("div");
 
-
         example.className =
           "comparison-example";
 
-
         example.textContent =
-          item.example;
-
+          item.example || "";
 
 
         card.appendChild(name);
 
-
         card.appendChild(role);
-
 
         card.appendChild(example);
 
 
         grid.appendChild(card);
 
-
       });
 
 
       slideElement.appendChild(grid);
 
-
     }
 
 
 
-    /* =========================
-       終了スライド
-    ========================= */
+    /* ========================================
+       完了スライド
+       ======================================== */
 
     function renderEndSlide(data) {
 
-
       const container =
         document.createElement("div");
-
 
       container.className =
         "end-slide";
 
 
-
       const icon =
         document.createElement("div");
 
-
       icon.className =
         "end-icon";
-
 
       icon.textContent =
         "✓";
 
 
-
       const title =
         document.createElement("h1");
-
 
       title.className =
         "slide-title";
 
-
       title.textContent =
-        data.title;
-
+        data.title || "Lesson 完了";
 
 
       const text =
         document.createElement("p");
 
-
       text.className =
         "slide-text";
 
-
       text.textContent =
-        data.text;
-
+        data.text || "";
 
 
       container.appendChild(icon);
 
-
       container.appendChild(title);
-
 
       container.appendChild(text);
 
 
-
       if (data.next) {
-
 
         const next =
           document.createElement("div");
 
-
         next.className =
           "next-lesson";
-
 
         next.textContent =
           data.next;
 
-
         container.appendChild(next);
 
-
       }
-
 
 
       slideElement.appendChild(
         container
       );
 
-
     }
 
 
 
-    /* =========================
-       進捗更新
-    ========================= */
+    /* ========================================
+       進捗
+       ======================================== */
 
     function updateProgress() {
+
+      if (!currentLesson) return;
 
 
       const total =
@@ -1750,186 +1677,276 @@
       progressTextElement.textContent =
         `${current} / ${total}`;
 
-
     }
 
 
 
-    /* =========================
-       ボタン状態更新
-    ========================= */
+    /* ========================================
+       ボタン状態
+       ======================================== */
 
     function updateButtons() {
+
+      if (!currentLesson) return;
+
+
+      const lastSlide =
+        currentSlide >=
+        currentLesson.slides.length - 1;
 
 
       prevButton.disabled =
         currentSlide === 0;
 
 
-      nextButton.disabled =
-        currentSlide ===
-        currentLesson.slides.length - 1;
+      nextButton.style.display =
+        lastSlide
+          ? "none"
+          : "inline-flex";
 
+
+      /*
+       * 最終スライドなら
+       * 「次へ」の代わりに
+       * 「次の講座へ」を表示
+       */
+
+      if (lastSlide) {
+
+        nextLessonButton.classList.add(
+          "show"
+        );
+
+      }
+
+      else {
+
+        nextLessonButton.classList.remove(
+          "show"
+        );
+
+      }
+
+
+      /*
+       * 最終Lessonなら
+       * ボタンの文字を変更
+       */
+
+      const nextLesson =
+        getNextLesson();
+
+
+      if (!nextLesson) {
+
+        nextLessonButton.textContent =
+          "講座を完了 ✓";
+
+      }
+
+      else {
+
+        nextLessonButton.textContent =
+          `次の講座へ →`;
+
+      }
 
     }
 
 
 
-    /* =========================
-       エラー表示
-    ========================= */
+    /* ========================================
+       次のLesson取得
+       ======================================== */
 
-    function showError(message) {
+    function getNextLesson() {
 
-
-      slideElement.innerHTML = `
-
-        <div class="error">
-
-          <h2>
-            エラー
-          </h2>
-
-          <p>
-            ${message}
-          </p>
-
-        </div>
-
-      `;
+      if (!courseData) return null;
 
 
-      prevButton.disabled = true;
-
-
-      nextButton.disabled = true;
-
+      return courseData.lessons.find(
+        lesson =>
+          Number(lesson.id) ===
+          lessonId + 1
+      );
 
     }
 
 
 
-    /* =========================
-       前へ
-    ========================= */
+    /* ========================================
+       次のLessonへ
+       ======================================== */
 
-    prevButton.addEventListener(
-      "click",
-      () => {
+    function goToNextLesson() {
 
-
-        if (currentSlide > 0) {
+      const nextLesson =
+        getNextLesson();
 
 
-          currentSlide--;
+      /*
+       * 次のLessonがない
+       */
+
+      if (!nextLesson) {
+
+        markLessonCompleted();
 
 
-          renderSlide();
+        alert(
+          "HTML・CSS・JavaScript講座を完了しました！"
+        );
 
 
-        }
+        window.location.href =
+          "../html/";
 
 
-      }
-    );
-
-
-
-    /* =========================
-       次へ
-    ========================= */
-
-    nextButton.addEventListener(
-      "click",
-      () => {
-
-
-        if (
-          currentSlide <
-          currentLesson.slides.length - 1
-        ) {
-
-
-          currentSlide++;
-
-
-          renderSlide();
-
-
-        }
-
+        return;
 
       }
-    );
+
+
+      /*
+       * 現在のLessonを完了扱いにする
+       */
+
+      markLessonCompleted();
+
+
+      /*
+       * 次のLessonへ
+       *
+       * /html-ress/2/
+       */
+
+      window.location.href =
+        `../html-ress/${nextLesson.id}/`;
+
+    }
 
 
 
-    /* =========================
-       キーボード操作
-    ========================= */
+    /* ========================================
+       スキップ
+       ======================================== */
 
-    document.addEventListener(
-      "keydown",
-      event => {
+    function skipLesson() {
 
-
-        if (
-          event.key === "ArrowRight"
-        ) {
+      const nextLesson =
+        getNextLesson();
 
 
-          if (!nextButton.disabled) {
+      /*
+       * スキップ確認
+       */
 
-            nextButton.click();
-
-          }
-
-
-        }
-
-
-
-        if (
-          event.key === "ArrowLeft"
-        ) {
+      const confirmed =
+        window.confirm(
+          "この講座をスキップして、次の講座へ進みますか？"
+        );
 
 
-          if (!prevButton.disabled) {
+      if (!confirmed) {
 
-            prevButton.click();
-
-          }
-
-
-        }
-
+        return;
 
       }
-    );
+
+
+      /*
+       * 現在のLessonを
+       * スキップ済みにする
+       */
+
+      markLessonSkipped();
+
+
+      /*
+       * 次のLessonが存在する場合
+       */
+
+      if (nextLesson) {
+
+        window.location.href =
+          `../html-ress/${nextLesson.id}/`;
+
+        return;
+
+      }
+
+
+      /*
+       * 最終Lessonの場合
+       */
+
+      alert(
+        "この講座には次のLessonがありません。"
+      );
+
+
+      window.location.href =
+        "../html/";
+
+    }
 
 
 
-    /* =========================
-       学習進捗保存
-    ========================= */
+    /* ========================================
+       Lesson完了
+       ======================================== */
+
+    function markLessonCompleted() {
+
+      localStorage.setItem(
+
+        `proglight-html-lesson-${lessonId}-status`,
+
+        "completed"
+
+      );
+
+    }
+
+
+
+    /* ========================================
+       Lessonスキップ
+       ======================================== */
+
+    function markLessonSkipped() {
+
+      localStorage.setItem(
+
+        `proglight-html-lesson-${lessonId}-status`,
+
+        "skipped"
+
+      );
+
+    }
+
+
+
+    /* ========================================
+       進捗保存
+       ======================================== */
 
     function saveProgress() {
+
+      if (!currentLesson) return;
 
 
       const progressData = {
 
-
         lessonId:
           currentLesson.id,
-
 
         slide:
           currentSlide,
 
-
         updatedAt:
           new Date().toISOString()
-
 
       };
 
@@ -1942,16 +1959,17 @@
 
       );
 
-
     }
 
 
 
-    /* =========================
-       保存された進捗を読み込み
-    ========================= */
+    /* ========================================
+       進捗読み込み
+       ======================================== */
 
     function loadProgress() {
+
+      if (!currentLesson) return;
 
 
       const saved =
@@ -1962,11 +1980,14 @@
         );
 
 
-      if (!saved) return;
+      if (!saved) {
+
+        return;
+
+      }
 
 
       try {
-
 
         const data =
           JSON.parse(saved);
@@ -1982,67 +2003,222 @@
 
           &&
 
-          data.slide < currentLesson.slides.length
+          data.slide <
+            currentLesson.slides.length
 
         ) {
-
 
           currentSlide =
             data.slide;
 
-
         }
-
 
       }
 
 
       catch (error) {
 
-
         console.error(
           "進捗データの読み込みに失敗しました",
           error
         );
 
-
       }
-
 
     }
 
 
 
-    /* =========================
+    /* ========================================
+       エラー
+       ======================================== */
+
+    function showError(message) {
+
+      slideElement.innerHTML = `
+
+        <div class="error">
+
+          <h2>エラー</h2>
+
+          <p></p>
+
+        </div>
+
+      `;
+
+
+      slideElement
+        .querySelector("p")
+        .textContent =
+        message;
+
+
+      prevButton.disabled =
+        true;
+
+      nextButton.disabled =
+        true;
+
+      skipButton.disabled =
+        true;
+
+      nextLessonButton.disabled =
+        true;
+
+    }
+
+
+
+    /* ========================================
+       ボタンイベント
+       ======================================== */
+
+    prevButton.addEventListener(
+      "click",
+      () => {
+
+        if (currentSlide > 0) {
+
+          currentSlide--;
+
+          renderSlide();
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+
+        }
+
+      }
+    );
+
+
+
+    nextButton.addEventListener(
+      "click",
+      () => {
+
+        if (
+          currentSlide <
+          currentLesson.slides.length - 1
+        ) {
+
+          currentSlide++;
+
+          renderSlide();
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+
+        }
+
+      }
+    );
+
+
+
+    nextLessonButton.addEventListener(
+      "click",
+      goToNextLesson
+    );
+
+
+
+    skipButton.addEventListener(
+      "click",
+      skipLesson
+    );
+
+
+
+    /* ========================================
+       キーボード
+       ======================================== */
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        /*
+         * 入力欄などでは
+         * キーボード操作を無効化
+         */
+
+        const tag =
+          document.activeElement.tagName;
+
+
+        if (
+          tag === "INPUT" ||
+          tag === "TEXTAREA"
+        ) {
+
+          return;
+
+        }
+
+
+        if (
+          event.key === "ArrowRight" ||
+          event.key === " "
+        ) {
+
+          event.preventDefault();
+
+
+          if (
+            !nextButton.disabled &&
+            nextButton.style.display !== "none"
+          ) {
+
+            nextButton.click();
+
+          }
+
+          else if (
+            nextLessonButton.classList.contains(
+              "show"
+            )
+          ) {
+
+            nextLessonButton.click();
+
+          }
+
+        }
+
+
+        if (
+          event.key === "ArrowLeft"
+        ) {
+
+          event.preventDefault();
+
+
+          if (!prevButton.disabled) {
+
+            prevButton.click();
+
+          }
+
+        }
+
+      }
+    );
+
+
+
+    /* ========================================
        初期化
-    ========================= */
+       ======================================== */
 
-    async function init() {
-
-
-      await loadCourse();
-
-
-      if (currentLesson) {
-
-
-        loadProgress();
-
-
-        renderSlide();
-
-
-      }
-
-
-    }
-
-
-    init();
-
+    loadCourse();
 
   </script>
-
 
 </body>
 </html>
