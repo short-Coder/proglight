@@ -1,4 +1,5 @@
-{
+[
+  {
   "course": {
     "id": "html",
     "title": "HTML・CSS・JavaScript講座",
@@ -205,4 +206,5 @@
       ]
     }
   ]
-}
+ }
+]
