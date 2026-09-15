@@ -13,70 +13,2008 @@
         {
           "type": "title",
           "title": "Webサイトとプログラミング",
-          "text": "Webサイトとプログラミングの基本を学びます。"
+          "text": "この講座では、Webサイトがどのように作られているのかを学びます。まずはWebサイトの基本的な仕組みを理解しましょう。"
         },
         {
           "type": "content",
-          "title": "Webサイトとは？",
-          "text": "Webサイトはインターネット上で公開されているページです。",
+          "title": "Webサイトとは何か",
+          "text": "Webサイトとは、文章・画像・動画・リンクなどの情報をまとめて、ブラウザで見られるようにしたものです。",
           "list": [
-            "HTMLで構造を作る",
-            "CSSでデザインする",
-            "JavaScriptで動きを作る"
+            "文章",
+            "画像・動画",
+            "リンク",
+            "ボタンなどの操作"
           ]
-        },
-        {
-          "type": "code",
-          "title": "HTMLの例",
-          "language": "html",
-          "code": "<h1>Hello World</h1>\\n<p>こんにちは！</p>"
         },
         {
           "type": "flow",
-          "title": "Webサイトが表示される流れ",
+          "title": "Webサイトが表示される仕組み",
           "steps": [
-            "ブラウザを開く",
-            "URLを入力する",
-            "サーバーへアクセスする",
-            "データを受け取る",
-            "Webページが表示される"
+            "ユーザーがブラウザにURLを入力する",
+            "ブラウザがサーバーにリクエストを送る",
+            "サーバーがHTML・CSS・JavaScriptファイルを返す",
+            "ブラウザがファイルを読み込む",
+            "ブラウザが画面にWebページを表示する"
           ]
         },
         {
+          "type": "content",
+          "title": "HTMLとは何か",
+          "text": "HTMLはWebページの構造を作るための言語です。見出しや文章、画像、リンクなどの要素を配置します。"
+        },
+        {
+          "type": "content",
+          "title": "CSSとは何か",
+          "text": "CSSはWebページの見た目（デザイン）を作るための言語です。文字の色やサイズ、レイアウトなどを指定します。"
+        },
+        {
+          "type": "content",
+          "title": "JavaScriptとは何か",
+          "text": "JavaScriptはWebページに動きをつけるためのプログラミング言語です。クリックしたときの動作やアニメーションなどを作れます。"
+        },
+        {
           "type": "comparison",
-          "title": "HTML・CSS・JavaScript",
+          "title": "HTML・CSS・JavaScriptの違い",
           "items": [
             {
               "name": "HTML",
-              "role": "Webページの構造を作る",
-              "example": "見出し・文章・画像など"
+              "role": "Webページの構造",
+              "example": "見出し・文章・画像"
             },
             {
               "name": "CSS",
-              "role": "Webページのデザインを作る",
-              "example": "色・サイズ・レイアウトなど"
+              "role": "Webページのデザイン",
+              "example": "色・サイズ・レイアウト"
             },
             {
               "name": "JavaScript",
-              "role": "Webページに動きや機能を追加する",
-              "example": "クリック・ゲーム・アプリなど"
+              "role": "Webページの動作",
+              "example": "クリック・アニメーション"
             }
           ]
         },
         {
           "type": "summary",
-          "title": "まとめ",
+          "title": "今回のまとめ",
           "list": [
-            "HTMLは構造",
-            "CSSはデザイン",
-            "JavaScriptは動き"
+            "Webサイトはブラウザにファイルが読み込まれて表示される",
+            "HTMLは構造を作る",
+            "CSSはデザインを作る",
+            "JavaScriptは動作を作る"
           ]
         },
         {
           "type": "end",
-          "title": "Lesson 1 完了！",
-          "text": "Webサイトとプログラミングの基本を学びました。",
-          "next": "次は「開発環境とファイル」を学びます。"
+          "title": "レッスン終了！",
+          "text": "Webサイトの基本的な仕組みと、HTML・CSS・JavaScriptの役割を学びました。",
+          "next": "次は開発環境とファイルについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category": "入門編",
+      "title": "開発環境とファイル",
+      "slides": [
+        {
+          "type": "title",
+          "title": "開発環境とファイル",
+          "text": "Webサイトを作るために必要なファイルの作り方と、基本的なファイル構成を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "HTMLファイルの作成",
+          "text": "HTMLファイルは拡張子「.html」で保存します。テキストエディタで新規ファイルを作成し、「index.html」という名前で保存するのが基本です。"
+        },
+        {
+          "type": "content",
+          "title": "CSSファイルの作成",
+          "text": "CSSファイルは拡張子「.css」で保存します。デザインをまとめて管理するために「style.css」という名前がよく使われます。"
+        },
+        {
+          "type": "content",
+          "title": "JavaScriptファイルの作成",
+          "text": "JavaScriptファイルは拡張子「.js」で保存します。動きの処理をまとめるために「script.js」という名前がよく使われます。"
+        },
+        {
+          "type": "content",
+          "title": "ファイル名の基本",
+          "text": "ファイル名をつけるときにはいくつかのルールがあります。",
+          "list": [
+            "半角英数字を使う（日本語や記号は避ける）",
+            "スペースを使わない",
+            "拡張子を正しくつける（.html、.css、.js）",
+            "トップページは index.html にする"
+          ]
+        },
+        {
+          "type": "content",
+          "title": "フォルダの基本",
+          "text": "Webサイトのファイルは、1つのフォルダにまとめて管理します。フォルダ名も半角英数字にするのが基本です。"
+        },
+        {
+          "type": "content",
+          "title": "Webサイトの基本的なファイル構成",
+          "text": "最も基本的なWebサイトは、次の3つのファイルで構成されます。",
+          "list": [
+            "index.html（構造）",
+            "style.css（デザイン）",
+            "script.js（動作）"
+          ]
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "HTML・CSS・JavaScriptはそれぞれ別ファイルにする",
+            "ファイル名は半角英数字にする",
+            "1つのフォルダにまとめて管理する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Webサイト制作に必要なファイルの作り方と構成を学びました。",
+          "next": "次はHTMLを実際に書いてみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "category": "入門編",
+      "title": "HTMLを書いてみよう",
+      "slides": [
+        {
+          "type": "title",
+          "title": "HTMLを書いてみよう",
+          "text": "実際にHTMLを書いて、Webページの基本構造を作ってみましょう。"
+        },
+        {
+          "type": "content",
+          "title": "HTMLの基本構造",
+          "text": "HTMLファイルには決まった書き方があります。DOCTYPE宣言から始まり、htmlタグの中にheadタグとbodyタグを配置します。",
+          "list": [
+            "DOCTYPE宣言",
+            "htmlタグ",
+            "headタグ",
+            "bodyタグ"
+          ]
+        },
+        {
+          "type": "code",
+          "title": "DOCTYPE宣言",
+          "language": "html",
+          "code": "<!DOCTYPE html>"
+        },
+        {
+          "type": "code",
+          "title": "htmlタグ・headタグ・bodyタグ",
+          "language": "html",
+          "code": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n</body>\n</html>"
+        },
+        {
+          "type": "content",
+          "title": "titleタグ",
+          "text": "titleタグはheadタグの中に書き、ブラウザのタブに表示されるページのタイトルを設定します。"
+        },
+        {
+          "type": "code",
+          "title": "titleタグを追加する",
+          "language": "html",
+          "code": "<head>\n  <title>はじめてのHTML</title>\n</head>"
+        },
+        {
+          "type": "code",
+          "title": "h1タグとpタグ",
+          "language": "html",
+          "code": "<body>\n  <h1>Hello World!</h1>\n  <p>Proglightへようこそ！</p>\n</body>"
+        },
+        {
+          "type": "code",
+          "title": "完成したHTML",
+          "language": "html",
+          "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>はじめてのHTML</title>\n</head>\n<body>\n  <h1>Hello World!</h1>\n  <p>Proglightへようこそ！</p>\n</body>\n</html>"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "HTMLはDOCTYPE宣言から始まる",
+            "htmlタグの中にheadタグとbodyタグがある",
+            "titleタグはタブに表示されるタイトル",
+            "h1タグは見出し、pタグは文章を表す"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "HTMLの基本構造と、よく使うタグの書き方を学びました。",
+          "next": "次はCSSを書いてみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "category": "入門編",
+      "title": "CSSを書いてみよう",
+      "slides": [
+        {
+          "type": "title",
+          "title": "CSSを書いてみよう",
+          "text": "CSSを使って、文字や背景に色をつけたり、サイズを変えたりする方法を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "CSSとは",
+          "text": "CSSはWebページの見た目を整えるための言語です。HTMLで作った要素に対して、色やサイズなどのデザインを指定します。"
+        },
+        {
+          "type": "code",
+          "title": "CSSの基本構文",
+          "language": "css",
+          "code": "セレクタ {\n  プロパティ: 値;\n}"
+        },
+        {
+          "type": "code",
+          "title": "文字の色を変える",
+          "language": "css",
+          "code": "h1 {\n  color: red;\n}"
+        },
+        {
+          "type": "code",
+          "title": "文字サイズを変える",
+          "language": "css",
+          "code": "p {\n  font-size: 20px;\n}"
+        },
+        {
+          "type": "code",
+          "title": "背景色を変える",
+          "language": "css",
+          "code": "body {\n  background-color: lightyellow;\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "CSSは「セレクタ { プロパティ: 値; }」の形で書く",
+            "colorで文字の色を変えられる",
+            "font-sizeで文字サイズを変えられる",
+            "background-colorで背景色を変えられる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "CSSの基本的な書き方と、色やサイズの指定方法を学びました。",
+          "next": "次はCSSをHTMLに埋め込む方法を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "category": "入門編",
+      "title": "CSSをHTMLに埋め込もう",
+      "slides": [
+        {
+          "type": "title",
+          "title": "CSSをHTMLに埋め込もう",
+          "text": "作成したCSSをHTMLに接続する3つの方法を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "CSSをHTMLに接続する3つの方法",
+          "text": "CSSをHTMLに反映させる方法には、主に次の3つがあります。",
+          "list": [
+            "外部CSSファイル（linkタグ）",
+            "styleタグ（HTML内に直接書く）",
+            "style属性（タグに直接書く）"
+          ]
+        },
+        {
+          "type": "code",
+          "title": "styleタグ（内部CSS）",
+          "language": "html",
+          "code": "<head>\n  <style>\n    h1 {\n      color: blue;\n    }\n  </style>\n</head>"
+        },
+        {
+          "type": "code",
+          "title": "style属性（インラインCSS）",
+          "language": "html",
+          "code": "<h1 style=\"color: blue;\">Hello World!</h1>"
+        },
+        {
+          "type": "code",
+          "title": "linkタグ（外部CSS）",
+          "language": "html",
+          "code": "<head>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>"
+        },
+        {
+          "type": "content",
+          "title": "rel属性とhref属性",
+          "text": "linkタグのrel属性には読み込むファイルの種類（stylesheet）を指定し、href属性には読み込むCSSファイルのパスを指定します。"
+        },
+        {
+          "type": "comparison",
+          "title": "3つの方法の比較",
+          "items": [
+            {
+              "name": "外部CSSファイル",
+              "role": "別ファイルにまとめて管理",
+              "example": "<link rel=\"stylesheet\" href=\"style.css\">"
+            },
+            {
+              "name": "styleタグ",
+              "role": "HTML内にまとめて記述",
+              "example": "<style>h1{color:blue;}</style>"
+            },
+            {
+              "name": "style属性",
+              "role": "タグ1つだけに直接指定",
+              "example": "<h1 style=\"color:blue;\">"
+            }
+          ]
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "CSSの接続方法には3種類ある",
+            "通常のWebサイトでは外部CSSファイルを使うことが多い",
+            "linkタグのrel属性とhref属性を理解する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "CSSをHTMLに反映させる3つの方法を学びました。",
+          "next": "次はJavaScriptを書いてみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "category": "入門編",
+      "title": "JavaScriptを書いてみよう",
+      "slides": [
+        {
+          "type": "title",
+          "title": "JavaScriptを書いてみよう",
+          "text": "JavaScriptの基本的な書き方と、できることを学びます。"
+        },
+        {
+          "type": "content",
+          "title": "JavaScriptとは",
+          "text": "JavaScriptはWebページに動きや処理を加えるためのプログラミング言語です。ブラウザ上で直接実行されます。"
+        },
+        {
+          "type": "content",
+          "title": "JavaScriptでできること",
+          "text": "JavaScriptを使うと、Webページに次のような機能を追加できます。",
+          "list": [
+            "ボタンをクリックしたときの動作",
+            "画面の内容を書き換える",
+            "アニメーションをつける",
+            "入力内容をチェックする"
+          ]
+        },
+        {
+          "type": "code",
+          "title": "console.log()",
+          "language": "javascript",
+          "code": "console.log(\"Hello World!\");"
+        },
+        {
+          "type": "code",
+          "title": "簡単な命令",
+          "language": "javascript",
+          "code": "let name = \"Proglight\";\nconsole.log(\"ようこそ、\" + name + \"へ！\");"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "JavaScriptはWebページに動きをつける言語",
+            "console.log()で文字を出力できる",
+            "変数を使って値を管理できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "JavaScriptの基本的な書き方とできることを学びました。",
+          "next": "次はJavaScriptをHTMLに埋め込む方法を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "category": "入門編",
+      "title": "JavaScriptをHTMLに埋め込もう",
+      "slides": [
+        {
+          "type": "title",
+          "title": "JavaScriptをHTMLに埋め込もう",
+          "text": "作成したJavaScriptをHTMLに読み込ませる方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "scriptタグでHTML内に直接書く",
+          "language": "html",
+          "code": "<script>\n  console.log(\"Hello World!\");\n</script>"
+        },
+        {
+          "type": "code",
+          "title": "外部JavaScriptファイルを読み込む",
+          "language": "html",
+          "code": "<script src=\"script.js\"></script>"
+        },
+        {
+          "type": "content",
+          "title": "src属性",
+          "text": "scriptタグのsrc属性には、読み込みたいJavaScriptファイルのパスを指定します。"
+        },
+        {
+          "type": "content",
+          "title": "scriptタグを置く場所",
+          "text": "scriptタグはbodyタグの最後（閉じタグの直前）に置くのが基本です。HTMLの読み込みが終わってからJavaScriptを実行できるためです。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "scriptタグでJavaScriptをHTMLに埋め込める",
+            "src属性で外部ファイルを読み込める",
+            "scriptタグはbodyの最後に置くのが基本"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "JavaScriptをHTMLに埋め込む方法を学びました。",
+          "next": "次はHTML・CSS・JavaScriptを接続してみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "category": "入門編",
+      "title": "HTML・CSS・JavaScriptを接続する",
+      "slides": [
+        {
+          "type": "title",
+          "title": "HTML・CSS・JavaScriptを接続する",
+          "text": "3つのファイルをつなげて、1つのWebサイトとして動かす方法を学びます。"
+        },
+        {
+          "type": "flow",
+          "title": "3つのファイルがつながる流れ",
+          "steps": [
+            "index.htmlがブラウザに読み込まれる",
+            "linkタグでstyle.cssが読み込まれる",
+            "scriptタグでscript.jsが読み込まれる",
+            "HTML・CSS・JavaScriptが組み合わさってページが完成する"
+          ]
+        },
+        {
+          "type": "code",
+          "title": "HTMLからCSSとJavaScriptを読み込む",
+          "language": "html",
+          "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>My Website</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>Hello World!</h1>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "type": "comparison",
+          "title": "3つの役割の違い（復習）",
+          "items": [
+            {
+              "name": "HTML",
+              "role": "Webページの構造",
+              "example": "index.html"
+            },
+            {
+              "name": "CSS",
+              "role": "Webページのデザイン",
+              "example": "style.css"
+            },
+            {
+              "name": "JavaScript",
+              "role": "Webページの動作",
+              "example": "script.js"
+            }
+          ]
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "index.htmlがCSSとJavaScriptを読み込んでいる",
+            "linkタグでCSSを、scriptタグでJavaScriptを読み込む",
+            "3つのファイルが組み合わさって1つのWebページになる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "HTML・CSS・JavaScriptを接続する方法を学びました。",
+          "next": "次はいよいよ最初のWebサイトを作ってみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "category": "入門編",
+      "title": "最初のWebサイトを作ろう",
+      "slides": [
+        {
+          "type": "title",
+          "title": "最初のWebサイトを作ろう",
+          "text": "これまで学んだHTML・CSS・JavaScriptを組み合わせて、実際にWebサイトを作ってみましょう。"
+        },
+        {
+          "type": "content",
+          "title": "作るWebサイトの内容",
+          "text": "今回は、タイトルと文章を表示し、ボタンを押すとメッセージが表示されるシンプルなWebサイトを作ります。",
+          "list": [
+            "タイトル",
+            "文章",
+            "デザイン（色・サイズ）",
+            "ボタン",
+            "クリック時の動作"
+          ]
+        },
+        {
+          "type": "code",
+          "title": "index.html",
+          "language": "html",
+          "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>My First Website</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>ようこそ！</h1>\n  <p>これは最初のWebサイトです。</p>\n  <button id=\"myButton\">クリックしてね</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "type": "code",
+          "title": "style.css",
+          "language": "css",
+          "code": "body {\n  background-color: lightyellow;\n  text-align: center;\n}\n\nh1 {\n  color: darkorange;\n}\n\nbutton {\n  font-size: 16px;\n  padding: 10px 20px;\n}"
+        },
+        {
+          "type": "code",
+          "title": "script.js",
+          "language": "javascript",
+          "code": "const button = document.querySelector(\"#myButton\");\n\nbutton.addEventListener(\"click\", function () {\n  alert(\"ボタンがクリックされました！\");\n});"
+        },
+        {
+          "type": "flow",
+          "title": "完成までの流れ",
+          "steps": [
+            "HTMLでタイトル・文章・ボタンを作る",
+            "CSSでデザインを整える",
+            "JavaScriptでボタンをクリックしたときの動作を作る",
+            "3つのファイルを接続して表示を確認する"
+          ]
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "HTML・CSS・JavaScriptを組み合わせてWebサイトを作れた",
+            "ボタンのクリックにJavaScriptで反応できる",
+            "3つの技術がそれぞれの役割を果たしている"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "入門編 終了！",
+          "text": "おめでとうございます！入門編が終了し、簡単なWebページを自分で作れるようになりました。",
+          "next": "次は基礎編に進み、HTML・CSS・JavaScriptをより詳しく学んでいきましょう。"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "category": "基礎編（HTML）",
+      "title": "HTML基本タグ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "HTML基本タグ",
+          "text": "入門編で学んだh1・pタグ以外にも、HTMLにはよく使う基本タグがたくさんあります。ここでまとめて学びましょう。"
+        },
+        {
+          "type": "code",
+          "title": "見出しタグ（h1〜h6）",
+          "language": "html",
+          "code": "<h1>一番大きい見出し</h1>\n<h2>2番目に大きい見出し</h2>\n<h3>3番目の見出し</h3>\n<h4>4番目の見出し</h4>\n<h5>5番目の見出し</h5>\n<h6>一番小さい見出し</h6>"
+        },
+        {
+          "type": "code",
+          "title": "改行と区切り線（br・hr）",
+          "language": "html",
+          "code": "<p>1行目<br>2行目</p>\n<hr>\n<p>区切り線の下の文章</p>"
+        },
+        {
+          "type": "code",
+          "title": "強調タグ（strong・em）",
+          "language": "html",
+          "code": "<p><strong>strongは重要な文章</strong>を表します。</p>\n<p><em>emは強調したい文章</em>を表します。</p>"
+        },
+        {
+          "type": "code",
+          "title": "spanタグ",
+          "language": "html",
+          "code": "<p>文章の中の<span style=\"color: red;\">一部分だけ</span>を装飾できます。</p>"
+        },
+        {
+          "type": "code",
+          "title": "コメント",
+          "language": "html",
+          "code": "<!-- これはコメントです。ブラウザには表示されません -->\n<p>表示される文章</p>"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "h1〜h6で見出しの大きさを使い分ける",
+            "brは改行、hrは区切り線",
+            "strongは重要、emは強調を表す",
+            "spanは文章の一部だけを装飾するときに使う",
+            "コメントは<!-- -->で囲む"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "HTMLの基本的なタグの種類と使い方を学びました。",
+          "next": "次はリンクと画像の使い方を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "category": "基礎編（HTML）",
+      "title": "リンクと画像",
+      "slides": [
+        {
+          "type": "title",
+          "title": "リンクと画像",
+          "text": "Webページには欠かせない、リンクと画像の設定方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "aタグとhref属性",
+          "language": "html",
+          "code": "<a href=\"https://example.com\">サイトへ移動</a>"
+        },
+        {
+          "type": "code",
+          "title": "imgタグ・src属性・alt属性",
+          "language": "html",
+          "code": "<img src=\"photo.jpg\" alt=\"風景の写真\">"
+        },
+        {
+          "type": "content",
+          "title": "相対パスと絶対パス",
+          "text": "パスの指定方法には2種類あります。相対パスは今いるファイルを基準にした位置を、絶対パスはURL全体を指定します。",
+          "list": [
+            "相対パス：images/photo.jpg",
+            "絶対パス：https://example.com/images/photo.jpg"
+          ]
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "aタグとhrefでリンクを作る",
+            "imgタグとsrcで画像を表示する",
+            "altは画像が表示できない時の代替テキスト",
+            "パスには相対パスと絶対パスがある"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "リンクと画像の基本的な設定方法を学びました。",
+          "next": "次はリストの作り方を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "category": "基礎編（HTML）",
+      "title": "リスト",
+      "slides": [
+        {
+          "type": "title",
+          "title": "リスト",
+          "text": "箇条書きを作るためのリストタグを学びます。"
+        },
+        {
+          "type": "code",
+          "title": "順序なしリスト（ul・li）",
+          "language": "html",
+          "code": "<ul>\n  <li>りんご</li>\n  <li>みかん</li>\n  <li>ぶどう</li>\n</ul>"
+        },
+        {
+          "type": "code",
+          "title": "順序ありリスト（ol・li）",
+          "language": "html",
+          "code": "<ol>\n  <li>材料を用意する</li>\n  <li>調理する</li>\n  <li>盛り付ける</li>\n</ol>"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "ulは順序のないリスト",
+            "olは順序のあるリスト",
+            "liはリストの中の1つの項目"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "順序なしリストと順序ありリストの作り方を学びました。",
+          "next": "次は表の作り方を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "category": "基礎編（HTML）",
+      "title": "表",
+      "slides": [
+        {
+          "type": "title",
+          "title": "表",
+          "text": "表形式でデータを表示するためのタグを学びます。"
+        },
+        {
+          "type": "code",
+          "title": "tableの基本構造",
+          "language": "html",
+          "code": "<table>\n  <tr>\n    <th>名前</th>\n    <th>点数</th>\n  </tr>\n  <tr>\n    <td>田中</td>\n    <td>80</td>\n  </tr>\n</table>"
+        },
+        {
+          "type": "code",
+          "title": "theadとtbody",
+          "language": "html",
+          "code": "<table>\n  <thead>\n    <tr>\n      <th>名前</th>\n      <th>点数</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>田中</td>\n      <td>80</td>\n    </tr>\n  </tbody>\n</table>"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "tableは表全体、trは行を表す",
+            "thは見出しセル、tdは通常のセル",
+            "theadは見出し部分、tbodyは本体部分をまとめる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "表の基本的な作り方を学びました。",
+          "next": "次はフォームの作り方を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "category": "基礎編（HTML）",
+      "title": "フォーム",
+      "slides": [
+        {
+          "type": "title",
+          "title": "フォーム",
+          "text": "ユーザーからの入力を受け取るフォームの作り方を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "formタグとinput",
+          "language": "html",
+          "code": "<form>\n  <input type=\"text\" placeholder=\"名前を入力\">\n</form>"
+        },
+        {
+          "type": "code",
+          "title": "textareaとbutton",
+          "language": "html",
+          "code": "<textarea placeholder=\"コメントを入力\"></textarea>\n<button type=\"submit\">送信</button>"
+        },
+        {
+          "type": "code",
+          "title": "selectとoption",
+          "language": "html",
+          "code": "<select>\n  <option value=\"apple\">りんご</option>\n  <option value=\"orange\">みかん</option>\n</select>"
+        },
+        {
+          "type": "content",
+          "title": "labelタグ",
+          "text": "labelタグはinputなどの入力項目にラベルをつけるためのタグです。forとidを対応させることで、ラベルをクリックしても入力欄を選択できるようになります。"
+        },
+        {
+          "type": "code",
+          "title": "labelとinputの組み合わせ",
+          "language": "html",
+          "code": "<label for=\"username\">ユーザー名</label>\n<input id=\"username\" type=\"text\">"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "formタグで入力フォーム全体を囲む",
+            "inputは1行入力、textareaは複数行入力",
+            "selectとoptionで選択肢を作る",
+            "labelは入力項目のラベルを表す"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "フォームを作るための基本タグを学びました。",
+          "next": "次はページ全体の構造を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "category": "基礎編（HTML）",
+      "title": "ページ構造",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ページ構造",
+          "text": "Webページ全体を意味のあるブロックに分けるためのタグを学びます。"
+        },
+        {
+          "type": "code",
+          "title": "ページ全体構造の例",
+          "language": "html",
+          "code": "<body>\n  <header>ヘッダー</header>\n  <nav>ナビゲーション</nav>\n  <main>\n    <section>\n      <article>記事1</article>\n    </section>\n    <aside>サイドメニュー</aside>\n  </main>\n  <footer>フッター</footer>\n</body>"
+        },
+        {
+          "type": "content",
+          "title": "各タグの役割",
+          "text": "それぞれのタグには次のような役割があります。",
+          "list": [
+            "header：ページやセクションの見出し部分",
+            "nav：ナビゲーションメニュー",
+            "main：ページの主要な内容",
+            "section：意味のあるまとまり",
+            "article：独立した記事コンテンツ",
+            "aside：補足的な情報",
+            "footer：ページの下部にある情報"
+          ]
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "ページ全体を意味のあるタグで分けることができる",
+            "header・nav・main・footerは主に全体構造で使う",
+            "section・article・asideは内容の分類に使う"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "ページ構造を作るための各種タグを学びました。",
+          "next": "次はセマンティックHTMLの考え方を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "category": "基礎編（HTML）",
+      "title": "セマンティックHTML",
+      "slides": [
+        {
+          "type": "title",
+          "title": "セマンティックHTML",
+          "text": "見た目だけでなく、意味を意識してHTMLを書く「セマンティックHTML」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "適切なHTMLタグの選び方",
+          "text": "divやspanだけでなく、内容に合ったタグ（header、nav、article など）を選ぶことで、コードの意味が明確になります。"
+        },
+        {
+          "type": "content",
+          "title": "SEOの基本",
+          "text": "SEOとは検索結果で見つけてもらいやすくするための工夫です。適切な見出し構造やタグの使い方は、検索エンジンがページ内容を理解する助けになります。"
+        },
+        {
+          "type": "content",
+          "title": "アクセシビリティの基本",
+          "text": "アクセシビリティとは、誰にとっても使いやすいWebページを作る考え方です。alt属性やlabelタグなどが、視覚に障がいのある人にも情報を伝える助けになります。"
+        },
+        {
+          "type": "content",
+          "title": "見出し構造の考え方",
+          "text": "h1はページに1つだけにし、h2、h3と階層を守って使うことで、ページの構造がわかりやすくなります。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "内容に合ったタグを選ぶことをセマンティックHTMLという",
+            "適切なタグの使用はSEOにも良い影響がある",
+            "アクセシビリティを意識したHTMLを書く",
+            "見出しは階層を守って使う"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "セマンティックHTMLの考え方を学びました。これでHTML編は終了です。",
+          "next": "次からはCSSについて詳しく学んでいきましょう。"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "category": "基礎編（CSS）",
+      "title": "CSSセレクタ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "CSSセレクタ",
+          "text": "CSSで「どの要素にデザインを適用するか」を指定するセレクタについて学びます。"
+        },
+        {
+          "type": "code",
+          "title": "要素セレクタ",
+          "language": "css",
+          "code": "p {\n  color: gray;\n}"
+        },
+        {
+          "type": "code",
+          "title": "classセレクタ",
+          "language": "css",
+          "code": ".highlight {\n  color: red;\n}"
+        },
+        {
+          "type": "code",
+          "title": "idセレクタ",
+          "language": "css",
+          "code": "#header {\n  background-color: navy;\n}"
+        },
+        {
+          "type": "code",
+          "title": "子孫セレクタ",
+          "language": "css",
+          "code": "nav a {\n  color: white;\n}"
+        },
+        {
+          "type": "code",
+          "title": "複数セレクタ",
+          "language": "css",
+          "code": "h1, h2, h3 {\n  font-family: sans-serif;\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "要素セレクタはタグ名で指定する",
+            "classセレクタは「.」、idセレクタは「#」を使う",
+            "子孫セレクタはスペースで区切って指定する",
+            "複数セレクタは「,」で区切ってまとめて指定できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "CSSのさまざまなセレクタの使い方を学びました。",
+          "next": "次は文字とフォントのデザインを学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "category": "基礎編（CSS）",
+      "title": "文字とフォント",
+      "slides": [
+        {
+          "type": "title",
+          "title": "文字とフォント",
+          "text": "文字の色やサイズ、フォントなど、文字に関するCSSプロパティを学びます。"
+        },
+        {
+          "type": "code",
+          "title": "colorとfont-size",
+          "language": "css",
+          "code": "p {\n  color: #333333;\n  font-size: 18px;\n}"
+        },
+        {
+          "type": "code",
+          "title": "font-familyとfont-weight",
+          "language": "css",
+          "code": "p {\n  font-family: \"Helvetica\", sans-serif;\n  font-weight: bold;\n}"
+        },
+        {
+          "type": "code",
+          "title": "text-alignとline-height",
+          "language": "css",
+          "code": "p {\n  text-align: center;\n  line-height: 1.8;\n}"
+        },
+        {
+          "type": "code",
+          "title": "letter-spacing",
+          "language": "css",
+          "code": "h1 {\n  letter-spacing: 2px;\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "colorで文字色、font-sizeで文字サイズを指定する",
+            "font-familyでフォント、font-weightで太さを指定する",
+            "text-alignで文字揃え、line-heightで行間を指定する",
+            "letter-spacingで文字間隔を調整できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "文字とフォントに関するCSSプロパティを学びました。",
+          "next": "次は背景のデザインを学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "category": "基礎編（CSS）",
+      "title": "背景",
+      "slides": [
+        {
+          "type": "title",
+          "title": "背景",
+          "text": "背景色や背景画像の設定方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "background-colorとbackground-image",
+          "language": "css",
+          "code": "body {\n  background-color: #f0f0f0;\n}\n\n.hero {\n  background-image: url(\"bg.jpg\");\n}"
+        },
+        {
+          "type": "code",
+          "title": "background-size・position・repeat",
+          "language": "css",
+          "code": ".hero {\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "background-colorで背景色を指定する",
+            "background-imageで背景画像を指定する",
+            "background-sizeで画像サイズ、positionで位置を指定する",
+            "background-repeatで画像の繰り返しを制御する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "背景に関するCSSプロパティを学びました。",
+          "next": "次はボックスモデルを学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "category": "基礎編（CSS）",
+      "title": "ボックスモデル",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ボックスモデル",
+          "text": "すべてのHTML要素は箱（ボックス）として扱われます。この考え方をボックスモデルといいます。"
+        },
+        {
+          "type": "flow",
+          "title": "ボックスモデルの構成",
+          "steps": [
+            "content（中身：文字や画像）",
+            "padding（内側の余白）",
+            "border（枠線）",
+            "margin（外側の余白）"
+          ]
+        },
+        {
+          "type": "code",
+          "title": "width・height・margin・padding",
+          "language": "css",
+          "code": ".box {\n  width: 200px;\n  height: 100px;\n  margin: 20px;\n  padding: 10px;\n}"
+        },
+        {
+          "type": "code",
+          "title": "borderとborder-radius",
+          "language": "css",
+          "code": ".box {\n  border: 2px solid black;\n  border-radius: 10px;\n}"
+        },
+        {
+          "type": "content",
+          "title": "box-sizing",
+          "text": "box-sizing: border-box; を指定すると、widthやheightにborderとpaddingを含めて計算できるようになり、レイアウトが作りやすくなります。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "要素はcontent・padding・border・marginで構成される",
+            "widthとheightで要素のサイズを指定する",
+            "border-radiusで角を丸くできる",
+            "box-sizing: border-boxでサイズ計算が分かりやすくなる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "ボックスモデルの考え方と関連プロパティを学びました。",
+          "next": "次は要素の表示方法を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "category": "基礎編（CSS）",
+      "title": "表示方法",
+      "slides": [
+        {
+          "type": "title",
+          "title": "表示方法",
+          "text": "displayプロパティを使って、要素の表示のされ方を変える方法を学びます。"
+        },
+        {
+          "type": "comparison",
+          "title": "block・inline・inline-blockの違い",
+          "items": [
+            {
+              "name": "block",
+              "role": "横幅いっぱいに広がり、改行される",
+              "example": "div、p、h1など"
+            },
+            {
+              "name": "inline",
+              "role": "文章の一部として横に並ぶ",
+              "example": "span、aなど"
+            },
+            {
+              "name": "inline-block",
+              "role": "横に並びつつ、幅や高さを指定できる",
+              "example": "display: inline-block;"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "title": "display: none で非表示にする",
+          "language": "css",
+          "code": ".hidden {\n  display: none;\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "blockは横幅いっぱいに広がる",
+            "inlineは文章の中で横に並ぶ",
+            "inline-blockは横に並びつつサイズ指定ができる",
+            "display: noneで要素を非表示にできる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "要素の表示方法を切り替えるdisplayプロパティを学びました。",
+          "next": "次はFlexboxを使ったレイアウトを学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "category": "基礎編（CSS）",
+      "title": "Flexbox",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Flexbox",
+          "text": "Flexboxを使うと、要素を横や縦に簡単に並べるレイアウトが作れます。"
+        },
+        {
+          "type": "code",
+          "title": "display: flexの基本",
+          "language": "css",
+          "code": ".container {\n  display: flex;\n}"
+        },
+        {
+          "type": "code",
+          "title": "flex-direction",
+          "language": "css",
+          "code": ".container {\n  display: flex;\n  flex-direction: column;\n}"
+        },
+        {
+          "type": "code",
+          "title": "justify-contentとalign-items",
+          "language": "css",
+          "code": ".container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}"
+        },
+        {
+          "type": "code",
+          "title": "gapとflex-wrap",
+          "language": "css",
+          "code": ".container {\n  display: flex;\n  gap: 16px;\n  flex-wrap: wrap;\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "display: flexで子要素を並べられる",
+            "flex-directionで並ぶ方向を指定する",
+            "justify-contentは横方向、align-itemsは縦方向の揃え方を指定する",
+            "gapで要素間の間隔、flex-wrapで折り返しを指定できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Flexboxを使った基本的なレイアウト方法を学びました。",
+          "next": "次はCSS Gridを学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "category": "基礎編（CSS）",
+      "title": "CSS Grid",
+      "slides": [
+        {
+          "type": "title",
+          "title": "CSS Grid",
+          "text": "CSS Gridを使うと、行と列を組み合わせた2次元のレイアウトを作れます。"
+        },
+        {
+          "type": "code",
+          "title": "display: gridの基本",
+          "language": "css",
+          "code": ".container {\n  display: grid;\n}"
+        },
+        {
+          "type": "code",
+          "title": "grid-template-columnsとrows",
+          "language": "css",
+          "code": ".container {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n  grid-template-rows: auto auto;\n}"
+        },
+        {
+          "type": "code",
+          "title": "gapを使ったレイアウト",
+          "language": "css",
+          "code": ".container {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 20px;\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "display: gridで2次元のレイアウトを作れる",
+            "grid-template-columnsで列、grid-template-rowsで行を指定する",
+            "gapで要素同士の間隔を指定できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "CSS Gridを使ったレイアウトの基本を学びました。",
+          "next": "次は擬似クラス・擬似要素を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "category": "基礎編（CSS）",
+      "title": "擬似クラス・擬似要素",
+      "slides": [
+        {
+          "type": "title",
+          "title": "擬似クラス・擬似要素",
+          "text": "特定の状態や位置にだけスタイルを当てる、擬似クラス・擬似要素を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "hover・focus・active",
+          "language": "css",
+          "code": "button:hover {\n  background-color: lightblue;\n}\n\ninput:focus {\n  border-color: blue;\n}\n\nbutton:active {\n  transform: scale(0.95);\n}"
+        },
+        {
+          "type": "code",
+          "title": "nth-child()",
+          "language": "css",
+          "code": "li:nth-child(2) {\n  color: red;\n}"
+        },
+        {
+          "type": "code",
+          "title": "beforeとafter",
+          "language": "css",
+          "code": ".label::before {\n  content: \"★ \";\n}\n\n.label::after {\n  content: \" ★\";\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "hoverはマウスが乗った時、focusは選択された時のスタイル",
+            "activeはクリックされている間のスタイル",
+            "nth-child()で特定の順番の要素を指定できる",
+            "beforeとafterで要素の前後に内容を追加できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "擬似クラスと擬似要素の使い方を学びました。",
+          "next": "次はCSSアニメーションを学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "category": "基礎編（CSS）",
+      "title": "CSSアニメーション",
+      "slides": [
+        {
+          "type": "title",
+          "title": "CSSアニメーション",
+          "text": "CSSだけで要素に動きをつける方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "transition",
+          "language": "css",
+          "code": "button {\n  transition: background-color 0.3s;\n}\n\nbutton:hover {\n  background-color: orange;\n}"
+        },
+        {
+          "type": "code",
+          "title": "transform（translate・scale・rotate）",
+          "language": "css",
+          "code": ".box:hover {\n  transform: translateY(-10px) scale(1.1) rotate(5deg);\n}"
+        },
+        {
+          "type": "code",
+          "title": "keyframesとanimation",
+          "language": "css",
+          "code": "@keyframes fadeIn {\n  from { opacity: 0; }\n  to { opacity: 1; }\n}\n\n.box {\n  animation: fadeIn 1s ease-in;\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "transitionで変化を滑らかにできる",
+            "transformで移動・拡大縮小・回転ができる",
+            "@keyframesでアニメーションの流れを定義する",
+            "animationプロパティでkeyframesを適用する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "CSSアニメーションの基本を学びました。",
+          "next": "次はレスポンシブデザインを学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "category": "基礎編（CSS）",
+      "title": "レスポンシブデザイン",
+      "slides": [
+        {
+          "type": "title",
+          "title": "レスポンシブデザイン",
+          "text": "スマートフォンやタブレットなど、画面サイズに合わせてデザインを変える方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "viewportメタタグ",
+          "language": "html",
+          "code": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
+        },
+        {
+          "type": "code",
+          "title": "media queryの基本",
+          "language": "css",
+          "code": "@media (max-width: 600px) {\n  body {\n    font-size: 14px;\n  }\n}"
+        },
+        {
+          "type": "content",
+          "title": "モバイルファーストの考え方",
+          "text": "モバイルファーストとは、まずスマートフォン向けのデザインを作り、そこから画面が大きくなるにつれてスタイルを追加していく考え方です。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "viewportメタタグでスマホ表示の基準を設定する",
+            "media queryで画面サイズごとにスタイルを変えられる",
+            "モバイルファーストで小さい画面から設計する",
+            "CSS編はこれで終了"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "レスポンシブデザインの基本を学びました。これでCSS編は終了です。",
+          "next": "次からはJavaScriptについて詳しく学んでいきましょう。"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "category": "基礎編（JavaScript）",
+      "title": "JavaScriptの基本",
+      "slides": [
+        {
+          "type": "title",
+          "title": "JavaScriptの基本",
+          "text": "変数の宣言方法など、JavaScriptの基本的な書き方を復習・整理します。"
+        },
+        {
+          "type": "code",
+          "title": "letとconst",
+          "language": "javascript",
+          "code": "let score = 10;\nscore = 20;\n\nconst name = \"Proglight\";"
+        },
+        {
+          "type": "code",
+          "title": "コメントの書き方",
+          "language": "javascript",
+          "code": "// 1行のコメント\n\n/*\n複数行の\nコメント\n*/"
+        },
+        {
+          "type": "code",
+          "title": "console.log()の復習",
+          "language": "javascript",
+          "code": "console.log(\"デバッグ用のメッセージ\");"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "letは値を変更できる変数、constは変更できない変数",
+            "コメントは//または/* */で書く",
+            "console.log()で値を確認できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "JavaScriptの基本的な書き方を復習しました。",
+          "next": "次はデータ型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "category": "基礎編（JavaScript）",
+      "title": "データ型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "データ型",
+          "text": "JavaScriptで扱う値には、いくつかの種類（データ型）があります。"
+        },
+        {
+          "type": "code",
+          "title": "String・Number・Boolean",
+          "language": "javascript",
+          "code": "let name = \"Proglight\"; // String\nlet age = 20;           // Number\nlet isActive = true;    // Boolean"
+        },
+        {
+          "type": "content",
+          "title": "nullとundefinedの違い",
+          "text": "undefinedは値がまだ設定されていない状態を表し、nullは「値が存在しない」ことを意図的に表すために使います。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Stringは文字列、Numberは数値、Booleanは真偽値",
+            "undefinedは未設定の状態",
+            "nullは意図的に「何もない」ことを表す"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "JavaScriptの基本的なデータ型を学びました。",
+          "next": "次は演算子について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "category": "基礎編（JavaScript）",
+      "title": "演算子",
+      "slides": [
+        {
+          "type": "title",
+          "title": "演算子",
+          "text": "計算や比較を行うための演算子について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "四則演算",
+          "language": "javascript",
+          "code": "console.log(1 + 2); // 3\nconsole.log(5 - 2); // 3\nconsole.log(3 * 4); // 12\nconsole.log(10 / 2); // 5"
+        },
+        {
+          "type": "code",
+          "title": "比較演算子",
+          "language": "javascript",
+          "code": "console.log(3 === 3); // true\nconsole.log(3 !== 4); // true\nconsole.log(5 > 3);   // true"
+        },
+        {
+          "type": "code",
+          "title": "論理演算子",
+          "language": "javascript",
+          "code": "console.log(true && false); // false\nconsole.log(true || false); // true\nconsole.log(!true);         // false"
+        },
+        {
+          "type": "code",
+          "title": "代入演算子",
+          "language": "javascript",
+          "code": "let score = 10;\nscore += 5; // score = score + 5\nconsole.log(score); // 15"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "四則演算で計算ができる",
+            "比較演算子で値を比較できる（===、!==、>など）",
+            "論理演算子で複数の条件を組み合わせられる（&&、||、!）",
+            "代入演算子で値を更新できる（+=など）"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "JavaScriptで使う主な演算子を学びました。",
+          "next": "次は条件分岐について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "category": "基礎編（JavaScript）",
+      "title": "条件分岐",
+      "slides": [
+        {
+          "type": "title",
+          "title": "条件分岐",
+          "text": "条件によって処理を変える「条件分岐」を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "if / else if / else",
+          "language": "javascript",
+          "code": "let score = 75;\n\nif (score >= 80) {\n  console.log(\"合格\");\n} else if (score >= 60) {\n  console.log(\"再試験\");\n} else {\n  console.log(\"不合格\");\n}"
+        },
+        {
+          "type": "code",
+          "title": "switch文",
+          "language": "javascript",
+          "code": "let day = \"月\";\n\nswitch (day) {\n  case \"月\":\n    console.log(\"仕事の日\");\n    break;\n  case \"土\":\n  case \"日\":\n    console.log(\"休みの日\");\n    break;\n  default:\n    console.log(\"通常の日\");\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "ifで条件がtrueのときの処理を書く",
+            "else if、elseで他の条件を追加できる",
+            "switchは1つの値によって処理を分けたい時に便利"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "条件によって処理を分ける方法を学びました。",
+          "next": "次は繰り返し処理について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "category": "基礎編（JavaScript）",
+      "title": "繰り返し",
+      "slides": [
+        {
+          "type": "title",
+          "title": "繰り返し",
+          "text": "同じ処理を何度も行うための繰り返し処理を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "for文",
+          "language": "javascript",
+          "code": "for (let i = 0; i < 5; i++) {\n  console.log(i);\n}"
+        },
+        {
+          "type": "code",
+          "title": "while文",
+          "language": "javascript",
+          "code": "let i = 0;\nwhile (i < 5) {\n  console.log(i);\n  i++;\n}"
+        },
+        {
+          "type": "code",
+          "title": "for...of文",
+          "language": "javascript",
+          "code": "const fruits = [\"りんご\", \"みかん\", \"ぶどう\"];\n\nfor (const fruit of fruits) {\n  console.log(fruit);\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "forは回数が決まっている繰り返しに便利",
+            "whileは条件がtrueの間、処理を繰り返す",
+            "for...ofは配列の中身を順番に取り出せる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "繰り返し処理の書き方を学びました。",
+          "next": "次は関数について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "category": "基礎編（JavaScript）",
+      "title": "関数",
+      "slides": [
+        {
+          "type": "title",
+          "title": "関数",
+          "text": "処理をひとまとまりにして再利用できる「関数」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "function宣言・引数・return",
+          "language": "javascript",
+          "code": "function add(a, b) {\n  return a + b;\n}\n\nconsole.log(add(2, 3)); // 5"
+        },
+        {
+          "type": "code",
+          "title": "アロー関数",
+          "language": "javascript",
+          "code": "const add = (a, b) => {\n  return a + b;\n};\n\nconsole.log(add(2, 3)); // 5"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "functionで関数を定義できる",
+            "引数を受け取り、returnで結果を返す",
+            "アロー関数は=>を使った短い書き方"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "関数の基本的な作り方を学びました。",
+          "next": "次は配列について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "category": "基礎編（JavaScript）",
+      "title": "配列",
+      "slides": [
+        {
+          "type": "title",
+          "title": "配列",
+          "text": "複数の値をまとめて扱うことができる「配列」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "配列の作成と要素の取得",
+          "language": "javascript",
+          "code": "const fruits = [\"りんご\", \"みかん\", \"ぶどう\"];\n\nconsole.log(fruits[0]); // りんご"
+        },
+        {
+          "type": "code",
+          "title": "push()とpop()",
+          "language": "javascript",
+          "code": "fruits.push(\"バナナ\"); // 末尾に追加\nfruits.pop();          // 末尾を削除"
+        },
+        {
+          "type": "code",
+          "title": "length",
+          "language": "javascript",
+          "code": "console.log(fruits.length); // 配列の要素数"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "配列は複数の値をまとめて管理できる",
+            "インデックス番号（0から始まる）で要素を取得する",
+            "push()で追加、pop()で末尾の削除ができる",
+            "lengthで配列の要素数を取得できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "配列の基本的な使い方を学びました。",
+          "next": "次はオブジェクトについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "category": "基礎編（JavaScript）",
+      "title": "オブジェクト",
+      "slides": [
+        {
+          "type": "title",
+          "title": "オブジェクト",
+          "text": "名前と値のペアでデータを管理できる「オブジェクト」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "オブジェクトの作成とプロパティ",
+          "language": "javascript",
+          "code": "const user = {\n  name: \"田中\",\n  age: 20\n};\n\nconsole.log(user.name); // 田中"
+        },
+        {
+          "type": "code",
+          "title": "メソッドの定義",
+          "language": "javascript",
+          "code": "const user = {\n  name: \"田中\",\n  greet: function () {\n    console.log(\"こんにちは、\" + this.name + \"です\");\n  }\n};\n\nuser.greet();"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "オブジェクトはプロパティ（名前と値）で構成される",
+            "ドット記法（user.name）で値を取得できる",
+            "オブジェクトの中に関数（メソッド）を定義できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "オブジェクトの基本的な使い方を学びました。",
+          "next": "次はDOM操作について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "category": "基礎編（JavaScript）",
+      "title": "DOM操作",
+      "slides": [
+        {
+          "type": "title",
+          "title": "DOM操作",
+          "text": "JavaScriptでHTMLの内容を書き換える「DOM操作」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "DOMとは",
+          "text": "DOM（Document Object Model）とは、ブラウザがHTMLをJavaScriptから操作できるように変換した構造のことです。"
+        },
+        {
+          "type": "code",
+          "title": "querySelectorとquerySelectorAll",
+          "language": "javascript",
+          "code": "const title = document.querySelector(\"h1\");\nconst items = document.querySelectorAll(\"li\");"
+        },
+        {
+          "type": "code",
+          "title": "textContentとinnerHTML",
+          "language": "javascript",
+          "code": "title.textContent = \"新しいタイトル\";\ntitle.innerHTML = \"<span>新しいタイトル</span>\";"
+        },
+        {
+          "type": "code",
+          "title": "classList",
+          "language": "javascript",
+          "code": "title.classList.add(\"active\");\ntitle.classList.remove(\"active\");\ntitle.classList.toggle(\"active\");"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "DOMはHTMLをJavaScriptから操作するための仕組み",
+            "querySelectorで要素を1つ、querySelectorAllで複数取得する",
+            "textContentは文字、innerHTMLはHTMLごと書き換える",
+            "classListでクラスの追加・削除・切り替えができる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "DOM操作の基本を学びました。",
+          "next": "次はイベントについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "category": "基礎編（JavaScript）",
+      "title": "イベント",
+      "slides": [
+        {
+          "type": "title",
+          "title": "イベント",
+          "text": "クリックや入力など、ユーザーの操作に反応する「イベント」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "addEventListener()の基本",
+          "language": "javascript",
+          "code": "const button = document.querySelector(\"button\");\n\nbutton.addEventListener(\"click\", function () {\n  console.log(\"クリックされました\");\n});"
+        },
+        {
+          "type": "code",
+          "title": "click・input・changeイベント",
+          "language": "javascript",
+          "code": "const input = document.querySelector(\"input\");\n\ninput.addEventListener(\"input\", function () {\n  console.log(input.value);\n});\n\ninput.addEventListener(\"change\", function () {\n  console.log(\"値が確定しました\");\n});"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "addEventListener()でイベントを設定できる",
+            "clickはクリック時、inputは入力中に発火する",
+            "changeは入力が確定した時に発火する",
+            "JavaScript編はこれで終了"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "イベント処理の基本を学びました。これでJavaScript編は終了です。",
+          "next": "次からはCanvasを使った描画について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "category": "基礎編（Canvas）",
+      "title": "Canvas入門",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Canvas入門",
+          "text": "図形やアニメーションを描画できるCanvasの基本を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "canvasタグの書き方",
+          "language": "html",
+          "code": "<canvas id=\"myCanvas\" width=\"400\" height=\"300\"></canvas>"
+        },
+        {
+          "type": "code",
+          "title": "getContext(\"2d\")",
+          "language": "javascript",
+          "code": "const canvas = document.querySelector(\"#myCanvas\");\nconst ctx = canvas.getContext(\"2d\");"
+        },
+        {
+          "type": "content",
+          "title": "Canvasの座標",
+          "text": "Canvasの座標は、左上を(0, 0)として、右方向にx、下方向にyが増えていきます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "canvasタグでwidthとheightを指定する",
+            "getContext(\"2d\")で描画用のオブジェクトを取得する",
+            "Canvasの座標は左上が(0, 0)"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Canvasを使うための基本的な準備方法を学びました。",
+          "next": "次はCanvasで図形を描いてみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "category": "基礎編（Canvas）",
+      "title": "Canvasで図形を描く",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Canvasで図形を描く",
+          "text": "Canvasを使って四角形や円、線を描く方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "fillRectとstrokeRect",
+          "language": "javascript",
+          "code": "ctx.fillRect(50, 50, 100, 80);   // 塗りつぶし四角形\nctx.strokeRect(200, 50, 100, 80); // 枠線の四角形"
+        },
+        {
+          "type": "code",
+          "title": "fillStyleとstrokeStyle",
+          "language": "javascript",
+          "code": "ctx.fillStyle = \"red\";\nctx.fillRect(50, 50, 100, 80);\n\nctx.strokeStyle = \"blue\";\nctx.strokeRect(200, 50, 100, 80);"
+        },
+        {
+          "type": "code",
+          "title": "円を描く（arc）",
+          "language": "javascript",
+          "code": "ctx.beginPath();\nctx.arc(150, 200, 50, 0, Math.PI * 2);\nctx.fillStyle = \"green\";\nctx.fill();"
+        },
+        {
+          "type": "code",
+          "title": "線を描く（moveTo・lineTo）",
+          "language": "javascript",
+          "code": "ctx.beginPath();\nctx.moveTo(50, 250);\nctx.lineTo(300, 250);\nctx.strokeStyle = \"black\";\nctx.stroke();"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "fillRectとstrokeRectで四角形を描ける",
+            "fillStyleとstrokeStyleで色を指定する",
+            "beginPathとarcで円を描ける",
+            "moveToとlineToで線を描ける"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Canvasを使った基本的な図形の描き方を学びました。",
+          "next": "次はCanvasで動きを作ってみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "category": "基礎編（Canvas）",
+      "title": "Canvasで動きを作る",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Canvasで動きを作る",
+          "text": "Canvasを使って、簡単なアニメーションを作る方法を学びます。"
+        },
+        {
+          "type": "flow",
+          "title": "アニメーションの仕組み",
+          "steps": [
+            "座標を少しずつ変更する",
+            "clearRectで画面をクリアする",
+            "新しい座標で図形を描き直す",
+            "requestAnimationFrame()でこれを繰り返す"
+          ]
+        },
+        {
+          "type": "code",
+          "title": "requestAnimationFrame()",
+          "language": "javascript",
+          "code": "function loop() {\n  // 描画処理\n  requestAnimationFrame(loop);\n}\n\nloop();"
+        },
+        {
+          "type": "code",
+          "title": "ボールが動いて跳ね返るサンプル",
+          "language": "javascript",
+          "code": "let x = 50;\nlet dx = 2;\n\nfunction loop() {\n  ctx.clearRect(0, 0, canvas.width, canvas.height);\n\n  x += dx;\n  if (x < 0 || x > canvas.width) {\n    dx = -dx;\n  }\n\n  ctx.beginPath();\n  ctx.arc(x, 150, 20, 0, Math.PI * 2);\n  ctx.fillStyle = \"orange\";\n  ctx.fill();\n\n  requestAnimationFrame(loop);\n}\n\nloop();"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "座標を変更してから再描画することで動きを作る",
+            "clearRectで前のフレームを消してから描き直す",
+            "requestAnimationFrame()でアニメーションループを作る",
+            "壁に当たったら向きを反転させることで跳ね返りを表現できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "基礎編 終了！",
+          "text": "おめでとうございます！基礎編が終了し、一般的なWebサイト制作に必要な知識を習得しました。",
+          "next": "次は応用編でJavaScriptをさらに深く学んでいきましょう。"
         }
       ]
     }
