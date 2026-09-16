@@ -1774,56 +1774,48 @@
 
 
 
-    /* ========================================
-       次のLessonへ
-       ======================================== */
+/* ========================================
+   次のLessonへ
+   ======================================== */
 
-    function goToNextLesson() {
+function goToNextLesson() {
 
-      const nextLesson =
-        getNextLesson();
+  const nextLesson =
+    getNextLesson();
 
+  /*
+   * 次のLessonがない
+   */
 
-      /*
-       * 次のLessonがない
-       */
+  if (!nextLesson) {
 
-      if (!nextLesson) {
+    markLessonCompleted();
 
-        markLessonCompleted();
+    alert(
+      "HTML・CSS・JavaScript講座を完了しました！"
+    );
 
+    window.location.href =
+      "../html/";
 
-        alert(
-          "HTML・CSS・JavaScript講座を完了しました！"
-        );
+    return;
+  }
 
+  /*
+   * 現在のLessonを完了扱いにする
+   */
 
-        window.location.href =
-          "../html/";
+  markLessonCompleted();
 
+  /*
+   * 次のLessonへ
+   *
+   * html-ress.html?id=2
+   */
 
-        return;
-
-      }
-
-
-      /*
-       * 現在のLessonを完了扱いにする
-       */
-
-      markLessonCompleted();
-
-
-      /*
-       * 次のLessonへ
-       *
-       * /html-ress/2/
-       */
-
-      window.location.href =
-        `../html-ress/${nextLesson.id}/`;
-
-    }
+  window.location.href =
+    `/proglight/html-ress.html?id=${nextLesson.id}`;
+}
 
 
 
@@ -1867,9 +1859,8 @@
        */
 
       if (nextLesson) {
-
         window.location.href =
-          `../html-ress/${nextLesson.id}/`;
+  `/proglight/html-ress.html?id=${nextLesson.id}`;
 
         return;
 
