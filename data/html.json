@@ -2017,6 +2017,2755 @@
           "next": "次は応用編でJavaScriptをさらに深く学んでいきましょう。"
         }
       ]
+    },
+    {
+      "id": 40,
+      "category": "応用編（第1章：JavaScriptの深い基礎）",
+      "title": "スコープ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "スコープ",
+          "text": "変数がどの範囲で有効なのかを決める「スコープ」について学びます。"
+        },
+        {
+          "type": "comparison",
+          "title": "スコープの種類",
+          "items": [
+            {
+              "name": "グローバルスコープ",
+              "role": "どこからでもアクセスできる範囲",
+              "example": "ファイルの一番外側で宣言"
+            },
+            {
+              "name": "関数スコープ",
+              "role": "関数の中だけで有効な範囲",
+              "example": "function内でvarを宣言"
+            },
+            {
+              "name": "ブロックスコープ",
+              "role": "{}の中だけで有効な範囲",
+              "example": "if文やfor文の中でletを宣言"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "title": "letとvarの違い",
+          "language": "javascript",
+          "code": "if (true) {\n  var x = 1;\n  let y = 2;\n}\n\nconsole.log(x); // 1（varはブロックスコープを無視する）\nconsole.log(y); // エラー（letはブロックスコープの外に出せない）"
+        },
+        {
+          "type": "content",
+          "title": "スコープチェーン",
+          "text": "内側のスコープから外側のスコープへ順番に変数を探しに行く仕組みをスコープチェーンといいます。内側で見つからない場合、外側の変数が使われます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "グローバル・関数・ブロックの3種類のスコープがある",
+            "letとconstはブロックスコープ、varは関数スコープ",
+            "内側から外側へ変数を探す仕組みをスコープチェーンという"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "変数の有効範囲を決めるスコープの仕組みを学びました。",
+          "next": "次は実行コンテキストについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "category": "応用編（第1章：JavaScriptの深い基礎）",
+      "title": "実行コンテキスト",
+      "slides": [
+        {
+          "type": "title",
+          "title": "実行コンテキスト",
+          "text": "JavaScriptがコードをどのように実行しているのか、その仕組みを学びます。"
+        },
+        {
+          "type": "content",
+          "title": "実行コンテキストとは",
+          "text": "実行コンテキストとは、コードが実行される際に変数や関数の情報を管理する「場」のことです。コードが実行されるたびに新しい実行コンテキストが作られます。"
+        },
+        {
+          "type": "flow",
+          "title": "JavaScriptの実行順序",
+          "steps": [
+            "グローバル実行コンテキストが作られる",
+            "変数や関数が事前に登録される（巻き上げ）",
+            "コードが上から順番に実行される",
+            "関数が呼ばれるたびに新しい実行コンテキストが積み上がる",
+            "関数の実行が終わると実行コンテキストが破棄される"
+          ]
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "実行コンテキストは変数や関数を管理する場",
+            "関数が呼ばれるたびに新しい実行コンテキストが作られる",
+            "実行が終わると実行コンテキストは破棄される"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "JavaScriptの実行の仕組みを学びました。",
+          "next": "次はthisについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "category": "応用編（第1章：JavaScriptの深い基礎）",
+      "title": "this",
+      "slides": [
+        {
+          "type": "title",
+          "title": "this",
+          "text": "thisが指し示す対象は、書く場所によって変わります。その仕組みを学びます。"
+        },
+        {
+          "type": "code",
+          "title": "通常の関数でのthis",
+          "language": "javascript",
+          "code": "const user = {\n  name: \"田中\",\n  greet: function () {\n    console.log(this.name); // 田中\n  }\n};\n\nuser.greet();"
+        },
+        {
+          "type": "code",
+          "title": "オブジェクト内のthis",
+          "language": "javascript",
+          "code": "const button = {\n  label: \"送信\",\n  click: function () {\n    console.log(this.label); // 呼び出し元のオブジェクトを指す\n  }\n};"
+        },
+        {
+          "type": "code",
+          "title": "アロー関数との違い",
+          "language": "javascript",
+          "code": "const user = {\n  name: \"田中\",\n  greet: () => {\n    console.log(this.name); // undefined（アロー関数は自分専用のthisを持たない）\n  }\n};"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "通常の関数のthisは呼び出し方によって変わる",
+            "オブジェクトのメソッド内では、そのオブジェクト自身を指す",
+            "アロー関数は自分専用のthisを持たず、外側のthisを引き継ぐ"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "thisの指し示す対象について学びました。",
+          "next": "次はクロージャについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "category": "応用編（第1章：JavaScriptの深い基礎）",
+      "title": "クロージャ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "クロージャ",
+          "text": "関数が外側の変数を覚えておく仕組み「クロージャ」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "クロージャとは",
+          "text": "クロージャとは、関数が定義されたときの外側の変数を、関数の実行後も覚えておく仕組みのことです。"
+        },
+        {
+          "type": "code",
+          "title": "クロージャの例",
+          "language": "javascript",
+          "code": "function createCounter() {\n  let count = 0;\n  return function () {\n    count++;\n    return count;\n  };\n}\n\nconst counter = createCounter();\nconsole.log(counter()); // 1\nconsole.log(counter()); // 2"
+        },
+        {
+          "type": "content",
+          "title": "実用的な使用方法",
+          "text": "クロージャは、外部から直接変更されたくない変数を関数の中に隠しておきたいときや、カウンターのように状態を保持したい処理でよく使われます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "クロージャは外側の変数を覚えておく仕組み",
+            "関数の中に状態を隠して管理できる",
+            "カウンターなど、状態を保持する処理に便利"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "クロージャの仕組みと使いどころを学びました。第1章はこれで終了です。",
+          "next": "次の章では関数についてさらに詳しく学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "category": "応用編（第2章：関数完全理解）",
+      "title": "関数の種類",
+      "slides": [
+        {
+          "type": "title",
+          "title": "関数の種類",
+          "text": "JavaScriptにはいくつかの関数の書き方があります。それぞれの違いを整理します。"
+        },
+        {
+          "type": "comparison",
+          "title": "関数の書き方の比較",
+          "items": [
+            {
+              "name": "関数宣言",
+              "role": "functionキーワードで名前付きで定義",
+              "example": "function add(a, b) { return a + b; }"
+            },
+            {
+              "name": "関数式",
+              "role": "変数に関数を代入する",
+              "example": "const add = function(a, b) { return a + b; };"
+            },
+            {
+              "name": "無名関数",
+              "role": "名前を持たない関数",
+              "example": "function(a, b) { return a + b; }"
+            },
+            {
+              "name": "アロー関数",
+              "role": "=>を使った短い書き方",
+              "example": "const add = (a, b) => a + b;"
+            }
+          ]
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "関数宣言はfunctionキーワードで名前をつけて定義する",
+            "関数式は変数に関数を代入する形で定義する",
+            "無名関数は名前を持たない",
+            "アロー関数は=>を使った短い書き方"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "関数のさまざまな書き方の違いを学びました。",
+          "next": "次は高階関数について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "category": "応用編（第2章：関数完全理解）",
+      "title": "高階関数",
+      "slides": [
+        {
+          "type": "title",
+          "title": "高階関数",
+          "text": "関数を引数に渡したり、関数を返したりする「高階関数」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "関数を引数に渡す",
+          "language": "javascript",
+          "code": "function repeat(times, callback) {\n  for (let i = 0; i < times; i++) {\n    callback(i);\n  }\n}\n\nrepeat(3, (i) => console.log(i));"
+        },
+        {
+          "type": "code",
+          "title": "関数を返す",
+          "language": "javascript",
+          "code": "function multiplier(x) {\n  return function (y) {\n    return x * y;\n  };\n}\n\nconst double = multiplier(2);\nconsole.log(double(5)); // 10"
+        },
+        {
+          "type": "content",
+          "title": "高階関数の考え方",
+          "text": "高階関数とは、関数を引数として受け取ったり、関数を戻り値として返したりする関数のことです。処理を柔軟に組み立てられるようになります。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "高階関数は関数を引数に受け取ったり、関数を返したりする",
+            "処理を部品のように組み合わせられる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "高階関数の考え方を学びました。",
+          "next": "次はコールバック関数について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "category": "応用編（第2章：関数完全理解）",
+      "title": "コールバック関数",
+      "slides": [
+        {
+          "type": "title",
+          "title": "コールバック関数",
+          "text": "処理が終わったタイミングで呼び出される「コールバック関数」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "コールバックとは",
+          "text": "コールバック関数とは、他の関数に引数として渡され、特定のタイミングで呼び出される関数のことです。"
+        },
+        {
+          "type": "code",
+          "title": "実行タイミングと実用例",
+          "language": "javascript",
+          "code": "console.log(\"開始\");\n\nsetTimeout(function () {\n  console.log(\"3秒後に実行される\");\n}, 3000);\n\nconsole.log(\"終了\");"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "コールバック関数は他の関数に渡される関数",
+            "非同期処理の完了時などに呼び出されることが多い"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "コールバック関数の考え方を学びました。",
+          "next": "次は再帰について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "category": "応用編（第2章：関数完全理解）",
+      "title": "再帰",
+      "slides": [
+        {
+          "type": "title",
+          "title": "再帰",
+          "text": "関数が自分自身を呼び出す「再帰」というテクニックを学びます。"
+        },
+        {
+          "type": "content",
+          "title": "再帰関数と終了条件",
+          "text": "再帰関数とは、自分自身を呼び出す関数のことです。無限に呼び出し続けないよう、必ず「終了条件」を用意する必要があります。"
+        },
+        {
+          "type": "code",
+          "title": "再帰の仕組み（階乗の計算）",
+          "language": "javascript",
+          "code": "function factorial(n) {\n  if (n <= 1) {\n    return 1; // 終了条件\n  }\n  return n * factorial(n - 1);\n}\n\nconsole.log(factorial(5)); // 120"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "再帰関数は自分自身を呼び出す関数",
+            "必ず終了条件を用意しないと無限に呼び出され続ける",
+            "階乗の計算などに使われる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "再帰関数の仕組みを学びました。第2章はこれで終了です。",
+          "next": "次の章では配列とオブジェクトについてさらに詳しく学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "category": "応用編（第3章：配列・オブジェクト完全マスター）",
+      "title": "配列操作",
+      "slides": [
+        {
+          "type": "title",
+          "title": "配列操作",
+          "text": "配列を扱う便利なメソッドをまとめて学びます。"
+        },
+        {
+          "type": "code",
+          "title": "forEach()",
+          "language": "javascript",
+          "code": "const nums = [1, 2, 3];\n\nnums.forEach((n) => {\n  console.log(n);\n});"
+        },
+        {
+          "type": "code",
+          "title": "map()とfilter()",
+          "language": "javascript",
+          "code": "const nums = [1, 2, 3, 4];\n\nconst doubled = nums.map((n) => n * 2); // [2, 4, 6, 8]\nconst even = nums.filter((n) => n % 2 === 0); // [2, 4]"
+        },
+        {
+          "type": "code",
+          "title": "find()とreduce()",
+          "language": "javascript",
+          "code": "const nums = [1, 2, 3, 4];\n\nconst found = nums.find((n) => n > 2); // 3\nconst total = nums.reduce((sum, n) => sum + n, 0); // 10"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "forEach()は配列の各要素に対して処理を行う",
+            "map()は変換した新しい配列を作る",
+            "filter()は条件に合う要素だけの配列を作る",
+            "find()は最初に見つかった要素、reduce()は集計に使う"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "配列を操作する基本的なメソッドを学びました。",
+          "next": "次はさらに高度な配列操作を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "category": "応用編（第3章：配列・オブジェクト完全マスター）",
+      "title": "高度な配列操作",
+      "slides": [
+        {
+          "type": "title",
+          "title": "高度な配列操作",
+          "text": "配列をさらに便利に扱うメソッドを学びます。"
+        },
+        {
+          "type": "code",
+          "title": "some()とevery()",
+          "language": "javascript",
+          "code": "const nums = [1, 2, 3, 4];\n\nconsole.log(nums.some((n) => n > 3));  // true（1つでも条件を満たす）\nconsole.log(nums.every((n) => n > 0)); // true（すべてが条件を満たす）"
+        },
+        {
+          "type": "code",
+          "title": "sort()",
+          "language": "javascript",
+          "code": "const nums = [3, 1, 4, 1, 5];\nnums.sort((a, b) => a - b);\nconsole.log(nums); // [1, 1, 3, 4, 5]"
+        },
+        {
+          "type": "code",
+          "title": "includes()とflat()",
+          "language": "javascript",
+          "code": "const nums = [1, 2, 3];\nconsole.log(nums.includes(2)); // true\n\nconst nested = [1, [2, 3], [4]];\nconsole.log(nested.flat()); // [1, 2, 3, 4]"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "some()は1つでも条件を満たすか、every()はすべて満たすかを調べる",
+            "sort()は配列を並び替える",
+            "includes()は値が含まれるか調べ、flat()は配列を平坦化する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "配列を扱う高度なメソッドを学びました。",
+          "next": "次はオブジェクト操作について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "category": "応用編（第3章：配列・オブジェクト完全マスター）",
+      "title": "オブジェクト操作",
+      "slides": [
+        {
+          "type": "title",
+          "title": "オブジェクト操作",
+          "text": "オブジェクトの中身を配列として取り出す方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "Object.keys() / values() / entries()",
+          "language": "javascript",
+          "code": "const user = { name: \"田中\", age: 20 };\n\nconsole.log(Object.keys(user));   // [\"name\", \"age\"]\nconsole.log(Object.values(user)); // [\"田中\", 20]\nconsole.log(Object.entries(user)); // [[\"name\", \"田中\"], [\"age\", 20]]"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Object.keys()はプロパティ名の配列を取得する",
+            "Object.values()は値の配列を取得する",
+            "Object.entries()はキーと値のペアの配列を取得する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "オブジェクトを配列として扱う方法を学びました。",
+          "next": "次は分割代入について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "category": "応用編（第3章：配列・オブジェクト完全マスター）",
+      "title": "分割代入",
+      "slides": [
+        {
+          "type": "title",
+          "title": "分割代入",
+          "text": "配列やオブジェクトから値を簡単に取り出せる「分割代入」を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "配列の分割代入",
+          "language": "javascript",
+          "code": "const [first, second] = [\"りんご\", \"みかん\"];\nconsole.log(first);  // りんご\nconsole.log(second); // みかん"
+        },
+        {
+          "type": "code",
+          "title": "オブジェクトの分割代入",
+          "language": "javascript",
+          "code": "const { name, age } = { name: \"田中\", age: 20 };\nconsole.log(name); // 田中\nconsole.log(age);  // 20"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "分割代入で配列やオブジェクトから値を取り出せる",
+            "配列は順番、オブジェクトはプロパティ名で対応する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "分割代入の書き方を学びました。",
+          "next": "次はスプレッド構文について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "category": "応用編（第3章：配列・オブジェクト完全マスター）",
+      "title": "スプレッド構文",
+      "slides": [
+        {
+          "type": "title",
+          "title": "スプレッド構文",
+          "text": "「...」を使って配列やオブジェクトを展開する、スプレッド構文を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "配列のコピーと結合",
+          "language": "javascript",
+          "code": "const nums1 = [1, 2, 3];\nconst copy = [...nums1];\n\nconst nums2 = [4, 5];\nconst combined = [...nums1, ...nums2];"
+        },
+        {
+          "type": "code",
+          "title": "オブジェクトのコピーと結合",
+          "language": "javascript",
+          "code": "const user = { name: \"田中\" };\nconst copy = { ...user };\n\nconst detail = { age: 20 };\nconst merged = { ...user, ...detail };"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "スプレッド構文（...）で配列やオブジェクトを展開できる",
+            "配列やオブジェクトのコピー・結合が簡単にできる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "スプレッド構文の使い方を学びました。第3章はこれで終了です。",
+          "next": "次の章では非同期JavaScriptについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "category": "応用編（第4章：非同期JavaScript）",
+      "title": "同期と非同期",
+      "slides": [
+        {
+          "type": "title",
+          "title": "同期と非同期",
+          "text": "処理の実行順序に関わる「同期処理」と「非同期処理」の違いを学びます。"
+        },
+        {
+          "type": "content",
+          "title": "同期処理とは",
+          "text": "同期処理とは、コードを上から順番に実行し、前の処理が終わるまで次の処理が待たされる方式です。"
+        },
+        {
+          "type": "content",
+          "title": "非同期処理とは",
+          "text": "非同期処理とは、時間のかかる処理を待たずに次の処理へ進み、完了したタイミングで結果を受け取る方式です。通信処理などでよく使われます。"
+        },
+        {
+          "type": "flow",
+          "title": "JavaScriptの実行モデル",
+          "steps": [
+            "同期的な処理から順番に実行される",
+            "非同期処理（通信など）が開始される",
+            "他の処理が先に進められる",
+            "非同期処理が完了すると、その結果を扱う処理が実行される"
+          ]
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "同期処理は順番に実行され、前の処理を待つ",
+            "非同期処理は待たずに次へ進み、完了時に結果を受け取る",
+            "通信処理など時間のかかる処理でよく使われる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "同期処理と非同期処理の違いを学びました。",
+          "next": "次はPromiseについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "category": "応用編（第4章：非同期JavaScript）",
+      "title": "Promise",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Promise",
+          "text": "非同期処理の結果を扱いやすくする仕組み「Promise」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "Promiseの基本",
+          "language": "javascript",
+          "code": "const promise = new Promise((resolve, reject) => {\n  const success = true;\n  if (success) {\n    resolve(\"成功しました\");\n  } else {\n    reject(\"失敗しました\");\n  }\n});"
+        },
+        {
+          "type": "code",
+          "title": "then()とcatch()",
+          "language": "javascript",
+          "code": "promise\n  .then((result) => {\n    console.log(result);\n  })\n  .catch((error) => {\n    console.log(error);\n  });"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Promiseは非同期処理の結果を表すオブジェクト",
+            "成功時はresolve、失敗時はrejectを呼ぶ",
+            "then()で成功時、catch()で失敗時の処理を書く"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Promiseの基本的な使い方を学びました。",
+          "next": "次はasync/awaitについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "category": "応用編（第4章：非同期JavaScript）",
+      "title": "async / await",
+      "slides": [
+        {
+          "type": "title",
+          "title": "async / await",
+          "text": "Promiseをより読みやすく書ける「async / await」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "async/awaitの基本",
+          "language": "javascript",
+          "code": "async function fetchData() {\n  const result = await someAsyncFunction();\n  console.log(result);\n}"
+        },
+        {
+          "type": "code",
+          "title": "try / catch / finally",
+          "language": "javascript",
+          "code": "async function fetchData() {\n  try {\n    const result = await someAsyncFunction();\n    console.log(result);\n  } catch (error) {\n    console.log(\"エラー:\", error);\n  } finally {\n    console.log(\"処理終了\");\n  }\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "asyncをつけた関数の中でawaitが使える",
+            "awaitはPromiseの結果が返るまで処理を待つ",
+            "try/catch/finallyでエラー処理をまとめて書ける"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "async/awaitを使った非同期処理の書き方を学びました。",
+          "next": "次はFetch APIについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "category": "応用編（第4章：非同期JavaScript）",
+      "title": "Fetch API",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Fetch API",
+          "text": "外部のAPIと通信するためのFetch APIについて学びます。"
+        },
+        {
+          "type": "content",
+          "title": "APIとは",
+          "text": "APIとは、あるプログラムが別のプログラムの機能やデータを利用するための窓口のことです。Webでは、サーバーからデータを取得するためによく使われます。"
+        },
+        {
+          "type": "code",
+          "title": "GETリクエスト",
+          "language": "javascript",
+          "code": "fetch(\"https://api.example.com/users\")\n  .then((response) => response.json())\n  .then((data) => console.log(data));"
+        },
+        {
+          "type": "code",
+          "title": "POSTリクエスト",
+          "language": "javascript",
+          "code": "fetch(\"https://api.example.com/users\", {\n  method: \"POST\",\n  headers: { \"Content-Type\": \"application/json\" },\n  body: JSON.stringify({ name: \"田中\" })\n});"
+        },
+        {
+          "type": "content",
+          "title": "レスポンス処理とエラー処理",
+          "text": "取得したレスポンスは、response.json()などでJavaScriptで扱える形に変換します。通信エラーはcatch()やtry/catchで処理します。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "fetch()でサーバーと通信できる",
+            "GETはデータ取得、POSTはデータ送信に使う",
+            "レスポンスはjson()などで変換して使う",
+            "エラー処理を忘れずに行う"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Fetch APIを使った通信の基本を学びました。",
+          "next": "次はJSONについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "category": "応用編（第4章：非同期JavaScript）",
+      "title": "JSON",
+      "slides": [
+        {
+          "type": "title",
+          "title": "JSON",
+          "text": "データをやり取りするための形式「JSON」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "JSONとJSON形式",
+          "text": "JSON（JavaScript Object Notation）は、データをやり取りするための軽量なテキスト形式です。オブジェクトや配列のような形でデータを表現します。"
+        },
+        {
+          "type": "code",
+          "title": "JSON.parse()とJSON.stringify()",
+          "language": "javascript",
+          "code": "const jsonText = '{\"name\": \"田中\", \"age\": 20}';\nconst obj = JSON.parse(jsonText); // 文字列 → オブジェクト\n\nconst backToText = JSON.stringify(obj); // オブジェクト → 文字列"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "JSONはデータをやり取りするための形式",
+            "JSON.parse()で文字列をオブジェクトに変換する",
+            "JSON.stringify()でオブジェクトを文字列に変換する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "JSON形式の基本を学びました。第4章はこれで終了です。",
+          "next": "次の章ではブラウザAPIについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "category": "応用編（第5章：ブラウザAPI）",
+      "title": "LocalStorage",
+      "slides": [
+        {
+          "type": "title",
+          "title": "LocalStorage",
+          "text": "ブラウザにデータを保存できるLocalStorageについて学びます。"
+        },
+        {
+          "type": "code",
+          "title": "基本操作",
+          "language": "javascript",
+          "code": "localStorage.setItem(\"username\", \"田中\");\nconsole.log(localStorage.getItem(\"username\")); // 田中\n\nlocalStorage.removeItem(\"username\");\nlocalStorage.clear();"
+        },
+        {
+          "type": "code",
+          "title": "JSONとの組み合わせ",
+          "language": "javascript",
+          "code": "const user = { name: \"田中\", age: 20 };\nlocalStorage.setItem(\"user\", JSON.stringify(user));\n\nconst saved = JSON.parse(localStorage.getItem(\"user\"));"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "setItem()で保存、getItem()で取得する",
+            "removeItem()で削除、clear()で全削除する",
+            "オブジェクトはJSON.stringify/parseと組み合わせて保存する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "LocalStorageを使ったデータ保存の方法を学びました。",
+          "next": "次はSessionStorageについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "category": "応用編（第5章：ブラウザAPI）",
+      "title": "SessionStorage",
+      "slides": [
+        {
+          "type": "title",
+          "title": "SessionStorage",
+          "text": "LocalStorageに似た、SessionStorageについて学びます。"
+        },
+        {
+          "type": "comparison",
+          "title": "LocalStorageとSessionStorageの違い",
+          "items": [
+            {
+              "name": "LocalStorage",
+              "role": "タブを閉じてもデータが残る",
+              "example": "ずっと保持したい設定など"
+            },
+            {
+              "name": "SessionStorage",
+              "role": "タブを閉じるとデータが消える",
+              "example": "そのページを開いている間だけの一時的なデータ"
+            }
+          ]
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "SessionStorageの使い方はLocalStorageと同じ",
+            "違いはデータが残る期間（タブを閉じると消えるかどうか）"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "SessionStorageとLocalStorageの違いを学びました。",
+          "next": "次はその他のWeb APIについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "category": "応用編（第5章：ブラウザAPI）",
+      "title": "Web API",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Web API",
+          "text": "ブラウザが提供する便利な機能、Web APIをいくつか紹介します。"
+        },
+        {
+          "type": "code",
+          "title": "Clipboard API",
+          "language": "javascript",
+          "code": "navigator.clipboard.writeText(\"コピーしたい文字列\");"
+        },
+        {
+          "type": "code",
+          "title": "Geolocation API",
+          "language": "javascript",
+          "code": "navigator.geolocation.getCurrentPosition((position) => {\n  console.log(position.coords.latitude, position.coords.longitude);\n});"
+        },
+        {
+          "type": "content",
+          "title": "Notification APIとURL API",
+          "text": "Notification APIを使うとブラウザ通知を表示でき、URL APIを使うとURLの各部分（ホスト名やパラメータなど）を簡単に扱えます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Clipboard APIでクリップボードを操作できる",
+            "Geolocation APIで現在地を取得できる",
+            "Notification APIやURL APIなど、さまざまなWeb APIがある"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "ブラウザが提供するさまざまなWeb APIを学びました。",
+          "next": "次はタイマーについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "category": "応用編（第5章：ブラウザAPI）",
+      "title": "タイマー",
+      "slides": [
+        {
+          "type": "title",
+          "title": "タイマー",
+          "text": "一定時間後や一定間隔で処理を実行するタイマー機能を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "setTimeout()とclearTimeout()",
+          "language": "javascript",
+          "code": "const timerId = setTimeout(() => {\n  console.log(\"3秒後に実行\");\n}, 3000);\n\nclearTimeout(timerId); // タイマーをキャンセル"
+        },
+        {
+          "type": "code",
+          "title": "setInterval()とclearInterval()",
+          "language": "javascript",
+          "code": "const intervalId = setInterval(() => {\n  console.log(\"1秒ごとに実行\");\n}, 1000);\n\nclearInterval(intervalId); // 繰り返しを停止"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "setTimeout()は一定時間後に1回だけ実行する",
+            "setInterval()は一定間隔で繰り返し実行する",
+            "clearTimeout()・clearInterval()でタイマーを止められる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "タイマー処理の使い方を学びました。第5章はこれで終了です。",
+          "next": "次の章ではDOM操作をさらに詳しく学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "category": "応用編（第6章：DOM完全マスター）",
+      "title": "DOM生成",
+      "slides": [
+        {
+          "type": "title",
+          "title": "DOM生成",
+          "text": "JavaScriptから新しいHTML要素を作成する方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "要素の作成と追加",
+          "language": "javascript",
+          "code": "const li = document.createElement(\"li\");\nli.textContent = \"新しい項目\";\n\nconst list = document.querySelector(\"ul\");\nlist.appendChild(li);\n// list.append(li); でも同じ結果になる"
+        },
+        {
+          "type": "code",
+          "title": "要素の削除",
+          "language": "javascript",
+          "code": "li.remove();"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "createElement()で新しい要素を作れる",
+            "appendChild()やappend()で要素を追加する",
+            "remove()で要素を削除できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "JavaScriptで要素を作成・追加・削除する方法を学びました。",
+          "next": "次はイベントについてさらに詳しく学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "category": "応用編（第6章：DOM完全マスター）",
+      "title": "イベント完全理解",
+      "slides": [
+        {
+          "type": "title",
+          "title": "イベント完全理解",
+          "text": "イベント処理の中で使われるeventオブジェクトについて詳しく学びます。"
+        },
+        {
+          "type": "code",
+          "title": "eventオブジェクト",
+          "language": "javascript",
+          "code": "button.addEventListener(\"click\", (event) => {\n  console.log(event);\n});"
+        },
+        {
+          "type": "content",
+          "title": "targetとcurrentTarget",
+          "text": "targetは実際にイベントが発生した要素、currentTargetはイベントリスナーを設定した要素を指します。"
+        },
+        {
+          "type": "code",
+          "title": "preventDefault()",
+          "language": "javascript",
+          "code": "form.addEventListener(\"submit\", (event) => {\n  event.preventDefault(); // フォームの送信をキャンセルする\n});"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "eventオブジェクトにはイベントの情報が入っている",
+            "targetとcurrentTargetは役割が異なる",
+            "preventDefault()で標準の動作をキャンセルできる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "eventオブジェクトの詳しい使い方を学びました。",
+          "next": "次はイベント伝播について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "category": "応用編（第6章：DOM完全マスター）",
+      "title": "イベント伝播",
+      "slides": [
+        {
+          "type": "title",
+          "title": "イベント伝播",
+          "text": "イベントが要素の間をどのように伝わっていくのかを学びます。"
+        },
+        {
+          "type": "flow",
+          "title": "イベントバブリングの流れ",
+          "steps": [
+            "クリックされた要素でイベントが発生する",
+            "親要素へ向かってイベントが伝わっていく",
+            "さらに上の親要素へと伝わっていく",
+            "documentまで伝わって終了する"
+          ]
+        },
+        {
+          "type": "content",
+          "title": "イベントキャプチャ",
+          "text": "イベントキャプチャは、バブリングとは逆に、外側の要素から内側の要素へ向かってイベントが伝わる仕組みです。"
+        },
+        {
+          "type": "code",
+          "title": "stopPropagation()",
+          "language": "javascript",
+          "code": "child.addEventListener(\"click\", (event) => {\n  event.stopPropagation(); // イベントの伝播を止める\n});"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "イベントバブリングは内側から外側へ伝わる",
+            "イベントキャプチャは外側から内側へ伝わる",
+            "stopPropagation()で伝播を止められる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "イベントが伝わる仕組みを学びました。",
+          "next": "次はイベント委譲について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "category": "応用編（第6章：DOM完全マスター）",
+      "title": "イベント委譲",
+      "slides": [
+        {
+          "type": "title",
+          "title": "イベント委譲",
+          "text": "イベント伝播の仕組みを利用した「イベント委譲」というテクニックを学びます。"
+        },
+        {
+          "type": "content",
+          "title": "イベント委譲とは",
+          "text": "イベント委譲とは、子要素1つ1つにイベントを設定するのではなく、親要素にまとめてイベントを設定し、event.targetで対象を判定する方法です。"
+        },
+        {
+          "type": "code",
+          "title": "イベント委譲の実装例",
+          "language": "javascript",
+          "code": "list.addEventListener(\"click\", (event) => {\n  if (event.target.tagName === \"LI\") {\n    console.log(event.target.textContent);\n  }\n});"
+        },
+        {
+          "type": "content",
+          "title": "動的に追加された要素への対応",
+          "text": "イベント委譲を使うと、あとから動的に追加された子要素にも、個別にイベントを設定し直すことなく対応できます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "イベント委譲は親要素にまとめてイベントを設定する方法",
+            "event.targetでクリックされた要素を判定する",
+            "動的に追加された要素にも効率よく対応できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "イベント委譲の考え方を学びました。第6章はこれで終了です。",
+          "next": "次の章ではモジュールとコード設計について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "category": "応用編（第7章：モジュールとコード設計）",
+      "title": "JavaScriptモジュール",
+      "slides": [
+        {
+          "type": "title",
+          "title": "JavaScriptモジュール",
+          "text": "コードをファイルごとに分割できる、モジュールの仕組みを学びます。"
+        },
+        {
+          "type": "code",
+          "title": "exportとimport",
+          "language": "javascript",
+          "code": "// math.js\nexport function add(a, b) {\n  return a + b;\n}\n\n// main.js\nimport { add } from \"./math.js\";\nconsole.log(add(2, 3));"
+        },
+        {
+          "type": "code",
+          "title": "default export",
+          "language": "javascript",
+          "code": "// math.js\nexport default function add(a, b) {\n  return a + b;\n}\n\n// main.js\nimport add from \"./math.js\";"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "exportで他のファイルから使えるようにする",
+            "importで他のファイルの機能を読み込む",
+            "default exportは1ファイル1つだけ設定できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "JavaScriptのモジュールの仕組みを学びました。",
+          "next": "次はコードの分割について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "category": "応用編（第7章：モジュールとコード設計）",
+      "title": "コードの分割",
+      "slides": [
+        {
+          "type": "title",
+          "title": "コードの分割",
+          "text": "大きくなったコードを、扱いやすい単位に分割する考え方を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "ファイル構成と機能別の分割",
+          "text": "1つのファイルにすべての処理を書くのではなく、機能ごとにファイルを分けることで、コードが読みやすく、修正しやすくなります。"
+        },
+        {
+          "type": "content",
+          "title": "再利用可能で保守しやすいコード",
+          "text": "共通処理を関数やモジュールとして切り出すことで、同じコードを何度も書かずに再利用でき、後からの修正もしやすくなります。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "機能ごとにファイルを分けると読みやすくなる",
+            "共通処理は関数やモジュールとして切り出す",
+            "保守しやすいコードを意識する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "コードを分割する考え方を学びました。",
+          "next": "次はエラー処理について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "category": "応用編（第7章：モジュールとコード設計）",
+      "title": "エラー処理",
+      "slides": [
+        {
+          "type": "title",
+          "title": "エラー処理",
+          "text": "プログラムの中で発生するエラーに対応する方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "throwとtry/catch",
+          "language": "javascript",
+          "code": "function checkAge(age) {\n  if (age < 0) {\n    throw new Error(\"年齢は0以上にしてください\");\n  }\n  return age;\n}\n\ntry {\n  checkAge(-1);\n} catch (error) {\n  console.log(error.message);\n}"
+        },
+        {
+          "type": "content",
+          "title": "finally",
+          "text": "finallyブロックは、エラーが発生してもしなくても必ず実行される処理を書くために使います。後片付けの処理などによく使われます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "throwで意図的にエラーを発生させられる",
+            "try/catchでエラーを検知して処理できる",
+            "finallyは必ず実行される処理を書く"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "エラー処理の基本的な書き方を学びました。",
+          "next": "次はデバッグの方法について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "category": "応用編（第7章：モジュールとコード設計）",
+      "title": "デバッグ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "デバッグ",
+          "text": "コードの不具合を見つけて修正する、デバッグの方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "console.table()とconsole.error()",
+          "language": "javascript",
+          "code": "const users = [\n  { name: \"田中\", age: 20 },\n  { name: \"鈴木\", age: 25 }\n];\n\nconsole.table(users);\nconsole.error(\"エラーが発生しました\");"
+        },
+        {
+          "type": "content",
+          "title": "DevToolsとbreakpoint",
+          "text": "ブラウザのDevTools（開発者ツール）を使うと、コードの実行を途中で止める「breakpoint」を設定し、変数の中身を1行ずつ確認しながらエラーの原因を調べられます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "console.table()やconsole.error()で情報を見やすく出力できる",
+            "DevToolsでbreakpointを設定し、処理を1行ずつ確認できる",
+            "エラーメッセージを正しく読むことが大切"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "デバッグの基本的な方法を学びました。第7章はこれで終了です。",
+          "next": "次の章ではJavaScriptの実践技術について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "category": "応用編（第8章：JavaScript実践技術）",
+      "title": "フォームバリデーション",
+      "slides": [
+        {
+          "type": "title",
+          "title": "フォームバリデーション",
+          "text": "入力内容が正しいかどうかをチェックする、フォームバリデーションを学びます。"
+        },
+        {
+          "type": "code",
+          "title": "必須項目のチェック",
+          "language": "javascript",
+          "code": "const input = document.querySelector(\"#name\");\n\nif (input.value === \"\") {\n  console.log(\"名前を入力してください\");\n}"
+        },
+        {
+          "type": "code",
+          "title": "正規表現でのチェック",
+          "language": "javascript",
+          "code": "const email = \"test@example.com\";\nconst pattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;\n\nconsole.log(pattern.test(email)); // true"
+        },
+        {
+          "type": "content",
+          "title": "エラー表示",
+          "text": "入力に問題がある場合は、赤い文字やアイコンなどでどこが間違っているかをユーザーにわかりやすく伝えることが大切です。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "必須項目は空かどうかをチェックする",
+            "正規表現で文字列の形式をチェックできる",
+            "エラーはユーザーにわかりやすく表示する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "フォームバリデーションの基本を学びました。",
+          "next": "次はデータ管理について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "category": "応用編（第8章：JavaScript実践技術）",
+      "title": "データ管理",
+      "slides": [
+        {
+          "type": "title",
+          "title": "データ管理",
+          "text": "アプリの中でデータ（状態）をどう管理するかという考え方を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "状態管理の考え方",
+          "text": "状態管理とは、アプリが持っているデータ（例えば「今の入力内容」や「表示中のリスト」）を、1箇所でまとめて管理する考え方です。"
+        },
+        {
+          "type": "code",
+          "title": "データとUIの同期例",
+          "language": "javascript",
+          "code": "let count = 0;\nconst countText = document.querySelector(\"#count\");\n\nfunction updateUI() {\n  countText.textContent = count;\n}\n\nfunction increment() {\n  count++;\n  updateUI();\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "状態管理はデータを1箇所でまとめて管理する考え方",
+            "データが変わったら画面（UI）を更新する処理を呼び出す",
+            "データと画面を同期させることが大切"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "データ管理の基本的な考え方を学びました。",
+          "next": "次は簡易ルーティングについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "category": "応用編（第8章：JavaScript実践技術）",
+      "title": "簡易ルーティング",
+      "slides": [
+        {
+          "type": "title",
+          "title": "簡易ルーティング",
+          "text": "ページ全体を再読み込みせずに画面を切り替える、簡易ルーティングを学びます。"
+        },
+        {
+          "type": "content",
+          "title": "SPAとは",
+          "text": "SPA（シングルページアプリケーション）とは、1つのHTMLページの中で、JavaScriptを使って表示内容だけを切り替えていくWebアプリのことです。"
+        },
+        {
+          "type": "code",
+          "title": "History APIでURLを変更する",
+          "language": "javascript",
+          "code": "history.pushState({}, \"\", \"/about\");\n\nwindow.addEventListener(\"popstate\", () => {\n  console.log(\"URLが変更されました:\", location.pathname);\n});"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "SPAはページ全体を再読み込みせずに画面を切り替える",
+            "History APIでURLを変更できる",
+            "URLに応じて表示内容を切り替える処理を作る"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "簡易ルーティングの考え方を学びました。",
+          "next": "次はパフォーマンスについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "category": "応用編（第8章：JavaScript実践技術）",
+      "title": "パフォーマンス",
+      "slides": [
+        {
+          "type": "title",
+          "title": "パフォーマンス",
+          "text": "処理を効率よく動かすための工夫について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "不要なDOM操作を減らす",
+          "text": "DOM操作は負荷が高い処理です。同じ要素を何度も書き換えるのではなく、まとめて1回で更新するように工夫すると、処理が軽くなります。"
+        },
+        {
+          "type": "code",
+          "title": "debounce",
+          "language": "javascript",
+          "code": "function debounce(fn, delay) {\n  let timerId;\n  return function (...args) {\n    clearTimeout(timerId);\n    timerId = setTimeout(() => fn(...args), delay);\n  };\n}"
+        },
+        {
+          "type": "code",
+          "title": "throttle",
+          "language": "javascript",
+          "code": "function throttle(fn, interval) {\n  let lastTime = 0;\n  return function (...args) {\n    const now = Date.now();\n    if (now - lastTime >= interval) {\n      lastTime = now;\n      fn(...args);\n    }\n  };\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "不要なDOM操作を減らすと処理が軽くなる",
+            "debounceは連続する処理をまとめて最後の1回だけ実行する",
+            "throttleは処理の実行間隔を制限する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "パフォーマンスを改善するための工夫を学びました。",
+          "next": "次はセキュリティ基礎について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "category": "応用編（第8章：JavaScript実践技術）",
+      "title": "セキュリティ基礎",
+      "slides": [
+        {
+          "type": "title",
+          "title": "セキュリティ基礎",
+          "text": "Webアプリを安全に作るための基本的な考え方を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "XSSとは",
+          "text": "XSS（クロスサイトスクリプティング）とは、悪意のあるスクリプトをWebページに埋め込まれてしまう攻撃のことです。"
+        },
+        {
+          "type": "content",
+          "title": "innerHTMLの危険性",
+          "text": "ユーザーが入力した内容をそのままinnerHTMLに代入すると、悪意のあるスクリプトが実行されてしまう危険があります。"
+        },
+        {
+          "type": "code",
+          "title": "安全なDOM操作の書き方",
+          "language": "javascript",
+          "code": "// 危険な例\nelement.innerHTML = userInput;\n\n// 安全な例\nelement.textContent = userInput;"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "XSSは悪意のあるスクリプトを埋め込まれる攻撃",
+            "ユーザー入力をそのままinnerHTMLに使わない",
+            "textContentを使うことで安全にテキストを表示できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "セキュリティの基本的な考え方を学びました。第8章はこれで終了です。",
+          "next": "次の章ではJavaScriptの言語仕様についてさらに詳しく学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "category": "応用編（第9章：JavaScript言語仕様）",
+      "title": "クラス",
+      "slides": [
+        {
+          "type": "title",
+          "title": "クラス",
+          "text": "オブジェクトの設計図となる「クラス」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "classとconstructor",
+          "language": "javascript",
+          "code": "class User {\n  constructor(name, age) {\n    this.name = name;\n    this.age = age;\n  }\n\n  greet() {\n    console.log(this.name + \"です\");\n  }\n}\n\nconst user = new User(\"田中\", 20);\nuser.greet();"
+        },
+        {
+          "type": "code",
+          "title": "extendsとsuper",
+          "language": "javascript",
+          "code": "class Admin extends User {\n  constructor(name, age) {\n    super(name, age);\n  }\n}\n\nconst admin = new Admin(\"鈴木\", 30);\nadmin.greet();"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "classでオブジェクトの設計図を作れる",
+            "constructorはインスタンス作成時に実行される",
+            "extendsで継承、superで親クラスの機能を呼び出せる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "クラスの基本的な使い方を学びました。",
+          "next": "次はプロトタイプについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "category": "応用編（第9章：JavaScript言語仕様）",
+      "title": "プロトタイプ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "プロトタイプ",
+          "text": "JavaScriptの継承の仕組みを支える「プロトタイプ」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "prototypeとは",
+          "text": "JavaScriptのオブジェクトは、prototypeという仕組みを通じて、他のオブジェクトの機能を引き継ぐことができます。classはこの仕組みを分かりやすく書くための機能です。"
+        },
+        {
+          "type": "code",
+          "title": "プロトタイプチェーンの例",
+          "language": "javascript",
+          "code": "function User(name) {\n  this.name = name;\n}\n\nUser.prototype.greet = function () {\n  console.log(this.name + \"です\");\n};\n\nconst user = new User(\"田中\");\nuser.greet();"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "prototypeを通じてオブジェクトが機能を引き継ぐ",
+            "見つからないプロパティはプロトタイプチェーンをたどって探される",
+            "classはプロトタイプを分かりやすく扱うための書き方"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "プロトタイプの仕組みを学びました。",
+          "next": "次はイテレーターについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "category": "応用編（第9章：JavaScript言語仕様）",
+      "title": "イテレーター",
+      "slides": [
+        {
+          "type": "title",
+          "title": "イテレーター",
+          "text": "値を1つずつ順番に取り出す仕組み「イテレーター」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "iteratorとiterable",
+          "text": "iterableとは、for...ofで繰り返し処理ができるオブジェクトのことです。iteratorは、値を1つずつ取り出すための仕組みを提供します。"
+        },
+        {
+          "type": "code",
+          "title": "for...ofとの関係",
+          "language": "javascript",
+          "code": "const nums = [1, 2, 3];\n\n// 配列はiterableなので、for...ofで順番に取り出せる\nfor (const n of nums) {\n  console.log(n);\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "iterableはfor...ofで繰り返せるオブジェクト",
+            "iteratorは値を1つずつ取り出す仕組み",
+            "配列や文字列は標準でiterableになっている"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "イテレーターの考え方を学びました。",
+          "next": "次はジェネレーターについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "category": "応用編（第9章：JavaScript言語仕様）",
+      "title": "ジェネレーター",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ジェネレーター",
+          "text": "処理の途中で値を返しながら、続きから再開できる「ジェネレーター」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "ジェネレーター関数の基本",
+          "language": "javascript",
+          "code": "function* numberGenerator() {\n  yield 1;\n  yield 2;\n  yield 3;\n}\n\nconst gen = numberGenerator();\nconsole.log(gen.next().value); // 1\nconsole.log(gen.next().value); // 2\nconsole.log(gen.next().value); // 3"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "function*でジェネレーター関数を定義する",
+            "yieldで値を1つずつ返す",
+            "next()を呼ぶたびに続きから処理が再開される"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "ジェネレーター関数の基本を学びました。",
+          "next": "次はSymbolについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "category": "応用編（第9章：JavaScript言語仕様）",
+      "title": "Symbol",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Symbol",
+          "text": "必ず一意な値を作れる「Symbol」というデータ型について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "Symbolとは",
+          "text": "Symbolは、他のどの値とも重複しない、一意な値を作るためのデータ型です。オブジェクトのプロパティ名が他と衝突しないようにしたい場合などに使われます。"
+        },
+        {
+          "type": "code",
+          "title": "Symbolの使用例",
+          "language": "javascript",
+          "code": "const id1 = Symbol(\"id\");\nconst id2 = Symbol(\"id\");\n\nconsole.log(id1 === id2); // false（同じ説明文でも別の値になる）\n\nconst user = {\n  [id1]: 123\n};"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Symbolは必ず一意になる値を作れる",
+            "同じ説明文で作っても、それぞれ別の値として扱われる",
+            "プロパティ名の衝突を避けたい場合などに使う"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Symbolの基本的な使い方を学びました。",
+          "next": "次はProxyについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "category": "応用編（第9章：JavaScript言語仕様）",
+      "title": "Proxy",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Proxy",
+          "text": "オブジェクトへのアクセスを監視・制御できる「Proxy」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "Proxyとは",
+          "text": "Proxyとは、オブジェクトに対する操作（値の取得や設定など）を横取りして、独自の処理を追加できる仕組みです。"
+        },
+        {
+          "type": "code",
+          "title": "getとsetのフック",
+          "language": "javascript",
+          "code": "const user = { name: \"田中\" };\n\nconst handler = {\n  get(target, prop) {\n    console.log(prop + \"が読み取られました\");\n    return target[prop];\n  },\n  set(target, prop, value) {\n    console.log(prop + \"が\" + value + \"に変更されました\");\n    target[prop] = value;\n    return true;\n  }\n};\n\nconst proxyUser = new Proxy(user, handler);\nproxyUser.name; // 「nameが読み取られました」と表示\nproxyUser.name = \"鈴木\"; // 「nameが鈴木に変更されました」と表示"
+        },
+        {
+          "type": "content",
+          "title": "実用例",
+          "text": "Proxyは、データが変更されたタイミングで自動的に画面を更新するような、状態管理の仕組みの内部などで使われています。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Proxyはオブジェクトへの操作を監視・制御できる",
+            "getで値の取得、setで値の設定をフックできる",
+            "状態管理などの仕組みの内部で使われることがある"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "応用編 終了！",
+          "text": "おめでとうございます！応用編（JavaScript完全マスター）が終了しました。JavaScriptの内部の仕組みから実践技術まで、幅広く学ぶことができました。",
+          "next": "ここまでで基本カリキュラムは終了です。次はおまけコンテンツで、便利な小技やUIテクニックを自由に学んでいきましょう。"
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "category": "おまけ（HTML小技）",
+      "title": "detailsとsummaryで開閉メニュー",
+      "slides": [
+        {
+          "type": "title",
+          "title": "detailsとsummaryで開閉メニュー",
+          "text": "detailsタグとsummaryタグを使うと、JavaScriptなしで開閉できるメニューが作れます。"
+        },
+        {
+          "type": "code",
+          "title": "detailsとsummaryで開閉メニュー",
+          "language": "html",
+          "code": "<details>\n  <summary>詳細を見る</summary>\n  <p>ここに詳細内容が入ります。</p>\n</details>"
+        },
+        {
+          "type": "end",
+          "title": "detailsとsummaryで開閉メニュー 終了！",
+          "text": "「detailsとsummaryで開閉メニュー」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "category": "おまけ（HTML小技）",
+      "title": "contenteditableで編集可能にする",
+      "slides": [
+        {
+          "type": "title",
+          "title": "contenteditableで編集可能にする",
+          "text": "contenteditable属性をつけると、その要素を画面上で直接編集できるようになります。"
+        },
+        {
+          "type": "code",
+          "title": "contenteditableで編集可能にする",
+          "language": "html",
+          "code": "<div contenteditable=\"true\">ここをクリックすると編集できます</div>"
+        },
+        {
+          "type": "end",
+          "title": "contenteditableで編集可能にする 終了！",
+          "text": "「contenteditableで編集可能にする」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "category": "おまけ（HTML小技）",
+      "title": "download属性でファイルをダウンロード",
+      "slides": [
+        {
+          "type": "title",
+          "title": "download属性でファイルをダウンロード",
+          "text": "aタグにdownload属性をつけると、リンク先のファイルをその場でダウンロードさせることができます。"
+        },
+        {
+          "type": "code",
+          "title": "download属性でファイルをダウンロード",
+          "language": "html",
+          "code": "<a href=\"file.pdf\" download>PDFをダウンロード</a>"
+        },
+        {
+          "type": "end",
+          "title": "download属性でファイルをダウンロード 終了！",
+          "text": "「download属性でファイルをダウンロード」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "category": "おまけ（HTML小技）",
+      "title": "target=\"_blank\"の使い方",
+      "slides": [
+        {
+          "type": "title",
+          "title": "target=\"_blank\"の使い方",
+          "text": "target=\"_blank\"を指定すると、リンクを新しいタブで開けます。セキュリティのためrel=\"noopener\"も一緒に指定します。"
+        },
+        {
+          "type": "code",
+          "title": "target=\"_blank\"の使い方",
+          "language": "html",
+          "code": "<a href=\"https://example.com\" target=\"_blank\" rel=\"noopener\">新しいタブで開く</a>"
+        },
+        {
+          "type": "end",
+          "title": "target=\"_blank\"の使い方 終了！",
+          "text": "「target=\"_blank\"の使い方」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "category": "おまけ（HTML小技）",
+      "title": "faviconの設定",
+      "slides": [
+        {
+          "type": "title",
+          "title": "faviconの設定",
+          "text": "faviconとは、ブラウザのタブに表示される小さなアイコンのことです。linkタグで設定します。"
+        },
+        {
+          "type": "code",
+          "title": "faviconの設定",
+          "language": "html",
+          "code": "<link rel=\"icon\" href=\"favicon.ico\">"
+        },
+        {
+          "type": "end",
+          "title": "faviconの設定 終了！",
+          "text": "「faviconの設定」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "category": "おまけ（HTML小技）",
+      "title": "data属性",
+      "slides": [
+        {
+          "type": "title",
+          "title": "data属性",
+          "text": "data-から始まる独自の属性（data属性）を使うと、HTML要素にJavaScriptで使いたい情報を持たせることができます。"
+        },
+        {
+          "type": "code",
+          "title": "data属性",
+          "language": "html",
+          "code": "<button data-id=\"123\">削除</button>\n\n<script>\nconst button = document.querySelector(\"button\");\nconsole.log(button.dataset.id); // \"123\"\n</script>"
+        },
+        {
+          "type": "end",
+          "title": "data属性 終了！",
+          "text": "「data属性」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "category": "おまけ（HTML小技）",
+      "title": "iframeの基本",
+      "slides": [
+        {
+          "type": "title",
+          "title": "iframeの基本",
+          "text": "iframeタグを使うと、別のWebページを今のページの中に埋め込んで表示できます。"
+        },
+        {
+          "type": "code",
+          "title": "iframeの基本",
+          "language": "html",
+          "code": "<iframe src=\"https://example.com\" width=\"600\" height=\"400\"></iframe>"
+        },
+        {
+          "type": "end",
+          "title": "iframeの基本 終了！",
+          "text": "「iframeの基本」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "category": "おまけ（CSS小技）",
+      "title": "CSS変数",
+      "slides": [
+        {
+          "type": "title",
+          "title": "CSS変数",
+          "text": "CSS変数を使うと、色やサイズなどの値を1箇所で管理し、使い回すことができます。"
+        },
+        {
+          "type": "code",
+          "title": "CSS変数",
+          "language": "css",
+          "code": ":root {\n  --main-color: #3498db;\n}\n\nh1 {\n  color: var(--main-color);\n}"
+        },
+        {
+          "type": "end",
+          "title": "CSS変数 終了！",
+          "text": "「CSS変数」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "category": "おまけ（CSS小技）",
+      "title": "ダークモード風デザイン",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ダークモード風デザイン",
+          "text": "背景を暗い色、文字を明るい色にすることで、ダークモード風のデザインを作れます。"
+        },
+        {
+          "type": "code",
+          "title": "ダークモード風デザイン",
+          "language": "css",
+          "code": "body {\n  background-color: #121212;\n  color: #eeeeee;\n}"
+        },
+        {
+          "type": "end",
+          "title": "ダークモード風デザイン 終了！",
+          "text": "「ダークモード風デザイン」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "category": "おまけ（CSS小技）",
+      "title": ":hoverだけでメニューを作る",
+      "slides": [
+        {
+          "type": "title",
+          "title": ":hoverだけでメニューを作る",
+          "text": "JavaScriptを使わなくても、:hoverだけでマウスを乗せたときに表示されるメニューを作れます。"
+        },
+        {
+          "type": "code",
+          "title": ":hoverだけでメニューを作る",
+          "language": "css",
+          "code": ".menu:hover .submenu {\n  display: block;\n}\n\n.submenu {\n  display: none;\n}"
+        },
+        {
+          "type": "end",
+          "title": ":hoverだけでメニューを作る 終了！",
+          "text": "「:hoverだけでメニューを作る」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 91,
+      "category": "おまけ（CSS小技）",
+      "title": "position: sticky",
+      "slides": [
+        {
+          "type": "title",
+          "title": "position: sticky",
+          "text": "position: stickyを使うと、スクロールしても画面上の特定の位置に固定される要素を作れます。"
+        },
+        {
+          "type": "code",
+          "title": "position: sticky",
+          "language": "css",
+          "code": "header {\n  position: sticky;\n  top: 0;\n}"
+        },
+        {
+          "type": "end",
+          "title": "position: sticky 終了！",
+          "text": "「position: sticky」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 92,
+      "category": "おまけ（CSS小技）",
+      "title": "backdrop-filter",
+      "slides": [
+        {
+          "type": "title",
+          "title": "backdrop-filter",
+          "text": "backdrop-filterを使うと、要素の背後にある内容をぼかすなどの効果をつけられます。"
+        },
+        {
+          "type": "code",
+          "title": "backdrop-filter",
+          "language": "css",
+          "code": ".glass {\n  backdrop-filter: blur(10px);\n  background-color: rgba(255, 255, 255, 0.2);\n}"
+        },
+        {
+          "type": "end",
+          "title": "backdrop-filter 終了！",
+          "text": "「backdrop-filter」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 93,
+      "category": "おまけ（CSS小技）",
+      "title": "clip-path",
+      "slides": [
+        {
+          "type": "title",
+          "title": "clip-path",
+          "text": "clip-pathを使うと、要素を三角形や多角形など、四角形以外の形に切り抜くことができます。"
+        },
+        {
+          "type": "code",
+          "title": "clip-path",
+          "language": "css",
+          "code": ".shape {\n  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);\n}"
+        },
+        {
+          "type": "end",
+          "title": "clip-path 終了！",
+          "text": "「clip-path」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "category": "おまけ（CSS小技）",
+      "title": "scroll-behavior: smooth",
+      "slides": [
+        {
+          "type": "title",
+          "title": "scroll-behavior: smooth",
+          "text": "scroll-behavior: smoothを指定すると、ページ内リンクなどのスクロールが滑らかになります。"
+        },
+        {
+          "type": "code",
+          "title": "scroll-behavior: smooth",
+          "language": "css",
+          "code": "html {\n  scroll-behavior: smooth;\n}"
+        },
+        {
+          "type": "end",
+          "title": "scroll-behavior: smooth 終了！",
+          "text": "「scroll-behavior: smooth」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "category": "おまけ（CSS小技）",
+      "title": "cursorの変更",
+      "slides": [
+        {
+          "type": "title",
+          "title": "cursorの変更",
+          "text": "cursorプロパティを使うと、マウスカーソルの形を変更できます。"
+        },
+        {
+          "type": "code",
+          "title": "cursorの変更",
+          "language": "css",
+          "code": "button {\n  cursor: pointer;\n}\n\n.disabled {\n  cursor: not-allowed;\n}"
+        },
+        {
+          "type": "end",
+          "title": "cursorの変更 終了！",
+          "text": "「cursorの変更」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "category": "おまけ（JavaScript小技）",
+      "title": "ワンクリックコピー",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ワンクリックコピー",
+          "text": "Clipboard APIを使うと、ボタン1つでテキストをクリップボードにコピーできます。"
+        },
+        {
+          "type": "code",
+          "title": "ワンクリックコピー",
+          "language": "javascript",
+          "code": "button.addEventListener(\"click\", () => {\n  navigator.clipboard.writeText(\"コピーしたい文字列\");\n});"
+        },
+        {
+          "type": "end",
+          "title": "ワンクリックコピー 終了！",
+          "text": "「ワンクリックコピー」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 97,
+      "category": "おまけ（JavaScript小技）",
+      "title": "ランダムな数字を作る",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ランダムな数字を作る",
+          "text": "Math.random()を使うと、指定した範囲のランダムな数字を作れます。"
+        },
+        {
+          "type": "code",
+          "title": "ランダムな数字を作る",
+          "language": "javascript",
+          "code": "const randomNum = Math.floor(Math.random() * 10) + 1; // 1〜10のランダムな整数\nconsole.log(randomNum);"
+        },
+        {
+          "type": "end",
+          "title": "ランダムな数字を作る 終了！",
+          "text": "「ランダムな数字を作る」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 98,
+      "category": "おまけ（JavaScript小技）",
+      "title": "ランダムな色を作る",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ランダムな色を作る",
+          "text": "ランダムな数字を組み合わせることで、ランダムなカラーコードを作れます。"
+        },
+        {
+          "type": "code",
+          "title": "ランダムな色を作る",
+          "language": "javascript",
+          "code": "const randomColor = \"#\" + Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, \"0\");\nconsole.log(randomColor);"
+        },
+        {
+          "type": "end",
+          "title": "ランダムな色を作る 終了！",
+          "text": "「ランダムな色を作る」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "category": "おまけ（JavaScript小技）",
+      "title": "URLの情報を取得する",
+      "slides": [
+        {
+          "type": "title",
+          "title": "URLの情報を取得する",
+          "text": "locationオブジェクトを使うと、現在のページのURLに関する情報を取得できます。"
+        },
+        {
+          "type": "code",
+          "title": "URLの情報を取得する",
+          "language": "javascript",
+          "code": "console.log(location.href);     // URL全体\nconsole.log(location.hostname); // ドメイン名\nconsole.log(location.pathname); // パス部分"
+        },
+        {
+          "type": "end",
+          "title": "URLの情報を取得する 終了！",
+          "text": "「URLの情報を取得する」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "category": "おまけ（JavaScript小技）",
+      "title": "ページをリロードする",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ページをリロードする",
+          "text": "location.reload()を使うと、JavaScriptから現在のページを再読み込みできます。"
+        },
+        {
+          "type": "code",
+          "title": "ページをリロードする",
+          "language": "javascript",
+          "code": "location.reload();"
+        },
+        {
+          "type": "end",
+          "title": "ページをリロードする 終了！",
+          "text": "「ページをリロードする」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "category": "おまけ（JavaScript小技）",
+      "title": "一定時間後に処理する",
+      "slides": [
+        {
+          "type": "title",
+          "title": "一定時間後に処理する",
+          "text": "setTimeout()を使うと、指定した時間が経過したあとに処理を実行できます。"
+        },
+        {
+          "type": "code",
+          "title": "一定時間後に処理する",
+          "language": "javascript",
+          "code": "setTimeout(() => {\n  console.log(\"3秒後に実行されます\");\n}, 3000);"
+        },
+        {
+          "type": "end",
+          "title": "一定時間後に処理する 終了！",
+          "text": "「一定時間後に処理する」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "category": "おまけ（JavaScript小技）",
+      "title": "キーボード操作を取得する",
+      "slides": [
+        {
+          "type": "title",
+          "title": "キーボード操作を取得する",
+          "text": "keydownイベントを使うと、押されたキーの情報を取得できます。"
+        },
+        {
+          "type": "code",
+          "title": "キーボード操作を取得する",
+          "language": "javascript",
+          "code": "document.addEventListener(\"keydown\", (event) => {\n  console.log(event.key);\n});"
+        },
+        {
+          "type": "end",
+          "title": "キーボード操作を取得する 終了！",
+          "text": "「キーボード操作を取得する」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "category": "おまけ（JavaScript小技）",
+      "title": "現在時刻を取得する",
+      "slides": [
+        {
+          "type": "title",
+          "title": "現在時刻を取得する",
+          "text": "Dateオブジェクトを使うと、現在の日時を取得できます。"
+        },
+        {
+          "type": "code",
+          "title": "現在時刻を取得する",
+          "language": "javascript",
+          "code": "const now = new Date();\nconsole.log(now.toLocaleTimeString()); // 現在の時刻\nconsole.log(now.toLocaleDateString()); // 現在の日付"
+        },
+        {
+          "type": "end",
+          "title": "現在時刻を取得する 終了！",
+          "text": "「現在時刻を取得する」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "category": "おまけ（ブラウザの便利機能）",
+      "title": "クリップボード操作",
+      "slides": [
+        {
+          "type": "title",
+          "title": "クリップボード操作",
+          "text": "Clipboard APIを使うと、クリップボードの内容を読み書きできます。"
+        },
+        {
+          "type": "code",
+          "title": "クリップボード操作",
+          "language": "javascript",
+          "code": "// クリップボードから読み取る\nnavigator.clipboard.readText().then((text) => {\n  console.log(text);\n});"
+        },
+        {
+          "type": "end",
+          "title": "クリップボード操作 終了！",
+          "text": "「クリップボード操作」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "category": "おまけ（ブラウザの便利機能）",
+      "title": "全画面表示",
+      "slides": [
+        {
+          "type": "title",
+          "title": "全画面表示",
+          "text": "Fullscreen APIを使うと、ページを全画面表示に切り替えることができます。"
+        },
+        {
+          "type": "code",
+          "title": "全画面表示",
+          "language": "javascript",
+          "code": "document.documentElement.requestFullscreen();\n\n// 全画面表示を解除する\ndocument.exitFullscreen();"
+        },
+        {
+          "type": "end",
+          "title": "全画面表示 終了！",
+          "text": "「全画面表示」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "category": "おまけ（ブラウザの便利機能）",
+      "title": "ブラウザ通知",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ブラウザ通知",
+          "text": "Notification APIを使うと、ブラウザからデスクトップ通知を表示できます。利用には許可が必要です。"
+        },
+        {
+          "type": "code",
+          "title": "ブラウザ通知",
+          "language": "javascript",
+          "code": "Notification.requestPermission().then((permission) => {\n  if (permission === \"granted\") {\n    new Notification(\"お知らせ\", { body: \"処理が完了しました\" });\n  }\n});"
+        },
+        {
+          "type": "end",
+          "title": "ブラウザ通知 終了！",
+          "text": "「ブラウザ通知」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 107,
+      "category": "おまけ（ブラウザの便利機能）",
+      "title": "音声読み上げ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "音声読み上げ",
+          "text": "Web Speech APIを使うと、テキストを音声で読み上げることができます。"
+        },
+        {
+          "type": "code",
+          "title": "音声読み上げ",
+          "language": "javascript",
+          "code": "const utterance = new SpeechSynthesisUtterance(\"こんにちは\");\nspeechSynthesis.speak(utterance);"
+        },
+        {
+          "type": "end",
+          "title": "音声読み上げ 終了！",
+          "text": "「音声読み上げ」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "category": "おまけ（ブラウザの便利機能）",
+      "title": "音声認識",
+      "slides": [
+        {
+          "type": "title",
+          "title": "音声認識",
+          "text": "Web Speech APIには、マイクからの音声を文字に変換する音声認識機能もあります。"
+        },
+        {
+          "type": "code",
+          "title": "音声認識",
+          "language": "javascript",
+          "code": "const recognition = new webkitSpeechRecognition();\nrecognition.lang = \"ja-JP\";\nrecognition.onresult = (event) => {\n  console.log(event.results[0][0].transcript);\n};\nrecognition.start();"
+        },
+        {
+          "type": "end",
+          "title": "音声認識 終了！",
+          "text": "「音声認識」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "category": "おまけ（ブラウザの便利機能）",
+      "title": "画面共有",
+      "slides": [
+        {
+          "type": "title",
+          "title": "画面共有",
+          "text": "Screen Capture APIを使うと、画面の内容を共有・録画するための映像を取得できます。"
+        },
+        {
+          "type": "code",
+          "title": "画面共有",
+          "language": "javascript",
+          "code": "navigator.mediaDevices.getDisplayMedia({ video: true }).then((stream) => {\n  console.log(stream);\n});"
+        },
+        {
+          "type": "end",
+          "title": "画面共有 終了！",
+          "text": "「画面共有」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 110,
+      "category": "おまけ（Canvas発展）",
+      "title": "Canvasに画像を描画",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Canvasに画像を描画",
+          "text": "Imageオブジェクトを使うと、Canvasの上に画像を描画できます。"
+        },
+        {
+          "type": "code",
+          "title": "Canvasに画像を描画",
+          "language": "javascript",
+          "code": "const img = new Image();\nimg.src = \"photo.jpg\";\nimg.onload = () => {\n  ctx.drawImage(img, 0, 0);\n};"
+        },
+        {
+          "type": "end",
+          "title": "Canvasに画像を描画 終了！",
+          "text": "「Canvasに画像を描画」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "category": "おまけ（Canvas発展）",
+      "title": "Canvasに文字を描画",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Canvasに文字を描画",
+          "text": "fillText()を使うと、Canvasの上に文字を描画できます。"
+        },
+        {
+          "type": "code",
+          "title": "Canvasに文字を描画",
+          "language": "javascript",
+          "code": "ctx.font = \"24px sans-serif\";\nctx.fillStyle = \"black\";\nctx.fillText(\"Hello Canvas\", 50, 50);"
+        },
+        {
+          "type": "end",
+          "title": "Canvasに文字を描画 終了！",
+          "text": "「Canvasに文字を描画」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "category": "おまけ（Canvas発展）",
+      "title": "マウスで絵を描く",
+      "slides": [
+        {
+          "type": "title",
+          "title": "マウスで絵を描く",
+          "text": "mousemoveイベントと組み合わせることで、マウスを動かした軌跡に沿って図形を描けます。"
+        },
+        {
+          "type": "code",
+          "title": "マウスで絵を描く",
+          "language": "javascript",
+          "code": "canvas.addEventListener(\"mousemove\", (event) => {\n  ctx.fillRect(event.offsetX, event.offsetY, 2, 2);\n});"
+        },
+        {
+          "type": "end",
+          "title": "マウスで絵を描く 終了！",
+          "text": "「マウスで絵を描く」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 113,
+      "category": "おまけ（Canvas発展）",
+      "title": "簡単なお絵描きソフト",
+      "slides": [
+        {
+          "type": "title",
+          "title": "簡単なお絵描きソフト",
+          "text": "mousedown・mousemove・mouseupの3つのイベントを組み合わせることで、ペンのように線を描けるお絵描きソフトが作れます。マウスを押している間だけ線を描くようにするのがポイントです。"
+        },
+        {
+          "type": "content",
+          "title": "簡単なお絵描きソフト",
+          "text": "実装のポイント：mousedownで描画開始のフラグを立て、mousemoveでフラグが立っている間だけ線を描き、mouseupでフラグを下げます。"
+        },
+        {
+          "type": "end",
+          "title": "簡単なお絵描きソフト 終了！",
+          "text": "「簡単なお絵描きソフト」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 114,
+      "category": "おまけ（Canvas発展）",
+      "title": "パーティクル",
+      "slides": [
+        {
+          "type": "title",
+          "title": "パーティクル",
+          "text": "小さな図形をたくさん生成し、それぞれに座標と速度を持たせて動かすことで、花火や雪のようなパーティクル表現が作れます。"
+        },
+        {
+          "type": "content",
+          "title": "パーティクル",
+          "text": "実装のポイント：配列に複数のパーティクルオブジェクト（x座標、y座標、速度など）を保持し、requestAnimationFrame()のループの中で1つずつ座標を更新して描き直します。"
+        },
+        {
+          "type": "end",
+          "title": "パーティクル 終了！",
+          "text": "「パーティクル」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 115,
+      "category": "おまけ（Canvas発展）",
+      "title": "簡単なゲーム",
+      "slides": [
+        {
+          "type": "title",
+          "title": "簡単なゲーム",
+          "text": "キーボード操作とアニメーションループを組み合わせることで、キャラクターを操作する簡単なゲームが作れます。"
+        },
+        {
+          "type": "content",
+          "title": "簡単なゲーム",
+          "text": "実装のポイント：keydown・keyupイベントで押されているキーを記録し、requestAnimationFrame()のループの中でキャラクターの座標を更新して描き直します。"
+        },
+        {
+          "type": "end",
+          "title": "簡単なゲーム 終了！",
+          "text": "「簡単なゲーム」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 116,
+      "category": "おまけ（UI制作テクニック）",
+      "title": "ボタンのホバーアニメーション",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ボタンのホバーアニメーション",
+          "text": "transitionとtransformを組み合わせると、マウスを乗せたときに滑らかに変化するボタンが作れます。"
+        },
+        {
+          "type": "code",
+          "title": "ボタンのホバーアニメーション",
+          "language": "css",
+          "code": "button {\n  transition: transform 0.2s;\n}\n\nbutton:hover {\n  transform: scale(1.05);\n}"
+        },
+        {
+          "type": "end",
+          "title": "ボタンのホバーアニメーション 終了！",
+          "text": "「ボタンのホバーアニメーション」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 117,
+      "category": "おまけ（UI制作テクニック）",
+      "title": "カードUI",
+      "slides": [
+        {
+          "type": "title",
+          "title": "カードUI",
+          "text": "border-radiusとbox-shadowを組み合わせると、情報をまとめて見せる「カードUI」が作れます。"
+        },
+        {
+          "type": "code",
+          "title": "カードUI",
+          "language": "css",
+          "code": ".card {\n  border-radius: 12px;\n  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);\n  padding: 16px;\n}"
+        },
+        {
+          "type": "end",
+          "title": "カードUI 終了！",
+          "text": "「カードUI」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 118,
+      "category": "おまけ（UI制作テクニック）",
+      "title": "グラスモーフィズム",
+      "slides": [
+        {
+          "type": "title",
+          "title": "グラスモーフィズム",
+          "text": "半透明の背景とbackdrop-filterを組み合わせると、すりガラスのような「グラスモーフィズム」デザインが作れます。"
+        },
+        {
+          "type": "code",
+          "title": "グラスモーフィズム",
+          "language": "css",
+          "code": ".glass-card {\n  background: rgba(255, 255, 255, 0.2);\n  backdrop-filter: blur(12px);\n  border-radius: 16px;\n}"
+        },
+        {
+          "type": "end",
+          "title": "グラスモーフィズム 終了！",
+          "text": "「グラスモーフィズム」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 119,
+      "category": "おまけ（UI制作テクニック）",
+      "title": "ローディング画面",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ローディング画面",
+          "text": "border と @keyframes を組み合わせると、くるくる回るローディングアイコンを作れます。"
+        },
+        {
+          "type": "code",
+          "title": "ローディング画面",
+          "language": "css",
+          "code": ".spinner {\n  border: 4px solid #eeeeee;\n  border-top: 4px solid #333333;\n  border-radius: 50%;\n  width: 40px;\n  height: 40px;\n  animation: spin 1s linear infinite;\n}\n\n@keyframes spin {\n  to {\n    transform: rotate(360deg);\n  }\n}"
+        },
+        {
+          "type": "end",
+          "title": "ローディング画面 終了！",
+          "text": "「ローディング画面」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "category": "おまけ（UI制作テクニック）",
+      "title": "ハンバーガーメニュー",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ハンバーガーメニュー",
+          "text": "画面幅が狭いときに使われる、3本線のアイコンをクリックしてメニューを開閉するUIです。CSSのdisplay切り替えと、JavaScriptのclickイベントを組み合わせて実装します。"
+        },
+        {
+          "type": "content",
+          "title": "ハンバーガーメニュー",
+          "text": "実装のポイント：アイコンをクリックしたら、メニュー用の要素にクラスを付け外しして、display: none / blockを切り替えます。"
+        },
+        {
+          "type": "end",
+          "title": "ハンバーガーメニュー 終了！",
+          "text": "「ハンバーガーメニュー」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 121,
+      "category": "おまけ（UI制作テクニック）",
+      "title": "モーダルウィンドウ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "モーダルウィンドウ",
+          "text": "画面の手前に重ねて表示する小さなウィンドウ（モーダル）です。position: fixedと、背景を覆う半透明のオーバーレイを組み合わせて作ります。"
+        },
+        {
+          "type": "content",
+          "title": "モーダルウィンドウ",
+          "text": "実装のポイント：オーバーレイと本体をposition: fixedで画面全体・中央に配置し、閉じるボタンやオーバーレイのクリックで非表示にします。"
+        },
+        {
+          "type": "end",
+          "title": "モーダルウィンドウ 終了！",
+          "text": "「モーダルウィンドウ」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 122,
+      "category": "おまけ（UI制作テクニック）",
+      "title": "トースト通知",
+      "slides": [
+        {
+          "type": "title",
+          "title": "トースト通知",
+          "text": "画面の端に一時的に表示される通知です。setTimeout()と組み合わせて、数秒後に自動的に消えるようにします。"
+        },
+        {
+          "type": "content",
+          "title": "トースト通知",
+          "text": "実装のポイント：通知用の要素を画面の隅にposition: fixedで表示し、setTimeout()で数秒後にクラスを外して非表示にします。"
+        },
+        {
+          "type": "end",
+          "title": "トースト通知 終了！",
+          "text": "「トースト通知」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 123,
+      "category": "おまけ（UI制作テクニック）",
+      "title": "アコーディオン",
+      "slides": [
+        {
+          "type": "title",
+          "title": "アコーディオン",
+          "text": "クリックすると内容が開閉するUIです。detailsタグを使うか、JavaScriptでクラスの切り替えとmax-heightのアニメーションを組み合わせて実装します。"
+        },
+        {
+          "type": "content",
+          "title": "アコーディオン",
+          "text": "実装のポイント：detailsタグを使えば簡単に実装でき、より凝ったアニメーションをつけたい場合はJavaScriptでmax-heightを切り替えます。"
+        },
+        {
+          "type": "end",
+          "title": "アコーディオン 終了！",
+          "text": "「アコーディオン」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 124,
+      "category": "おまけ（UI制作テクニック）",
+      "title": "タブメニュー",
+      "slides": [
+        {
+          "type": "title",
+          "title": "タブメニュー",
+          "text": "複数のタブを切り替えて内容を表示するUIです。クリックされたタブに応じて、対応する内容だけを表示するように切り替えます。"
+        },
+        {
+          "type": "content",
+          "title": "タブメニュー",
+          "text": "実装のポイント：タブと内容にそれぞれdata属性で対応関係を持たせ、クリックされたタブのdata属性と一致する内容だけを表示します。"
+        },
+        {
+          "type": "end",
+          "title": "タブメニュー 終了！",
+          "text": "「タブメニュー」の使い方を学びました。",
+          "next": "他のおまけコンテンツも自由に見てみましょう。"
+        }
+      ]
     }
   ]
 }
