@@ -1,1 +1,3137 @@
-
+{
+  "course": {
+    "id": "typescript",
+    "title": "TypeScript講座",
+    "description": "TypeScriptを使用して、型安全で保守しやすい本格的なWebアプリケーションを自力で開発できるようになることを目指す講座です。"
+  },
+  "lessons": [
+    {
+      "id": 1,
+      "category": "入門編",
+      "title": "TypeScriptとは",
+      "slides": [
+        {
+          "type": "title",
+          "title": "TypeScriptとは",
+          "text": "これから学んでいく「TypeScript」がどんな言語なのかを学びます。"
+        },
+        {
+          "type": "content",
+          "title": "TypeScriptとJavaScriptとの違い",
+          "text": "TypeScriptは、JavaScriptに「型」という仕組みを追加したプログラミング言語です。JavaScriptのコードはそのままTypeScriptとしても動きますが、型を指定することでより安全にコードを書けます。"
+        },
+        {
+          "type": "content",
+          "title": "TypeScriptを使うメリット",
+          "text": "型を指定することで、実行前にミスに気づけたり、エディタの補完が賢くなったりします。特に大きなプログラムほど、その効果を実感しやすくなります。"
+        },
+        {
+          "type": "content",
+          "title": "型とは何か",
+          "text": "型とは、その値が文字列なのか、数値なのか、といった「値の種類」のことです。TypeScriptでは、変数や関数にあらかじめ型を指定できます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "TypeScriptはJavaScriptに型を追加した言語",
+            "型を使うことで実行前にミスに気づきやすくなる",
+            "型は値の種類を表すもの"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "TypeScriptがどんな言語なのかを学びました。",
+          "next": "次はTypeScriptの実行環境を作ってみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category": "入門編",
+      "title": "TypeScriptの環境を作ろう",
+      "slides": [
+        {
+          "type": "title",
+          "title": "TypeScriptの環境を作ろう",
+          "text": "TypeScriptを実行するための基本的な環境を学びます。"
+        },
+        {
+          "type": "content",
+          "title": ".tsファイルとJavaScriptとの違い",
+          "text": "TypeScriptのコードは、拡張子「.ts」のファイルに書きます。書き方はJavaScriptに似ていますが、変数や関数に型を指定できる点が異なります。"
+        },
+        {
+          "type": "content",
+          "title": "コンパイルとは何か",
+          "text": "コンパイルとは、TypeScriptのコード（.ts）を、ブラウザが実行できるJavaScriptのコード（.js）に変換する作業のことです。"
+        },
+        {
+          "type": "code",
+          "title": "基本的なファイル構成",
+          "language": "text",
+          "code": "project/\n├── index.html\n├── style.css\n├── script.ts\n└── script.js"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "TypeScriptのコードは.tsファイルに書く",
+            "コンパイルによって.tsは.jsに変換される",
+            "ブラウザで実行されるのは変換後の.jsファイル"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "TypeScriptの基本的な環境について学びました。",
+          "next": "次はTypeScriptをWebサイトで実際に使ってみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "category": "入門編",
+      "title": "TypeScriptをWebサイトで使う",
+      "slides": [
+        {
+          "type": "title",
+          "title": "TypeScriptをWebサイトで使う",
+          "text": "TypeScriptをWebサイトで動かすための基本的な流れを学びます。"
+        },
+        {
+          "type": "content",
+          "title": "ブラウザは.tsを直接実行できない",
+          "text": "ブラウザが理解できるのはJavaScriptだけです。そのため、TypeScriptのコードは一度コンパイルしてJavaScriptに変換してから、HTMLに読み込む必要があります。"
+        },
+        {
+          "type": "flow",
+          "title": "基本的な流れ",
+          "steps": [
+            "script.tsにTypeScriptのコードを書く",
+            "コンパイルを実行する",
+            "script.jsが生成される",
+            "HTMLからscript.jsを読み込む"
+          ]
+        },
+        {
+          "type": "code",
+          "title": "HTMLへのJavaScript埋め込み",
+          "language": "html",
+          "code": "<script src=\"script.js\"></script>"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "ブラウザはJavaScriptしか実行できない",
+            "TypeScriptはコンパイルしてJavaScriptに変換してから使う",
+            "HTMLではコンパイル後の.jsファイルを読み込む"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "TypeScriptをWebサイトで使うための基本的な流れを学びました。",
+          "next": "次はTypeScriptの基本的な型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "category": "入門編",
+      "title": "最初の型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "最初の型",
+          "text": "TypeScriptで最初に使う、基本的な3つの型を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "string・number・boolean",
+          "language": "typescript",
+          "code": "let name: string = \"Proglight\";\nlet age: number = 15;\nlet isMember: boolean = true;"
+        },
+        {
+          "type": "content",
+          "title": "型の役割",
+          "text": "変数の後ろに「: 型名」と書くことで、その変数に入れられる値の種類を指定できます。違う種類の値を入れようとすると、エラーとして教えてくれます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "stringは文字列、numberは数値、booleanは真偽値を表す",
+            "変数名の後ろに「: 型名」で型を指定する",
+            "指定した型と違う値を代入しようとするとエラーになる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "TypeScriptの基本的な型を学びました。",
+          "next": "次は型推論について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "category": "入門編",
+      "title": "型推論",
+      "slides": [
+        {
+          "type": "title",
+          "title": "型推論",
+          "text": "型を書かなくても、TypeScriptが自動で型を判断してくれる「型推論」を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "型推論の例",
+          "language": "typescript",
+          "code": "let message = \"こんにちは\";\n// TypeScriptが自動的にstring型として判断する"
+        },
+        {
+          "type": "content",
+          "title": "明示的な型指定との違い",
+          "text": "型を明示的に書かなくても、代入された値からTypeScriptが自動的に型を判断してくれます。ただし、意図をはっきりさせたい場合は、明示的に型を書くこともできます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "型推論はTypeScriptが自動で型を判断する仕組み",
+            "初期値から型が明らかな場合は型を省略できる",
+            "意図を明確にしたいときは明示的に型を書く"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "型推論の仕組みを学びました。",
+          "next": "次は配列とオブジェクトの型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "category": "入門編",
+      "title": "配列とオブジェクトの型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "配列とオブジェクトの型",
+          "text": "配列やオブジェクトにも型を指定する方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "string[]とnumber[]",
+          "language": "typescript",
+          "code": "let users: string[] = [\"田中\", \"佐藤\"];\nlet scores: number[] = [80, 90, 70];"
+        },
+        {
+          "type": "code",
+          "title": "オブジェクトの型指定",
+          "language": "typescript",
+          "code": "let user: { name: string; age: number } = {\n  name: \"田中\",\n  age: 20\n};"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "型[]で「その型の値だけを持つ配列」を表せる",
+            "オブジェクトは{ プロパティ名: 型 }の形で型を指定する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "配列とオブジェクトの型指定を学びました。",
+          "next": "次は関数と型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "category": "入門編",
+      "title": "関数と型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "関数と型",
+          "text": "関数の引数や戻り値に型をつける方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "引数の型と戻り値の型",
+          "language": "typescript",
+          "code": "function add(a: number, b: number): number {\n  return a + b;\n}\n\nconsole.log(add(2, 3)); // 5"
+        },
+        {
+          "type": "content",
+          "title": "関数の型安全性",
+          "text": "引数や戻り値に型をつけることで、間違った種類の値を渡そうとした場合や、想定と違う値を返そうとした場合に、コンパイル時にエラーとして気づくことができます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "引数名の後ろに「: 型」で引数の型を指定する",
+            "関数の後ろに「: 型」で戻り値の型を指定する",
+            "型を指定することで関数の安全性が高まる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "関数に型をつける方法を学びました。",
+          "next": "次はJavaScriptからTypeScriptへの移行について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "category": "入門編",
+      "title": "JavaScriptからTypeScriptへ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "JavaScriptからTypeScriptへ",
+          "text": "既存のJavaScriptのコードに、少しずつ型をつけていく方法を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "既存JavaScriptの型付け",
+          "text": "JavaScriptのコードは、拡張子を.tsに変えるだけでも多くの場合そのまま動きます。そこから少しずつ変数や関数に型をつけていくことで、TypeScript化を進められます。"
+        },
+        {
+          "type": "code",
+          "title": "型エラーを確認する",
+          "language": "typescript",
+          "code": "function greet(name: string) {\n  console.log(\"こんにちは、\" + name);\n}\n\ngreet(123); // エラー：numberはstringに代入できません"
+        },
+        {
+          "type": "content",
+          "title": "JavaScriptコードを改善する",
+          "text": "型エラーは、コードの中に潜んでいた思わぬ間違いを教えてくれることがあります。エラーを1つずつ直していくことで、コード全体の品質を高められます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "既存のJavaScriptに少しずつ型をつけていける",
+            "型エラーはコードの改善点を教えてくれる",
+            "無理に一度にすべて型をつける必要はない"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "JavaScriptからTypeScriptへ移行する考え方を学びました。",
+          "next": "次はいよいよ最初のTypeScriptプログラムを作ってみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "category": "入門編",
+      "title": "最初のTypeScriptプログラム",
+      "slides": [
+        {
+          "type": "title",
+          "title": "最初のTypeScriptプログラム",
+          "text": "HTML・CSS・TypeScriptを使って、簡単なWebページを作ってみましょう。"
+        },
+        {
+          "type": "content",
+          "title": "作るWebサイトの内容",
+          "text": "今回は、ボタンを押すと入力した名前で挨拶を表示する、簡単なWebページを作ります。",
+          "list": [
+            "HTML（入力欄とボタン）",
+            "CSS（見た目）",
+            "TypeScript（変数・型・関数・DOM操作）"
+          ]
+        },
+        {
+          "type": "code",
+          "title": "index.html",
+          "language": "html",
+          "code": "<input id=\"nameInput\" type=\"text\">\n<button id=\"greetButton\">挨拶する</button>\n<p id=\"result\"></p>\n<script src=\"script.js\"></script>"
+        },
+        {
+          "type": "code",
+          "title": "script.ts",
+          "language": "typescript",
+          "code": "const input = document.querySelector(\"#nameInput\") as HTMLInputElement;\nconst button = document.querySelector(\"#greetButton\") as HTMLButtonElement;\nconst result = document.querySelector(\"#result\") as HTMLParagraphElement;\n\nfunction greet(name: string): string {\n  return `こんにちは、${name}さん`;\n}\n\nbutton.addEventListener(\"click\", () => {\n  result.textContent = greet(input.value);\n});"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "HTML・CSS・TypeScriptを組み合わせてWebページを作れた",
+            "変数・型・関数・DOM操作を実際に使うことができた"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "入門編 終了！",
+          "text": "おめでとうございます！入門編が終了し、TypeScriptの役割とJavaScriptとの違い、基本的な型を理解できました。",
+          "next": "次は基礎編で、TypeScriptの型システムをさらに詳しく学んでいきましょう。"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "category": "基礎編（基本の型）",
+      "title": "基本型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "基本型",
+          "text": "TypeScriptの基本的な型をまとめて確認します。"
+        },
+        {
+          "type": "code",
+          "title": "string・number・boolean・bigint・symbol",
+          "language": "typescript",
+          "code": "let name: string = \"田中\";\nlet age: number = 20;\nlet isActive: boolean = true;\nlet big: bigint = 100n;\nlet id: symbol = Symbol(\"id\");"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "string・number・booleanは最もよく使う基本型",
+            "bigintは非常に大きな整数を扱う型",
+            "symbolは必ず一意になる値を表す型"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "TypeScriptの基本型を確認しました。",
+          "next": "次は特殊な型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "category": "基礎編（基本の型）",
+      "title": "特殊な型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "特殊な型",
+          "text": "null・undefined・void・neverという特殊な型について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "nullとundefined",
+          "language": "typescript",
+          "code": "let a: null = null;\nlet b: undefined = undefined;"
+        },
+        {
+          "type": "code",
+          "title": "voidとnever",
+          "language": "typescript",
+          "code": "function log(message: string): void {\n  console.log(message); // 戻り値がない関数はvoid\n}\n\nfunction throwError(): never {\n  throw new Error(\"エラー\"); // 正常に終了しない関数はnever\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "nullとundefinedはそれぞれ「値がない」ことを表す",
+            "voidは戻り値がないことを表す",
+            "neverは正常に終了しない関数などに使う"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "特殊な型の使い方を学びました。",
+          "next": "次はanyとunknownについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "category": "基礎編（基本の型）",
+      "title": "anyとunknown",
+      "slides": [
+        {
+          "type": "title",
+          "title": "anyとunknown",
+          "text": "どんな型でも受け入れられるany型と、より安全なunknown型を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "anyの危険性",
+          "language": "typescript",
+          "code": "let value: any = \"文字列\";\nvalue = 123; // 型チェックが効かなくなる\nvalue.toUpperCase(); // エラーにならないが実行時に壊れる可能性がある"
+        },
+        {
+          "type": "code",
+          "title": "unknownの安全な扱い方",
+          "language": "typescript",
+          "code": "let value: unknown = \"文字列\";\n\nif (typeof value === \"string\") {\n  console.log(value.toUpperCase()); // 型を確認してから使う\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "anyは型チェックを無効にしてしまう危険な型",
+            "unknownはどんな値も入れられるが、使う前に型の確認が必要",
+            "できるだけanyを避け、unknownを使うのが安全"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "anyとunknownの違いを学びました。",
+          "next": "次は型推論についてさらに詳しく学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "category": "基礎編（基本の型）",
+      "title": "型推論",
+      "slides": [
+        {
+          "type": "title",
+          "title": "型推論",
+          "text": "型注釈を省略できる場面と、明示的に指定すべき場面を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "型を省略できる場合",
+          "language": "typescript",
+          "code": "let count = 0; // numberと推論される\nlet items = [\"a\", \"b\"]; // string[]と推論される"
+        },
+        {
+          "type": "code",
+          "title": "明示的に指定する場合",
+          "language": "typescript",
+          "code": "let value: string | number; // 初期値がないので型注釈が必要\nvalue = \"文字列\";\nvalue = 123;"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "初期値から型が明らかな場合は型注釈を省略できる",
+            "初期値がない場合や、複数の型を許可したい場合は型注釈を書く"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "型推論と型注釈の使い分けを学びました。基本の型編はこれで終了です。",
+          "next": "次は配列・オブジェクトについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "category": "基礎編（配列・オブジェクト）",
+      "title": "配列の型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "配列の型",
+          "text": "配列の型指定について、さらに詳しく学びます。"
+        },
+        {
+          "type": "code",
+          "title": "string[]とArray<T>",
+          "language": "typescript",
+          "code": "let names: string[] = [\"田中\", \"佐藤\"];\nlet scores: Array<number> = [80, 90];"
+        },
+        {
+          "type": "code",
+          "title": "複数の型を持つ配列",
+          "language": "typescript",
+          "code": "let mixed: (string | number)[] = [\"田中\", 20, \"佐藤\", 25];"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "型[]とArray<型>はどちらも同じ意味の配列の型",
+            "(型A | 型B)[]で複数の型を許可する配列を作れる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "配列の型指定について学びました。",
+          "next": "次はオブジェクトの型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "category": "基礎編（配列・オブジェクト）",
+      "title": "オブジェクトの型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "オブジェクトの型",
+          "text": "オブジェクトの型指定をさらに詳しく学びます。"
+        },
+        {
+          "type": "code",
+          "title": "オプションプロパティ",
+          "language": "typescript",
+          "code": "let user: { name: string; age?: number } = {\n  name: \"田中\"\n}; // ageは省略可能"
+        },
+        {
+          "type": "code",
+          "title": "readonly",
+          "language": "typescript",
+          "code": "let point: { readonly x: number; readonly y: number } = { x: 0, y: 0 };\n// point.x = 10; // エラー：readonlyなので変更できない"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "プロパティ名の後ろに?をつけると省略可能になる",
+            "readonlyをつけると、そのプロパティは変更できなくなる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "オブジェクトの型指定について詳しく学びました。",
+          "next": "次は型エイリアスについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "category": "基礎編（配列・オブジェクト）",
+      "title": "型エイリアス",
+      "slides": [
+        {
+          "type": "title",
+          "title": "型エイリアス",
+          "text": "typeを使って、独自の型に名前をつけられる「型エイリアス」を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "typeで独自の型を作る",
+          "language": "typescript",
+          "code": "type User = {\n  name: string;\n  age: number;\n};\n\nconst user: User = {\n  name: \"田中\",\n  age: 20\n};"
+        },
+        {
+          "type": "content",
+          "title": "複数の場所で再利用する",
+          "text": "同じ形のオブジェクトをいろいろな場所で使う場合、型エイリアスを使うことで、同じ型定義を何度も書かずに済みます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "typeで独自の型に名前をつけられる",
+            "同じ型を複数の場所で再利用できる",
+            "コードの見通しが良くなる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "型エイリアスの使い方を学びました。",
+          "next": "次はインターフェースについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "category": "基礎編（配列・オブジェクト）",
+      "title": "インターフェース",
+      "slides": [
+        {
+          "type": "title",
+          "title": "インターフェース",
+          "text": "オブジェクトの型を定義するもう1つの方法、interfaceについて学びます。"
+        },
+        {
+          "type": "code",
+          "title": "interfaceの基本",
+          "language": "typescript",
+          "code": "interface User {\n  name: string;\n  age: number;\n}\n\nconst user: User = {\n  name: \"田中\",\n  age: 20\n};"
+        },
+        {
+          "type": "comparison",
+          "title": "typeとinterfaceの違い",
+          "items": [
+            {
+              "name": "type",
+              "role": "オブジェクト以外の型にも使える",
+              "example": "type ID = string | number;"
+            },
+            {
+              "name": "interface",
+              "role": "オブジェクトの形を定義するのに特化している",
+              "example": "あとから同じ名前で拡張できる"
+            }
+          ]
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "interfaceはオブジェクトの型を定義するための仕組み",
+            "typeはオブジェクト以外の型（Union型など）にも使える",
+            "オブジェクトの型定義にはどちらもよく使われる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "インターフェースの基本を学びました。配列・オブジェクト編はこれで終了です。",
+          "next": "次は関数の型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "category": "基礎編（関数）",
+      "title": "関数の型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "関数の型",
+          "text": "関数の型指定をさらに詳しく学びます。"
+        },
+        {
+          "type": "code",
+          "title": "voidとoptional parameter",
+          "language": "typescript",
+          "code": "function log(message: string): void {\n  console.log(message);\n}\n\nfunction greet(name: string, greeting?: string) {\n  console.log(`${greeting ?? \"こんにちは\"}、${name}さん`);\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "voidは戻り値がないことを表す",
+            "引数名の後ろに?をつけると省略可能な引数（optional parameter）になる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "関数の型指定についてさらに学びました。",
+          "next": "次はデフォルト引数について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "category": "基礎編（関数）",
+      "title": "デフォルト引数",
+      "slides": [
+        {
+          "type": "title",
+          "title": "デフォルト引数",
+          "text": "引数が渡されなかったときの初期値を設定できる、デフォルト引数を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "デフォルト値の設定",
+          "language": "typescript",
+          "code": "function greet(name: string, greeting: string = \"こんにちは\") {\n  console.log(`${greeting}、${name}さん`);\n}\n\ngreet(\"田中\");\ngreet(\"田中\", \"おはよう\");"
+        },
+        {
+          "type": "content",
+          "title": "関数の安全な設計",
+          "text": "デフォルト引数を使うと、呼び出し側で値を省略した場合でも、関数が安全に動作するように設計できます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "引数 = 値の形でデフォルト値を設定できる",
+            "省略された場合は、指定したデフォルト値が使われる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "デフォルト引数の使い方を学びました。",
+          "next": "次は関数型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "category": "基礎編（関数）",
+      "title": "関数型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "関数型",
+          "text": "関数そのものに型をつけて、変数やコールバックとして扱う方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "関数を変数に入れる",
+          "language": "typescript",
+          "code": "const add: (a: number, b: number) => number = (a, b) => a + b;\n\nconsole.log(add(2, 3)); // 5"
+        },
+        {
+          "type": "code",
+          "title": "コールバック関数の型指定",
+          "language": "typescript",
+          "code": "function repeat(times: number, callback: (index: number) => void) {\n  for (let i = 0; i < times; i++) {\n    callback(i);\n  }\n}\n\nrepeat(3, (i) => console.log(i));"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "(引数の型) => 戻り値の型 という形で関数の型を書ける",
+            "コールバック関数にも型を指定できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "関数型の指定方法を学びました。",
+          "next": "次はオーバーロードについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "category": "基礎編（関数）",
+      "title": "オーバーロード",
+      "slides": [
+        {
+          "type": "title",
+          "title": "オーバーロード",
+          "text": "1つの関数に複数の引数パターンを定義できる「オーバーロード」を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "関数オーバーロードの基本",
+          "language": "typescript",
+          "code": "function makeId(value: string): string;\nfunction makeId(value: number): string;\nfunction makeId(value: string | number): string {\n  return `ID-${value}`;\n}\n\nconsole.log(makeId(\"abc\"));\nconsole.log(makeId(123));"
+        },
+        {
+          "type": "content",
+          "title": "型ごとの処理",
+          "text": "オーバーロードを使うと、渡された値の型ごとに、より正確な戻り値の型をエディタに伝えることができます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "オーバーロードで複数の引数パターンを定義できる",
+            "型ごとに異なる戻り値の型を指定できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "関数オーバーロードの基本を学びました。関数編はこれで終了です。",
+          "next": "次は高度な基本型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "category": "基礎編（高度な基本型）",
+      "title": "Union型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Union型",
+          "text": "複数の型のいずれかであることを表す「Union型」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "string | number",
+          "language": "typescript",
+          "code": "let id: string | number;\nid = \"abc123\";\nid = 123;"
+        },
+        {
+          "type": "content",
+          "title": "Union型の使い方",
+          "text": "Union型を使うと、「文字列か数値のどちらか」というように、複数の型を許可する変数や引数を作ることができます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "型A | 型Bで複数の型のいずれかを表せる",
+            "1つの変数や引数に複数の種類の値を許可したい場合に使う"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Union型の基本を学びました。",
+          "next": "次はLiteral型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "category": "基礎編（高度な基本型）",
+      "title": "Literal型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Literal型",
+          "text": "特定の値だけを許可する「Literal型」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "文字列リテラル型",
+          "language": "typescript",
+          "code": "let direction: \"left\" | \"right\";\ndirection = \"left\";\n// direction = \"up\"; // エラー：\"left\"か\"right\"以外は許可されない"
+        },
+        {
+          "type": "code",
+          "title": "数値リテラル型",
+          "language": "typescript",
+          "code": "let diceResult: 1 | 2 | 3 | 4 | 5 | 6;\ndiceResult = 3;"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Literal型は特定の値だけを許可する型",
+            "文字列リテラル型・数値リテラル型が作れる",
+            "決まった選択肢しか許可したくない場合に便利"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Literal型の基本を学びました。",
+          "next": "次は型の絞り込みについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "category": "基礎編（高度な基本型）",
+      "title": "型の絞り込み",
+      "slides": [
+        {
+          "type": "title",
+          "title": "型の絞り込み",
+          "text": "Union型などの値を、状況に応じて安全に扱う「型の絞り込み」を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "typeofによる型ガード",
+          "language": "typescript",
+          "code": "function show(value: string | number) {\n  if (typeof value === \"string\") {\n    console.log(value.toUpperCase());\n  } else {\n    console.log(value.toFixed(2));\n  }\n}"
+        },
+        {
+          "type": "code",
+          "title": "instanceofとin",
+          "language": "typescript",
+          "code": "class Dog { bark() { console.log(\"わんわん\"); } }\nclass Cat { meow() { console.log(\"にゃー\"); } }\n\nfunction speak(animal: Dog | Cat) {\n  if (animal instanceof Dog) {\n    animal.bark();\n  } else {\n    animal.meow();\n  }\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "typeofで値の型を確認できる（型ガード）",
+            "instanceofでクラスのインスタンスかどうかを確認できる",
+            "inでオブジェクトが特定のプロパティを持つか確認できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "型の絞り込みの方法を学びました。",
+          "next": "次はIntersection型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "category": "基礎編（高度な基本型）",
+      "title": "Intersection型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Intersection型",
+          "text": "複数の型を組み合わせる「Intersection型」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "&で型を組み合わせる",
+          "language": "typescript",
+          "code": "type Named = { name: string };\ntype Aged = { age: number };\n\ntype Person = Named & Aged;\n\nconst person: Person = {\n  name: \"田中\",\n  age: 20\n};"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "型A & 型Bで複数の型を組み合わせられる",
+            "組み合わせた型は、すべてのプロパティを持つ必要がある"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Intersection型の基本を学びました。高度な基本型編はこれで終了です。",
+          "next": "次はジェネリクスについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "category": "基礎編（ジェネリクス）",
+      "title": "ジェネリクス入門",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ジェネリクス入門",
+          "text": "型を後から決められる仕組み「ジェネリクス」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "ジェネリクスとは",
+          "text": "ジェネリクスとは、関数やクラスを作るときに型を決め打ちせず、使うときに型を指定できるようにする仕組みです。<T>のように書きます。"
+        },
+        {
+          "type": "code",
+          "title": "<T>の基本",
+          "language": "typescript",
+          "code": "function identity<T>(value: T): T {\n  return value;\n}\n\nconsole.log(identity<string>(\"hello\"));\nconsole.log(identity<number>(123));"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "ジェネリクスは型を後から決められる仕組み",
+            "<T>のように書いて型パラメータを表す",
+            "同じ処理をさまざまな型に対して使い回せる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "ジェネリクスの基本的な考え方を学びました。",
+          "next": "次はジェネリクス関数について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "category": "基礎編（ジェネリクス）",
+      "title": "ジェネリクス関数",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ジェネリクス関数",
+          "text": "ジェネリクスを使った、汎用的で型安全な関数の作り方を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "Tを使った汎用的な関数",
+          "language": "typescript",
+          "code": "function getFirst<T>(items: T[]): T {\n  return items[0];\n}\n\nconsole.log(getFirst<number>([1, 2, 3])); // 1\nconsole.log(getFirst<string>([\"a\", \"b\"])); // a"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "ジェネリクス関数は、さまざまな型の配列などに対応できる",
+            "呼び出すときに型を指定するか、TypeScriptが自動で推論する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "ジェネリクス関数の作り方を学びました。",
+          "next": "次はジェネリクス型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "category": "基礎編（ジェネリクス）",
+      "title": "ジェネリクス型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ジェネリクス型",
+          "text": "interfaceやtypeにもジェネリクスを使う方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "ジェネリクスインターフェース",
+          "language": "typescript",
+          "code": "interface Box<T> {\n  content: T;\n}\n\nconst numberBox: Box<number> = { content: 123 };\nconst stringBox: Box<string> = { content: \"hello\" };"
+        },
+        {
+          "type": "code",
+          "title": "複数の型パラメータ",
+          "language": "typescript",
+          "code": "type Pair<A, B> = {\n  first: A;\n  second: B;\n};\n\nconst pair: Pair<string, number> = { first: \"田中\", second: 20 };"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "interfaceやtypeでもジェネリクスを使える",
+            "<A, B>のように複数の型パラメータを指定できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "ジェネリクス型の使い方を学びました。",
+          "next": "次はジェネリクス制約について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "category": "基礎編（ジェネリクス）",
+      "title": "ジェネリクス制約",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ジェネリクス制約",
+          "text": "extendsを使って、ジェネリクスに使える型を制限する方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "extendsによる制約",
+          "language": "typescript",
+          "code": "function getLength<T extends { length: number }>(value: T): number {\n  return value.length;\n}\n\nconsole.log(getLength(\"hello\")); // 5\nconsole.log(getLength([1, 2, 3])); // 3"
+        },
+        {
+          "type": "content",
+          "title": "安全なジェネリクス",
+          "text": "ジェネリクス制約を使うことで、「lengthプロパティを持つ型だけ」というように、Tに使える型を制限し、より安全なコードを書けます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "T extends 型で、Tに使える型を制限できる",
+            "制約をつけることで、Tに対して安全に特定の操作ができるようになる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "ジェネリクス制約の使い方を学びました。ジェネリクス編はこれで終了です。",
+          "next": "次はTypeScriptのクラスについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "category": "基礎編（クラス）",
+      "title": "TypeScriptのクラス",
+      "slides": [
+        {
+          "type": "title",
+          "title": "TypeScriptのクラス",
+          "text": "TypeScriptでのクラスの基本的な書き方を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "classとconstructor",
+          "language": "typescript",
+          "code": "class User {\n  name: string;\n  age: number;\n\n  constructor(name: string, age: number) {\n    this.name = name;\n    this.age = age;\n  }\n\n  greet(): void {\n    console.log(`${this.name}です`);\n  }\n}\n\nconst user = new User(\"田中\", 20);\nuser.greet();"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "TypeScriptのクラスもプロパティに型を指定できる",
+            "constructorやメソッドの引数・戻り値にも型をつけられる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "TypeScriptでのクラスの基本を学びました。",
+          "next": "次はアクセス修飾子について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "category": "基礎編（クラス）",
+      "title": "アクセス修飾子",
+      "slides": [
+        {
+          "type": "title",
+          "title": "アクセス修飾子",
+          "text": "プロパティやメソッドの公開範囲を指定する「アクセス修飾子」を学びます。"
+        },
+        {
+          "type": "comparison",
+          "title": "public・private・protected",
+          "items": [
+            {
+              "name": "public",
+              "role": "どこからでもアクセスできる（デフォルト）",
+              "example": "public name: string;"
+            },
+            {
+              "name": "private",
+              "role": "クラスの内部からのみアクセスできる",
+              "example": "private password: string;"
+            },
+            {
+              "name": "protected",
+              "role": "クラスの内部と、継承した子クラスからアクセスできる",
+              "example": "protected id: number;"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "title": "privateの使用例",
+          "language": "typescript",
+          "code": "class BankAccount {\n  private balance: number = 0;\n\n  deposit(amount: number) {\n    this.balance += amount;\n  }\n}\n\nconst account = new BankAccount();\n// account.balance; // エラー：privateなので外部からアクセスできない"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "publicはどこからでもアクセスできる（省略時のデフォルト）",
+            "privateはクラスの内部からしかアクセスできない",
+            "protectedはクラスの内部と子クラスからアクセスできる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "アクセス修飾子の使い方を学びました。",
+          "next": "次はreadonlyについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "category": "基礎編（クラス）",
+      "title": "readonly",
+      "slides": [
+        {
+          "type": "title",
+          "title": "readonly",
+          "text": "クラスのプロパティを変更できないようにする、readonlyについて学びます。"
+        },
+        {
+          "type": "code",
+          "title": "変更できないプロパティ",
+          "language": "typescript",
+          "code": "class User {\n  readonly id: number;\n\n  constructor(id: number) {\n    this.id = id;\n  }\n}\n\nconst user = new User(1);\n// user.id = 2; // エラー：readonlyなので変更できない"
+        },
+        {
+          "type": "content",
+          "title": "安全なデータ管理",
+          "text": "IDのように、一度設定したら変わってほしくない値には、readonlyをつけておくことで、意図しない変更を防ぐことができます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "readonlyをつけたプロパティは、あとから変更できなくなる",
+            "変わってほしくない値の安全性を高められる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "readonlyの使い方を学びました。",
+          "next": "次は継承について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "category": "基礎編（クラス）",
+      "title": "継承",
+      "slides": [
+        {
+          "type": "title",
+          "title": "継承",
+          "text": "TypeScriptのクラスでの継承の書き方を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "extendsとsuper",
+          "language": "typescript",
+          "code": "class User {\n  constructor(protected name: string) {}\n\n  greet(): void {\n    console.log(`${this.name}です`);\n  }\n}\n\nclass Admin extends User {\n  constructor(name: string, private level: number) {\n    super(name);\n  }\n}\n\nconst admin = new Admin(\"鈴木\", 1);\nadmin.greet();"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "extendsで親クラスの機能を引き継げる",
+            "super()で親クラスのconstructorを呼び出す"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "クラスの継承について学びました。",
+          "next": "次は抽象クラスについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "category": "基礎編（クラス）",
+      "title": "抽象クラス",
+      "slides": [
+        {
+          "type": "title",
+          "title": "抽象クラス",
+          "text": "実装を子クラスに強制する「抽象クラス」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "abstractと抽象メソッド",
+          "language": "typescript",
+          "code": "abstract class Animal {\n  abstract speak(): void;\n\n  move(): void {\n    console.log(\"動きます\");\n  }\n}\n\nclass Dog extends Animal {\n  speak(): void {\n    console.log(\"わんわん\");\n  }\n}\n\nconst dog = new Dog();\ndog.speak();"
+        },
+        {
+          "type": "content",
+          "title": "設計の基本",
+          "text": "抽象クラスを使うと、共通の処理（moveなど）はまとめつつ、クラスごとに異なる処理（speakなど）は子クラスで必ず実装させる、という設計ができます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "abstractをつけたクラスは、そのままインスタンス化できない",
+            "抽象メソッドは、継承した子クラスで必ず実装する必要がある"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "抽象クラスの基本を学びました。クラス編はこれで終了です。",
+          "next": "次はDOMとTypeScriptについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "category": "基礎編（DOMとTypeScript）",
+      "title": "DOM操作と型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "DOM操作と型",
+          "text": "DOM操作をTypeScriptで型安全に行う方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "HTMLElementとasによる型指定",
+          "language": "typescript",
+          "code": "const input = document.querySelector(\"#name\") as HTMLInputElement;\nconst button = document.querySelector(\"#submit\") as HTMLButtonElement;\n\nconsole.log(input.value); // HTMLInputElementなのでvalueが使える"
+        },
+        {
+          "type": "content",
+          "title": "型を指定する理由",
+          "text": "querySelector()の戻り値は、そのままだと汎用的なElement型として扱われます。asを使って具体的な型（HTMLInputElementなど）を指定することで、valueなどのプロパティを安全に使えるようになります。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "querySelector()にはasで具体的な型を指定できる",
+            "HTMLInputElementやHTMLButtonElementなど、要素ごとの型がある"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "DOM操作を型安全に行う方法を学びました。",
+          "next": "次はnullの扱い方について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "category": "基礎編（DOMとTypeScript）",
+      "title": "nullの扱い",
+      "slides": [
+        {
+          "type": "title",
+          "title": "nullの扱い",
+          "text": "querySelector()などが返す可能性のあるnullを安全に扱う方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "nullチェック",
+          "language": "typescript",
+          "code": "const button = document.querySelector(\"#submit\");\n\nif (button !== null) {\n  button.addEventListener(\"click\", () => {\n    console.log(\"クリックされました\");\n  });\n}"
+        },
+        {
+          "type": "code",
+          "title": "optional chaining",
+          "language": "typescript",
+          "code": "const button = document.querySelector(\"#submit\");\nbutton?.addEventListener(\"click\", () => {\n  console.log(\"クリックされました\");\n});"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "querySelector()は要素が見つからない場合nullを返す",
+            "if文でnullチェックをしてから使う",
+            "optional chaining（?.）を使うと安全に短く書ける"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "nullを安全に扱う方法を学びました。",
+          "next": "次はイベントと型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "category": "基礎編（DOMとTypeScript）",
+      "title": "イベントと型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "イベントと型",
+          "text": "イベント処理で使われるEventオブジェクトの型について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "MouseEventとKeyboardEvent",
+          "language": "typescript",
+          "code": "button.addEventListener(\"click\", (event: MouseEvent) => {\n  console.log(event.clientX, event.clientY);\n});\n\ndocument.addEventListener(\"keydown\", (event: KeyboardEvent) => {\n  console.log(event.key);\n});"
+        },
+        {
+          "type": "code",
+          "title": "InputEvent",
+          "language": "typescript",
+          "code": "input.addEventListener(\"input\", (event: InputEvent) => {\n  const target = event.target as HTMLInputElement;\n  console.log(target.value);\n});"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "イベントの種類ごとに専用の型（MouseEvent・KeyboardEventなど）が用意されている",
+            "型を指定することで、イベントオブジェクトのプロパティを安全に使える"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "イベントと型の関係を学びました。基礎編はこれで終了です。",
+          "next": "次は応用編でTypeScriptの高度な型システムについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "category": "応用編（第1章：高度な型システム）",
+      "title": "型の互換性",
+      "slides": [
+        {
+          "type": "title",
+          "title": "型の互換性",
+          "text": "TypeScriptがどのように型同士の互換性を判断しているかを学びます。"
+        },
+        {
+          "type": "content",
+          "title": "構造的部分型",
+          "text": "TypeScriptは、型の名前ではなく「どんなプロパティを持っているか」という構造で型の互換性を判断します。これを構造的部分型といいます。"
+        },
+        {
+          "type": "code",
+          "title": "TypeScriptの型判定",
+          "language": "typescript",
+          "code": "type Named = { name: string };\n\nfunction greet(person: Named) {\n  console.log(person.name);\n}\n\nconst user = { name: \"田中\", age: 20 };\ngreet(user); // nameを持っているのでOK"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "TypeScriptは構造で型の互換性を判断する",
+            "必要なプロパティさえ持っていれば、余分なプロパティがあってもOK"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "型の互換性の考え方を学びました。",
+          "next": "次はConditional Typesについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "category": "応用編（第1章：高度な型システム）",
+      "title": "Conditional Types",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Conditional Types",
+          "text": "条件によって型を切り替えられる「Conditional Types」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "extendsによる型の分岐",
+          "language": "typescript",
+          "code": "type IsString<T> = T extends string ? \"文字列です\" : \"文字列ではありません\";\n\ntype A = IsString<string>; // \"文字列です\"\ntype B = IsString<number>; // \"文字列ではありません\""
+        },
+        {
+          "type": "content",
+          "title": "Conditional Typesの使いどころ",
+          "text": "Conditional Typesを使うと、渡された型によって別の型を返すような、柔軟な型定義を作ることができます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "T extends 条件 ? 真の型 : 偽の型 という形で書く",
+            "型のレベルで条件分岐ができる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Conditional Typesの基本を学びました。",
+          "next": "次はMapped Typesについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "category": "応用編（第1章：高度な型システム）",
+      "title": "Mapped Types",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Mapped Types",
+          "text": "既存の型をもとに、プロパティを一括変換する「Mapped Types」を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "プロパティを一括で読み取り専用にする",
+          "language": "typescript",
+          "code": "type User = { name: string; age: number };\n\ntype ReadonlyUser = {\n  readonly [K in keyof User]: User[K];\n};"
+        },
+        {
+          "type": "content",
+          "title": "型を変換する考え方",
+          "text": "Mapped Typesを使うと、既存の型のすべてのプロパティに対して、readonlyやオプション化などの変換をまとめて適用できます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "[K in keyof T]という形で、Tのすべてのプロパティを走査できる",
+            "既存の型をもとに、新しい型を一括で作れる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Mapped Typesの基本を学びました。",
+          "next": "次はTemplate Literal Typesについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "category": "応用編（第1章：高度な型システム）",
+      "title": "Template Literal Types",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Template Literal Types",
+          "text": "文字列型を組み合わせられる「Template Literal Types」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "文字列型の組み合わせ",
+          "language": "typescript",
+          "code": "type Direction = \"left\" | \"right\";\ntype Action = `move-${Direction}`;\n// \"move-left\" | \"move-right\"\n\nconst action: Action = \"move-left\";"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "テンプレートリテラルのような書き方で文字列型を組み合わせられる",
+            "Union型同士を組み合わせて、パターンの組み合わせを型として表現できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Template Literal Typesの基本を学びました。第1章はこれで終了です。",
+          "next": "次の章ではUtility Typesについて詳しく学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "category": "応用編（第2章：Utility Types完全理解）",
+      "title": "Partial",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Partial",
+          "text": "すべてのプロパティを任意にできる、Partialというユーティリティ型を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "Partial<T>の使用例",
+          "language": "typescript",
+          "code": "type User = { name: string; age: number };\n\ntype PartialUser = Partial<User>;\n// { name?: string; age?: number }\n\nfunction updateUser(user: PartialUser) {\n  console.log(user);\n}\n\nupdateUser({ name: \"田中\" }); // ageを省略できる"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Partial<T>はTのすべてのプロパティを省略可能にする",
+            "一部のプロパティだけ更新したい場合などに便利"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Partialの使い方を学びました。",
+          "next": "次はRequiredとReadonlyについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "category": "応用編（第2章：Utility Types完全理解）",
+      "title": "RequiredとReadonly",
+      "slides": [
+        {
+          "type": "title",
+          "title": "RequiredとReadonly",
+          "text": "プロパティを必須にするRequiredと、読み取り専用にするReadonlyを学びます。"
+        },
+        {
+          "type": "code",
+          "title": "Required<T>",
+          "language": "typescript",
+          "code": "type User = { name: string; age?: number };\ntype RequiredUser = Required<User>;\n// { name: string; age: number }"
+        },
+        {
+          "type": "code",
+          "title": "Readonly<T>",
+          "language": "typescript",
+          "code": "type User = { name: string; age: number };\ntype ReadonlyUser = Readonly<User>;\n// { readonly name: string; readonly age: number }"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Required<T>はすべてのプロパティを必須にする",
+            "Readonly<T>はすべてのプロパティを読み取り専用にする"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "RequiredとReadonlyの使い方を学びました。",
+          "next": "次はPickとOmitについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "category": "応用編（第2章：Utility Types完全理解）",
+      "title": "PickとOmit",
+      "slides": [
+        {
+          "type": "title",
+          "title": "PickとOmit",
+          "text": "必要なプロパティだけを選んだり、除外したりできるPickとOmitを学びます。"
+        },
+        {
+          "type": "code",
+          "title": "Pick<T, K>",
+          "language": "typescript",
+          "code": "type User = { name: string; age: number; email: string };\ntype UserName = Pick<User, \"name\">;\n// { name: string }"
+        },
+        {
+          "type": "code",
+          "title": "Omit<T, K>",
+          "language": "typescript",
+          "code": "type UserWithoutEmail = Omit<User, \"email\">;\n// { name: string; age: number }"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Pick<T, K>はTから指定したプロパティだけを選んだ型を作る",
+            "Omit<T, K>はTから指定したプロパティを除外した型を作る"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "PickとOmitの使い方を学びました。",
+          "next": "次はRecordについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "category": "応用編（第2章：Utility Types完全理解）",
+      "title": "Record",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Record",
+          "text": "キーと値の型を指定してオブジェクトの型を作る、Recordを学びます。"
+        },
+        {
+          "type": "code",
+          "title": "Record<K, V>",
+          "language": "typescript",
+          "code": "type Scores = Record<string, number>;\n\nconst scores: Scores = {\n  田中: 80,\n  佐藤: 90\n};"
+        },
+        {
+          "type": "content",
+          "title": "使いどころ",
+          "text": "Recordは、キーの種類が決まっていて、それぞれのキーに対応する値の型を指定したい場合に便利です。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Record<K, V>はキーの型がK、値の型がVのオブジェクトの型を作る",
+            "辞書のようなオブジェクトの型を簡単に表現できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Recordの使い方を学びました。",
+          "next": "次はExcludeとExtractについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "category": "応用編（第2章：Utility Types完全理解）",
+      "title": "ExcludeとExtract",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ExcludeとExtract",
+          "text": "Union型から特定の型を取り除いたり、取得したりできるExcludeとExtractを学びます。"
+        },
+        {
+          "type": "code",
+          "title": "Exclude<T, U>",
+          "language": "typescript",
+          "code": "type Status = \"active\" | \"inactive\" | \"deleted\";\ntype VisibleStatus = Exclude<Status, \"deleted\">;\n// \"active\" | \"inactive\""
+        },
+        {
+          "type": "code",
+          "title": "Extract<T, U>",
+          "language": "typescript",
+          "code": "type StringOrNumber = string | number | boolean;\ntype OnlyStringOrNumber = Extract<StringOrNumber, string | number>;\n// string | number"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Exclude<T, U>はTからUに含まれる型を取り除く",
+            "Extract<T, U>はTからUに含まれる型だけを取得する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "ExcludeとExtractの使い方を学びました。",
+          "next": "次はReturnTypeとParametersについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "category": "応用編（第2章：Utility Types完全理解）",
+      "title": "ReturnTypeとParameters",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ReturnTypeとParameters",
+          "text": "関数の型から戻り値や引数の型を取り出す、ReturnTypeとParametersを学びます。"
+        },
+        {
+          "type": "code",
+          "title": "ReturnType<T>",
+          "language": "typescript",
+          "code": "function createUser() {\n  return { name: \"田中\", age: 20 };\n}\n\ntype User = ReturnType<typeof createUser>;\n// { name: string; age: number }"
+        },
+        {
+          "type": "code",
+          "title": "Parameters<T>",
+          "language": "typescript",
+          "code": "function add(a: number, b: number) {\n  return a + b;\n}\n\ntype AddParams = Parameters<typeof add>;\n// [number, number]"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "ReturnType<T>は関数の戻り値の型を取得する",
+            "Parameters<T>は関数の引数の型をタプルとして取得する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "ReturnTypeとParametersの使い方を学びました。Utility Types編はこれで終了です。",
+          "next": "次の章では高度なジェネリクスについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "category": "応用編（第3章：高度なジェネリクス）",
+      "title": "複数の型パラメータ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "複数の型パラメータ",
+          "text": "<T, U>のように、複数の型パラメータを使う方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "<T, U>を使った関数",
+          "language": "typescript",
+          "code": "function merge<T, U>(a: T, b: U): T & U {\n  return { ...a, ...b };\n}\n\nconst merged = merge({ name: \"田中\" }, { age: 20 });\nconsole.log(merged.name, merged.age);"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "<T, U>のように複数の型パラメータを定義できる",
+            "2つの異なる型を受け取って処理する関数などに使える"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "複数の型パラメータの使い方を学びました。",
+          "next": "次はkeyofについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "category": "応用編（第3章：高度なジェネリクス）",
+      "title": "keyof",
+      "slides": [
+        {
+          "type": "title",
+          "title": "keyof",
+          "text": "オブジェクトのキーを型として取得できる「keyof」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "keyofの基本",
+          "language": "typescript",
+          "code": "type User = { name: string; age: number };\ntype UserKeys = keyof User;\n// \"name\" | \"age\""
+        },
+        {
+          "type": "code",
+          "title": "keyofとジェネリクスの組み合わせ",
+          "language": "typescript",
+          "code": "function getValue<T, K extends keyof T>(obj: T, key: K): T[K] {\n  return obj[key];\n}\n\nconst user = { name: \"田中\", age: 20 };\nconsole.log(getValue(user, \"name\")); // 田中"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "keyof Tで、Tのプロパティ名をUnion型として取得できる",
+            "ジェネリクス制約と組み合わせて安全なアクセスができる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "keyofの使い方を学びました。",
+          "next": "次はtypeofと型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "category": "応用編（第3章：高度なジェネリクス）",
+      "title": "typeofと型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "typeofと型",
+          "text": "すでにある値から型を取得できる「typeof」の型としての使い方を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "値から型を取得する",
+          "language": "typescript",
+          "code": "const config = {\n  apiUrl: \"https://api.example.com\",\n  timeout: 3000\n};\n\ntype Config = typeof config;\n// { apiUrl: string; timeout: number }"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "typeofを型の位置で使うと、値から型を取得できる",
+            "すでにあるオブジェクトの形をそのまま型にしたいときに便利"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "typeofを型として使う方法を学びました。",
+          "next": "次はIndexed Access Typesについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "category": "応用編（第3章：高度なジェネリクス）",
+      "title": "Indexed Access Types",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Indexed Access Types",
+          "text": "オブジェクトの型から、特定のプロパティの型だけを取得する方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "オブジェクトから型を取得する",
+          "language": "typescript",
+          "code": "type User = { name: string; age: number };\ntype Age = User[\"age\"];\n// number"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "T[\"プロパティ名\"]で、そのプロパティの型だけを取得できる",
+            "大きな型の一部分だけを再利用したいときに便利"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Indexed Access Typesの基本を学びました。",
+          "next": "次はinferについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "category": "応用編（第3章：高度なジェネリクス）",
+      "title": "infer",
+      "slides": [
+        {
+          "type": "title",
+          "title": "infer",
+          "text": "Conditional Typesの中で型を推論できる「infer」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "inferによる型の推論",
+          "language": "typescript",
+          "code": "type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;\n\ntype A = UnwrapPromise<Promise<string>>; // string\ntype B = UnwrapPromise<number>;           // number"
+        },
+        {
+          "type": "content",
+          "title": "inferの使いどころ",
+          "text": "inferを使うと、複雑な型の中に埋め込まれている型を取り出すことができます。ReturnTypeなどの組み込みユーティリティ型も、内部でinferを使って実装されています。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "inferはConditional Typesの中で型を推論するためのキーワード",
+            "型の内部に隠れている型を取り出すことができる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "inferの基本的な使い方を学びました。第3章はこれで終了です。",
+          "next": "次の章では型ガードについて詳しく学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "category": "応用編（第4章：型ガード完全理解）",
+      "title": "typeof型ガード",
+      "slides": [
+        {
+          "type": "title",
+          "title": "typeof型ガード",
+          "text": "typeofを使った型ガードについて、あらためて詳しく学びます。"
+        },
+        {
+          "type": "code",
+          "title": "typeofによる型判定",
+          "language": "typescript",
+          "code": "function format(value: string | number): string {\n  if (typeof value === \"string\") {\n    return value;\n  }\n  return value.toString();\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "typeofは文字列・数値・真偽値など、基本型の判定に使う",
+            "if文と組み合わせて、その中だけ型が絞り込まれる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "typeof型ガードの使い方を復習しました。",
+          "next": "次はinstanceof型ガードについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "category": "応用編（第4章：型ガード完全理解）",
+      "title": "instanceof型ガード",
+      "slides": [
+        {
+          "type": "title",
+          "title": "instanceof型ガード",
+          "text": "クラスのインスタンスかどうかを判定する、instanceof型ガードを学びます。"
+        },
+        {
+          "type": "code",
+          "title": "instanceofによる判定",
+          "language": "typescript",
+          "code": "class ApiError extends Error {}\n\nfunction handle(error: unknown) {\n  if (error instanceof ApiError) {\n    console.log(\"APIエラーです\");\n  } else if (error instanceof Error) {\n    console.log(\"一般的なエラーです\");\n  }\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "instanceofはクラスのインスタンスかどうかを判定できる",
+            "エラーの種類を判定するときなどによく使われる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "instanceof型ガードの使い方を学びました。",
+          "next": "次はユーザー定義型ガードについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "category": "応用編（第4章：型ガード完全理解）",
+      "title": "ユーザー定義型ガード",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ユーザー定義型ガード",
+          "text": "自分で作った関数を型ガードとして使える、isキーワードについて学びます。"
+        },
+        {
+          "type": "code",
+          "title": "isによる独自の型判定関数",
+          "language": "typescript",
+          "code": "type Dog = { bark: () => void };\ntype Cat = { meow: () => void };\n\nfunction isDog(animal: Dog | Cat): animal is Dog {\n  return (animal as Dog).bark !== undefined;\n}\n\nfunction speak(animal: Dog | Cat) {\n  if (isDog(animal)) {\n    animal.bark();\n  } else {\n    animal.meow();\n  }\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "戻り値の型を「引数 is 型」と書くと、ユーザー定義型ガードになる",
+            "複雑な条件で型を判定したい場合に便利"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "ユーザー定義型ガードの使い方を学びました。",
+          "next": "次はDiscriminated Unionについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "category": "応用編（第4章：型ガード完全理解）",
+      "title": "Discriminated Union",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Discriminated Union",
+          "text": "共通のプロパティで安全に判定できる、Discriminated Union（識別可能なUnion型）を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "識別可能なUnion型",
+          "language": "typescript",
+          "code": "type Circle = { kind: \"circle\"; radius: number };\ntype Square = { kind: \"square\"; size: number };\ntype Shape = Circle | Square;\n\nfunction getArea(shape: Shape): number {\n  if (shape.kind === \"circle\") {\n    return Math.PI * shape.radius ** 2;\n  } else {\n    return shape.size ** 2;\n  }\n}"
+        },
+        {
+          "type": "content",
+          "title": "安全な条件分岐",
+          "text": "kindのような共通のプロパティ（識別子）を持たせることで、Union型の中のどの型なのかを、TypeScriptに安全に絞り込ませることができます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "共通のプロパティ（kindなど）で種類を識別するUnion型をDiscriminated Unionという",
+            "if文やswitch文で安全に型を絞り込める"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Discriminated Unionの使い方を学びました。第4章はこれで終了です。",
+          "next": "次の章では高度なオブジェクト設計について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "category": "応用編（第5章：高度なオブジェクト設計）",
+      "title": "Interfaceの拡張",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Interfaceの拡張",
+          "text": "interfaceでもextendsを使って型を拡張できることを学びます。"
+        },
+        {
+          "type": "code",
+          "title": "extendsによる拡張",
+          "language": "typescript",
+          "code": "interface Named {\n  name: string;\n}\n\ninterface User extends Named {\n  age: number;\n}\n\nconst user: User = { name: \"田中\", age: 20 };"
+        },
+        {
+          "type": "code",
+          "title": "複数のInterfaceを継承する",
+          "language": "typescript",
+          "code": "interface Aged {\n  age: number;\n}\n\ninterface User extends Named, Aged {\n  email: string;\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "interfaceもextendsで拡張できる",
+            "複数のinterfaceを同時に継承することもできる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Interfaceの拡張方法を学びました。",
+          "next": "次はDeclaration Mergingについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "category": "応用編（第5章：高度なオブジェクト設計）",
+      "title": "Declaration Merging",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Declaration Merging",
+          "text": "同じ名前のinterfaceを複数回書くと自動的に結合される、Declaration Mergingについて学びます。"
+        },
+        {
+          "type": "code",
+          "title": "Interfaceの自動結合",
+          "language": "typescript",
+          "code": "interface User {\n  name: string;\n}\n\ninterface User {\n  age: number;\n}\n\nconst user: User = { name: \"田中\", age: 20 };\n// User型はnameとageの両方を持つ型として結合される"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "同じ名前のinterfaceは自動的に1つに結合される",
+            "typeでは同じことはできない（interface特有の性質）"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Declaration Mergingの仕組みを学びました。",
+          "next": "次はIndex Signatureについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "category": "応用編（第5章：高度なオブジェクト設計）",
+      "title": "Index Signature",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Index Signature",
+          "text": "キーの名前が決まっていないオブジェクトの型を表現する方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "動的なキーを持つオブジェクトの型",
+          "language": "typescript",
+          "code": "interface Scores {\n  [name: string]: number;\n}\n\nconst scores: Scores = {\n  田中: 80,\n  佐藤: 90\n};\n\nscores[\"鈴木\"] = 70; // 新しいキーも追加できる"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "[キー名: 型]: 値の型 という形でIndex Signatureを書く",
+            "キーの名前が決まっていないオブジェクトの型を表現できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Index Signatureの使い方を学びました。",
+          "next": "次はOptional Propertiesについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "category": "応用編（第5章：高度なオブジェクト設計）",
+      "title": "Optional Properties",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Optional Properties",
+          "text": "省略可能なプロパティを、より安全に扱う方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "省略可能なプロパティへの安全なアクセス",
+          "language": "typescript",
+          "code": "interface User {\n  name: string;\n  nickname?: string;\n}\n\nfunction showName(user: User) {\n  console.log(user.nickname ?? user.name);\n}"
+        },
+        {
+          "type": "content",
+          "title": "安全なアクセスのポイント",
+          "text": "オプションプロパティはundefinedである可能性があるため、Nullish Coalescing（??）などと組み合わせて、値がない場合の代わりの値を用意しておくと安全です。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "?をつけたプロパティはundefinedの可能性がある",
+            "??などと組み合わせて安全にアクセスする"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Optional Propertiesの安全な扱い方を学びました。第5章はこれで終了です。",
+          "next": "次の章ではモジュールについて詳しく学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "category": "応用編（第6章：モジュール完全理解）",
+      "title": "モジュールシステム",
+      "slides": [
+        {
+          "type": "title",
+          "title": "モジュールシステム",
+          "text": "ES ModulesとCommonJSという2つのモジュールシステムについて学びます。"
+        },
+        {
+          "type": "comparison",
+          "title": "ES ModulesとCommonJS",
+          "items": [
+            {
+              "name": "ES Modules",
+              "role": "ブラウザやモダンな環境で標準的な方式",
+              "example": "export / import"
+            },
+            {
+              "name": "CommonJS",
+              "role": "Node.jsで古くから使われてきた方式",
+              "example": "module.exports / require"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "title": "exportとimport",
+          "language": "typescript",
+          "code": "// math.ts\nexport function add(a: number, b: number): number {\n  return a + b;\n}\n\n// main.ts\nimport { add } from \"./math\";\nconsole.log(add(2, 3));"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "ES Modulesはexport/importを使うモダンな方式",
+            "CommonJSはNode.jsで伝統的に使われてきた方式",
+            "TypeScriptではES Modulesの書き方がよく使われる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "モジュールシステムの基本を学びました。",
+          "next": "次は名前付きエクスポートについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "category": "応用編（第6章：モジュール完全理解）",
+      "title": "名前付きエクスポート",
+      "slides": [
+        {
+          "type": "title",
+          "title": "名前付きエクスポート",
+          "text": "1つのファイルから複数の機能を公開できる、名前付きエクスポートを学びます。"
+        },
+        {
+          "type": "code",
+          "title": "複数の機能を公開する",
+          "language": "typescript",
+          "code": "// utils.ts\nexport function add(a: number, b: number) {\n  return a + b;\n}\n\nexport function subtract(a: number, b: number) {\n  return a - b;\n}\n\n// main.ts\nimport { add, subtract } from \"./utils\";"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "exportを複数つけることで、1ファイルから複数の機能を公開できる",
+            "importで必要な機能だけを選んで読み込める"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "名前付きエクスポートの使い方を学びました。",
+          "next": "次はDefault Exportについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "category": "応用編（第6章：モジュール完全理解）",
+      "title": "Default Export",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Default Export",
+          "text": "ファイルごとに1つだけ設定できる「Default Export」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "default exportの書き方",
+          "language": "typescript",
+          "code": "// user.ts\nexport default class User {\n  constructor(public name: string) {}\n}\n\n// main.ts\nimport User from \"./user\"; // {}をつけずに読み込む"
+        },
+        {
+          "type": "comparison",
+          "title": "名前付きexportとの違い",
+          "items": [
+            {
+              "name": "名前付きexport",
+              "role": "1ファイルから複数公開でき、名前を指定して読み込む",
+              "example": "import { add } from \"./utils\";"
+            },
+            {
+              "name": "default export",
+              "role": "1ファイルに1つだけ設定でき、任意の名前で読み込める",
+              "example": "import User from \"./user\";"
+            }
+          ]
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "default exportはファイルごとに1つだけ設定できる",
+            "importするときに{}をつけず、自由な名前で読み込める"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Default Exportの使い方を学びました。",
+          "next": "次は型専用Importについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "category": "応用編（第6章：モジュール完全理解）",
+      "title": "型専用Import",
+      "slides": [
+        {
+          "type": "title",
+          "title": "型専用Import",
+          "text": "型だけを読み込む「import type」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "import typeの使い方",
+          "language": "typescript",
+          "code": "// types.ts\nexport type User = { name: string; age: number };\n\n// main.ts\nimport type { User } from \"./types\";\n\nconst user: User = { name: \"田中\", age: 20 };"
+        },
+        {
+          "type": "content",
+          "title": "型だけを読み込む理由",
+          "text": "import typeを使うと、その値は型情報としてのみ使われ、コンパイル後のJavaScriptには含まれないことが明確になります。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "import typeで型だけを読み込むことを明示できる",
+            "コンパイル後のJavaScriptのコード量を減らせる場合がある"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "型専用Importの使い方を学びました。モジュール編はこれで終了です。",
+          "next": "次の章ではtsconfigについて詳しく学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "category": "応用編（第7章：tsconfig完全理解）",
+      "title": "tsconfig.json",
+      "slides": [
+        {
+          "type": "title",
+          "title": "tsconfig.json",
+          "text": "TypeScriptのコンパイル方法を設定するファイル、tsconfig.jsonについて学びます。"
+        },
+        {
+          "type": "content",
+          "title": "tsconfigとは",
+          "text": "tsconfig.jsonは、TypeScriptをどのようにコンパイルするかをまとめて設定するファイルです。プロジェクトのルートフォルダに置きます。"
+        },
+        {
+          "type": "code",
+          "title": "基本的な設定例",
+          "language": "typescript",
+          "code": "{\n  \"compilerOptions\": {\n    \"target\": \"ES2020\",\n    \"module\": \"ESNext\",\n    \"strict\": true\n  }\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "tsconfig.jsonはコンパイル設定をまとめるファイル",
+            "compilerOptionsの中にさまざまな設定項目を書く"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "tsconfig.jsonの基本を学びました。",
+          "next": "次はstrictモードについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "category": "応用編（第7章：tsconfig完全理解）",
+      "title": "strictモード",
+      "slides": [
+        {
+          "type": "title",
+          "title": "strictモード",
+          "text": "型チェックをより厳しくする「strictモード」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "strictの設定",
+          "language": "typescript",
+          "code": "{\n  \"compilerOptions\": {\n    \"strict\": true\n  }\n}"
+        },
+        {
+          "type": "content",
+          "title": "安全なコードのために",
+          "text": "strict: trueにすると、暗黙的なanyの禁止やnullチェックの強化など、複数の厳格なチェックがまとめて有効になります。最初からstrictモードで開発を始めるのがおすすめです。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "strict: trueで複数の厳格なチェックがまとめて有効になる",
+            "型安全なコードを書くために、strictモードの利用が推奨される"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "strictモードの重要性を学びました。",
+          "next": "次はさまざまなコンパイル設定について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "category": "応用編（第7章：tsconfig完全理解）",
+      "title": "コンパイル設定",
+      "slides": [
+        {
+          "type": "title",
+          "title": "コンパイル設定",
+          "text": "target・module・outDir・rootDirなど、代表的なコンパイル設定を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "代表的な設定項目",
+          "language": "typescript",
+          "code": "{\n  \"compilerOptions\": {\n    \"target\": \"ES2020\",\n    \"module\": \"ESNext\",\n    \"outDir\": \"./dist\",\n    \"rootDir\": \"./src\"\n  }\n}"
+        },
+        {
+          "type": "comparison",
+          "title": "各設定項目の役割",
+          "items": [
+            {
+              "name": "target",
+              "role": "変換後のJavaScriptのバージョン",
+              "example": "ES2020, ES5 など"
+            },
+            {
+              "name": "module",
+              "role": "モジュールの形式",
+              "example": "ESNext, CommonJS など"
+            },
+            {
+              "name": "outDir",
+              "role": "コンパイル後のファイルの出力先",
+              "example": "./dist"
+            },
+            {
+              "name": "rootDir",
+              "role": "コンパイル対象のソースコードの場所",
+              "example": "./src"
+            }
+          ]
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "targetで変換後のJavaScriptのバージョンを指定する",
+            "moduleでモジュールの形式を指定する",
+            "outDirとrootDirで入出力先のフォルダを指定する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "代表的なコンパイル設定を学びました。",
+          "next": "次はSource Mapについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "category": "応用編（第7章：tsconfig完全理解）",
+      "title": "Source Map",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Source Map",
+          "text": "コンパイル後のJavaScriptと、元のTypeScriptを対応づける「Source Map」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "sourceMapの設定",
+          "language": "typescript",
+          "code": "{\n  \"compilerOptions\": {\n    \"sourceMap\": true\n  }\n}"
+        },
+        {
+          "type": "content",
+          "title": "TypeScriptのデバッグ",
+          "text": "Source Mapを有効にすると、ブラウザの開発者ツールでデバッグする際に、コンパイル後のJavaScriptではなく、元のTypeScriptのコードを見ながらデバッグできるようになります。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "sourceMap: trueでSource Mapを生成できる",
+            "元のTypeScriptのコードを見ながらデバッグできるようになる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Source Mapの役割を学びました。tsconfig編はこれで終了です。",
+          "next": "次の章では実践的なTypeScriptの使い方について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "category": "応用編（第8章：実践的なTypeScript）",
+      "title": "エラー処理",
+      "slides": [
+        {
+          "type": "title",
+          "title": "エラー処理",
+          "text": "TypeScriptでの、より型安全なエラー処理の書き方を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "try/catchとunknownなエラー",
+          "language": "typescript",
+          "code": "try {\n  JSON.parse(\"不正なJSON\");\n} catch (error: unknown) {\n  if (error instanceof Error) {\n    console.log(error.message);\n  }\n}"
+        },
+        {
+          "type": "content",
+          "title": "catchのerrorがunknownである理由",
+          "text": "TypeScriptでは、catchで受け取るerrorはunknown型として扱われます。これは、投げられるものが必ずしもErrorオブジェクトとは限らないためで、使う前に型を確認する必要があります。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "catchのerrorはunknown型として扱われる",
+            "instanceof Errorなどで型を確認してから使う"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "型安全なエラー処理の書き方を学びました。",
+          "next": "次はAPIレスポンスの型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "category": "応用編（第8章：実践的なTypeScript）",
+      "title": "APIレスポンスの型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "APIレスポンスの型",
+          "text": "APIから取得したJSONデータを、型安全に扱う方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "レスポンス型の定義",
+          "language": "typescript",
+          "code": "type User = {\n  id: number;\n  name: string;\n};\n\nasync function fetchUser(id: number): Promise<User> {\n  const response = await fetch(`/api/users/${id}`);\n  const data: User = await response.json();\n  return data;\n}"
+        },
+        {
+          "type": "content",
+          "title": "JSONデータの安全な扱い方",
+          "text": "response.json()の戻り値はデフォルトではanyになってしまうため、期待するデータの形をあらかじめ型として定義し、明示的に指定することが大切です。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "APIから取得するデータの形を、あらかじめ型として定義する",
+            "response.json()の結果に型を指定して安全に扱う"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "APIレスポンスの型安全な扱い方を学びました。",
+          "next": "次はフォームの型安全化について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "category": "応用編（第8章：実践的なTypeScript）",
+      "title": "フォームの型安全化",
+      "slides": [
+        {
+          "type": "title",
+          "title": "フォームの型安全化",
+          "text": "フォームの入力値を型安全に扱う方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "フォームデータの型",
+          "language": "typescript",
+          "code": "type FormData = {\n  name: string;\n  email: string;\n};\n\nfunction validate(data: FormData): string[] {\n  const errors: string[] = [];\n  if (data.name === \"\") {\n    errors.push(\"名前を入力してください\");\n  }\n  return errors;\n}"
+        },
+        {
+          "type": "content",
+          "title": "バリデーションとの組み合わせ",
+          "text": "入力値の形を型として定義しておくことで、バリデーション処理の中でも、どのプロパティをチェックすべきかが明確になります。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "フォームの入力値を型として定義する",
+            "型と組み合わせることでバリデーション処理も書きやすくなる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "フォームの型安全化について学びました。",
+          "next": "次は状態管理について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "category": "応用編（第8章：実践的なTypeScript）",
+      "title": "状態管理",
+      "slides": [
+        {
+          "type": "title",
+          "title": "状態管理",
+          "text": "アプリの状態（State）を型安全に管理する考え方を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "型安全な状態管理の例",
+          "language": "typescript",
+          "code": "type State = {\n  count: number;\n};\n\nlet state: State = { count: 0 };\n\nfunction increment() {\n  state = { ...state, count: state.count + 1 };\n}"
+        },
+        {
+          "type": "content",
+          "title": "UIとの同期",
+          "text": "状態の形を型として定義しておくことで、状態を扱う処理や、状態を画面に反映するUI更新処理の両方で、間違ったプロパティ名を使うミスを防げます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "状態の形をあらかじめ型として定義しておく",
+            "型があることで、状態とUIの同期処理も安全に書ける"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "型安全な状態管理の考え方を学びました。",
+          "next": "次は非同期処理と型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "category": "応用編（第8章：実践的なTypeScript）",
+      "title": "非同期処理と型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "非同期処理と型",
+          "text": "Promiseやasync/awaitに型をつける方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "Promise<T>とasync/await",
+          "language": "typescript",
+          "code": "function wait(ms: number): Promise<void> {\n  return new Promise((resolve) => setTimeout(resolve, ms));\n}\n\nasync function fetchData(): Promise<string> {\n  await wait(1000);\n  return \"データ\";\n}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Promise<T>で非同期処理の結果の型を表せる",
+            "async関数の戻り値は自動的にPromise<T>として扱われる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "非同期処理と型の関係を学びました。第8章はこれで終了です。",
+          "next": "次の章ではコード設計について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "category": "応用編（第9章：コード設計）",
+      "title": "型安全な設計",
+      "slides": [
+        {
+          "type": "title",
+          "title": "型安全な設計",
+          "text": "anyを減らし、より安全な設計をするための考え方を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "anyを減らす",
+          "text": "anyを使うと型チェックが効かなくなってしまうため、できるだけ具体的な型やunknownを使い、必要な場合だけ最小限にanyを使うようにします。"
+        },
+        {
+          "type": "content",
+          "title": "適切な型設計",
+          "text": "データの形が決まっているものにはできるだけ型をつけ、想定外の値が来る可能性がある場所ではunknownと型ガードを組み合わせて安全に扱います。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "anyの使用はできるだけ最小限にする",
+            "unknownと型ガードを組み合わせて安全性を確保する",
+            "データの形が決まっている場所には積極的に型をつける"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "型安全な設計の考え方を学びました。",
+          "next": "次は再利用可能な型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "category": "応用編（第9章：コード設計）",
+      "title": "再利用可能な型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "再利用可能な型",
+          "text": "複数のファイルで使う共通の型を整理する方法を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "共通型とtypesフォルダ",
+          "text": "プロジェクト全体で使う共通の型は、typesフォルダなどにまとめておくことで、どこから使われているかが分かりやすくなります。"
+        },
+        {
+          "type": "code",
+          "title": "型ファイルの例",
+          "language": "typescript",
+          "code": "// types/user.ts\nexport type User = {\n  id: number;\n  name: string;\n};\n\n// 他のファイルから\nimport type { User } from \"./types/user\";"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "共通で使う型は専用のファイルやフォルダにまとめる",
+            "typesフォルダなどを用意すると管理しやすくなる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "再利用可能な型の整理方法を学びました。",
+          "next": "次は大規模プロジェクトの構成について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "category": "応用編（第9章：コード設計）",
+      "title": "大規模プロジェクトの構成",
+      "slides": [
+        {
+          "type": "title",
+          "title": "大規模プロジェクトの構成",
+          "text": "プロジェクトが大きくなっても管理しやすい、フォルダ構成の考え方を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "フォルダ構成とモジュール設計",
+          "text": "機能ごとにフォルダを分け、それぞれの中にコンポーネントやロジック、型定義をまとめることで、必要なファイルを見つけやすくなります。"
+        },
+        {
+          "type": "content",
+          "title": "機能別設計",
+          "text": "1つの機能に関連するファイルをまとめて配置することで、機能の追加や削除がしやすくなり、チームでの開発もスムーズになります。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "機能ごとにフォルダを分けて管理する",
+            "関連するファイルをまとめて配置すると開発しやすくなる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "大規模プロジェクトの構成の考え方を学びました。",
+          "next": "次はTypeScriptのデバッグについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "category": "応用編（第9章：コード設計）",
+      "title": "TypeScriptのデバッグ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "TypeScriptのデバッグ",
+          "text": "型エラーやコンパイルエラーを読み解く方法を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "型エラーとコンパイルエラーの読み方",
+          "text": "エラーメッセージには、どの型とどの型が合わないのか、どのプロパティが足りないのかといった情報が書かれています。エラーメッセージを1つずつ丁寧に読むことが大切です。"
+        },
+        {
+          "type": "content",
+          "title": "DevToolsとの組み合わせ",
+          "text": "Source Mapを有効にしておけば、ブラウザのDevToolsでも元のTypeScriptのコードを見ながら実行時の動作を確認できます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "エラーメッセージを丁寧に読むことで原因を特定しやすくなる",
+            "DevToolsと組み合わせて実行時の挙動も確認する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "TypeScriptのデバッグ方法を学びました。",
+          "next": "次はJavaScriptからTypeScriptへの移行についてさらに詳しく学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "category": "応用編（第9章：コード設計）",
+      "title": "JavaScriptからTypeScriptへの移行",
+      "slides": [
+        {
+          "type": "title",
+          "title": "JavaScriptからTypeScriptへの移行",
+          "text": "既存のJavaScriptプロジェクトを、少しずつTypeScript化していく方法を学びます。"
+        },
+        {
+          "type": "flow",
+          "title": "移行の進め方",
+          "steps": [
+            "拡張子を.jsから.tsに変更する",
+            "発生した型エラーを1つずつ確認する",
+            "重要な部分から少しずつ型をつけていく",
+            "anyを減らしながら、最終的にstrictモードを目指す"
+          ]
+        },
+        {
+          "type": "content",
+          "title": "anyの削減",
+          "text": "移行の初期段階ではanyが多く残ることがありますが、少しずつ具体的な型に置き換えていくことで、プロジェクト全体の安全性を高めていくことができます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "拡張子の変更から少しずつ移行を進められる",
+            "anyを少しずつ減らしていくことが大切",
+            "最終的にstrictモードを目指す"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "JavaScriptからTypeScriptへの移行方法を学びました。第9章はこれで終了です。",
+          "next": "次の章ではTypeScript完全マスターに向けて、最後の内容を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "category": "応用編（第10章：完全マスターレベル）",
+      "title": "Declaration Files",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Declaration Files",
+          "text": "型情報だけをまとめた「.d.tsファイル」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": ".d.tsと型定義ファイル",
+          "text": ".d.tsファイルは、実際の処理を書かず、型情報だけを定義するためのファイルです。JavaScriptのライブラリにTypeScriptの型情報を追加する際などに使われます。"
+        },
+        {
+          "type": "code",
+          "title": ".d.tsの例",
+          "language": "typescript",
+          "code": "// user.d.ts\ndeclare function getUser(id: number): { name: string; age: number };"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            ".d.tsファイルは型情報だけをまとめたファイル",
+            "実際の処理を持たないJavaScriptのコードに型を追加できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Declaration Filesの基本を学びました。",
+          "next": "次は外部ライブラリの型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "category": "応用編（第10章：完全マスターレベル）",
+      "title": "外部ライブラリの型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "外部ライブラリの型",
+          "text": "外部ライブラリに型情報を追加する「@types」パッケージについて学びます。"
+        },
+        {
+          "type": "code",
+          "title": "@typesのインストール",
+          "language": "typescript",
+          "code": "npm install --save-dev @types/lodash"
+        },
+        {
+          "type": "content",
+          "title": "型定義の利用",
+          "text": "多くの人気ライブラリには、@types/ライブラリ名という形で型定義が別途提供されています。これをインストールすることで、TypeScript側で型の恩恵を受けられるようになります。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "@types/ライブラリ名で、外部ライブラリの型定義を追加できる",
+            "TypeScript製ではないライブラリでも型の恩恵を受けられる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "外部ライブラリの型定義の利用方法を学びました。",
+          "next": "次は独自型定義について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "category": "応用編（第10章：完全マスターレベル）",
+      "title": "独自型定義",
+      "slides": [
+        {
+          "type": "title",
+          "title": "独自型定義",
+          "text": "型定義が用意されていないライブラリのために、自分で.d.tsファイルを作る方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "独自の.d.ts作成",
+          "language": "typescript",
+          "code": "// my-library.d.ts\ndeclare module \"my-library\" {\n  export function doSomething(value: string): void;\n}"
+        },
+        {
+          "type": "content",
+          "title": "ライブラリの型定義",
+          "text": "型定義が公式にもDefinitelyTypedにも存在しないライブラリを使う場合、自分でdeclare moduleを使って最低限の型を用意することができます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "declare moduleで独自の型定義を作れる",
+            "型定義がないライブラリでも、自分で型をつけられる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "独自型定義の作り方を学びました。",
+          "next": "次は高度な型プログラミングについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "category": "応用編（第10章：完全マスターレベル）",
+      "title": "高度な型プログラミング",
+      "slides": [
+        {
+          "type": "title",
+          "title": "高度な型プログラミング",
+          "text": "型そのものを使ってプログラミングするような、高度な型の使い方を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "再帰的な型",
+          "language": "typescript",
+          "code": "type DeepReadonly<T> = {\n  readonly [K in keyof T]: T[K] extends object ? DeepReadonly<T[K]> : T[K];\n};\n\ntype User = { name: string; address: { city: string } };\ntype ReadonlyUser = DeepReadonly<User>;"
+        },
+        {
+          "type": "content",
+          "title": "複雑な型変換の考え方",
+          "text": "Mapped Types・Conditional Types・inferなどを組み合わせることで、ネストしたオブジェクトを再帰的に変換するような、複雑な型を作ることができます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "型定義の中で自分自身を参照する「再帰的な型」を作れる",
+            "複数の高度な型機能を組み合わせて複雑な変換ができる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "高度な型プログラミングの一端を学びました。",
+          "next": "最後にTypeScript完全理解として総復習をしましょう。"
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "category": "応用編（第10章：完全マスターレベル）",
+      "title": "TypeScript完全理解",
+      "slides": [
+        {
+          "type": "title",
+          "title": "TypeScript完全理解",
+          "text": "入門編から応用編まで学んできた内容を振り返り、TypeScriptの全体像を総復習します。"
+        },
+        {
+          "type": "summary",
+          "title": "TypeScript講座 総復習",
+          "list": [
+            "基本の型（string・number・booleanなど）と型推論",
+            "typeとinterfaceによるオブジェクトの型定義",
+            "Union型・Literal型・型の絞り込み",
+            "ジェネリクスを使った汎用的で安全なコード",
+            "クラスとアクセス修飾子、継承、抽象クラス",
+            "DOM操作の型安全な扱い方",
+            "Utility Types・Conditional Types・Mapped Types",
+            "型ガードによる安全な条件分岐",
+            "モジュールシステムとtsconfigの設定",
+            "実践的なAPI・状態管理・非同期処理の型付け"
+          ]
+        },
+        {
+          "type": "content",
+          "title": "JavaScriptとの関係と適切な設計",
+          "text": "TypeScriptはあくまでJavaScriptに型を追加したものです。型を正しく使うことで、実行時に気づきにくいバグを未然に防ぎ、保守しやすい設計のアプリケーションを作れるようになります。"
+        },
+        {
+          "type": "end",
+          "title": "TypeScript講座 完全マスター達成！",
+          "text": "おめでとうございます！TypeScript講座の入門編・基礎編・応用編がすべて終了しました。ここまで学んだ型システムの知識を活かして、型安全なアプリケーション開発に挑戦してみてください。",
+          "next": "気になるテーマがあれば、おまけコンテンツでさらに便利な小技を学ぶこともできます。"
+        }
+      ]
+    }
+  ]
+}
