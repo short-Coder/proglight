@@ -1,1 +1,3747 @@
-
+{
+  "course": {
+    "id": "python",
+    "title": "Python講座",
+    "description": "Pythonの基本文法から高度なプログラミング、ファイル操作、データ処理、API、非同期処理、オブジェクト指向、Pygameなどを理解し、Pythonを使って様々なプログラムを自力で開発できる完全マスターレベルを目指す講座です。"
+  },
+  "lessons": [
+    {
+      "id": 1,
+      "category": "入門編",
+      "title": "Pythonとは",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Pythonとは",
+          "text": "これからPythonというプログラミング言語について学んでいきます。"
+        },
+        {
+          "type": "content",
+          "title": "Pythonとは何か・できること",
+          "text": "Pythonは、シンプルで読みやすい文法が特徴のプログラミング言語です。Webアプリ、データ分析、AI、ゲーム、自動化ツールなど、幅広い分野で使われています。",
+          "list": [
+            "Webアプリ開発",
+            "データ分析・AI",
+            "ゲーム開発",
+            "作業の自動化"
+          ]
+        },
+        {
+          "type": "content",
+          "title": "Pythonの特徴",
+          "text": "Pythonは文法がシンプルで初心者にも学びやすく、豊富なライブラリが用意されているのが特徴です。"
+        },
+        {
+          "type": "content",
+          "title": "インタプリタとは",
+          "text": "Pythonはインタプリタ型の言語です。インタプリタとは、書いたコードを1行ずつ順番に実行してくれるプログラムのことです。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Pythonはシンプルで読みやすい言語",
+            "Web・データ分析・AI・ゲームなど幅広い分野で使われる",
+            "Pythonはインタプリタによって実行される"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Pythonがどんな言語なのかを学びました。",
+          "next": "次はPythonを実際に動かしてみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category": "入門編",
+      "title": "Pythonを動かしてみよう",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Pythonを動かしてみよう",
+          "text": "Pythonのプログラムを実行する方法を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "Pythonファイル（.pyファイル）",
+          "text": "Pythonのプログラムは、拡張子「.py」のファイルに書きます。テキストエディタで新しいファイルを作り、「main.py」のような名前で保存します。"
+        },
+        {
+          "type": "flow",
+          "title": "プログラムを実行するまでの流れ",
+          "steps": [
+            "テキストエディタで.pyファイルを作成する",
+            "Pythonのコードを書く",
+            "ファイルを保存する",
+            "ターミナルでpythonコマンドを実行する"
+          ]
+        },
+        {
+          "type": "code",
+          "title": "プログラムの実行方法",
+          "language": "python",
+          "code": "# ターミナルで以下のように実行する\npython main.py"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Pythonのコードは拡張子.pyのファイルに書く",
+            "ターミナルからpythonコマンドで実行する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Pythonプログラムの実行方法を学びました。",
+          "next": "次は実際にプログラムを書いてみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "category": "入門編",
+      "title": "最初のPythonプログラム",
+      "slides": [
+        {
+          "type": "title",
+          "title": "最初のPythonプログラム",
+          "text": "print()を使って、画面に文字を表示するプログラムを書いてみましょう。"
+        },
+        {
+          "type": "code",
+          "title": "print()で文字を表示する",
+          "language": "python",
+          "code": "print(\"Hello World!\")"
+        },
+        {
+          "type": "code",
+          "title": "コメント",
+          "language": "python",
+          "code": "# これはコメントです。実行されません\nprint(\"Proglightへようこそ\")"
+        },
+        {
+          "type": "content",
+          "title": "文字列",
+          "text": "文字列とは、文字の並びのことです。Pythonではシングルクォート（'）またはダブルクォート（\"）で囲んで表します。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "print()で画面に文字を表示できる",
+            "コメントは#で書く",
+            "文字列は' 'または\" \"で囲む"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "はじめてのPythonプログラムを書きました。",
+          "next": "次は変数について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "category": "入門編",
+      "title": "変数",
+      "slides": [
+        {
+          "type": "title",
+          "title": "変数",
+          "text": "値に名前をつけて管理できる「変数」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "変数とは",
+          "text": "変数とは、データに名前をつけて保存しておく箱のようなものです。あとから値を取り出したり、変更したりできます。"
+        },
+        {
+          "type": "code",
+          "title": "変数の作成と代入",
+          "language": "python",
+          "code": "name = \"田中\"\nage = 20\n\nprint(name)\nprint(age)"
+        },
+        {
+          "type": "code",
+          "title": "変数の利用",
+          "language": "python",
+          "code": "score = 10\nscore = score + 5\nprint(score) # 15"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "変数はデータに名前をつけて保存する箱",
+            "「=」で値を代入する",
+            "変数の値はあとから変更できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "変数の基本的な使い方を学びました。",
+          "next": "次はデータ型について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "category": "入門編",
+      "title": "データ型",
+      "slides": [
+        {
+          "type": "title",
+          "title": "データ型",
+          "text": "Pythonで扱う値には、いくつかの種類（データ型）があります。"
+        },
+        {
+          "type": "code",
+          "title": "str・int・float・bool・None",
+          "language": "python",
+          "code": "name = \"田中\"      # str（文字列）\nage = 20            # int（整数）\nheight = 170.5      # float（小数）\nis_student = True   # bool（真偽値）\nresult = None        # None（値がないことを表す）"
+        },
+        {
+          "type": "content",
+          "title": "型の確認",
+          "text": "type()という関数を使うと、値のデータ型を確認できます。"
+        },
+        {
+          "type": "code",
+          "title": "type()で型を確認する",
+          "language": "python",
+          "code": "print(type(age))    # <class 'int'>\nprint(type(name))   # <class 'str'>"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "strは文字列、intは整数、floatは小数",
+            "boolはTrueかFalseの真偽値",
+            "Noneは値がないことを表す",
+            "type()でデータ型を確認できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Pythonの基本的なデータ型を学びました。",
+          "next": "次は計算をしてみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "category": "入門編",
+      "title": "計算してみよう",
+      "slides": [
+        {
+          "type": "title",
+          "title": "計算してみよう",
+          "text": "Pythonを使ってさまざまな計算をする方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "四則演算",
+          "language": "python",
+          "code": "print(1 + 2)  # 足し算 3\nprint(5 - 2)  # 引き算 3\nprint(3 * 4)  # 掛け算 12\nprint(10 / 3) # 割り算 3.333..."
+        },
+        {
+          "type": "code",
+          "title": "余りとべき乗",
+          "language": "python",
+          "code": "print(10 % 3)  # 余り 1\nprint(2 ** 3)  # べき乗 8（2の3乗）"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "+ - * / で四則演算ができる",
+            "%で割り算の余りを求められる",
+            "**でべき乗を計算できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Pythonでの基本的な計算方法を学びました。",
+          "next": "次は文字列について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "category": "入門編",
+      "title": "文字列",
+      "slides": [
+        {
+          "type": "title",
+          "title": "文字列",
+          "text": "文字列を組み合わせたり、加工したりする方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "文字列の結合",
+          "language": "python",
+          "code": "first = \"こんにちは、\"\nsecond = \"世界！\"\nprint(first + second) # こんにちは、世界！"
+        },
+        {
+          "type": "code",
+          "title": "f-string",
+          "language": "python",
+          "code": "name = \"田中\"\nage = 20\nprint(f\"{name}さんは{age}歳です\")"
+        },
+        {
+          "type": "code",
+          "title": "文字列の長さ",
+          "language": "python",
+          "code": "text = \"Proglight\"\nprint(len(text)) # 9"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "文字列は+で結合できる",
+            "f-stringを使うと変数を文字列に埋め込める",
+            "len()で文字列の長さを取得できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "文字列の基本的な操作方法を学びました。",
+          "next": "次はユーザーからの入力を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "category": "入門編",
+      "title": "入力",
+      "slides": [
+        {
+          "type": "title",
+          "title": "入力",
+          "text": "input()を使って、ユーザーからの入力を受け取る方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "input()の基本",
+          "language": "python",
+          "code": "name = input(\"名前を入力してください: \")\nprint(f\"こんにちは、{name}さん\")"
+        },
+        {
+          "type": "content",
+          "title": "文字列から数値への変換",
+          "text": "input()で受け取った値は常に文字列（str）になります。計算に使いたい場合は、int()やfloat()で数値に変換する必要があります。"
+        },
+        {
+          "type": "code",
+          "title": "int()とfloat()",
+          "language": "python",
+          "code": "age_text = input(\"年齢を入力してください: \")\nage = int(age_text)\nprint(age + 1)"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "input()でユーザーからの入力を受け取れる",
+            "input()の結果は必ず文字列になる",
+            "int()やfloat()で数値に変換できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "ユーザーからの入力を受け取る方法を学びました。",
+          "next": "次は条件分岐について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "category": "入門編",
+      "title": "条件分岐",
+      "slides": [
+        {
+          "type": "title",
+          "title": "条件分岐",
+          "text": "条件によって処理を変える「条件分岐」を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "if / elif / else",
+          "language": "python",
+          "code": "score = 75\n\nif score >= 80:\n    print(\"合格\")\nelif score >= 60:\n    print(\"再試験\")\nelse:\n    print(\"不合格\")"
+        },
+        {
+          "type": "code",
+          "title": "比較演算子と論理演算子",
+          "language": "python",
+          "code": "age = 20\n\nprint(age == 20)             # 比較演算子\nprint(age >= 18 and age < 65) # 論理演算子（and）\nprint(age < 18 or age > 65)   # 論理演算子（or）"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "ifで条件がTrueのときの処理を書く",
+            "elif、elseで他の条件を追加できる",
+            "比較演算子や論理演算子で条件を作る"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "条件によって処理を分ける方法を学びました。",
+          "next": "次は繰り返し処理について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "category": "入門編",
+      "title": "繰り返し",
+      "slides": [
+        {
+          "type": "title",
+          "title": "繰り返し",
+          "text": "同じ処理を何度も行う「繰り返し」処理を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "for文とrange()",
+          "language": "python",
+          "code": "for i in range(5):\n    print(i) # 0, 1, 2, 3, 4"
+        },
+        {
+          "type": "code",
+          "title": "while文",
+          "language": "python",
+          "code": "i = 0\nwhile i < 5:\n    print(i)\n    i += 1"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "forは回数が決まっている繰り返しに便利",
+            "range()で繰り返す回数の範囲を指定できる",
+            "whileは条件がTrueの間、処理を繰り返す"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "繰り返し処理の書き方を学びました。",
+          "next": "次はリストについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "category": "入門編",
+      "title": "リスト",
+      "slides": [
+        {
+          "type": "title",
+          "title": "リスト",
+          "text": "複数の値をまとめて扱える「リスト」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "リストの作成と要素の取得",
+          "language": "python",
+          "code": "fruits = [\"りんご\", \"みかん\", \"ぶどう\"]\nprint(fruits[0]) # りんご"
+        },
+        {
+          "type": "code",
+          "title": "追加・削除・変更",
+          "language": "python",
+          "code": "fruits.append(\"バナナ\") # 追加\nfruits.remove(\"みかん\") # 削除\nfruits[0] = \"パイナップル\" # 変更"
+        },
+        {
+          "type": "code",
+          "title": "len()",
+          "language": "python",
+          "code": "print(len(fruits)) # リストの要素数"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "リストは複数の値をまとめて管理できる",
+            "インデックス番号（0から始まる）で要素を取得する",
+            "append()で追加、remove()で削除できる",
+            "len()で要素数を取得できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "リストの基本的な使い方を学びました。",
+          "next": "次は関数について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "category": "入門編",
+      "title": "関数",
+      "slides": [
+        {
+          "type": "title",
+          "title": "関数",
+          "text": "処理をひとまとまりにして再利用できる「関数」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "defと引数・return",
+          "language": "python",
+          "code": "def add(a, b):\n    return a + b\n\nresult = add(2, 3)\nprint(result) # 5"
+        },
+        {
+          "type": "content",
+          "title": "戻り値について",
+          "text": "returnを使うと、関数の実行結果を呼び出し元に返すことができます。returnがない関数は、実行してもNoneが返ります。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "defで関数を定義する",
+            "引数として値を受け取れる",
+            "returnで結果を返す"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "関数の基本的な作り方を学びました。",
+          "next": "次は辞書について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "category": "入門編",
+      "title": "辞書",
+      "slides": [
+        {
+          "type": "title",
+          "title": "辞書",
+          "text": "キーと値のペアでデータを管理できる「辞書」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "辞書の作成とキー・値",
+          "language": "python",
+          "code": "user = {\"name\": \"田中\", \"age\": 20}\nprint(user[\"name\"]) # 田中"
+        },
+        {
+          "type": "code",
+          "title": "要素の追加・変更・削除",
+          "language": "python",
+          "code": "user[\"email\"] = \"tanaka@example.com\" # 追加\nuser[\"age\"] = 21                       # 変更\ndel user[\"email\"]                      # 削除"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "辞書はキーと値のペアでデータを管理する",
+            "キーを指定して値を取得・変更できる",
+            "delで要素を削除できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "辞書の基本的な使い方を学びました。",
+          "next": "次はタプルと集合について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "category": "入門編",
+      "title": "タプル・集合",
+      "slides": [
+        {
+          "type": "title",
+          "title": "タプル・集合",
+          "text": "リストに似た、タプルと集合というデータ型を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "tuple（タプル）",
+          "language": "python",
+          "code": "point = (10, 20)\nprint(point[0]) # 10"
+        },
+        {
+          "type": "code",
+          "title": "set（集合）",
+          "language": "python",
+          "code": "fruits = {\"りんご\", \"みかん\", \"りんご\"}\nprint(fruits) # 重複が自動的に取り除かれる"
+        },
+        {
+          "type": "comparison",
+          "title": "listとの違い",
+          "items": [
+            {
+              "name": "list",
+              "role": "変更でき、順番がある",
+              "example": "[1, 2, 3]"
+            },
+            {
+              "name": "tuple",
+              "role": "変更できず、順番がある",
+              "example": "(1, 2, 3)"
+            },
+            {
+              "name": "set",
+              "role": "変更でき、重複せず、順番はない",
+              "example": "{1, 2, 3}"
+            }
+          ]
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "タプルは変更できないリストのようなもの",
+            "集合は重複を許さないデータの集まり",
+            "listとtuple、setにはそれぞれ特徴がある"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "タプルと集合の基本を学びました。",
+          "next": "次はエラーと例外について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "category": "入門編",
+      "title": "エラーと例外",
+      "slides": [
+        {
+          "type": "title",
+          "title": "エラーと例外",
+          "text": "プログラムを書いていると必ず出会う「エラー」との向き合い方を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "エラーとエラーメッセージ",
+          "text": "エラーとは、プログラムが正しく実行できないときに表示されるメッセージのことです。エラーメッセージには、原因を特定するためのヒントが書かれています。"
+        },
+        {
+          "type": "content",
+          "title": "基本的なエラーの読み方",
+          "text": "エラーメッセージの一番下の行には、エラーの種類と内容が書かれています。まずはそこを確認する習慣をつけましょう。"
+        },
+        {
+          "type": "code",
+          "title": "try / exceptの基礎",
+          "language": "python",
+          "code": "try:\n    num = int(\"abc\") # エラーが発生する\nexcept ValueError:\n    print(\"数値に変換できませんでした\")"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "エラーメッセージには原因のヒントが書かれている",
+            "try/exceptでエラーが起きても処理を続けられる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "エラーと例外の基本的な考え方を学びました。",
+          "next": "次はモジュールについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "category": "入門編",
+      "title": "モジュール",
+      "slides": [
+        {
+          "type": "title",
+          "title": "モジュール",
+          "text": "他の人が作った便利な機能を使える「モジュール」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "importの基本",
+          "language": "python",
+          "code": "import random\n\nprint(random.randint(1, 10)) # 1〜10のランダムな整数"
+        },
+        {
+          "type": "code",
+          "title": "mathモジュール",
+          "language": "python",
+          "code": "import math\n\nprint(math.sqrt(16)) # 4.0（平方根）"
+        },
+        {
+          "type": "content",
+          "title": "標準ライブラリ",
+          "text": "randomやmathのように、Pythonにはじめから用意されている便利なモジュール群を「標準ライブラリ」といいます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "importでモジュールを読み込める",
+            "randomでランダムな値を扱える",
+            "mathで数学的な計算ができる",
+            "標準ライブラリはPythonに最初から用意されている"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "モジュールの基本的な使い方を学びました。",
+          "next": "次はこれまでの内容を組み合わせてプログラムを作ってみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "category": "入門編",
+      "title": "Pythonで簡単なプログラムを作ろう",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Pythonで簡単なプログラムを作ろう",
+          "text": "これまで学んだ、計算・入力・条件分岐・繰り返し・関数を組み合わせて、簡単なプログラムを作ってみましょう。"
+        },
+        {
+          "type": "content",
+          "title": "作るプログラムの内容",
+          "text": "今回は、入力された点数に応じて「合格」「再試験」「不合格」を判定するプログラムを作ります。",
+          "list": [
+            "点数の入力",
+            "点数による条件分岐",
+            "判定結果の表示"
+          ]
+        },
+        {
+          "type": "code",
+          "title": "完成したプログラム",
+          "language": "python",
+          "code": "def judge(score):\n    if score >= 80:\n        return \"合格\"\n    elif score >= 60:\n        return \"再試験\"\n    else:\n        return \"不合格\"\n\nscore_text = input(\"点数を入力してください: \")\nscore = int(score_text)\n\nresult = judge(score)\nprint(f\"結果: {result}\")"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "input・条件分岐・関数を組み合わせてプログラムを作れた",
+            "入門編で学んだ知識を実際に使うことができた"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "入門編 終了！",
+          "text": "おめでとうございます！入門編が終了し、Pythonの基本文法を使って簡単なプログラムを作れるようになりました。",
+          "next": "次は基礎編で、Pythonの主要な機能をさらに詳しく学んでいきましょう。"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "category": "基礎編（Python基礎）",
+      "title": "リスト完全理解",
+      "slides": [
+        {
+          "type": "title",
+          "title": "リスト完全理解",
+          "text": "リストをさらに詳しく使いこなす方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "スライス",
+          "language": "python",
+          "code": "nums = [0, 1, 2, 3, 4, 5]\nprint(nums[1:4])  # [1, 2, 3]\nprint(nums[:3])   # [0, 1, 2]\nprint(nums[::-1]) # [5, 4, 3, 2, 1, 0]"
+        },
+        {
+          "type": "code",
+          "title": "多重リスト",
+          "language": "python",
+          "code": "matrix = [[1, 2], [3, 4]]\nprint(matrix[0][1]) # 2"
+        },
+        {
+          "type": "code",
+          "title": "リスト内包表記",
+          "language": "python",
+          "code": "squares = [x ** 2 for x in range(5)]\nprint(squares) # [0, 1, 4, 9, 16]"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "スライスでリストの一部を取り出せる",
+            "リストの中にリストを入れて多重リストを作れる",
+            "リスト内包表記で短くリストを作れる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "リストの応用的な使い方を学びました。",
+          "next": "次は辞書についてさらに詳しく学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "category": "基礎編（Python基礎）",
+      "title": "辞書完全理解",
+      "slides": [
+        {
+          "type": "title",
+          "title": "辞書完全理解",
+          "text": "辞書をさらに詳しく使いこなす方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "items()・keys()・values()",
+          "language": "python",
+          "code": "user = {\"name\": \"田中\", \"age\": 20}\n\nfor key, value in user.items():\n    print(key, value)\n\nprint(user.keys())\nprint(user.values())"
+        },
+        {
+          "type": "code",
+          "title": "辞書内包表記",
+          "language": "python",
+          "code": "squares = {x: x ** 2 for x in range(5)}\nprint(squares) # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "items()でキーと値のペアを取り出せる",
+            "keys()・values()でキーだけ、値だけを取得できる",
+            "辞書内包表記で短く辞書を作れる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "辞書の応用的な使い方を学びました。",
+          "next": "次は関数の発展的な使い方を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "category": "基礎編（Python基礎）",
+      "title": "関数の発展",
+      "slides": [
+        {
+          "type": "title",
+          "title": "関数の発展",
+          "text": "引数の受け取り方をさらに詳しく学びます。"
+        },
+        {
+          "type": "code",
+          "title": "デフォルト引数とキーワード引数",
+          "language": "python",
+          "code": "def greet(name, greeting=\"こんにちは\"):\n    print(f\"{greeting}、{name}さん\")\n\ngreet(\"田中\")\ngreet(\"田中\", greeting=\"おはよう\")"
+        },
+        {
+          "type": "code",
+          "title": "可変長引数（*args・**kwargs）",
+          "language": "python",
+          "code": "def total(*args):\n    return sum(args)\n\nprint(total(1, 2, 3)) # 6\n\ndef show_info(**kwargs):\n    for key, value in kwargs.items():\n        print(key, value)\n\nshow_info(name=\"田中\", age=20)"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "デフォルト引数で省略可能な引数を作れる",
+            "キーワード引数で引数名を指定して渡せる",
+            "*argsは複数の引数、**kwargsは複数のキーワード引数をまとめて受け取れる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "関数の発展的な使い方を学びました。",
+          "next": "次はlambdaについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "category": "基礎編（Python基礎）",
+      "title": "lambda",
+      "slides": [
+        {
+          "type": "title",
+          "title": "lambda",
+          "text": "1行で書ける無名関数「lambda」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "lambda式の基本",
+          "language": "python",
+          "code": "add = lambda a, b: a + b\nprint(add(2, 3)) # 5"
+        },
+        {
+          "type": "code",
+          "title": "map()とfilter()",
+          "language": "python",
+          "code": "nums = [1, 2, 3, 4]\n\ndoubled = list(map(lambda x: x * 2, nums))\neven = list(filter(lambda x: x % 2 == 0, nums))\n\nprint(doubled) # [2, 4, 6, 8]\nprint(even)    # [2, 4]"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "lambdaは名前をつけずに書ける簡単な関数",
+            "map()は各要素を変換する",
+            "filter()は条件に合う要素だけを取り出す"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "lambda式の使い方を学びました。",
+          "next": "次はファイル操作について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "category": "基礎編（Python基礎）",
+      "title": "ファイル操作",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ファイル操作",
+          "text": "Pythonからファイルを読み書きする方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "open()とwith",
+          "language": "python",
+          "code": "with open(\"sample.txt\", \"r\", encoding=\"utf-8\") as f:\n    content = f.read()\n    print(content)"
+        },
+        {
+          "type": "code",
+          "title": "write()でファイルに書き込む",
+          "language": "python",
+          "code": "with open(\"sample.txt\", \"w\", encoding=\"utf-8\") as f:\n    f.write(\"こんにちは\\n\")"
+        },
+        {
+          "type": "content",
+          "title": "withを使う理由",
+          "text": "withを使うと、処理が終わったあとに自動的にファイルを閉じてくれるため、閉じ忘れを防ぐことができます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "open()でファイルを開く",
+            "read()で読み込み、write()で書き込みができる",
+            "withを使うと自動的にファイルを閉じてくれる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "ファイルの読み書きの基本を学びました。",
+          "next": "次はCSVファイルの扱い方を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "category": "基礎編（Python基礎）",
+      "title": "CSV",
+      "slides": [
+        {
+          "type": "title",
+          "title": "CSV",
+          "text": "表形式のデータを扱う「CSVファイル」の読み書きを学びます。"
+        },
+        {
+          "type": "code",
+          "title": "csvモジュールで読み込む",
+          "language": "python",
+          "code": "import csv\n\nwith open(\"data.csv\", \"r\", encoding=\"utf-8\") as f:\n    reader = csv.reader(f)\n    for row in reader:\n        print(row)"
+        },
+        {
+          "type": "code",
+          "title": "csvモジュールで書き込む",
+          "language": "python",
+          "code": "import csv\n\nwith open(\"data.csv\", \"w\", encoding=\"utf-8\", newline=\"\") as f:\n    writer = csv.writer(f)\n    writer.writerow([\"名前\", \"年齢\"])\n    writer.writerow([\"田中\", 20])"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "csvモジュールでCSVファイルを扱える",
+            "csv.reader()で読み込み、csv.writer()で書き込みができる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "CSVファイルの読み書きの方法を学びました。",
+          "next": "次はJSONファイルの扱い方を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "category": "基礎編（Python基礎）",
+      "title": "JSON",
+      "slides": [
+        {
+          "type": "title",
+          "title": "JSON",
+          "text": "データをやり取りするための形式「JSON」をPythonで扱う方法を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "JSONとは",
+          "text": "JSONは、データをやり取りするための軽量なテキスト形式です。Pythonの辞書やリストとよく似た形でデータを表現できます。"
+        },
+        {
+          "type": "code",
+          "title": "jsonモジュールで読み込む・書き込む",
+          "language": "python",
+          "code": "import json\n\n# 読み込み\nwith open(\"data.json\", \"r\", encoding=\"utf-8\") as f:\n    data = json.load(f)\n\n# 書き込み\nwith open(\"data.json\", \"w\", encoding=\"utf-8\") as f:\n    json.dump(data, f, ensure_ascii=False, indent=2)"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "jsonモジュールでJSONファイルを扱える",
+            "json.load()で読み込み、json.dump()で書き込みができる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "JSONファイルの読み書きの方法を学びました。",
+          "next": "次は例外処理についてさらに詳しく学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "category": "基礎編（Python基礎）",
+      "title": "例外処理",
+      "slides": [
+        {
+          "type": "title",
+          "title": "例外処理",
+          "text": "エラーへの対応方法をさらに詳しく学びます。"
+        },
+        {
+          "type": "code",
+          "title": "try / except / else / finally",
+          "language": "python",
+          "code": "try:\n    num = int(input(\"数値を入力: \"))\nexcept ValueError:\n    print(\"数値ではありません\")\nelse:\n    print(\"変換に成功しました\")\nfinally:\n    print(\"処理終了\")"
+        },
+        {
+          "type": "code",
+          "title": "raiseで意図的にエラーを発生させる",
+          "language": "python",
+          "code": "def check_age(age):\n    if age < 0:\n        raise ValueError(\"年齢は0以上にしてください\")\n    return age"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "exceptでエラーの種類ごとに処理を分けられる",
+            "elseはエラーが起きなかったときに実行される",
+            "finallyは必ず実行される",
+            "raiseで意図的にエラーを発生させられる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "例外処理の発展的な書き方を学びました。",
+          "next": "次はモジュールとパッケージについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "category": "基礎編（Python基礎）",
+      "title": "モジュールとパッケージ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "モジュールとパッケージ",
+          "text": "自分のコードを複数のファイルに分ける方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "importとfrom",
+          "language": "python",
+          "code": "# math_utils.py\ndef add(a, b):\n    return a + b\n\n# main.py\nimport math_utils\nprint(math_utils.add(2, 3))\n\nfrom math_utils import add\nprint(add(2, 3))"
+        },
+        {
+          "type": "content",
+          "title": "パッケージと__init__.py",
+          "text": "複数のモジュールをまとめたフォルダを「パッケージ」といいます。フォルダの中に__init__.pyというファイルを置くことで、そのフォルダをパッケージとして扱えるようになります。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "importで他のファイルの機能を読み込める",
+            "fromを使うと特定の関数だけを読み込める",
+            "パッケージは複数のモジュールをまとめたフォルダ"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "モジュールとパッケージの基本を学びました。",
+          "next": "次は標準ライブラリについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "category": "基礎編（Python基礎）",
+      "title": "標準ライブラリ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "標準ライブラリ",
+          "text": "Pythonに最初から用意されている、便利な標準ライブラリを紹介します。"
+        },
+        {
+          "type": "code",
+          "title": "osとsys",
+          "language": "python",
+          "code": "import os\nimport sys\n\nprint(os.getcwd())     # 現在のフォルダのパス\nprint(sys.version)     # Pythonのバージョン"
+        },
+        {
+          "type": "code",
+          "title": "datetimeとtime",
+          "language": "python",
+          "code": "import datetime\nimport time\n\nnow = datetime.datetime.now()\nprint(now)\n\ntime.sleep(1) # 1秒待つ"
+        },
+        {
+          "type": "content",
+          "title": "mathとrandomの復習",
+          "text": "入門編で学んだmathやrandomも標準ライブラリの一部です。これ以外にも、Pythonにはたくさんの標準ライブラリが用意されています。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "osはファイルやフォルダに関する機能を提供する",
+            "sysはPythonの実行環境に関する情報を扱う",
+            "datetimeは日付や時刻、timeは時間に関する機能を提供する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "代表的な標準ライブラリを学びました。",
+          "next": "次はオブジェクト指向について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "category": "基礎編（オブジェクト指向）",
+      "title": "クラス",
+      "slides": [
+        {
+          "type": "title",
+          "title": "クラス",
+          "text": "オブジェクトの設計図となる「クラス」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "classと属性・メソッド",
+          "language": "python",
+          "code": "class User:\n    def greet(self):\n        print(\"こんにちは\")\n\nuser = User()\nuser.greet()"
+        },
+        {
+          "type": "content",
+          "title": "インスタンスとは",
+          "text": "クラスから作られた実体のことを「インスタンス」といいます。同じクラスから、それぞれ独立したインスタンスをいくつも作ることができます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "classでオブジェクトの設計図を作る",
+            "クラスから作られた実体をインスタンスという",
+            "クラスの中の関数をメソッドという"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "クラスの基本的な使い方を学びました。",
+          "next": "次はコンストラクタについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "category": "基礎編（オブジェクト指向）",
+      "title": "コンストラクタ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "コンストラクタ",
+          "text": "インスタンスが作られたときに実行される「コンストラクタ」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "__init__()とインスタンス変数",
+          "language": "python",
+          "code": "class User:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def greet(self):\n        print(f\"{self.name}です\")\n\nuser = User(\"田中\", 20)\nuser.greet()"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "__init__()はインスタンス作成時に自動で実行される",
+            "self.〇〇に代入することでインスタンス変数を作れる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "コンストラクタの使い方を学びました。",
+          "next": "次は継承について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "category": "基礎編（オブジェクト指向）",
+      "title": "継承",
+      "slides": [
+        {
+          "type": "title",
+          "title": "継承",
+          "text": "既存のクラスの機能を引き継ぐ「継承」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "親クラスと子クラス",
+          "language": "python",
+          "code": "class User:\n    def __init__(self, name):\n        self.name = name\n\n    def greet(self):\n        print(f\"{self.name}です\")\n\nclass Admin(User):\n    pass\n\nadmin = Admin(\"鈴木\")\nadmin.greet()"
+        },
+        {
+          "type": "code",
+          "title": "super()",
+          "language": "python",
+          "code": "class Admin(User):\n    def __init__(self, name, level):\n        super().__init__(name)\n        self.level = level"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "子クラスは親クラスの機能を引き継げる",
+            "super()で親クラスの機能を呼び出せる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "継承の基本的な使い方を学びました。",
+          "next": "次は特殊メソッドについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "category": "基礎編（オブジェクト指向）",
+      "title": "特殊メソッド",
+      "slides": [
+        {
+          "type": "title",
+          "title": "特殊メソッド",
+          "text": "前後にアンダースコア2つがつく「特殊メソッド」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "__str__()と__repr__()",
+          "language": "python",
+          "code": "class User:\n    def __init__(self, name):\n        self.name = name\n\n    def __str__(self):\n        return f\"User: {self.name}\"\n\nuser = User(\"田中\")\nprint(user) # User: 田中"
+        },
+        {
+          "type": "code",
+          "title": "__len__()",
+          "language": "python",
+          "code": "class Team:\n    def __init__(self, members):\n        self.members = members\n\n    def __len__(self):\n        return len(self.members)\n\nteam = Team([\"田中\", \"鈴木\"])\nprint(len(team)) # 2"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "__str__()はprint()したときの表示をカスタマイズできる",
+            "__len__()はlen()の結果をカスタマイズできる",
+            "特殊メソッドは自分のクラスに標準的な振る舞いを追加できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "特殊メソッドの基本を学びました。オブジェクト指向編はこれで終了です。",
+          "next": "次は実用的なPythonの機能について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "category": "基礎編（実用Python）",
+      "title": "正規表現",
+      "slides": [
+        {
+          "type": "title",
+          "title": "正規表現",
+          "text": "文字列のパターンを検索・置換できる「正規表現」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "パターンの検索",
+          "language": "python",
+          "code": "import re\n\ntext = \"私のメールはtest@example.comです\"\nmatch = re.search(r\"[\\w.]+@[\\w.]+\", text)\nprint(match.group()) # test@example.com"
+        },
+        {
+          "type": "code",
+          "title": "置換",
+          "language": "python",
+          "code": "import re\n\ntext = \"電話番号は090-1234-5678です\"\nresult = re.sub(r\"\\d\", \"*\", text)\nprint(result)"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "reモジュールで正規表現を扱える",
+            "re.search()でパターンを検索できる",
+            "re.sub()でパターンに一致する部分を置換できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "正規表現の基本的な使い方を学びました。",
+          "next": "次は日付と時間について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "category": "基礎編（実用Python）",
+      "title": "日付と時間",
+      "slides": [
+        {
+          "type": "title",
+          "title": "日付と時間",
+          "text": "datetimeモジュールを使って、日付や時間を扱う方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "dateとtime",
+          "language": "python",
+          "code": "from datetime import datetime\n\nnow = datetime.now()\nprint(now.year, now.month, now.day)\nprint(now.hour, now.minute, now.second)"
+        },
+        {
+          "type": "code",
+          "title": "timedelta",
+          "language": "python",
+          "code": "from datetime import datetime, timedelta\n\nnow = datetime.now()\ntomorrow = now + timedelta(days=1)\nprint(tomorrow)"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "datetime.now()で現在の日時を取得できる",
+            "timedeltaで日時の計算ができる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "日付と時間の扱い方を学びました。",
+          "next": "次はランダム処理について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "category": "基礎編（実用Python）",
+      "title": "ランダム処理",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ランダム処理",
+          "text": "randomモジュールを使った、ランダムな処理を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "乱数の生成",
+          "language": "python",
+          "code": "import random\n\nprint(random.randint(1, 6)) # 1〜6のランダムな整数\nprint(random.random())      # 0〜1のランダムな小数"
+        },
+        {
+          "type": "code",
+          "title": "ランダム選択とシャッフル",
+          "language": "python",
+          "code": "import random\n\nfruits = [\"りんご\", \"みかん\", \"ぶどう\"]\nprint(random.choice(fruits)) # ランダムに1つ選ぶ\n\nrandom.shuffle(fruits)\nprint(fruits) # 順番がシャッフルされる"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "random.randint()でランダムな整数を作れる",
+            "random.choice()でリストからランダムに1つ選べる",
+            "random.shuffle()でリストの順番をシャッフルできる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "ランダム処理の使い方を学びました。",
+          "next": "次はコマンドラインの使い方について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "category": "基礎編（実用Python）",
+      "title": "コマンドライン",
+      "slides": [
+        {
+          "type": "title",
+          "title": "コマンドライン",
+          "text": "ターミナルからPythonプログラムに情報を渡す方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "sys.argv",
+          "language": "python",
+          "code": "import sys\n\nprint(sys.argv) # 実行時に渡した引数のリスト\n# 実行例: python main.py hello world"
+        },
+        {
+          "type": "code",
+          "title": "argparseの基本",
+          "language": "python",
+          "code": "import argparse\n\nparser = argparse.ArgumentParser()\nparser.add_argument(\"name\")\nargs = parser.parse_args()\n\nprint(f\"こんにちは、{args.name}さん\")"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "sys.argvでターミナルから渡された引数を取得できる",
+            "argparseを使うとオプション付きの引数を扱いやすくなる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "コマンドラインからの入力の扱い方を学びました。",
+          "next": "次は環境変数について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "category": "基礎編（実用Python）",
+      "title": "環境変数",
+      "slides": [
+        {
+          "type": "title",
+          "title": "環境変数",
+          "text": "パスワードやAPIキーなどの設定値を安全に管理する「環境変数」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "環境変数とは",
+          "text": "環境変数とは、プログラムの外側（OSやシステム側）に保存しておく設定値のことです。パスワードなどの秘密の情報をコードに直接書かずに済むようにするために使われます。"
+        },
+        {
+          "type": "code",
+          "title": "os.environ",
+          "language": "python",
+          "code": "import os\n\napi_key = os.environ.get(\"API_KEY\")\nprint(api_key)"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "環境変数はプログラムの外側で管理する設定値",
+            "os.environで環境変数を取得できる",
+            "秘密の情報はコードに直接書かず、環境変数で管理する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "環境変数の基本的な考え方を学びました。実用Python編はこれで終了です。",
+          "next": "次はWeb・ネットワークについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "category": "基礎編（Web・ネットワーク）",
+      "title": "HTTPの基本",
+      "slides": [
+        {
+          "type": "title",
+          "title": "HTTPの基本",
+          "text": "Webでの通信の基本となる「HTTP」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "HTTPとURL",
+          "text": "HTTPとは、ブラウザとサーバーがデータをやり取りするための約束事（プロトコル）です。URLは、そのデータがどこにあるかを示す住所のようなものです。"
+        },
+        {
+          "type": "comparison",
+          "title": "GETとPOST",
+          "items": [
+            {
+              "name": "GET",
+              "role": "データを取得するためのリクエスト",
+              "example": "ページの表示、検索など"
+            },
+            {
+              "name": "POST",
+              "role": "データを送信するためのリクエスト",
+              "example": "フォームの送信、投稿など"
+            }
+          ]
+        },
+        {
+          "type": "content",
+          "title": "ステータスコード",
+          "text": "ステータスコードは、リクエストの結果を表す数字です。200は成功、404はページが見つからない、500はサーバーエラーを表します。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "HTTPはブラウザとサーバーの通信の約束事",
+            "GETはデータ取得、POSTはデータ送信に使う",
+            "ステータスコードでリクエストの結果がわかる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "HTTP通信の基本を学びました。",
+          "next": "次はAPIについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "category": "基礎編（Web・ネットワーク）",
+      "title": "API",
+      "slides": [
+        {
+          "type": "title",
+          "title": "API",
+          "text": "外部のサービスと連携するための「API」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "APIとは",
+          "text": "APIとは、あるプログラムが別のプログラムやサービスの機能・データを利用するための窓口のことです。"
+        },
+        {
+          "type": "code",
+          "title": "requestsでAPIからデータを取得する",
+          "language": "python",
+          "code": "import requests\n\nresponse = requests.get(\"https://api.example.com/users\")\nprint(response.status_code)\nprint(response.text)"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "APIは他のサービスの機能やデータを利用するための窓口",
+            "requestsライブラリでAPIと通信できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "APIの基本的な使い方を学びました。",
+          "next": "次はJSON APIについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "category": "基礎編（Web・ネットワーク）",
+      "title": "JSON API",
+      "slides": [
+        {
+          "type": "title",
+          "title": "JSON API",
+          "text": "JSON形式でデータをやり取りするAPIの使い方を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "レスポンスをJSONとして扱う",
+          "language": "python",
+          "code": "import requests\n\nresponse = requests.get(\"https://api.example.com/users\")\ndata = response.json()\n\nfor user in data:\n    print(user[\"name\"])"
+        },
+        {
+          "type": "content",
+          "title": "APIデータの利用",
+          "text": "取得したJSONデータは、Pythonの辞書やリストと同じように扱うことができます。必要な情報を取り出して、プログラムの中で活用しましょう。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "response.json()でレスポンスを辞書やリストに変換できる",
+            "取得したデータはPythonの辞書・リストとして扱える"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "JSON形式のAPIの扱い方を学びました。Web・ネットワーク編はこれで終了です。",
+          "next": "次はPygameを使ったゲーム開発について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "category": "基礎編（Pygame入門）",
+      "title": "Pygameとは",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Pygameとは",
+          "text": "Pythonでゲームを作れるライブラリ「Pygame」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "Pygameとゲーム開発",
+          "text": "Pygameは、Pythonで2Dゲームを作るための代表的なライブラリです。画面の描画やキーボード入力、音の再生などをまとめて扱うことができます。"
+        },
+        {
+          "type": "code",
+          "title": "Pygameのインストール",
+          "language": "python",
+          "code": "pip install pygame"
+        },
+        {
+          "type": "content",
+          "title": "基本的な構成",
+          "text": "Pygameのプログラムは、Pygameの初期化、ゲームループ（繰り返し処理）、画面の更新という基本的な流れで作られます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "PygameはPythonで2Dゲームを作るためのライブラリ",
+            "pip installでインストールする",
+            "初期化・ゲームループ・画面更新が基本の流れ"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Pygameがどんなライブラリかを学びました。",
+          "next": "次はPygameで画面を作ってみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "category": "基礎編（Pygame入門）",
+      "title": "Pygameで画面を作る",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Pygameで画面を作る",
+          "text": "Pygameを使ってウィンドウを表示する方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "ウィンドウとゲームループ",
+          "language": "python",
+          "code": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((640, 480))\npygame.display.set_caption(\"My Game\")\n\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n\n    screen.fill((135, 206, 235)) # 背景色\n    pygame.display.update()\n\npygame.quit()"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "pygame.display.set_mode()で画面サイズを指定する",
+            "pygame.display.set_caption()でタイトルを設定する",
+            "whileループの中でイベント処理と画面更新を繰り返す"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Pygameでウィンドウを作る方法を学びました。",
+          "next": "次は図形を描いてみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "category": "基礎編（Pygame入門）",
+      "title": "図形を描く",
+      "slides": [
+        {
+          "type": "title",
+          "title": "図形を描く",
+          "text": "pygame.drawを使って、画面に図形を描く方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "四角形・円・線",
+          "language": "python",
+          "code": "pygame.draw.rect(screen, (255, 0, 0), (50, 50, 100, 80))    # 四角形\npygame.draw.circle(screen, (0, 255, 0), (300, 100), 50)      # 円\npygame.draw.line(screen, (0, 0, 0), (50, 250), (300, 250), 3) # 線"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "pygame.draw.rect()で四角形を描ける",
+            "pygame.draw.circle()で円を描ける",
+            "pygame.draw.line()で線を描ける"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Pygameでの図形の描き方を学びました。",
+          "next": "次は画像を表示する方法を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "category": "基礎編（Pygame入門）",
+      "title": "画像を表示する",
+      "slides": [
+        {
+          "type": "title",
+          "title": "画像を表示する",
+          "text": "Pygameで画像ファイルを読み込んで表示する方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "画像の読み込みと表示",
+          "language": "python",
+          "code": "image = pygame.image.load(\"character.png\")\nscreen.blit(image, (100, 100))"
+        },
+        {
+          "type": "content",
+          "title": "Surfaceとは",
+          "text": "Pygameでは、画像や図形を描くための領域をSurfaceといいます。読み込んだ画像もSurfaceとして扱われ、blit()で他のSurface（画面など）に貼り付けます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "pygame.image.load()で画像を読み込む",
+            "blit()で画像を画面に貼り付ける",
+            "画像や画面はSurfaceというオブジェクトとして扱われる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "画像の表示方法を学びました。",
+          "next": "次はキーボード操作について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "category": "基礎編（Pygame入門）",
+      "title": "キーボード操作",
+      "slides": [
+        {
+          "type": "title",
+          "title": "キーボード操作",
+          "text": "キーボードの入力を受け取り、キャラクターを操作する方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "KEYDOWNとKEYUP",
+          "language": "python",
+          "code": "for event in pygame.event.get():\n    if event.type == pygame.KEYDOWN:\n        if event.key == pygame.K_RIGHT:\n            print(\"右キーが押された\")\n    if event.type == pygame.KEYUP:\n        print(\"キーが離された\")"
+        },
+        {
+          "type": "code",
+          "title": "キャラクター操作の例",
+          "language": "python",
+          "code": "x = 100\nkeys = pygame.key.get_pressed()\nif keys[pygame.K_RIGHT]:\n    x += 5\nif keys[pygame.K_LEFT]:\n    x -= 5"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "KEYDOWNはキーが押された瞬間、KEYUPは離された瞬間に発生する",
+            "pygame.key.get_pressed()で押されているキーを継続的に取得できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "キーボード操作の基本を学びました。",
+          "next": "次はマウス操作について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "category": "基礎編（Pygame入門）",
+      "title": "マウス操作",
+      "slides": [
+        {
+          "type": "title",
+          "title": "マウス操作",
+          "text": "マウスの座標やクリックを扱う方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "マウス座標とクリック",
+          "language": "python",
+          "code": "for event in pygame.event.get():\n    if event.type == pygame.MOUSEBUTTONDOWN:\n        print(\"クリックされた座標:\", event.pos)\n\nmouse_x, mouse_y = pygame.mouse.get_pos()\nprint(mouse_x, mouse_y)"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "pygame.mouse.get_pos()で現在のマウス座標を取得できる",
+            "MOUSEBUTTONDOWNでクリックされた瞬間を検知できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "マウス操作の基本を学びました。",
+          "next": "次はPygameで音を鳴らす方法を学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "category": "基礎編（Pygame入門）",
+      "title": "Pygameで音を鳴らす",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Pygameで音を鳴らす",
+          "text": "pygame.mixerを使って、効果音やBGMを鳴らす方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "効果音の再生",
+          "language": "python",
+          "code": "pygame.mixer.init()\nsound = pygame.mixer.Sound(\"jump.wav\")\nsound.play()"
+        },
+        {
+          "type": "code",
+          "title": "BGMの再生",
+          "language": "python",
+          "code": "pygame.mixer.music.load(\"bgm.mp3\")\npygame.mixer.music.play(-1) # -1でループ再生"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "pygame.mixer.Sound()で効果音を扱える",
+            "pygame.mixer.music.play()でBGMを再生できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Pygameでの音の再生方法を学びました。",
+          "next": "次はいよいよ簡単なゲームを作ってみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "category": "基礎編（Pygame入門）",
+      "title": "簡単なゲームを作ろう",
+      "slides": [
+        {
+          "type": "title",
+          "title": "簡単なゲームを作ろう",
+          "text": "これまで学んだPygameの知識を組み合わせて、簡単なゲームを作ります。"
+        },
+        {
+          "type": "flow",
+          "title": "ゲーム制作の流れ",
+          "steps": [
+            "画面とプレイヤーを表示する",
+            "キーボードでプレイヤーを操作できるようにする",
+            "敵キャラクターを表示して動かす",
+            "colliderect()などで当たり判定を行う",
+            "スコアを表示・更新する"
+          ]
+        },
+        {
+          "type": "code",
+          "title": "当たり判定の例",
+          "language": "python",
+          "code": "player_rect = pygame.Rect(player_x, player_y, 40, 40)\nenemy_rect = pygame.Rect(enemy_x, enemy_y, 40, 40)\n\nif player_rect.colliderect(enemy_rect):\n    print(\"衝突しました\")"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "ゲームループの中でプレイヤー・敵・当たり判定を組み合わせる",
+            "colliderect()で四角形同士の衝突を判定できる",
+            "スコアなどの状態を管理しながらゲームを作る"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "基礎編 終了！",
+          "text": "おめでとうございます！基礎編が終了し、ファイル操作・JSON/CSV・オブジェクト指向・API・Pygameなど、実用的な機能を幅広く学びました。",
+          "next": "次は応用編でPythonをさらに深く学んでいきましょう。"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "category": "応用編（第1章：Python内部理解）",
+      "title": "Pythonの実行モデル",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Pythonの実行モデル",
+          "text": "Pythonのコードがどのように実行されているのか、その仕組みを学びます。"
+        },
+        {
+          "type": "flow",
+          "title": "Pythonの実行の流れ",
+          "steps": [
+            "書いたコード（ソースコード）が読み込まれる",
+            "インタプリタがコードをバイトコードに変換する",
+            "Python仮想マシン（PVM）がバイトコードを1行ずつ実行する"
+          ]
+        },
+        {
+          "type": "content",
+          "title": "インタプリタとバイトコード",
+          "text": "Pythonはインタプリタ型の言語で、実行前にソースコードをバイトコードという中間的な形式に変換し、それをPython仮想マシンが実行します。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Pythonのコードはバイトコードに変換されてから実行される",
+            "Python仮想マシン（PVM）がバイトコードを実行する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Pythonの実行の仕組みを学びました。",
+          "next": "次はオブジェクトと参照について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "category": "応用編（第1章：Python内部理解）",
+      "title": "オブジェクトと参照",
+      "slides": [
+        {
+          "type": "title",
+          "title": "オブジェクトと参照",
+          "text": "Pythonにおける変数とオブジェクトの関係について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "オブジェクトと参照",
+          "text": "Pythonの変数は、値そのものではなく、値（オブジェクト）が置かれている場所への「参照」を持っています。"
+        },
+        {
+          "type": "code",
+          "title": "ミュータブルとイミュータブル",
+          "language": "python",
+          "code": "# イミュータブル（変更不可）な例\na = 10\nb = a\nb = 20\nprint(a) # 10（aは影響を受けない）\n\n# ミュータブル（変更可能）な例\nlist_a = [1, 2, 3]\nlist_b = list_a\nlist_b.append(4)\nprint(list_a) # [1, 2, 3, 4]（同じリストを参照しているため変わる）"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "変数はオブジェクトへの参照を持っている",
+            "intや文字列はイミュータブル（変更不可）",
+            "listや辞書はミュータブル（変更可能）"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "オブジェクトと参照の関係を学びました。",
+          "next": "次はメモリ管理について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "category": "応用編（第1章：Python内部理解）",
+      "title": "メモリ管理",
+      "slides": [
+        {
+          "type": "title",
+          "title": "メモリ管理",
+          "text": "Pythonがメモリをどのように管理しているのかを学びます。"
+        },
+        {
+          "type": "content",
+          "title": "参照カウント",
+          "text": "Pythonは、各オブジェクトが「いくつの変数から参照されているか」を数える参照カウントという仕組みでメモリを管理しています。"
+        },
+        {
+          "type": "content",
+          "title": "ガベージコレクション",
+          "text": "参照カウントが0になったオブジェクトは、使われなくなったと判断され、ガベージコレクションによって自動的にメモリから解放されます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Pythonは参照カウントでメモリを管理している",
+            "参照されなくなったオブジェクトはガベージコレクションで解放される",
+            "開発者が明示的にメモリを解放する必要はほとんどない"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Pythonのメモリ管理の仕組みを学びました。第1章はこれで終了です。",
+          "next": "次の章では高度な関数について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "category": "応用編（第2章：高度な関数）",
+      "title": "デコレータ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "デコレータ",
+          "text": "関数に機能を追加できる「デコレータ」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "デコレータとは",
+          "text": "デコレータとは、既存の関数を変更せずに、新しい機能を追加するための仕組みです。"
+        },
+        {
+          "type": "code",
+          "title": "関数デコレータの実用例",
+          "language": "python",
+          "code": "def log(func):\n    def wrapper(*args, **kwargs):\n        print(f\"{func.__name__}を実行します\")\n        return func(*args, **kwargs)\n    return wrapper\n\n@log\ndef greet(name):\n    print(f\"こんにちは、{name}さん\")\n\ngreet(\"田中\")"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "デコレータは関数に機能を追加する仕組み",
+            "@デコレータ名を関数の上に書いて使う"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "デコレータの基本的な使い方を学びました。",
+          "next": "次はクロージャについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "category": "応用編（第2章：高度な関数）",
+      "title": "クロージャ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "クロージャ",
+          "text": "関数が外側の変数を覚えておく仕組み「クロージャ」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "クロージャと自由変数",
+          "text": "クロージャとは、関数が定義されたときの外側の変数（自由変数）を、関数の実行後も覚えておく仕組みのことです。"
+        },
+        {
+          "type": "code",
+          "title": "関数を保持する仕組み",
+          "language": "python",
+          "code": "def create_counter():\n    count = 0\n    def counter():\n        nonlocal count\n        count += 1\n        return count\n    return counter\n\ncounter = create_counter()\nprint(counter()) # 1\nprint(counter()) # 2"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "クロージャは外側の変数（自由変数）を覚えておく仕組み",
+            "nonlocalを使うと外側の変数を書き換えられる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "クロージャの仕組みを学びました。",
+          "next": "次はジェネレータについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "category": "応用編（第2章：高度な関数）",
+      "title": "ジェネレータ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ジェネレータ",
+          "text": "値を1つずつ返しながら処理を進められる「ジェネレータ」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "yieldとgenerator",
+          "language": "python",
+          "code": "def count_up():\n    n = 1\n    while True:\n        yield n\n        n += 1\n\ngen = count_up()\nprint(next(gen)) # 1\nprint(next(gen)) # 2"
+        },
+        {
+          "type": "content",
+          "title": "遅延評価",
+          "text": "ジェネレータは、値をすべて先に計算してメモリに保持するのではなく、必要になったタイミングで1つずつ計算します。これを遅延評価といいます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "yieldを使うとジェネレータ関数を作れる",
+            "next()を呼ぶたびに値が1つずつ返される",
+            "遅延評価により、大量のデータも効率よく扱える"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "ジェネレータの基本を学びました。",
+          "next": "次はイテレータについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "category": "応用編（第2章：高度な関数）",
+      "title": "イテレータ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "イテレータ",
+          "text": "値を1つずつ順番に取り出す仕組み「イテレータ」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "iter()とnext()",
+          "language": "python",
+          "code": "nums = [1, 2, 3]\nit = iter(nums)\n\nprint(next(it)) # 1\nprint(next(it)) # 2\nprint(next(it)) # 3"
+        },
+        {
+          "type": "content",
+          "title": "iteratorとfor文の関係",
+          "text": "for文は、内部的にiter()でイテレータを作り、next()を繰り返し呼び出すことで要素を1つずつ取り出しています。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "iter()でイテレータを作れる",
+            "next()で次の値を1つ取り出せる",
+            "for文は内部的にこの仕組みを利用している"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "イテレータの仕組みを学びました。第2章はこれで終了です。",
+          "next": "次の章では高度なクラスについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "category": "応用編（第3章：高度なクラス）",
+      "title": "多重継承",
+      "slides": [
+        {
+          "type": "title",
+          "title": "多重継承",
+          "text": "複数のクラスから同時に機能を引き継ぐ「多重継承」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "複数の親クラス",
+          "language": "python",
+          "code": "class Flyable:\n    def fly(self):\n        print(\"飛ぶ\")\n\nclass Swimmable:\n    def swim(self):\n        print(\"泳ぐ\")\n\nclass Duck(Flyable, Swimmable):\n    pass\n\nduck = Duck()\nduck.fly()\nduck.swim()"
+        },
+        {
+          "type": "content",
+          "title": "MRO（メソッド解決順序）",
+          "text": "複数の親クラスに同じ名前のメソッドがある場合、どちらを優先するかはMRO（Method Resolution Order）という決まったルールに沿って決定されます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "多重継承で複数のクラスの機能を1つのクラスにまとめられる",
+            "同名メソッドがある場合はMROに従って優先順位が決まる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "多重継承の基本を学びました。",
+          "next": "次は抽象クラスについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "category": "応用編（第3章：高度なクラス）",
+      "title": "抽象クラス",
+      "slides": [
+        {
+          "type": "title",
+          "title": "抽象クラス",
+          "text": "実装を強制するための「抽象クラス」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "ABCとabstractmethod",
+          "language": "python",
+          "code": "from abc import ABC, abstractmethod\n\nclass Animal(ABC):\n    @abstractmethod\n    def speak(self):\n        pass\n\nclass Dog(Animal):\n    def speak(self):\n        print(\"わんわん\")\n\ndog = Dog()\ndog.speak()"
+        },
+        {
+          "type": "content",
+          "title": "抽象クラスを使う理由",
+          "text": "抽象クラスを継承した子クラスは、abstractmethodで指定されたメソッドを必ず実装しなければなりません。これにより、共通のルールを強制できます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "ABCを継承すると抽象クラスを作れる",
+            "@abstractmethodをつけたメソッドは子クラスで必ず実装する必要がある"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "抽象クラスの基本を学びました。",
+          "next": "次はプロパティについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "category": "応用編（第3章：高度なクラス）",
+      "title": "プロパティ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "プロパティ",
+          "text": "メソッドを変数のように扱える「プロパティ」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "propertyとgetter・setter",
+          "language": "python",
+          "code": "class User:\n    def __init__(self, name):\n        self._name = name\n\n    @property\n    def name(self):\n        return self._name\n\n    @name.setter\n    def name(self, value):\n        if value == \"\":\n            raise ValueError(\"名前は空にできません\")\n        self._name = value\n\nuser = User(\"田中\")\nprint(user.name)\nuser.name = \"鈴木\""
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "@propertyでメソッドを変数のように扱える",
+            "@名前.setterで値を設定するときの処理を書ける",
+            "値のチェックなどをgetter・setterに集約できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "プロパティの使い方を学びました。",
+          "next": "次はdataclassについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "category": "応用編（第3章：高度なクラス）",
+      "title": "dataclass",
+      "slides": [
+        {
+          "type": "title",
+          "title": "dataclass",
+          "text": "データを保持するクラスを簡単に作れる「dataclass」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "dataclassesの基本",
+          "language": "python",
+          "code": "from dataclasses import dataclass\n\n@dataclass\nclass User:\n    name: str\n    age: int\n\nuser = User(\"田中\", 20)\nprint(user) # User(name='田中', age=20)"
+        },
+        {
+          "type": "content",
+          "title": "自動生成されるメソッド",
+          "text": "dataclassを使うと、__init__()や__repr__()などのメソッドが自動的に生成されるため、データを保持するだけのクラスを短く書けます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "@dataclassをつけるとデータ保持用のクラスを簡単に作れる",
+            "__init__()や__repr__()が自動生成される"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "dataclassの使い方を学びました。",
+          "next": "次は特殊メソッドについてさらに詳しく学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "category": "応用編（第3章：高度なクラス）",
+      "title": "特殊メソッド完全理解",
+      "slides": [
+        {
+          "type": "title",
+          "title": "特殊メソッド完全理解",
+          "text": "さまざまな特殊メソッドを使って、独自のクラスの振る舞いをカスタマイズする方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "__call__と__getitem__",
+          "language": "python",
+          "code": "class Adder:\n    def __call__(self, a, b):\n        return a + b\n\nadd = Adder()\nprint(add(2, 3)) # 5（インスタンスを関数のように呼べる）\n\nclass Deck:\n    def __init__(self):\n        self.cards = [1, 2, 3]\n\n    def __getitem__(self, index):\n        return self.cards[index]\n\ndeck = Deck()\nprint(deck[0]) # 1"
+        },
+        {
+          "type": "code",
+          "title": "__enter__と__exit__",
+          "language": "python",
+          "code": "class FileManager:\n    def __enter__(self):\n        print(\"開始処理\")\n        return self\n\n    def __exit__(self, exc_type, exc_value, traceback):\n        print(\"終了処理\")\n\nwith FileManager() as fm:\n    print(\"処理中\")"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "__call__でインスタンスを関数のように呼び出せる",
+            "__getitem__でインスタンスにインデックスアクセスできる",
+            "__enter__と__exit__でwith文に対応できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "さまざまな特殊メソッドを学びました。第3章はこれで終了です。",
+          "next": "次の章では型システムについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "category": "応用編（第4章：型システム）",
+      "title": "型ヒント",
+      "slides": [
+        {
+          "type": "title",
+          "title": "型ヒント",
+          "text": "変数や関数の型を明示できる「型ヒント」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "型ヒントとは",
+          "text": "型ヒントとは、変数や関数の引数・戻り値がどんな型なのかをコードに書いておく仕組みです。実行時の動作は変わりませんが、コードの読みやすさやエディタの補完に役立ちます。"
+        },
+        {
+          "type": "code",
+          "title": "基本的な型指定",
+          "language": "python",
+          "code": "def add(a: int, b: int) -> int:\n    return a + b\n\nname: str = \"田中\"\nage: int = 20"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "型ヒントで変数や関数の型を明示できる",
+            "実行時の動作には影響しないが、可読性が上がる",
+            "typingモジュールでさらに高度な型を扱える"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "型ヒントの基本を学びました。",
+          "next": "次は高度な型ヒントについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "category": "応用編（第4章：型システム）",
+      "title": "高度な型ヒント",
+      "slides": [
+        {
+          "type": "title",
+          "title": "高度な型ヒント",
+          "text": "Optional・Union・Literal・Anyなど、typingモジュールが提供する型を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "OptionalとUnion",
+          "language": "python",
+          "code": "from typing import Optional, Union\n\ndef find_user(user_id: int) -> Optional[str]:\n    # 見つからない場合はNoneを返す可能性がある\n    return None\n\ndef show(value: Union[int, str]):\n    print(value)"
+        },
+        {
+          "type": "code",
+          "title": "LiteralとAny",
+          "language": "python",
+          "code": "from typing import Literal, Any\n\ndef set_mode(mode: Literal[\"light\", \"dark\"]):\n    print(mode)\n\ndef process(value: Any):\n    print(value)"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "OptionalはNoneの可能性がある型を表す",
+            "Unionは複数の型のどれかであることを表す",
+            "Literalは決まった値のいずれかであることを表す",
+            "Anyはどんな型でも受け入れることを表す"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "高度な型ヒントの使い方を学びました。",
+          "next": "次はGenericsについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "category": "応用編（第4章：型システム）",
+      "title": "Generics",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Generics",
+          "text": "型を汎用的に扱える「Generics（ジェネリクス）」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "TypeVarとGeneric",
+          "language": "python",
+          "code": "from typing import TypeVar, Generic\n\nT = TypeVar(\"T\")\n\nclass Box(Generic[T]):\n    def __init__(self, content: T):\n        self.content = content\n\nint_box = Box[int](123)\nstr_box = Box[str](\"hello\")"
+        },
+        {
+          "type": "content",
+          "title": "汎用的な型の利点",
+          "text": "Genericsを使うと、int用・str用と別々にクラスを作らなくても、1つのクラスでさまざまな型を安全に扱えるようになります。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "TypeVarで型変数を定義できる",
+            "Genericを継承すると汎用的な型のクラスを作れる",
+            "同じクラスをさまざまな型に対して安全に使い回せる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Genericsの基本を学びました。",
+          "next": "次はProtocolについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "category": "応用編（第4章：型システム）",
+      "title": "Protocol",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Protocol",
+          "text": "継承関係がなくても型として扱える「Protocol」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "構造的部分型とは",
+          "text": "Protocolは、クラスの継承関係ではなく「どんなメソッドや属性を持っているか」によって型を判断する、構造的部分型という考え方を実現します。"
+        },
+        {
+          "type": "code",
+          "title": "Protocolの使用例",
+          "language": "python",
+          "code": "from typing import Protocol\n\nclass Speaker(Protocol):\n    def speak(self) -> None:\n        ...\n\nclass Dog:\n    def speak(self):\n        print(\"わんわん\")\n\ndef make_speak(speaker: Speaker):\n    speaker.speak()\n\nmake_speak(Dog()) # 継承していなくてもOK"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Protocolは継承関係がなくても型として扱える",
+            "「speak()を持っているかどうか」のように構造で判断する",
+            "柔軟な型設計ができるようになる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Protocolの考え方を学びました。第4章はこれで終了です。",
+          "next": "次の章では非同期処理・並列処理について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "category": "応用編（第5章：非同期処理・並列処理）",
+      "title": "threading",
+      "slides": [
+        {
+          "type": "title",
+          "title": "threading",
+          "text": "複数の処理を同時に進める「スレッド」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "スレッドの基本",
+          "language": "python",
+          "code": "import threading\nimport time\n\ndef task():\n    time.sleep(1)\n    print(\"タスク完了\")\n\nt = threading.Thread(target=task)\nt.start()\nprint(\"メイン処理は先に進む\")\nt.join()"
+        },
+        {
+          "type": "content",
+          "title": "並行処理とは",
+          "text": "並行処理とは、複数の処理を切り替えながら進めることで、待ち時間の多い処理（通信やファイル操作など）を効率よく扱う方法です。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "threadingでスレッドを使った並行処理ができる",
+            "start()でスレッドを開始し、join()で終了を待てる",
+            "待ち時間の多い処理と相性が良い"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "スレッドの基本的な使い方を学びました。",
+          "next": "次はmultiprocessingについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "category": "応用編（第5章：非同期処理・並列処理）",
+      "title": "multiprocessing",
+      "slides": [
+        {
+          "type": "title",
+          "title": "multiprocessing",
+          "text": "複数のプロセスで処理を分担する「並列処理」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "プロセスの基本",
+          "language": "python",
+          "code": "import multiprocessing\n\ndef task(n):\n    print(n * n)\n\nif __name__ == \"__main__\":\n    p = multiprocessing.Process(target=task, args=(5,))\n    p.start()\n    p.join()"
+        },
+        {
+          "type": "content",
+          "title": "スレッドとプロセスの違い",
+          "text": "スレッドはメモリを共有しながら処理を切り替えるのに対し、プロセスはそれぞれ独立したメモリ空間を持ちます。計算量の多い処理には、multiprocessingによる並列処理が向いています。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "multiprocessingで複数のプロセスに処理を分担できる",
+            "プロセスはそれぞれ独立したメモリ空間を持つ",
+            "計算量の多い処理に向いている"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "並列処理の基本を学びました。",
+          "next": "次はasyncioについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "category": "応用編（第5章：非同期処理・並列処理）",
+      "title": "asyncio",
+      "slides": [
+        {
+          "type": "title",
+          "title": "asyncio",
+          "text": "非同期処理を扱うためのasync・awaitとイベントループについて学びます。"
+        },
+        {
+          "type": "code",
+          "title": "asyncとawaitの基本",
+          "language": "python",
+          "code": "import asyncio\n\nasync def say_hello():\n    await asyncio.sleep(1)\n    print(\"こんにちは\")\n\nasyncio.run(say_hello())"
+        },
+        {
+          "type": "content",
+          "title": "イベントループとは",
+          "text": "イベントループとは、複数の非同期処理を管理し、待ち時間の間に他の処理を進めてくれる仕組みのことです。asyncio.run()がイベントループを開始します。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "asyncをつけた関数の中でawaitが使える",
+            "asyncio.run()でイベントループを開始する",
+            "待ち時間の間に他の処理を進められる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "asyncioの基本を学びました。",
+          "next": "次は非同期プログラミングについてさらに詳しく学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "category": "応用編（第5章：非同期処理・並列処理）",
+      "title": "非同期プログラミング",
+      "slides": [
+        {
+          "type": "title",
+          "title": "非同期プログラミング",
+          "text": "複数の非同期処理を同時に実行する方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "Taskで並行実行する",
+          "language": "python",
+          "code": "import asyncio\n\nasync def task(name, seconds):\n    await asyncio.sleep(seconds)\n    print(f\"{name}完了\")\n\nasync def main():\n    t1 = asyncio.create_task(task(\"A\", 2))\n    t2 = asyncio.create_task(task(\"B\", 1))\n    await t1\n    await t2\n\nasyncio.run(main())"
+        },
+        {
+          "type": "content",
+          "title": "並行実行のメリット",
+          "text": "複数の非同期関数をTaskとして同時に開始することで、それぞれの待ち時間を重ねることができ、全体の処理時間を短縮できます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "asyncio.create_task()で非同期関数を並行して実行できる",
+            "複数の待ち時間を重ねることで全体の処理が速くなる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "非同期プログラミングの応用を学びました。第5章はこれで終了です。",
+          "next": "次の章ではデータ処理について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "category": "応用編（第6章：データ処理）",
+      "title": "高度なファイル操作",
+      "slides": [
+        {
+          "type": "title",
+          "title": "高度なファイル操作",
+          "text": "pathlibを使った、より扱いやすいファイル・フォルダの操作方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "pathlibの基本",
+          "language": "python",
+          "code": "from pathlib import Path\n\np = Path(\"data/sample.txt\")\nprint(p.exists())  # ファイルが存在するか\nprint(p.name)       # sample.txt\nprint(p.parent)      # data"
+        },
+        {
+          "type": "code",
+          "title": "ディレクトリ操作",
+          "language": "python",
+          "code": "from pathlib import Path\n\ndir_path = Path(\"my_folder\")\ndir_path.mkdir(exist_ok=True)\n\nfor file in dir_path.iterdir():\n    print(file)"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "pathlibでファイルパスをオブジェクトとして扱える",
+            "mkdir()でフォルダを作成できる",
+            "iterdir()でフォルダの中身を列挙できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "pathlibを使ったファイル操作を学びました。",
+          "next": "次はデータ処理について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "category": "応用編（第6章：データ処理）",
+      "title": "データ処理",
+      "slides": [
+        {
+          "type": "title",
+          "title": "データ処理",
+          "text": "CSVやJSONなど、さまざまな形式のデータを変換・処理する方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "CSVからJSONへの変換",
+          "language": "python",
+          "code": "import csv\nimport json\n\nwith open(\"data.csv\", \"r\", encoding=\"utf-8\") as f:\n    reader = csv.DictReader(f)\n    data = list(reader)\n\nwith open(\"data.json\", \"w\", encoding=\"utf-8\") as f:\n    json.dump(data, f, ensure_ascii=False, indent=2)"
+        },
+        {
+          "type": "content",
+          "title": "大量データの扱い方",
+          "text": "大量のデータを扱う場合、すべてを一度にメモリに読み込むのではなく、1行ずつ処理するなど、メモリの使い方を意識することが大切です。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "csv.DictReader()で見出し付きのCSVを扱いやすく読み込める",
+            "CSVとJSONの間でデータを変換できる",
+            "大量データはメモリの使い方を意識して処理する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "データ処理の応用的な方法を学びました。",
+          "next": "次はSQLiteについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "category": "応用編（第6章：データ処理）",
+      "title": "SQLite",
+      "slides": [
+        {
+          "type": "title",
+          "title": "SQLite",
+          "text": "Pythonから手軽に使えるデータベース「SQLite」について学びます。"
+        },
+        {
+          "type": "content",
+          "title": "データベースとSQLite",
+          "text": "データベースとは、大量のデータを効率よく保存・検索するための仕組みです。SQLiteは、ファイル1つで動く軽量なデータベースで、Pythonに標準で組み込まれています。"
+        },
+        {
+          "type": "code",
+          "title": "Pythonからの操作",
+          "language": "python",
+          "code": "import sqlite3\n\nconn = sqlite3.connect(\"my_database.db\")\ncursor = conn.cursor()\n\ncursor.execute(\"CREATE TABLE IF NOT EXISTS users (id INTEGER, name TEXT)\")\ncursor.execute(\"INSERT INTO users VALUES (1, '田中')\")\nconn.commit()\n\ncursor.execute(\"SELECT * FROM users\")\nprint(cursor.fetchall())\n\nconn.close()"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "SQLiteはファイル1つで動く軽量なデータベース",
+            "sqlite3モジュールでPythonから操作できる",
+            "SQL文でテーブルの作成やデータの操作を行う"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "SQLiteの基本を学びました。第6章はこれで終了です。",
+          "next": "次の章ではWeb開発について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "category": "応用編（第7章：Web開発）",
+      "title": "Python Web開発",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Python Web開発",
+          "text": "PythonでWebアプリを作るための基本的な仕組みを学びます。"
+        },
+        {
+          "type": "content",
+          "title": "Webアプリの仕組みとHTTP",
+          "text": "Webアプリは、ブラウザからのHTTPリクエストを受け取り、それに応じた処理を行って、レスポンスを返すプログラムです。"
+        },
+        {
+          "type": "content",
+          "title": "ルーティング",
+          "text": "ルーティングとは、URLごとにどの処理を実行するかを対応付ける仕組みのことです。「/」なら一覧表示、「/about」なら紹介ページ、というように振り分けます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "WebアプリはHTTPリクエストを受け取ってレスポンスを返す",
+            "ルーティングでURLごとの処理を振り分ける"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Web開発の基本的な仕組みを学びました。",
+          "next": "次はWebフレームワークについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "category": "応用編（第7章：Web開発）",
+      "title": "Webフレームワーク",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Webフレームワーク",
+          "text": "Pythonの代表的なWebフレームワーク「Flask」の基本を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "Flaskの基本",
+          "language": "python",
+          "code": "from flask import Flask\n\napp = Flask(__name__)\n\n@app.route(\"/\")\ndef index():\n    return \"Hello, Flask!\"\n\nif __name__ == \"__main__\":\n    app.run(debug=True)"
+        },
+        {
+          "type": "content",
+          "title": "リクエストとレスポンス",
+          "text": "@app.routeで指定したURLにアクセスがあると、対応する関数が実行され、その戻り値がレスポンスとしてブラウザに返されます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "Flaskを使うと簡単にWebアプリを作れる",
+            "@app.routeでURLと処理を結びつける",
+            "関数の戻り値がそのままレスポンスになる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Flaskの基本的な使い方を学びました。",
+          "next": "次はAPI開発について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "category": "応用編（第7章：Web開発）",
+      "title": "API開発",
+      "slides": [
+        {
+          "type": "title",
+          "title": "API開発",
+          "text": "Flaskを使って、JSONを返すREST APIを作る方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "JSONレスポンスを返す",
+          "language": "python",
+          "code": "from flask import Flask, jsonify\n\napp = Flask(__name__)\n\n@app.route(\"/users\")\ndef get_users():\n    users = [{\"id\": 1, \"name\": \"田中\"}]\n    return jsonify(users)"
+        },
+        {
+          "type": "content",
+          "title": "GET・POST・PUT・DELETE",
+          "text": "REST APIでは、GETでデータ取得、POSTで新規作成、PUTで更新、DELETEで削除というように、HTTPメソッドごとに操作の意味を分けて設計します。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "jsonify()でPythonのデータをJSONレスポンスに変換できる",
+            "GET・POST・PUT・DELETEでそれぞれ異なる操作を表す",
+            "この設計方針をREST APIという"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "API開発の基本を学びました。",
+          "next": "次はデータベース連携について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "category": "応用編（第7章：Web開発）",
+      "title": "データベース連携",
+      "slides": [
+        {
+          "type": "title",
+          "title": "データベース連携",
+          "text": "WebアプリとデータベースをつなげてCRUD処理を行う方法を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "WebアプリとDB",
+          "text": "多くのWebアプリは、データベースと連携してデータの保存・取得・更新・削除を行います。これらの基本操作をまとめてCRUD（Create・Read・Update・Delete）といいます。"
+        },
+        {
+          "type": "code",
+          "title": "CRUDの実装イメージ",
+          "language": "python",
+          "code": "@app.route(\"/users\", methods=[\"POST\"])\ndef create_user():\n    # 受け取ったデータをデータベースに保存する処理\n    return jsonify({\"message\": \"作成しました\"})"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "CRUDはCreate・Read・Update・Deleteの4つの操作",
+            "WebアプリはこれらをAPIとして提供することが多い",
+            "データベースと連携してデータを永続的に管理する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "データベース連携の基本的な考え方を学びました。第7章はこれで終了です。",
+          "next": "次の章ではPygameをさらに深く学んでいきましょう。"
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "category": "応用編（第8章：Pygame完全マスター）",
+      "title": "Pygameのゲームループ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Pygameのゲームループ",
+          "text": "FPSを一定に保つ、より本格的なゲームループの作り方を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "Clockを使ったFPSの管理",
+          "language": "python",
+          "code": "clock = pygame.time.Clock()\n\nwhile running:\n    clock.tick(60) # 1秒間に60回に制限する\n    # 更新処理\n    # 描画処理"
+        },
+        {
+          "type": "content",
+          "title": "ゲームループの設計",
+          "text": "本格的なゲームループでは、入力処理・状態の更新・描画の3つを毎フレーム繰り返すように設計するのが基本です。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "pygame.time.Clock()でFPSを管理できる",
+            "tick(60)で1秒間に60回のループに制限できる",
+            "入力・更新・描画を毎フレーム繰り返す"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "本格的なゲームループの作り方を学びました。",
+          "next": "次はスプライトについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "category": "応用編（第8章：Pygame完全マスター）",
+      "title": "スプライト",
+      "slides": [
+        {
+          "type": "title",
+          "title": "スプライト",
+          "text": "複数のキャラクターをまとめて管理できる「スプライト」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "Spriteクラス",
+          "language": "python",
+          "code": "class Player(pygame.sprite.Sprite):\n    def __init__(self):\n        super().__init__()\n        self.image = pygame.image.load(\"player.png\")\n        self.rect = self.image.get_rect()"
+        },
+        {
+          "type": "code",
+          "title": "Groupで画像をまとめて管理",
+          "language": "python",
+          "code": "all_sprites = pygame.sprite.Group()\nplayer = Player()\nall_sprites.add(player)\n\nall_sprites.update()\nall_sprites.draw(screen)"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "pygame.sprite.Spriteを継承してキャラクターを作れる",
+            "Groupで複数のスプライトをまとめて更新・描画できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "スプライトを使った画像管理の方法を学びました。",
+          "next": "次は当たり判定について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "category": "応用編（第8章：Pygame完全マスター）",
+      "title": "当たり判定",
+      "slides": [
+        {
+          "type": "title",
+          "title": "当たり判定",
+          "text": "Rectを使った本格的な当たり判定の方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "colliderect()",
+          "language": "python",
+          "code": "if player.rect.colliderect(enemy.rect):\n    print(\"衝突しました\")"
+        },
+        {
+          "type": "code",
+          "title": "spritecollide()",
+          "language": "python",
+          "code": "hits = pygame.sprite.spritecollide(player, enemies, True)\nfor hit in hits:\n    print(\"敵を倒した\")"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "colliderect()で2つの四角形の衝突を判定できる",
+            "spritecollide()でスプライトグループとの衝突をまとめて判定できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "本格的な当たり判定の方法を学びました。",
+          "next": "次はアニメーションについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "category": "応用編（第8章：Pygame完全マスター）",
+      "title": "アニメーション",
+      "slides": [
+        {
+          "type": "title",
+          "title": "アニメーション",
+          "text": "複数の画像を切り替えて、動いているように見せるアニメーションの作り方を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "フレームアニメーション",
+          "language": "python",
+          "code": "frames = [pygame.image.load(f\"walk{i}.png\") for i in range(4)]\nframe_index = 0\n\nframe_index = (frame_index + 1) % len(frames)\nscreen.blit(frames[frame_index], (x, y))"
+        },
+        {
+          "type": "content",
+          "title": "キャラクターアニメーションのポイント",
+          "text": "一定のフレーム数ごとに表示する画像を切り替えることで、歩いているような動きを表現できます。切り替える間隔を調整することで、動きの速さも変えられます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "複数の画像を順番に切り替えることでアニメーションを表現する",
+            "切り替える間隔で動きの速さを調整できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "キャラクターアニメーションの作り方を学びました。",
+          "next": "次はカメラについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "category": "応用編（第8章：Pygame完全マスター）",
+      "title": "カメラ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "カメラ",
+          "text": "画面よりも大きなマップをスクロールして表示する「カメラ」の仕組みを学びます。"
+        },
+        {
+          "type": "content",
+          "title": "スクロールとカメラ座標",
+          "text": "大きなマップ全体を1度に画面に表示するのではなく、プレイヤーを中心にした一部分だけを表示し、プレイヤーの移動に合わせてカメラ座標をずらすことでスクロールを表現します。"
+        },
+        {
+          "type": "code",
+          "title": "カメラ座標を使った描画",
+          "language": "python",
+          "code": "camera_x = player_x - screen_width // 2\n\nscreen.blit(player_image, (player_x - camera_x, player_y))"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "カメラ座標を使うと、大きなマップをスクロール表示できる",
+            "描画するときにキャラクターの座標からカメラ座標を引く"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "カメラとスクロールの仕組みを学びました。",
+          "next": "次はゲームUIについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "category": "応用編（第8章：Pygame完全マスター）",
+      "title": "ゲームUI",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ゲームUI",
+          "text": "文字表示やメニュー、HP・スコアなど、ゲームのUI要素の作り方を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "文字表示",
+          "language": "python",
+          "code": "font = pygame.font.SysFont(None, 36)\ntext = font.render(\"Score: 100\", True, (255, 255, 255))\nscreen.blit(text, (10, 10))"
+        },
+        {
+          "type": "content",
+          "title": "メニューやボタンの考え方",
+          "text": "メニューやボタンは、四角形の当たり判定とマウスクリックを組み合わせることで実装できます。クリックされた位置がボタンの範囲内かどうかを判定します。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "pygame.font.SysFont()とrender()で文字を描画できる",
+            "ボタンは四角形の当たり判定とクリック判定で実装する",
+            "HPやスコアも同じように文字として表示できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "ゲームUIの基本的な作り方を学びました。",
+          "next": "次はサウンドシステムについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "category": "応用編（第8章：Pygame完全マスター）",
+      "title": "サウンドシステム",
+      "slides": [
+        {
+          "type": "title",
+          "title": "サウンドシステム",
+          "text": "BGMと効果音を組み合わせた、より本格的なサウンドの管理方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "音量管理",
+          "language": "python",
+          "code": "pygame.mixer.music.set_volume(0.5) # BGMの音量（0.0〜1.0）\n\nsound = pygame.mixer.Sound(\"jump.wav\")\nsound.set_volume(0.8) # 効果音の音量"
+        },
+        {
+          "type": "content",
+          "title": "BGMと効果音の使い分け",
+          "text": "BGMはpygame.mixer.musicでループ再生し、効果音はpygame.mixer.Soundで短く鳴らすというように使い分けるのが一般的です。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "set_volume()でBGMや効果音の音量を調整できる",
+            "BGMと効果音でそれぞれ適した機能を使い分ける"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "サウンドシステムの管理方法を学びました。",
+          "next": "次はセーブシステムについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "category": "応用編（第8章：Pygame完全マスター）",
+      "title": "セーブシステム",
+      "slides": [
+        {
+          "type": "title",
+          "title": "セーブシステム",
+          "text": "ゲームの進行状況をファイルに保存する「セーブシステム」の作り方を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "JSONでゲームデータを保存する",
+          "language": "python",
+          "code": "import json\n\ndef save_game(data):\n    with open(\"save.json\", \"w\", encoding=\"utf-8\") as f:\n        json.dump(data, f)\n\ndef load_game():\n    with open(\"save.json\", \"r\", encoding=\"utf-8\") as f:\n        return json.load(f)\n\nsave_game({\"score\": 100, \"stage\": 3})\nprint(load_game())"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "ゲームの進行状況をJSON形式でファイルに保存できる",
+            "起動時にファイルを読み込むことでロードを実現できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "セーブ・ロードの基本的な仕組みを学びました。",
+          "next": "次はいよいよPygameゲーム制作に挑戦しましょう。"
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "category": "応用編（第8章：Pygame完全マスター）",
+      "title": "Pygameゲーム制作",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Pygameゲーム制作",
+          "text": "これまで学んだPygameの技術をすべて使って、2Dゲームを企画・設計・制作します。"
+        },
+        {
+          "type": "flow",
+          "title": "ゲーム制作の流れ",
+          "steps": [
+            "作りたいゲームの内容を企画する",
+            "必要な画面・キャラクター・機能を設計する",
+            "ゲームループ・スプライト・当たり判定を実装する",
+            "UI・サウンド・セーブ機能を組み込む",
+            "実際に遊んでみて調整する"
+          ]
+        },
+        {
+          "type": "content",
+          "title": "企画・設計のポイント",
+          "text": "いきなりすべてを作ろうとせず、まずは「プレイヤーが動く」「敵と当たったらゲームオーバー」のような最小限の要素から作り始め、少しずつ機能を追加していくのがおすすめです。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "これまで学んだPygameの技術を組み合わせてゲームを作る",
+            "最小限の要素から作り始め、少しずつ機能を追加する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Pygameを使ったゲーム制作の進め方を学びました。第8章はこれで終了です。",
+          "next": "次の章では高度なPython開発について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "category": "応用編（第9章：高度なPython開発）",
+      "title": "ログ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "ログ",
+          "text": "プログラムの動作記録を残す「ログ」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "loggingの基本",
+          "language": "python",
+          "code": "import logging\n\nlogging.basicConfig(level=logging.INFO)\n\nlogging.info(\"処理を開始しました\")\nlogging.warning(\"注意が必要です\")\nlogging.error(\"エラーが発生しました\")"
+        },
+        {
+          "type": "content",
+          "title": "ログレベル",
+          "text": "ログには重要度に応じたレベル（DEBUG・INFO・WARNING・ERROR・CRITICAL）があり、必要な情報だけを表示・記録するように調整できます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "loggingモジュールでログを出力できる",
+            "ログレベルで表示する情報の重要度を調整できる",
+            "print()の代わりにログを使うことで管理がしやすくなる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "ログの基本的な使い方を学びました。",
+          "next": "次はテストについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "category": "応用編（第9章：高度なPython開発）",
+      "title": "テスト",
+      "slides": [
+        {
+          "type": "title",
+          "title": "テスト",
+          "text": "コードが正しく動くかを自動で確認する「テスト」について学びます。"
+        },
+        {
+          "type": "code",
+          "title": "unittestの基本",
+          "language": "python",
+          "code": "import unittest\n\ndef add(a, b):\n    return a + b\n\nclass TestAdd(unittest.TestCase):\n    def test_add(self):\n        self.assertEqual(add(2, 3), 5)\n\nif __name__ == \"__main__\":\n    unittest.main()"
+        },
+        {
+          "type": "content",
+          "title": "pytestの考え方",
+          "text": "pytestは、unittestよりもシンプルな書き方でテストが書けるライブラリです。関数の先頭にtest_をつけるだけでテストとして認識されます。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "unittestは標準ライブラリのテストの仕組み",
+            "assertEqual()などで期待する結果と一致するか確認する",
+            "pytestを使うとよりシンプルにテストを書ける"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "テストコードの基本的な書き方を学びました。",
+          "next": "次はデバッグについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "category": "応用編（第9章：高度なPython開発）",
+      "title": "デバッグ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "デバッグ",
+          "text": "コードの不具合を見つけて修正する、デバッグの方法を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "breakpoint()",
+          "language": "python",
+          "code": "def calc(a, b):\n    breakpoint() # ここで処理が一時停止する\n    return a + b\n\ncalc(2, 3)"
+        },
+        {
+          "type": "content",
+          "title": "トレースバックの読み方",
+          "text": "エラーが発生すると表示される「トレースバック」には、エラーが起きるまでにどの関数がどの順番で呼ばれたかが書かれています。一番下の行から読み始めるのがコツです。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "breakpoint()で処理を一時停止し、変数の中身を確認できる",
+            "トレースバックはエラーの原因を探す手がかりになる",
+            "一番下の行から順に読んでいくと原因を見つけやすい"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "デバッグの基本的な方法を学びました。",
+          "next": "次はパッケージ管理について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "category": "応用編（第9章：高度なPython開発）",
+      "title": "パッケージ管理",
+      "slides": [
+        {
+          "type": "title",
+          "title": "パッケージ管理",
+          "text": "外部ライブラリを管理する仕組みについて学びます。"
+        },
+        {
+          "type": "code",
+          "title": "pipとrequirements.txt",
+          "language": "python",
+          "code": "pip install requests\npip freeze > requirements.txt\npip install -r requirements.txt"
+        },
+        {
+          "type": "code",
+          "title": "venv（仮想環境）",
+          "language": "python",
+          "code": "python -m venv venv\nsource venv/bin/activate  # Windowsの場合は venv\\Scripts\\activate"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "pipで外部ライブラリをインストールできる",
+            "requirements.txtで必要なライブラリの一覧を管理する",
+            "venvでプロジェクトごとに独立した環境を作れる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "パッケージ管理の基本を学びました。",
+          "next": "次はプロジェクト設計について学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "category": "応用編（第9章：高度なPython開発）",
+      "title": "プロジェクト設計",
+      "slides": [
+        {
+          "type": "title",
+          "title": "プロジェクト設計",
+          "text": "大きなプログラムを整理して管理する、プロジェクト設計の考え方を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "フォルダ構成とモジュール分割",
+          "text": "機能ごとにフォルダやファイルを分けることで、プロジェクトが大きくなっても迷わずにコードを探せるようになります。"
+        },
+        {
+          "type": "content",
+          "title": "責任分離と保守性",
+          "text": "1つの関数やクラスに多くの役割を持たせすぎず、それぞれが1つの責任だけを持つように設計すると、修正や機能追加がしやすくなります。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "機能ごとにファイルやフォルダを分けて管理する",
+            "1つの機能に1つの責任を持たせることを意識する",
+            "保守しやすい設計を心がける"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "プロジェクト設計の基本的な考え方を学びました。",
+          "next": "次はこれまでの技術を組み合わせてアプリケーションを制作してみましょう。"
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "category": "応用編（第9章：高度なPython開発）",
+      "title": "Pythonアプリケーション制作",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Pythonアプリケーション制作",
+          "text": "これまで学んだ技術を組み合わせて、本格的なPythonアプリケーションを制作します。"
+        },
+        {
+          "type": "flow",
+          "title": "アプリケーション制作の流れ",
+          "steps": [
+            "作りたいアプリケーションの機能を整理する",
+            "フォルダ構成とモジュールを設計する",
+            "各機能を関数やクラスとして実装する",
+            "テストやログを使って動作を確認する",
+            "必要に応じてパッケージ管理や設定ファイルを整える"
+          ]
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "設計・実装・テストという流れでアプリを作る",
+            "これまで学んだ機能を組み合わせて実践する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "本格的なPythonアプリケーション制作の進め方を学びました。第9章はこれで終了です。",
+          "next": "次の章ではPython完全マスターに向けて総仕上げをしましょう。"
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "category": "応用編（第10章：Python完全マスター）",
+      "title": "Pythonの高度な文法",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Pythonの高度な文法",
+          "text": "内包表記やアンパックなど、Pythonならではの高度な書き方を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "内包表記とアンパック",
+          "language": "python",
+          "code": "squares = [x ** 2 for x in range(5)]\n\na, b, *rest = [1, 2, 3, 4, 5]\nprint(a, b, rest) # 1 2 [3, 4, 5]"
+        },
+        {
+          "type": "code",
+          "title": "walrus operator（:=）",
+          "language": "python",
+          "code": "data = [1, 2, 3, 4, 5]\n\nif (n := len(data)) > 3:\n    print(f\"データ数は{n}件です\")"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "内包表記でリストや辞書を短く作れる",
+            "アンパックで複数の値をまとめて取り出せる",
+            "walrus operator（:=）で代入と条件判定を同時に行える"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Pythonの高度な文法を学びました。",
+          "next": "次はデザインパターンについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 91,
+      "category": "応用編（第10章：Python完全マスター）",
+      "title": "デザインパターン",
+      "slides": [
+        {
+          "type": "title",
+          "title": "デザインパターン",
+          "text": "よくある設計上の問題を解決する、代表的な「デザインパターン」を学びます。"
+        },
+        {
+          "type": "comparison",
+          "title": "代表的なデザインパターン",
+          "items": [
+            {
+              "name": "Factory",
+              "role": "オブジェクトの生成方法をまとめる",
+              "example": "条件に応じて異なるクラスのインスタンスを返す関数"
+            },
+            {
+              "name": "Strategy",
+              "role": "処理のアルゴリズムを切り替えられるようにする",
+              "example": "並び替え方法を切り替えられるクラス設計"
+            },
+            {
+              "name": "Observer",
+              "role": "状態の変化を複数のオブジェクトに通知する",
+              "example": "データが更新されたら関連する画面を更新する仕組み"
+            },
+            {
+              "name": "Singleton",
+              "role": "インスタンスを1つだけに制限する",
+              "example": "アプリ全体で1つだけ存在する設定管理クラス"
+            }
+          ]
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "デザインパターンはよくある設計問題への定石的な解決方法",
+            "Factory・Strategy・Observer・Singletonなど代表的なパターンがある",
+            "Pythonでもこれらの考え方を活用できる"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "代表的なデザインパターンを学びました。",
+          "next": "次はパフォーマンスについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 92,
+      "category": "応用編（第10章：Python完全マスター）",
+      "title": "パフォーマンス",
+      "slides": [
+        {
+          "type": "title",
+          "title": "パフォーマンス",
+          "text": "処理速度やメモリ使用量を改善するための考え方を学びます。"
+        },
+        {
+          "type": "code",
+          "title": "プロファイリングの基本",
+          "language": "python",
+          "code": "import time\n\nstart = time.time()\n# 計測したい処理\nend = time.time()\nprint(f\"実行時間: {end - start}秒\")"
+        },
+        {
+          "type": "content",
+          "title": "最適化の考え方",
+          "text": "最適化を行う前に、まずはどこが遅いのかをプロファイリングで確認することが大切です。むやみに書き換えるのではなく、ボトルネックとなっている箇所を見つけてから改善しましょう。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "処理時間を計測して、遅い箇所を確認する",
+            "プロファイリングでボトルネックを見つける",
+            "見つけた箇所を重点的に最適化する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "パフォーマンス改善の基本的な考え方を学びました。",
+          "next": "次はセキュリティについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 93,
+      "category": "応用編（第10章：Python完全マスター）",
+      "title": "セキュリティ",
+      "slides": [
+        {
+          "type": "title",
+          "title": "セキュリティ",
+          "text": "安全なPythonプログラムを書くための基本的な考え方を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "安全な入力処理とファイル操作",
+          "text": "ユーザーからの入力をそのまま信用せず、想定外の値が来てもプログラムが壊れないようにチェックすることが大切です。ファイルパスも同様に、危険な文字列が渡されないよう注意します。"
+        },
+        {
+          "type": "content",
+          "title": "APIキーの管理",
+          "text": "APIキーやパスワードなどの秘密情報は、コードに直接書き込まず、環境変数や設定ファイルで管理し、公開されるリポジトリには含めないようにします。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "ユーザー入力は信用せず、必ずチェックする",
+            "秘密情報はコードに直接書かず、環境変数などで管理する",
+            "危険なコード（evalの乱用など）は避ける"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "セキュリティの基本的な考え方を学びました。",
+          "next": "次はPythonのエコシステムについて学びましょう。"
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "category": "応用編（第10章：Python完全マスター）",
+      "title": "Pythonのエコシステム",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Pythonのエコシステム",
+          "text": "Pythonを取り巻くライブラリやコミュニティの全体像を学びます。"
+        },
+        {
+          "type": "content",
+          "title": "標準ライブラリと外部ライブラリ",
+          "text": "Pythonには最初から使える「標準ライブラリ」と、pipでインストールする「外部ライブラリ」があります。目的に応じて使い分けます。"
+        },
+        {
+          "type": "content",
+          "title": "PyPIとライブラリ選択",
+          "text": "PyPI（Python Package Index）は、外部ライブラリが公開されている場所です。ライブラリを選ぶ際は、更新頻度や利用者数、ドキュメントの充実度などを確認すると安心です。"
+        },
+        {
+          "type": "summary",
+          "title": "今回のまとめ",
+          "list": [
+            "標準ライブラリと外部ライブラリを使い分ける",
+            "外部ライブラリはPyPIから探してpipでインストールする",
+            "ライブラリを選ぶときは信頼性を確認する"
+          ]
+        },
+        {
+          "type": "end",
+          "title": "レッスン終了！",
+          "text": "Pythonのエコシステム全体の考え方を学びました。",
+          "next": "最後にPython完全マスターとして総復習をしましょう。"
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "category": "応用編（第10章：Python完全マスター）",
+      "title": "Python完全マスター",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Python完全マスター",
+          "text": "入門編から応用編まで学んできた内容を振り返り、Pythonの全体像を総復習します。"
+        },
+        {
+          "type": "summary",
+          "title": "Python講座 総復習",
+          "list": [
+            "基本文法（変数・条件分岐・繰り返し・関数・リスト・辞書）",
+            "ファイル操作・JSON・CSVなどのデータの扱い方",
+            "クラスを使ったオブジェクト指向プログラミング",
+            "API通信やWeb開発の基本",
+            "Pygameを使ったゲーム開発",
+            "デコレータ・ジェネレータなどの高度な関数",
+            "型ヒント・非同期処理・並列処理",
+            "テスト・デバッグ・パッケージ管理といった開発の実務知識",
+            "デザインパターンやセキュリティなど、設計・実践の視点"
+          ]
+        },
+        {
+          "type": "content",
+          "title": "これからできること",
+          "text": "ここまでの内容を身につけたことで、CLIツール、デスクトップアプリ、Webアプリ、API、データ処理、自動化ツール、ゲームなど、さまざまなプログラムを自力で開発できる土台が整いました。"
+        },
+        {
+          "type": "end",
+          "title": "Python講座 完全マスター達成！",
+          "text": "おめでとうございます！Python講座の入門編・基礎編・応用編がすべて終了しました。ここまで学んだ知識を活かして、自分だけのプログラムをぜひ作ってみてください。",
+          "next": "気になるテーマがあれば、おまけコンテンツでさらに便利な小技を学ぶこともできます。"
+        }
+      ]
+    }
+  ]
+}
